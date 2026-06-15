@@ -1,0 +1,13 @@
+.claude/settings.local.json
+
+# AI本部：バックアップ・一時出力ファイルを除外
+*.bak
+*.bak.*
+*-export.txt
+
+# 動画・サムネイル（容量大・Downloadsが原本）
+output/instagram/*/episode_*.mp4
+output/instagram/*/thumbnail_*.png
+
+# 素材動画
+*.MOV
