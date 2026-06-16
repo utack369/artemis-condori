@@ -5,9 +5,8 @@
 *.bak.*
 *-export.txt
 
-# 動画・サムネイル（容量大・Downloadsが原本）
+# 動画（容量大・Downloadsが原本）
 output/instagram/*/episode_*.mp4
-output/instagram/*/thumbnail_*.png
 
 # 素材動画
 *.MOV
