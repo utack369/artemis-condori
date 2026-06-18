@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Instagram Reels 予約投稿スクリプト（Resumable Upload 方式）
+Instagram Reels 予約投稿スクリプト（S3 署名付き URL 方式）
 
 使用方法:
   python scripts/post_reel.py <ep_number>
@@ -9,7 +9,11 @@ Instagram Reels 予約投稿スクリプト（Resumable Upload 方式）
   python scripts/post_reel.py 3
 
 前提:
-  pip install requests
+  pip install requests boto3
+
+config.json に以下のキーが必要:
+  access_token, ig_user_id,
+  aws_access_key_id, aws_secret_access_key, s3_bucket_name, s3_region
 """
 
 import json
@@ -19,7 +23,9 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Optional, Tuple
 
+import boto3
 import requests
+from botocore.exceptions import ClientError
 
 # ---------------------------------------------------------------------------
 # 定数
@@ -39,6 +45,9 @@ SCHEDULED_MINUTE = 0
 
 # Meta API の制約: 最短10分後・最長75日後
 MIN_SCHEDULE_OFFSET_MIN = 10
+
+# S3 署名付き URL の有効期限（秒）
+PRESIGNED_URL_EXPIRY = 3600
 
 
 # ---------------------------------------------------------------------------
@@ -73,7 +82,7 @@ def get_episode_files(ep_num: int) -> Tuple[Path, Optional[Path], str]:
         raise FileNotFoundError(f"MP4ファイルが見つかりません: {ep_dir}")
     video_path = mp4_files[0]
 
-    # サムネイル（情報表示のみ。Resumable Upload は動画専用のため upload 不可）
+    # サムネイル
     thumb_candidates = (
         sorted(ep_dir.glob("thumbnail_*.png"))
         + sorted(ep_dir.glob("thumbnail_*.jpg"))
@@ -115,6 +124,54 @@ def get_scheduled_timestamp() -> int:
 
 
 # ---------------------------------------------------------------------------
+# S3 操作
+# ---------------------------------------------------------------------------
+def build_s3_client(config: dict):
+    return boto3.client(
+        "s3",
+        region_name=config["s3_region"],
+        aws_access_key_id=config["aws_access_key_id"],
+        aws_secret_access_key=config["aws_secret_access_key"],
+    )
+
+
+def upload_to_s3(s3_client, bucket: str, video_path: Path, ep_num: int) -> str:
+    """動画を S3 にアップロードし、S3 キーを返す。"""
+    s3_key = f"reels/{ep_num}/{video_path.name}"
+    size_mb = video_path.stat().st_size / 1024 / 1024
+    print(f"  ファイル: {video_path.name} ({size_mb:.1f} MB)")
+    print(f"  S3キー  : s3://{bucket}/{s3_key}")
+
+    s3_client.upload_file(
+        str(video_path),
+        bucket,
+        s3_key,
+        ExtraArgs={"ContentType": "video/mp4"},
+    )
+    print("  アップロード完了")
+    return s3_key
+
+
+def generate_presigned_url(s3_client, bucket: str, s3_key: str) -> str:
+    """署名付き URL（有効期限 1 時間）を生成して返す。"""
+    url = s3_client.generate_presigned_url(
+        "get_object",
+        Params={"Bucket": bucket, "Key": s3_key},
+        ExpiresIn=PRESIGNED_URL_EXPIRY,
+    )
+    return url
+
+
+def delete_from_s3(s3_client, bucket: str, s3_key: str) -> None:
+    """S3 から動画ファイルを削除する。"""
+    try:
+        s3_client.delete_object(Bucket=bucket, Key=s3_key)
+        print(f"  S3削除完了: {s3_key}")
+    except ClientError as e:
+        print(f"  S3削除失敗（無視して続行）: {e}", file=sys.stderr)
+
+
+# ---------------------------------------------------------------------------
 # Meta / Instagram Graph API 操作
 # ---------------------------------------------------------------------------
 def _raise_for_api_error(resp: requests.Response) -> None:
@@ -147,18 +204,16 @@ def get_thumbnail_raw_url(ep_num: int, thumb_path: Path) -> str:
     )
 
 
-def create_resumable_container(
+def create_video_url_container(
     ig_user_id: str,
     access_token: str,
+    video_url: str,
     caption: str,
     scheduled_ts: int,
     cover_url: Optional[str] = None,
-) -> Tuple[str, str]:
+) -> str:
     """
-    upload_type=resumable でメディアコンテナを作成し、(container_id, upload_uri) を返す。
-
-    video_url は指定しない。動画バイナリはレスポンスの uri に直接 POST する。
-    caption・scheduled_publish_time・cover_url はこのステップで確定させる。
+    video_url パラメータでメディアコンテナを作成し、container_id を返す。
     """
     endpoint = f"{IG_API_BASE}/{ig_user_id}/media"
     headers = {
@@ -167,7 +222,7 @@ def create_resumable_container(
     }
     payload: dict = {
         "media_type": "REELS",
-        "upload_type": "resumable",
+        "video_url": video_url,
         "caption": caption,
         "published": False,
         "scheduled_publish_time": str(scheduled_ts),
@@ -180,52 +235,9 @@ def create_resumable_container(
 
     data = resp.json()
     container_id = data.get("id")
-    upload_uri = data.get("uri")
-    if not container_id or not upload_uri:
-        raise RuntimeError(f"コンテナ作成失敗（id または uri が欠落）: {data}")
-    return container_id, upload_uri
-
-
-def upload_video_resumable(
-    upload_uri: str,
-    access_token: str,
-    video_path: Path,
-    timeout: int = 600,
-) -> None:
-    """
-    rupload.facebook.com に動画バイナリをストリーミング送信する。
-
-    ヘッダー:
-      Authorization: OAuth（Bearer ではなく OAuth が rupload の正式仕様）
-      offset    : 0（先頭から送信 = 再開なしの単発アップロード）
-      file_size : ファイルのバイト数（正確に一致させる必要がある）
-      Content-Length: file_size と同値（サーバーが受信量を検証するために必要）
-
-    ファイルオブジェクトを data= に渡すことでメモリに全展開せずストリーミング送信する。
-    """
-    file_size = video_path.stat().st_size
-    size_mb = file_size / 1024 / 1024
-    print(f"  ファイル: {video_path.name} ({size_mb:.1f} MB)")
-    print(f"  送信先 : {upload_uri}")
-
-    headers = {
-        "Authorization": f"OAuth {access_token}",
-        "offset": "0",
-        "file_size": str(file_size),
-        "Content-Type": "application/octet-stream",
-        "Content-Length": str(file_size),
-    }
-
-    with open(video_path, "rb") as f:
-        resp = requests.post(
-            upload_uri,
-            headers=headers,
-            data=f,
-            timeout=timeout,
-        )
-
-    _raise_for_api_error(resp)
-    print("  アップロード完了")
+    if not container_id:
+        raise RuntimeError(f"コンテナ作成失敗（id が欠落）: {data}")
+    return container_id
 
 
 def wait_for_container_ready(
@@ -299,6 +311,10 @@ def main() -> None:
     config = load_config()
     access_token: str = config["access_token"]
     ig_user_id: str = config["ig_user_id"]
+    bucket: str = config["s3_bucket_name"]
+
+    # S3 クライアント
+    s3_client = build_s3_client(config)
 
     # エピソードファイル
     video_path, thumb_path, caption = get_episode_files(ep_num)
@@ -310,7 +326,7 @@ def main() -> None:
     )
 
     print(f"\n{'='*52}")
-    print(f"  ep{ep_num} Reels 予約投稿（Resumable Upload）")
+    print(f"  ep{ep_num} Reels 予約投稿（S3 署名付き URL）")
     print(f"{'='*52}")
     print(f"動画    : {video_path.name}")
     cover_url: Optional[str] = None
@@ -322,31 +338,43 @@ def main() -> None:
     print(f"キャプ  : {caption[:60]}{'...' if len(caption) > 60 else ''}")
     print()
 
-    # Step 1: コンテナ作成（upload_type=resumable）
-    print("Step 1: メディアコンテナ作成")
-    container_id, upload_uri = create_resumable_container(
-        ig_user_id, access_token, caption, scheduled_ts, cover_url
-    )
-    print(f"  コンテナID     : {container_id}")
-    print(f"  アップロードURI: {upload_uri}")
+    s3_key: Optional[str] = None
+    try:
+        # Step 1: S3 に動画をアップロード
+        print("Step 1: S3 へ動画アップロード")
+        s3_key = upload_to_s3(s3_client, bucket, video_path, ep_num)
 
-    # Step 2: 動画バイナリを rupload.facebook.com に直送
-    print("\nStep 2: 動画アップロード（rupload.facebook.com）")
-    upload_video_resumable(upload_uri, access_token, video_path)
+        # Step 2: 署名付き URL を生成
+        print("\nStep 2: 署名付き URL 生成")
+        presigned_url = generate_presigned_url(s3_client, bucket, s3_key)
+        print(f"  有効期限: {PRESIGNED_URL_EXPIRY // 60} 分")
 
-    # Step 3: Meta 側のエンコード完了を待機
-    print("\nStep 3: コンテナ処理待機")
-    wait_for_container_ready(access_token, container_id)
+        # Step 3: メディアコンテナ作成（video_url 方式）
+        print("\nStep 3: メディアコンテナ作成")
+        container_id = create_video_url_container(
+            ig_user_id, access_token, presigned_url, caption, scheduled_ts, cover_url
+        )
+        print(f"  コンテナID: {container_id}")
 
-    # Step 4: 予約投稿登録
-    print("\nStep 4: 予約投稿登録")
-    post_id = publish_reel(ig_user_id, access_token, container_id)
+        # Step 4: Meta 側のエンコード完了を待機
+        print("\nStep 4: コンテナ処理待機")
+        wait_for_container_ready(access_token, container_id)
 
-    print(f"\n{'='*52}")
-    print(f"  予約投稿完了!")
-    print(f"  投稿ID  : {post_id}")
-    print(f"  公開予定: {scheduled_jst}")
-    print(f"{'='*52}\n")
+        # Step 5: 予約投稿登録
+        print("\nStep 5: 予約投稿登録")
+        post_id = publish_reel(ig_user_id, access_token, container_id)
+
+        print(f"\n{'='*52}")
+        print(f"  予約投稿完了!")
+        print(f"  投稿ID  : {post_id}")
+        print(f"  公開予定: {scheduled_jst}")
+        print(f"{'='*52}\n")
+
+    finally:
+        # S3 から動画を削除（成功・失敗問わず）
+        if s3_key:
+            print("\nCleanup: S3 から動画を削除")
+            delete_from_s3(s3_client, bucket, s3_key)
 
 
 if __name__ == "__main__":
