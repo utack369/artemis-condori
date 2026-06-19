@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Instagram Reels 予約投稿スクリプト（S3 署名付き URL 方式）
+Instagram Reels 予約投稿スクリプト（Zernio API + S3 署名付き URL 方式）
 
 使用方法:
   python scripts/post_reel.py <ep_number>
@@ -12,13 +12,12 @@ Instagram Reels 予約投稿スクリプト（S3 署名付き URL 方式）
   pip install requests boto3
 
 config.json に以下のキーが必要:
-  access_token, ig_user_id,
+  zernio_api_key,
   aws_access_key_id, aws_secret_access_key, s3_bucket_name, s3_region
 """
 
 import json
 import sys
-import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Optional, Tuple
@@ -32,8 +31,6 @@ from botocore.exceptions import ClientError
 # ---------------------------------------------------------------------------
 CONFIG_PATH = Path.home() / "Downloads/コンドリ/自動取得システム/config.json"
 OUTPUT_BASE = Path(__file__).resolve().parent.parent / "output/instagram"
-API_VERSION = "v20.0"
-IG_API_BASE = f"https://graph.facebook.com/{API_VERSION}"
 JST = timezone(timedelta(hours=9))
 
 GITHUB_OWNER = "utack369"
@@ -43,11 +40,12 @@ GITHUB_BRANCH = "main"
 SCHEDULED_HOUR = 20
 SCHEDULED_MINUTE = 0
 
-# Meta API の制約: 最短10分後・最長75日後
 MIN_SCHEDULE_OFFSET_MIN = 10
 
 # S3 署名付き URL の有効期限（秒）
 PRESIGNED_URL_EXPIRY = 3600
+
+ZERNIO_API_BASE = "https://zernio.com/api/v1"
 
 
 # ---------------------------------------------------------------------------
@@ -101,10 +99,9 @@ def get_episode_files(ep_num: int) -> Tuple[Path, Optional[Path], str]:
 # ---------------------------------------------------------------------------
 # 予約時刻計算
 # ---------------------------------------------------------------------------
-def get_scheduled_timestamp() -> int:
+def get_scheduled_iso() -> str:
     """
-    当日 20:00 JST を返す。すでに 20:00 を過ぎていれば翌日 20:00 JST。
-    Meta API の制約（最短10分後）を確認する。
+    当日 20:00 JST を ISO 8601 形式で返す。すでに 20:00 を過ぎていれば翌日 20:00 JST。
     """
     now = datetime.now(JST)
     target = now.replace(
@@ -117,10 +114,10 @@ def get_scheduled_timestamp() -> int:
     if diff_min < MIN_SCHEDULE_OFFSET_MIN:
         raise ValueError(
             f"予約時刻が近すぎます（{diff_min:.1f}分後）。"
-            f"Meta API は最短 {MIN_SCHEDULE_OFFSET_MIN} 分後が必要です。"
+            f"最短 {MIN_SCHEDULE_OFFSET_MIN} 分後が必要です。"
         )
 
-    return int(target.timestamp())
+    return target.isoformat()
 
 
 # ---------------------------------------------------------------------------
@@ -172,27 +169,8 @@ def delete_from_s3(s3_client, bucket: str, s3_key: str) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Meta / Instagram Graph API 操作
+# サムネイル URL
 # ---------------------------------------------------------------------------
-def _raise_for_api_error(resp: requests.Response) -> None:
-    """Meta API のエラーレスポンスを人間が読めるメッセージで raise する"""
-    try:
-        resp.raise_for_status()
-    except requests.HTTPError:
-        try:
-            err = resp.json().get("error", {})
-            msg = err.get("message", resp.text)
-            code = err.get("code", "?")
-            fbtrace = err.get("fbtrace_id", "")
-            raise RuntimeError(
-                f"Meta API エラー (code={code}, fbtrace={fbtrace}): {msg}"
-            ) from None
-        except (ValueError, KeyError):
-            raise RuntimeError(
-                f"HTTP エラー {resp.status_code}: {resp.text}"
-            ) from None
-
-
 def get_thumbnail_raw_url(ep_num: int, thumb_path: Path) -> str:
     """
     GitHub raw URL を生成する。
@@ -204,96 +182,43 @@ def get_thumbnail_raw_url(ep_num: int, thumb_path: Path) -> str:
     )
 
 
-def create_video_url_container(
-    ig_user_id: str,
-    access_token: str,
+# ---------------------------------------------------------------------------
+# Zernio API 投稿
+# ---------------------------------------------------------------------------
+def post_to_zernio(
+    zernio_api_key: str,
     video_url: str,
     caption: str,
-    scheduled_ts: int,
-    cover_url: Optional[str] = None,
+    scheduled_iso: str,
+    thumbnail_url: Optional[str] = None,
 ) -> str:
-    """
-    video_url パラメータでメディアコンテナを作成し、container_id を返す。
-    """
-    endpoint = f"{IG_API_BASE}/{ig_user_id}/media"
+    """Zernio API に予約投稿リクエストを送信し、post._id を返す。"""
+    endpoint = f"{ZERNIO_API_BASE}/posts"
     headers = {
-        "Authorization": f"Bearer {access_token}",
+        "Authorization": f"Bearer {zernio_api_key}",
         "Content-Type": "application/json",
     }
     payload: dict = {
-        "media_type": "REELS",
-        "video_url": video_url,
-        "caption": caption,
-        "published": False,
-        "scheduled_publish_time": str(scheduled_ts),
+        "platforms": ["instagram"],
+        "content": caption,
+        "mediaItems": [{"url": video_url, "type": "video"}],
+        "scheduledFor": scheduled_iso,
     }
-    if cover_url:
-        payload["cover_url"] = cover_url
+    if thumbnail_url:
+        payload["instagramThumbnail"] = thumbnail_url
 
     resp = requests.post(endpoint, headers=headers, json=payload, timeout=60)
-    _raise_for_api_error(resp)
+    try:
+        resp.raise_for_status()
+    except requests.HTTPError:
+        raise RuntimeError(
+            f"Zernio API エラー (HTTP {resp.status_code}): {resp.text}"
+        ) from None
 
     data = resp.json()
-    container_id = data.get("id")
-    if not container_id:
-        raise RuntimeError(f"コンテナ作成失敗（id が欠落）: {data}")
-    return container_id
-
-
-def wait_for_container_ready(
-    access_token: str,
-    container_id: str,
-    max_wait_sec: int = 300,
-    poll_interval_sec: int = 10,
-) -> None:
-    """
-    コンテナの status_code が FINISHED になるまでポーリングする。
-    Meta 側でのエンコード完了まで最大 5 分待機する。
-    """
-    endpoint = f"{IG_API_BASE}/{container_id}"
-    headers = {"Authorization": f"Bearer {access_token}"}
-    params = {"fields": "status_code,status"}
-
-    print("  処理中", end="", flush=True)
-    elapsed = 0
-    status = ""
-    while elapsed < max_wait_sec:
-        resp = requests.get(endpoint, headers=headers, params=params, timeout=30)
-        _raise_for_api_error(resp)
-        data = resp.json()
-        status = data.get("status_code", "")
-
-        if status == "FINISHED":
-            print(" → 完了")
-            return
-        if status == "ERROR":
-            raise RuntimeError(f"コンテナ処理エラー: {data.get('status', data)}")
-
-        print(".", end="", flush=True)
-        time.sleep(poll_interval_sec)
-        elapsed += poll_interval_sec
-
-    raise TimeoutError(
-        f"コンテナが {max_wait_sec} 秒以内に完了しませんでした"
-        f"（最後のステータス: {status}）"
-    )
-
-
-def publish_reel(ig_user_id: str, access_token: str, container_id: str) -> str:
-    """
-    コンテナを media_publish し、投稿 ID を返す。
-    scheduled_publish_time 設定済みのコンテナは指定時刻に自動公開される。
-    """
-    endpoint = f"{IG_API_BASE}/{ig_user_id}/media_publish"
-    headers = {"Authorization": f"OAuth {access_token}"}
-    payload = {"creation_id": container_id}
-
-    resp = requests.post(endpoint, headers=headers, data=payload, timeout=60)
-    _raise_for_api_error(resp)
-
-    post_id = resp.json().get("id")
+    post_id = data.get("post", {}).get("_id")
     if not post_id:
-        raise RuntimeError(f"公開失敗: {resp.json()}")
+        raise RuntimeError(f"投稿ID が取得できませんでした: {data}")
     return post_id
 
 
@@ -309,8 +234,7 @@ def main() -> None:
 
     # 設定
     config = load_config()
-    access_token: str = config["access_token"]
-    ig_user_id: str = config["ig_user_id"]
+    zernio_api_key: str = config["zernio_api_key"]
     bucket: str = config["s3_bucket_name"]
 
     # S3 クライアント
@@ -319,21 +243,19 @@ def main() -> None:
     # エピソードファイル
     video_path, thumb_path, caption = get_episode_files(ep_num)
 
-    # 予約時刻
-    scheduled_ts = get_scheduled_timestamp()
-    scheduled_jst = datetime.fromtimestamp(scheduled_ts, JST).strftime(
-        "%Y-%m-%d %H:%M JST"
-    )
+    # 予約時刻（ISO 8601）
+    scheduled_iso = get_scheduled_iso()
+    scheduled_jst = datetime.fromisoformat(scheduled_iso).strftime("%Y-%m-%d %H:%M JST")
 
     print(f"\n{'='*52}")
-    print(f"  ep{ep_num} Reels 予約投稿（S3 署名付き URL）")
+    print(f"  ep{ep_num} Reels 予約投稿（Zernio API）")
     print(f"{'='*52}")
     print(f"動画    : {video_path.name}")
-    cover_url: Optional[str] = None
+    thumbnail_url: Optional[str] = None
     if thumb_path:
-        cover_url = get_thumbnail_raw_url(ep_num, thumb_path)
+        thumbnail_url = get_thumbnail_raw_url(ep_num, thumb_path)
         print(f"サムネ  : {thumb_path.name}")
-        print(f"          {cover_url}")
+        print(f"          {thumbnail_url}")
     print(f"公開予定: {scheduled_jst}")
     print(f"キャプ  : {caption[:60]}{'...' if len(caption) > 60 else ''}")
     print()
@@ -349,20 +271,11 @@ def main() -> None:
         presigned_url = generate_presigned_url(s3_client, bucket, s3_key)
         print(f"  有効期限: {PRESIGNED_URL_EXPIRY // 60} 分")
 
-        # Step 3: メディアコンテナ作成（video_url 方式）
-        print("\nStep 3: メディアコンテナ作成")
-        container_id = create_video_url_container(
-            ig_user_id, access_token, presigned_url, caption, scheduled_ts, cover_url
+        # Step 3: Zernio API に予約投稿
+        print("\nStep 3: Zernio API 予約投稿")
+        post_id = post_to_zernio(
+            zernio_api_key, presigned_url, caption, scheduled_iso, thumbnail_url
         )
-        print(f"  コンテナID: {container_id}")
-
-        # Step 4: Meta 側のエンコード完了を待機
-        print("\nStep 4: コンテナ処理待機")
-        wait_for_container_ready(access_token, container_id)
-
-        # Step 5: 予約投稿登録
-        print("\nStep 5: 予約投稿登録")
-        post_id = publish_reel(ig_user_id, access_token, container_id)
 
         print(f"\n{'='*52}")
         print(f"  予約投稿完了!")
