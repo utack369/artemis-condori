@@ -187,6 +187,7 @@ def get_thumbnail_raw_url(ep_num: int, thumb_path: Path) -> str:
 # ---------------------------------------------------------------------------
 def post_to_zernio(
     zernio_api_key: str,
+    account_id: str,
     video_url: str,
     caption: str,
     scheduled_iso: str,
@@ -198,14 +199,25 @@ def post_to_zernio(
         "Authorization": f"Bearer {zernio_api_key}",
         "Content-Type": "application/json",
     }
+    platform_specific: dict = {
+        "contentType": "reels",
+        "shareToFeed": True,
+    }
+    if thumbnail_url:
+        platform_specific["instagramThumbnail"] = thumbnail_url
+
     payload: dict = {
-        "platforms": ["instagram"],
+        "platforms": [
+            {
+                "platform": "instagram",
+                "accountId": account_id,
+                "platformSpecificData": platform_specific,
+            }
+        ],
         "content": caption,
         "mediaItems": [{"url": video_url, "type": "video"}],
         "scheduledFor": scheduled_iso,
     }
-    if thumbnail_url:
-        payload["instagramThumbnail"] = thumbnail_url
 
     resp = requests.post(endpoint, headers=headers, json=payload, timeout=60)
     try:
@@ -274,7 +286,12 @@ def main() -> None:
         # Step 3: Zernio API に予約投稿
         print("\nStep 3: Zernio API 予約投稿")
         post_id = post_to_zernio(
-            zernio_api_key, presigned_url, caption, scheduled_iso, thumbnail_url
+            zernio_api_key,
+            config["zernio_account_id"],
+            presigned_url,
+            caption,
+            scheduled_iso,
+            thumbnail_url,
         )
 
         print(f"\n{'='*52}")
