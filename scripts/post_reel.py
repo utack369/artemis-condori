@@ -301,10 +301,7 @@ def main() -> None:
         print(f"{'='*52}\n")
 
     finally:
-        # S3 から動画を削除（成功・失敗問わず）
-        if s3_key:
-            print("\nCleanup: S3 から動画を削除")
-            delete_from_s3(s3_client, bucket, s3_key)
+        pass
 
 
 if __name__ == "__main__":
