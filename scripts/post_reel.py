@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/Users/utano/artemis-condori/.venv/bin/python3
 """
 Instagram Reels 予約投稿スクリプト（Zernio API + S3 署名付き URL 方式）
 
