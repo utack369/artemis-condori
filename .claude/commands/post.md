@@ -14,6 +14,6 @@
    - ユーザーの明示的な承認なしに実行しない
 
 3. 承認後、以下を実行する
-   - `python scripts/post_reel.py $ARGUMENTS`
+   - `.venv/bin/python scripts/post_reel.py $ARGUMENTS`
 
 4. 結果を報告する（投稿ID・予約時刻）
