@@ -221,6 +221,7 @@ def post_to_zernio(
 
     resp = requests.post(endpoint, headers=headers, json=payload, timeout=60)
     try:
+        print(f"[DEBUG] Zernio API Response ({resp.status_code}): {resp.text}")
         resp.raise_for_status()
     except requests.HTTPError:
         raise RuntimeError(
