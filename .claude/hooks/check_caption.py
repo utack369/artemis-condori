@@ -42,6 +42,16 @@ def check_format(text):
         if tags.count('\n') != 0: errs.append('hashtagsが複数行（1行であること）')
         if any(l.strip() == '' for l in bdy.split('\n')):
             errs.append('body内に空行がある（追補A-2: body内に空行なし）')
+    # 4) 修辞的装飾禁止記号（kazuo_honne声ルール: alpha-executor.md「修辞的装飾を使わない（——・…連鎖・比喩・文学的言い回し禁止）」）
+    PROHIBITED_DECORATIONS = [
+        (r'—', '——（EMダッシュ）'),
+        (r'[…‥]', '…・‥（三点・二点リーダー）'),
+    ]
+    lines = text.split('\n')
+    for pattern, label in PROHIBITED_DECORATIONS:
+        hit_lines = [i+1 for i, l in enumerate(lines) if re.search(pattern, l)]
+        if hit_lines:
+            errs.append(f'修辞的装飾禁止記号 {label} が存在（行 {hit_lines}・kazuo_honne声ルール）')
     return errs
 
 def main():
