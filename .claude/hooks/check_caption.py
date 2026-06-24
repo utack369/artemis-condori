@@ -10,6 +10,9 @@ def is_record_caption(p):
 def is_post_caption(p):
     return re.search(r'caption_\d+\.txt$', p) is not None
 
+def is_ep_json(p):
+    return re.search(r'/input/instagram/ep\d+\.json$', p) is not None
+
 def ep_of(p):
     m = re.search(r'/ep(\d+)/caption\.md$', p) or re.search(r'caption_(\d+)\.txt$', p)
     return m.group(1) if m else None
@@ -54,12 +57,33 @@ def check_format(text):
             errs.append(f'修辞的装飾禁止記号 {label} が存在（行 {hit_lines}・kazuo_honne声ルール）')
     return errs
 
+def check_ep_json(text):
+    errs = []
+    EM_DASH = '—'
+    lines = text.split('\n')
+    hit_lines = [i+1 for i, l in enumerate(lines) if EM_DASH in l]
+    if hit_lines:
+        errs.append(f'EMダッシュ（U+2014 —）が存在（行 {hit_lines}）。全フィールド禁止・代わりに読点（、）を使う')
+    return errs
+
 def main():
     try:
         payload = json.load(sys.stdin)
     except Exception:
         sys.exit(0)
     path = (payload.get('tool_input') or {}).get('file_path') or ''
+    if is_ep_json(path):
+        if not os.path.isfile(path):
+            sys.exit(0)
+        text = open(path, encoding='utf-8').read()
+        errs = check_ep_json(text)
+        if errs:
+            sys.stderr.write('⛔ ep[N].json EMダッシュゲート不合格\n対象: ' + path + '\n')
+            for e in errs:
+                sys.stderr.write(' - ' + e + '\n')
+            sys.stderr.write('→ EMダッシュを読点（、）に置換して再生成（alpha-executor.md参照）。\n')
+            sys.exit(2)
+        sys.exit(0)
     if not (is_record_caption(path) or is_post_caption(path)):
         sys.exit(0)
     if not os.path.isfile(path):
