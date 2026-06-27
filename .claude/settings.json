@@ -1,0 +1,45 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 $CLAUDE_PROJECT_DIR/.claude/hooks/check_type.py"
+          },
+          {
+            "type": "command",
+            "command": "python3 $CLAUDE_PROJECT_DIR/.claude/hooks/check_cta.py"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 $CLAUDE_PROJECT_DIR/.claude/hooks/check_caption.py"
+          },
+          {
+            "type": "command",
+            "command": "python3 $CLAUDE_PROJECT_DIR/.claude/hooks/check_workplace_scene.py"
+          }
+        ]
+      }
+    ]
+  },
+  "extraKnownMarketplaces": {
+    "athena-honbu": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/utano/ai-honbu/athena-marketplace"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "athena@athena-honbu": true
+  }
+}
