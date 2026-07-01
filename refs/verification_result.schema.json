@@ -1,0 +1,68 @@
+{
+  "name": "submit_verification",
+  "description": "コンドリ1エピソードの意味的品質判定の結果を提出する。各判定軸の事実(pass/fail/skip)を返すこと。総合合否(overall)は含めない。総合判定はCoordinatorが集計するため、本ツールでは各軸の判定のみを正確に報告する。fail時は必ずlocationとreasonを埋めること。",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "ep_number": {
+        "type": "integer",
+        "description": "判定対象のエピソード番号（例：18）"
+      },
+      "euphemism_required": {
+        "type": "boolean",
+        "description": "このepの婉曲要否（ep[N].jsonのmeta.euphemism）。falseの場合C1・C2はskipになる"
+      },
+      "cta_required": {
+        "type": "boolean",
+        "description": "このepのCTA要否（telop_guideline.cta_required）。E1/E2の適用分岐に使う"
+      },
+      "checks": {
+        "type": "array",
+        "description": "全意味判定軸の結果。1軸につき1要素。機械チェック軸(F1-F4・F6・G1-G2・H1・H3)は含めない。",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axis_id": {
+              "type": "string",
+              "description": "判定軸ID",
+              "enum": ["A1","A2","A3","A4","A5","B1","B2","B3","C1","C2","C3","D1","D2","D3","E1","E2","E3","F5","G3","G4","H2","I1","I2","I3"]
+            },
+            "axis_name": {
+              "type": "string",
+              "description": "判定軸の名前（例：効果の断定チェック）"
+            },
+            "result": {
+              "type": "string",
+              "description": "判定結果。pass=合格 / fail=不合格 / skip=適用対象外(婉曲不要時のC群・入力不足等)",
+              "enum": ["pass", "fail", "skip"]
+            },
+            "severity": {
+              "type": "string",
+              "description": "この軸の重大度。Coordinatorの総合集計で使用（critical/highのfailで停止判定）",
+              "enum": ["critical", "high", "medium", "low"]
+            },
+            "target_file": {
+              "type": "string",
+              "description": "判定対象ファイル",
+              "enum": ["script.md", "caption", "ep[N].json", "design_master", "multiple"]
+            },
+            "location": {
+              "type": "string",
+              "description": "該当箇所の引用や位置（fail時は必須）。例：テロップ最終行『使い方が違った』"
+            },
+            "reason": {
+              "type": "string",
+              "description": "なぜpass/fail/skipと判定したかの根拠（全resultで必須）"
+            },
+            "suggested_fix": {
+              "type": "string",
+              "description": "fail時の修正提案（任意・あれば記載）。verifierは提案のみで自分では修正しない"
+            }
+          },
+          "required": ["axis_id", "axis_name", "result", "severity", "target_file", "reason"]
+        }
+      }
+    },
+    "required": ["ep_number", "euphemism_required", "cta_required", "checks"]
+  }
+}
