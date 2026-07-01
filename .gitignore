@@ -11,3 +11,6 @@ output/instagram/*/episode_*.mp4
 # 素材動画
 *.MOV
 .venv/
+
+# 編集前バックアップ（追跡しない）
+*.bak_*
