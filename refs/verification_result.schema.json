@@ -59,10 +59,12 @@
               "description": "fail時の修正提案（任意・あれば記載）。verifierは提案のみで自分では修正しない"
             }
           },
-          "required": ["axis_id", "axis_name", "result", "severity", "target_file", "reason"]
+          "required": ["axis_id", "axis_name", "result", "severity", "target_file", "reason"],
+          "additionalProperties": false
         }
       }
     },
-    "required": ["ep_number", "euphemism_required", "cta_required", "checks"]
+    "required": ["ep_number", "euphemism_required", "cta_required", "checks"],
+    "additionalProperties": false
   }
 }
