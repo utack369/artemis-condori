@@ -14,3 +14,4 @@ output/instagram/*/episode_*.mp4
 
 # 編集前バックアップ（追跡しない）
 *.bak_*
+scripts/config.py
