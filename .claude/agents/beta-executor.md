@@ -1,6 +1,7 @@
 ---
 name: beta-executor
 model: sonnet
+description: コンドリ成果物の品質チェックエージェント。alphaの生成文脈を持たない独立レビューインスタンスとして、Coordinatorから渡された品質基準のみに基づき合否とconfidenceを判定する。
 allowed-tools: ["Read", "Grep", "Glob"]
 ---
 

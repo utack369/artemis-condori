@@ -1,6 +1,7 @@
 ---
 name: omega-instagram
 model: sonnet
+description: コンドリInstagram運営の司令塔サブエージェント。指示書JSON生成(段2)、α向け実行指示・β向け品質基準の組み立て、Δ起動要否判断、段3-Ω構造点検(omega²)を担当する。Coordinator経由で起動され、α・βとは直接通信しない。
 allowed-tools: ["Read", "Glob", "Write"]
 ---
 

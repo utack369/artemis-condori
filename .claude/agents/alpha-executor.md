@@ -1,6 +1,7 @@
 ---
 name: alpha-executor
 model: sonnet
+description: コンドリ成果物生成エージェント。Coordinatorから受け取った実行指示に基づきscript.md／caption.md／thumbnail-instruction.mdを生成・保存する。design_masterのテーマ・Type・CTA厳守と素材重複禁止を徹底する。
 allowed-tools: ["Read", "Write", "Bash"]
 ---
 
