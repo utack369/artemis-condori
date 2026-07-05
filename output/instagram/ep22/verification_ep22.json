@@ -1,0 +1,41 @@
+{
+  "ep_number": 22,
+  "euphemism_required": false,
+  "cta_required": true,
+  "checks": [
+    {"axis_id":"A1","axis_name":"効果の断定チェック","result":"pass","severity":"critical","target_file":"multiple","reason":"ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定が存在しない。台本全体が『商品の前提が現場で成立しなかった』という失敗の記録であり、対策Xから効果Yへの因果断定構造は不在。"},
+    {"axis_id":"A2","axis_name":"効果の暗示チェック","result":"pass","severity":"critical","target_file":"multiple","reason":"ナレーション＋テロップ＋CTAの組み合わせ全体を通しても『これを使えば解決する』と読み取れる構造がない。CTAも『プロフィールに記録』『よかったら見てみてください』という事実陳述にとどまる。"},
+    {"axis_id":"A3","axis_name":"購入圧力チェック","result":"pass","severity":"critical","target_file":"multiple","reason":"限定感・緊急性・煽り表現が一切存在しない。キャプションCTAは購入ではなく記録の閲覧への柔らかい誘導。"},
+    {"axis_id":"A4","axis_name":"トーン一貫性チェック","result":"pass","severity":"critical","target_file":"multiple","reason":"ナレーションは和男の内面独白、テロップは淡々とした構造的提示、キャプションは既定3語トーン（気にならなくなった・保証しない・よかったら）と整合。"},
+    {"axis_id":"A5","axis_name":"「変わった」禁止チェック","result":"pass","severity":"critical","target_file":"multiple","reason":"ナレーション・テロップ・キャプション全体で「変わった/変わる/変化した」の語幹が一切使用されていない。"},
+    {"axis_id":"B1","axis_name":"テーマの一致チェック","result":"pass","severity":"high","target_file":"script.md","reason":"design_master File.22のテーマ『現場作業員の安全靴という「特殊環境」の無視』に対し、消臭中敷きの説明書が『靴を脱いで乾かす』を前提とし、安全靴では8時間脱げないという食い違いを扱っており完全一致。"},
+    {"axis_id":"B2","axis_name":"型の実装（意味的）チェック","result":"pass","severity":"high","target_file":"script.md","reason":"Type_1（失敗の正直な提示→本質への帰結）を正しく実装。商品への期待提示から『安全靴は八時間、脱げないと気づきました』という失敗の本質への帰結が淡々とした受容のトーンで描かれている。"},
+    {"axis_id":"B3","axis_name":"フェーズ内役割チェック","result":"pass","severity":"medium","target_file":"script.md","reason":"フェーズ『中盤：共感の深化と正直さの蓄積』に対し、商品と現場の食い違いという正直な記録で信頼を蓄積する内容として整合。"},
+    {"axis_id":"C1","axis_name":"NGワードの意味的使用チェック","result":"skip","severity":"critical","target_file":"script.md","reason":"meta.euphemism=不要のためskip。直接表現使用可の設定。"},
+    {"axis_id":"C2","axis_name":"婉曲変換の適切性チェック","result":"skip","severity":"medium","target_file":"script.md","reason":"meta.euphemism=不要のためskip。婉曲変換の要件自体が適用外。"},
+    {"axis_id":"C3","axis_name":"キャプション例外（制御ルール）チェック","result":"pass","severity":"low","target_file":"caption","reason":"C1/C2はskip（婉曲不要）のためキャプションへの婉曲チェック非適用は自明に満足。A群（正直さ）はキャプションにも適用済みで全pass。"},
+    {"axis_id":"D1","axis_name":"入口の実装チェック","result":"pass","severity":"high","target_file":"script.md","reason":"psychology.entryに対応し、ナレーション冒頭が説明書を読む場面という行為の真っ只中から始まり、商品への期待体験として引き込み機能を果たしている。"},
+    {"axis_id":"D2","axis_name":"出口の実装チェック","result":"pass","severity":"high","target_file":"script.md","reason":"psychology.exitに対応し、ナレーション末尾で食い違いを正直に提示、テロップ最終行『プロフィールに記録』がプロフィールへの自然な流入を実装。"},
+    {"axis_id":"D3","axis_name":"one_messageチェック","result":"pass","severity":"medium","target_file":"script.md","reason":"台本全体がone_message（商品と現場の食い違いを正直に記録した）に集約されており、第2メッセージの混在なし。"},
+    {"axis_id":"E1","axis_name":"ソフトCTA適切性チェック","result":"pass","severity":"high","target_file":"script.md","reason":"cta_required=true。テロップ実質最終行『プロフィールに記録』は記録の所在を述べる事実陳述であり、ソフトCTAとして機能。"},
+    {"axis_id":"E2","axis_name":"CTA非存在時の混入チェック","result":"skip","severity":"high","target_file":"script.md","reason":"cta_required=trueのためskip。"},
+    {"axis_id":"E3","axis_name":"テロップ内ハードCTA禁止チェック","result":"pass","severity":"critical","target_file":"script.md","reason":"テロップ全行に『プロフィールを見て/リンクから/今すぐ』等の直接誘導表現を含まない。『プロフィールに記録』は事実陳述でハードCTAではない。"},
+    {"axis_id":"F5","axis_name":"語尾統一チェック","result":"pass","severity":"medium","target_file":"script.md","reason":"ナレーション語尾は『ありました』『気づきました』でです・ます調に統一。だ・である調の混在なし。"},
+    {"axis_id":"G3","axis_name":"内容分離チェック","result":"pass","severity":"high","target_file":"script.md","reason":"ナレーション＝個人体験の語り、テロップ＝構造的対比の視覚提示。同一テキストの転記・要約ではなく別内容。"},
+    {"axis_id":"G4","axis_name":"役割分離チェック","result":"pass","severity":"medium","target_file":"script.md","reason":"ナレーション＝感情（共感）、テロップ＝論理（前提→現実→結論→記録）として役割分離が適切に実装されている。"},
+    {"axis_id":"H2","axis_name":"キャプション内容の指示書一致チェック","result":"pass","severity":"high","target_file":"caption","reason":"caption.mdのhook_line/body/cta/hashtagsがep22.jsonのcaptionフィールドと完全一致。別epの残骸混入なし。"},
+    {"axis_id":"I1","axis_name":"過去epとの素材重複チェック","result":"pass","severity":"medium","target_file":"script.md","reason":"直近5作（ep17〜21）と照合。ep19（インソール毎日交換の限界）と部分的共通性（足元ケア用品）はあるが、ep22の主題『商品の使用前提自体が現場環境と不適合』は切り口・場面・主張が明確に異なり重複と判定しない。"},
+    {"axis_id":"I2","axis_name":"テロップ視認性（意味的）チェック","result":"pass","severity":"low","target_file":"script.md","reason":"各テロップ行が独立した意味を持ち1行で瞬時に理解可能。全行10字以内で自己完結。"},
+    {"axis_id":"I3","axis_name":"イン・メディアス・レスチェック","result":"pass","severity":"medium","target_file":"script.md","reason":"ナレーション冒頭が説明書を読んでいる行為の真っ只中から始まり、opening_approachと完全一致。背景説明・前置きなし。"}
+  ],
+  "coordinator_aggregation": {
+    "pass": 21,
+    "fail": 0,
+    "skip": 3,
+    "skip_axes": ["C1", "C2", "E2"],
+    "critical_or_high_fail_count": 0,
+    "decision": "Pass",
+    "decision_rule": "鉄則⑨：Coordinatorが決定論的集計。critical/highのfailが0件、全軸pass or skip → Pass。omega²（段3-Ω）へ進行可。",
+    "note": "verifier自身が応答内で提示した集計サマリ表（20pass/4skip）はaxis別結果（21pass/0fail/3skip）と不一致だったため、Coordinatorが個票を再集計し本フィールドを正とする。"
+  }
+}
