@@ -1,0 +1,97 @@
+{
+  "ep_number": 23,
+  "euphemism_required": true,
+  "cta_required": false,
+  "current_round": 2,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        { "axis_id": "A1", "axis_name": "効果の断定", "result": "pass", "severity": "critical" },
+        { "axis_id": "A2", "axis_name": "効果の暗示", "result": "pass", "severity": "critical" },
+        { "axis_id": "A3", "axis_name": "購入圧力", "result": "pass", "severity": "critical" },
+        { "axis_id": "A4", "axis_name": "トーン一貫性", "result": "pass", "severity": "critical" },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "fail",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "script.md ナレーション「...変化していく気がしました」／caption.md「...変化していくのが分かりました」",
+          "reason": "禁止動詞「変化した」の進行形「変化していく」が足元文脈（安全靴の中）で使用されている。効果暗示ではなく劣化描写だが、Hookのステム照合（変わ）では検出されない紛らわしい使用に該当。",
+          "suggested_fix": "ナレーション案：「安全靴の中が、夏より急にこもっていく気がしました」／キャプション案：「安全靴の中の環境が、夏とは違うスピードで詰まっていくのが分かりました」"
+        },
+        { "axis_id": "B1", "axis_name": "テーマの一致", "result": "pass", "severity": "high" },
+        { "axis_id": "B2", "axis_name": "型の実装（意味的）", "result": "pass", "severity": "high" },
+        { "axis_id": "B3", "axis_name": "フェーズ内役割", "result": "pass", "severity": "medium" },
+        { "axis_id": "C1", "axis_name": "NGワードの意味的使用", "result": "pass", "severity": "critical" },
+        { "axis_id": "C2", "axis_name": "婉曲変換の適切性", "result": "pass", "severity": "medium" },
+        { "axis_id": "C3", "axis_name": "キャプション例外（制御ルール）", "result": "pass", "severity": "low" },
+        { "axis_id": "D1", "axis_name": "入口の実装", "result": "pass", "severity": "high" },
+        { "axis_id": "D2", "axis_name": "出口の実装", "result": "pass", "severity": "high" },
+        { "axis_id": "D3", "axis_name": "one_message", "result": "pass", "severity": "medium" },
+        { "axis_id": "E1", "axis_name": "ソフトCTA適切性", "result": "skip", "severity": "high", "reason": "cta_required=false のため対象外" },
+        { "axis_id": "E2", "axis_name": "CTA非存在時の混入", "result": "pass", "severity": "high" },
+        { "axis_id": "E3", "axis_name": "テロップ内ハードCTA禁止", "result": "pass", "severity": "critical" },
+        { "axis_id": "F5", "axis_name": "語尾統一", "result": "pass", "severity": "medium" },
+        { "axis_id": "G3", "axis_name": "内容分離", "result": "pass", "severity": "high" },
+        { "axis_id": "G4", "axis_name": "役割分離", "result": "pass", "severity": "medium" },
+        { "axis_id": "H2", "axis_name": "キャプション内容の指示書一致", "result": "pass", "severity": "high" },
+        { "axis_id": "I1", "axis_name": "過去epとの素材重複", "result": "pass", "severity": "medium" },
+        { "axis_id": "I2", "axis_name": "テロップ視認性（意味的）", "result": "pass", "severity": "low" },
+        { "axis_id": "I3", "axis_name": "イン・メディアス・レス", "result": "pass", "severity": "medium" }
+      ],
+      "summary": { "pass": 22, "fail": 1, "skip": 1 },
+      "coordinator_overall": "fail",
+      "coordinator_rule_applied": "critical/high fail が1件以上 → Fail",
+      "action": "うたへ提示して停止。alphaへの差し戻し1回目をうた承認のうえ実行。"
+    },
+    {
+      "round": 2,
+      "checks": [
+        { "axis_id": "A1", "axis_name": "効果の断定", "result": "pass", "severity": "critical" },
+        { "axis_id": "A2", "axis_name": "効果の暗示", "result": "pass", "severity": "critical" },
+        { "axis_id": "A3", "axis_name": "購入圧力", "result": "pass", "severity": "critical" },
+        { "axis_id": "A4", "axis_name": "トーン一貫性", "result": "pass", "severity": "critical" },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "前回failの原因だった「変化していく」は、script.mdナレーションで「こもっていく」に、caption.mdボディで「詰まっていく」に修正済み。grep検証により両ファイルに「変わ/変わる/変化/変え」のゼロヒットを確認。"
+        },
+        { "axis_id": "B1", "axis_name": "テーマの一致", "result": "pass", "severity": "high" },
+        { "axis_id": "B2", "axis_name": "型の実装（意味的）", "result": "pass", "severity": "high" },
+        { "axis_id": "B3", "axis_name": "フェーズ内役割", "result": "pass", "severity": "medium" },
+        { "axis_id": "C1", "axis_name": "NGワードの意味的使用", "result": "pass", "severity": "critical" },
+        { "axis_id": "C2", "axis_name": "婉曲変換の適切性", "result": "pass", "severity": "medium" },
+        { "axis_id": "C3", "axis_name": "キャプション例外（制御ルール）", "result": "pass", "severity": "low" },
+        { "axis_id": "D1", "axis_name": "入口の実装", "result": "pass", "severity": "high" },
+        { "axis_id": "D2", "axis_name": "出口の実装", "result": "pass", "severity": "high" },
+        { "axis_id": "D3", "axis_name": "one_message", "result": "pass", "severity": "medium" },
+        { "axis_id": "E1", "axis_name": "ソフトCTA適切性", "result": "skip", "severity": "high", "reason": "cta_required=false のため対象外" },
+        { "axis_id": "E2", "axis_name": "CTA非存在時の混入", "result": "pass", "severity": "high" },
+        { "axis_id": "E3", "axis_name": "テロップ内ハードCTA禁止", "result": "pass", "severity": "critical" },
+        { "axis_id": "F5", "axis_name": "語尾統一", "result": "pass", "severity": "medium" },
+        { "axis_id": "G3", "axis_name": "内容分離", "result": "pass", "severity": "high" },
+        { "axis_id": "G4", "axis_name": "役割分離", "result": "pass", "severity": "medium" },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "reason": "bodyに「変化していく→詰まっていく」の1箇所差異があるが、A5遵守のための意図的修正であり別ep残骸混入ではないためpass。"
+        },
+        { "axis_id": "I1", "axis_name": "過去epとの素材重複", "result": "pass", "severity": "medium" },
+        { "axis_id": "I2", "axis_name": "テロップ視認性（意味的）", "result": "pass", "severity": "low" },
+        { "axis_id": "I3", "axis_name": "イン・メディアス・レス", "result": "pass", "severity": "medium" }
+      ],
+      "summary": { "pass": 23, "fail": 0, "skip": 1 },
+      "coordinator_overall": "pass",
+      "coordinator_rule_applied": "critical/high fail 0件、medium/low fail 0件、全軸pass/skip → Pass",
+      "phase": "Phase1",
+      "action": "うたへ提示して停止。うた確認後、omega²（段3-Ω）進行 or 別対応を実行。"
+    }
+  ]
+}
