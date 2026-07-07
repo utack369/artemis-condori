@@ -8,7 +8,7 @@
     python3 run_episode.py [話数] [台本ファイルパス]
 
 例:
-    python3 run_episode.py 28 ~/Downloads/コンドリ/コンドリ動画自動生成/episode_28.txt
+    python3 run_episode.py 28 ~/artemis-media/コンドリ動画自動生成/episode_28.txt
 
 処理内容:
     1. 台本ファイルを読み込み
@@ -17,7 +17,7 @@
 
 前提:
     - pipeline_final.py が同じ scripts/ フォルダに存在すること
-    - config.py の OUTPUT_DIR が ~/Downloads/コンドリ/コンドリ動画自動生成 に設定済み
+    - config.py の OUTPUT_DIR が ~/artemis-media/コンドリ動画自動生成 に設定済み
 """
 
 import sys
@@ -51,7 +51,7 @@ LOCATION_TAG = "監査官"
 
 def usage_and_exit():
     print("使い方: python3 run_episode.py [話数] [台本ファイルパス] [サムネテキスト（省略可）]")
-    print("例:    python3 run_episode.py 28 ~/Downloads/コンドリ/コンドリ動画自動生成/episode_28.txt '午後の眠気は、寝不足のせいではありません'")
+    print("例:    python3 run_episode.py 28 ~/artemis-media/コンドリ動画自動生成/episode_28.txt '午後の眠気は、寝不足のせいではありません'")
     sys.exit(1)
 
 

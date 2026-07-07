@@ -19,7 +19,7 @@ def ep_of(p):
 
 def counterpart(p, ep):
     if is_record_caption(p):
-        return os.path.expanduser(f'~/Downloads/コンドリ/コンドリ動画自動生成/caption_{ep}.txt')
+        return os.path.expanduser(f'~/artemis-media/コンドリ動画自動生成/caption_{ep}.txt')
     return os.path.expanduser(f'~/artemis-condori/output/instagram/ep{ep}/caption.md')
 
 def check_format(text):

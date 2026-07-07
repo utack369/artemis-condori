@@ -29,7 +29,7 @@ from botocore.exceptions import ClientError
 # ---------------------------------------------------------------------------
 # 定数
 # ---------------------------------------------------------------------------
-CONFIG_PATH = Path.home() / "Downloads/コンドリ/自動取得システム/config.json"
+CONFIG_PATH = Path.home() / "artemis-media/自動取得システム/config.json"
 OUTPUT_BASE = Path(__file__).resolve().parent.parent / "output/instagram"
 JST = timezone(timedelta(hours=9))
 
