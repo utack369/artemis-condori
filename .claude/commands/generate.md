@@ -68,4 +68,4 @@ cp input/instagram/ep${N}.json output/instagram/ep${N}/
 - mp4/png は cp（artemis-media の投稿用原本を温存）、指示書JSON は cp（input/ の原本を温存）、caption_[N].txt は cp（output/ 側の正本を artemis-media へ複製）。段5の最後に open で成果物フォルダを自動表示する。
 
 ## 完了
-output/instagram/ep[N]/ の集約物一覧（caption.md / script.md / thumbnail-instruction.md / caption_[N].txt / ep[N].json / mp4 / png）をうたに提示して停止する。push は行わない。次の正規ステップは /post [N] である（本フローの範囲外）。
+output/instagram/ep[N]/ の集約物一覧（caption.md / script.md / thumbnail-instruction.md / caption_[N].txt / ep[N].json / mp4 / png）をうたに提示して停止する。push は行わない。
