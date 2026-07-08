@@ -169,6 +169,23 @@ def delete_from_s3(s3_client, bucket: str, s3_key: str) -> None:
 
 
 # ---------------------------------------------------------------------------
+# メディア URL 到達性チェック
+# ---------------------------------------------------------------------------
+def check_media_url(url: str, label: str) -> bool:
+    """
+    メディア URL への到達性を確認する。
+    HEAD は使わない（SigV2 署名 URL は HEAD で 403 になるため）。
+    """
+    resp = requests.get(url, headers={"Range": "bytes=0-1023"}, timeout=30, stream=True)
+    status = resp.status_code
+    if status in (200, 206):
+        print(f"  ✓ {label} URL到達性OK ({status})")
+        return True
+    print(f"  ✗ {label} URLに到達できません (HTTP {status})。Zernio登録を中止します")
+    return False
+
+
+# ---------------------------------------------------------------------------
 # サムネイル URL
 # ---------------------------------------------------------------------------
 def get_thumbnail_raw_url(ep_num: int, thumb_path: Path) -> str:
@@ -283,6 +300,13 @@ def main() -> None:
         print("\nStep 2: 署名付き URL 生成")
         presigned_url = generate_presigned_url(s3_client, bucket, s3_key)
         print(f"  有効期限: {PRESIGNED_URL_EXPIRY // 60} 分")
+
+        # Step 2.5: メディア URL 到達性チェック
+        print("\nStep 2.5: メディア URL 到達性チェック")
+        if not check_media_url(presigned_url, "動画"):
+            sys.exit(1)
+        if thumbnail_url:
+            check_media_url(thumbnail_url, "サムネイル")
 
         # Step 3: Zernio API に予約投稿
         print("\nStep 3: Zernio API 予約投稿")
