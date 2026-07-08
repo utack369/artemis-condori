@@ -17,6 +17,7 @@ config.json に以下のキーが必要:
 """
 
 import json
+import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -46,6 +47,10 @@ MIN_SCHEDULE_OFFSET_MIN = 10
 PRESIGNED_URL_EXPIRY = 86400
 
 ZERNIO_API_BASE = "https://zernio.com/api/v1"
+
+# 検死ジョブ（切り離しプロセス方式）
+VERIFY_LOG_DIR = Path.home() / "artemis-media/logs"
+VERIFY_DELAY_MINUTES = 10
 
 
 # ---------------------------------------------------------------------------
@@ -200,6 +205,48 @@ def get_thumbnail_raw_url(ep_num: int, thumb_path: Path) -> str:
 
 
 # ---------------------------------------------------------------------------
+# 検死ジョブ登録（切り離しプロセス方式）
+# ---------------------------------------------------------------------------
+def schedule_verify_job(post_id: str, scheduled_dt: datetime) -> None:
+    """
+    予約公開時刻の VERIFY_DELAY_MINUTES 分後に verify_post.py を実行する
+    切り離しプロセス（sleep 後に exec）を起動する。
+    起動に失敗しても投稿自体は成功しているため、警告表示のみで続行する。
+    """
+    try:
+        verify_dt = scheduled_dt + timedelta(minutes=VERIFY_DELAY_MINUTES)
+        wait_seconds = max(0, (verify_dt - datetime.now(JST)).total_seconds())
+
+        VERIFY_LOG_DIR.mkdir(parents=True, exist_ok=True)
+        log_path = VERIFY_LOG_DIR / f"verify_post_{post_id}.log"
+
+        project_root = Path(__file__).resolve().parent.parent
+        python_bin = project_root / ".venv/bin/python3"
+        verify_script = Path(__file__).resolve().parent / "verify_post.py"
+
+        log_file = open(log_path, "a")
+        p = subprocess.Popen(
+            [
+                "/bin/sh",
+                "-c",
+                f"sleep {int(wait_seconds)} && exec '{python_bin}' -u '{verify_script}' '{post_id}'",
+            ],
+            stdout=log_file,
+            stderr=log_file,
+            start_new_session=True,
+            cwd=project_root,
+        )
+
+        verify_jst = verify_dt.strftime("%Y-%m-%d %H:%M JST")
+        print(f"  ✓ 検死プロセス起動: {verify_jst} に verify_post を自動実行（PID {p.pid}）")
+    except Exception as e:
+        print(
+            f"  ⚠ 検死プロセス起動に失敗しました（投稿自体は成功しています）: {e}",
+            file=sys.stderr,
+        )
+
+
+# ---------------------------------------------------------------------------
 # Zernio API 投稿
 # ---------------------------------------------------------------------------
 def post_to_zernio(
@@ -318,6 +365,10 @@ def main() -> None:
             scheduled_iso,
             thumbnail_url,
         )
+
+        # Step 4: 検死ジョブ登録
+        print("\nStep 4: 検死ジョブ登録")
+        schedule_verify_job(post_id, datetime.fromisoformat(scheduled_iso))
 
         print(f"\n{'='*52}")
         print(f"  予約投稿完了!")
