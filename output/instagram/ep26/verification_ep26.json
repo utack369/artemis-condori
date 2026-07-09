@@ -1,0 +1,42 @@
+{
+  "ep_number": 26,
+  "euphemism_required": true,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        { "axis_id": "A1", "axis_name": "効果の断定", "result": "pass", "severity": "critical" },
+        { "axis_id": "A2", "axis_name": "効果の暗示", "result": "pass", "severity": "critical" },
+        { "axis_id": "A3", "axis_name": "購入圧力", "result": "pass", "severity": "critical" },
+        { "axis_id": "A4", "axis_name": "トーン一貫性", "result": "pass", "severity": "critical" },
+        { "axis_id": "A5", "axis_name": "「変わった」禁止", "result": "pass", "severity": "critical" },
+        { "axis_id": "B1", "axis_name": "テーマの一致", "result": "pass", "severity": "high" },
+        { "axis_id": "B2", "axis_name": "型の実装（意味的）", "result": "pass", "severity": "high" },
+        { "axis_id": "B3", "axis_name": "フェーズ内役割", "result": "pass", "severity": "medium" },
+        { "axis_id": "C1", "axis_name": "NGワードの意味的使用", "result": "pass", "severity": "critical" },
+        { "axis_id": "C2", "axis_name": "婉曲変換の適切性", "result": "pass", "severity": "medium" },
+        { "axis_id": "C3", "axis_name": "キャプション例外（制御ルール）", "result": "pass", "severity": "low" },
+        { "axis_id": "D1", "axis_name": "入口の実装", "result": "pass", "severity": "high" },
+        { "axis_id": "D2", "axis_name": "出口の実装", "result": "pass", "severity": "high" },
+        { "axis_id": "D3", "axis_name": "one_message", "result": "pass", "severity": "medium" },
+        { "axis_id": "E1", "axis_name": "ソフトCTA適切性", "result": "pass", "severity": "high" },
+        { "axis_id": "E2", "axis_name": "CTA非存在時の混入", "result": "skip", "severity": "high", "reason": "cta_required=true のため対象外" },
+        { "axis_id": "E3", "axis_name": "テロップ内ハードCTA禁止", "result": "pass", "severity": "critical" },
+        { "axis_id": "F5", "axis_name": "語尾統一", "result": "pass", "severity": "medium" },
+        { "axis_id": "G3", "axis_name": "内容分離", "result": "pass", "severity": "high" },
+        { "axis_id": "G4", "axis_name": "役割分離", "result": "pass", "severity": "medium" },
+        { "axis_id": "H2", "axis_name": "キャプション内容の指示書一致", "result": "pass", "severity": "high" },
+        { "axis_id": "I1", "axis_name": "過去epとの素材重複", "result": "pass", "severity": "medium" },
+        { "axis_id": "I2", "axis_name": "テロップ視認性（意味的）", "result": "pass", "severity": "low" },
+        { "axis_id": "I3", "axis_name": "イン・メディアス・レス", "result": "pass", "severity": "medium" }
+      ],
+      "summary": { "pass": 23, "fail": 0, "skip": 1 },
+      "coordinator_overall": "pass",
+      "coordinator_rule_applied": "critical/high fail 0件、medium/low fail 0件、全軸pass/skip → Pass",
+      "phase": "Phase1",
+      "action": "うたへ提示して停止。うた確認後、omega²（段3-Ω）進行 or 別対応を実行。"
+    }
+  ]
+}
