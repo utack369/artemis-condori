@@ -1,0 +1,42 @@
+{
+  "ep_number": 27,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {"axis_id": "A1", "axis_name": "効果の断定", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の断定表現がない。対策X→効果Yの因果断定は不成立。"},
+        {"axis_id": "A2", "axis_name": "効果の暗示", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "全体を通読しても『内側に目を向ければ解決する』という暗示構造は読み取れない。CTAも事実の陳述に留まる。"},
+        {"axis_id": "A3", "axis_name": "購入圧力", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "限定感・緊急性・煽り表現が一切ない。"},
+        {"axis_id": "A4", "axis_name": "トーン一貫性", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "和男の共感共闘トーンを維持。売り込み・専門家トーンへの逸脱なし。"},
+        {"axis_id": "A5", "axis_name": "変わった禁止", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "『変わった/変わる/変化した/変えた』の語幹が生成物内に未使用。"},
+        {"axis_id": "B1", "axis_name": "テーマの一致", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "design_master File.27のテーマ（外側→内側への方向転換）をナレーションが正確に扱っている。"},
+        {"axis_id": "B2", "axis_name": "型の実装（意味的）", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "Type_3（努力の肯定→限界の受容→方向転換）の心理構造がナレーション・テロップ双方に実装されている。"},
+        {"axis_id": "B3", "axis_name": "フェーズ内役割", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "phase『中盤：共感の深化と正直さの蓄積』に対し、山場でない中程度の強度で整合。"},
+        {"axis_id": "C1", "axis_name": "NGワードの意味的使用", "result": "skip", "severity": "critical", "target_file": "script.md", "reason": "meta.euphemism=不要のため対象外。"},
+        {"axis_id": "C2", "axis_name": "婉曲変換の適切性", "result": "skip", "severity": "medium", "target_file": "script.md", "reason": "meta.euphemism=不要のため対象外。"},
+        {"axis_id": "C3", "axis_name": "キャプション例外（制御ルール）", "result": "skip", "severity": "low", "target_file": "caption", "reason": "C1・C2がskipのため適用範囲制御も実質不要。"},
+        {"axis_id": "D1", "axis_name": "入口の実装", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "ナレーション冒頭『棚に並んだ消臭スプレーに、僕は手を伸ばしました』でpsychology.entryを実現。"},
+        {"axis_id": "D2", "axis_name": "出口の実装", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "ナレーション末尾と最終テロップ行がpsychology.exit（否定なき方向転換とプロフィール流入）を実装。"},
+        {"axis_id": "D3", "axis_name": "one_message", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "台本全体がtone_and_rules.one_messageに集約でき、第二のメッセージの混在なし。"},
+        {"axis_id": "E1", "axis_name": "ソフトCTA適切性", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "テロップ最終行『経緯もプロフィールに』は事実の陳述に留まり機能している。"},
+        {"axis_id": "E2", "axis_name": "CTA非存在時の混入", "result": "skip", "severity": "high", "target_file": "script.md", "reason": "cta_required=trueのため対象外。"},
+        {"axis_id": "E3", "axis_name": "テロップ内ハードCTA禁止", "result": "pass", "severity": "critical", "target_file": "script.md", "reason": "『プロフィールを見て』等の直接誘導はなし。事実の陳述のみ。"},
+        {"axis_id": "F5", "axis_name": "語尾統一", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション全文が「です・ます」調で統一。"},
+        {"axis_id": "G3", "axis_name": "内容分離", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "ナレーション（情景描写）とテロップ（気づきの三段構成＋CTA）は別内容。"},
+        {"axis_id": "G4", "axis_name": "役割分離", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション=感情、テロップ=論理の役割分離が明確。"},
+        {"axis_id": "H2", "axis_name": "キャプション内容の指示書一致", "result": "pass", "severity": "high", "target_file": "caption", "reason": "caption.mdの全要素がep27.jsonのcaptionフィールドと完全一致。"},
+        {"axis_id": "I1", "axis_name": "過去epとの素材重複", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "直近5作（ep22〜26）の主題（特殊環境・車内・湿度・角質パック・香り）と、ep27の主題（外側→内側の視点転換）に重複なし。"},
+        {"axis_id": "I2", "axis_name": "テロップ視認性（意味的）", "result": "pass", "severity": "low", "target_file": "script.md", "reason": "テロップ各行が独立して意味を持ち、1行で瞬時に理解可能。"},
+        {"axis_id": "I3", "axis_name": "イン・メディアス・レス", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション冒頭が背景説明でなく行為の真っ只中から開始している。"}
+      ],
+      "summary": {"pass": 20, "fail": 0, "skip": 4},
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highのfailなし。全軸pass又はskipのためPass。",
+      "action": "うたへ提示して一旦停止（Phase1運用ルール）。うた確認後、段3-Ω（omega²）へ進行。",
+      "phase": "中盤：共感の深化と正直さの蓄積"
+    }
+  ]
+}
