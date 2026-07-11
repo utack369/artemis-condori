@@ -308,6 +308,7 @@ def main() -> None:
         sys.exit(1)
 
     ep_num = int(sys.argv[1])
+    project_root = Path(__file__).resolve().parent.parent
 
     # 設定
     config = load_config()
@@ -339,6 +340,30 @@ def main() -> None:
 
     s3_key: Optional[str] = None
     try:
+        # Step 0: サムネイルの origin/main 反映確認
+        if thumb_path:
+            print("Step 0: サムネイル origin/main 反映確認")
+            subprocess.run(
+                ["git", "fetch", "origin", GITHUB_BRANCH],
+                cwd=project_root,
+                check=True,
+            )
+            rel_path = f"output/instagram/ep{ep_num}/{thumb_path.name}"
+            result = subprocess.run(
+                ["git", "ls-tree", f"origin/{GITHUB_BRANCH}", "--", rel_path],
+                cwd=project_root,
+                capture_output=True,
+                text=True,
+                check=True,
+            )
+            if not result.stdout.strip():
+                print(
+                    "  ✗ サムネイルがorigin/mainに存在しません。"
+                    "/push を実行してから再度お試しください"
+                )
+                sys.exit(1)
+            print(f"  ✓ サムネイルはorigin/mainに存在します: {rel_path}")
+
         # Step 1: S3 に動画をアップロード
         print("Step 1: S3 へ動画アップロード")
         s3_key = upload_to_s3(s3_client, bucket, video_path, ep_num)
@@ -353,7 +378,8 @@ def main() -> None:
         if not check_media_url(presigned_url, "動画"):
             sys.exit(1)
         if thumbnail_url:
-            check_media_url(thumbnail_url, "サムネイル")
+            if not check_media_url(thumbnail_url, "サムネイル"):
+                sys.exit(1)
 
         # Step 3: Zernio API に予約投稿
         print("\nStep 3: Zernio API 予約投稿")
