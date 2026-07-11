@@ -1,0 +1,42 @@
+{
+  "ep_number": 28,
+  "euphemism_required": true,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {"axis_id": "A1", "axis_name": "効果の断定チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する」等の効果断定表現は存在しない。行為と事実の記述のみ。"},
+        {"axis_id": "A2", "axis_name": "効果の暗示チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "全体を通読しても『これを使えば解決する』と読み取れる構造は存在しない。数の多さという気づきが中心で効果暗示には至っていない。"},
+        {"axis_id": "A3", "axis_name": "購入圧力チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "限定感・緊急性・煽り表現は存在しない。CTAは『よかったら見てみてください』の任意性明示のみ。"},
+        {"axis_id": "A4", "axis_name": "トーン一貫性チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "和男の内面独白として淡々とした共感共闘トーンを維持。売り込み・専門家トーンへの逸脱なし。"},
+        {"axis_id": "A5", "axis_name": "『変わった』禁止チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "『変わった/変わる/変化した』の語幹およびその活用形は未使用。"},
+        {"axis_id": "B1", "axis_name": "テーマの一致チェック", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "design_master File.28のテーマ『12年で試した対策、正直に全部言います』とナレーション・テロップが一致。"},
+        {"axis_id": "B2", "axis_name": "型の実装（意味的）チェック", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "Type_1（失敗を含む正直な提示→本質への帰結）を実装。良し悪し選ばず全部数える行為が正直さの提示を体現。"},
+        {"axis_id": "B3", "axis_name": "フェーズ内役割チェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "phase『中盤：共感の深化と正直さの蓄積』と、山場でない中程度の強度で整合。"},
+        {"axis_id": "C1", "axis_name": "NGワードの意味的使用チェック", "result": "pass", "severity": "critical", "target_file": "script.md", "reason": "euphemism_dict.prohibited_direct 13語のいずれもナレーション・テロップに出現しない。"},
+        {"axis_id": "C2", "axis_name": "婉曲変換の適切性チェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "足元の問題を直接表現する語自体を使用せず、数える行為・数字の多さ・正直さのみで構成。"},
+        {"axis_id": "C3", "axis_name": "キャプション例外（制御ルール）チェック", "result": "pass", "severity": "low", "target_file": "caption", "reason": "captionの対策名列挙（スプレー・インソール等）はprohibited_directに該当しない一般名詞でC群適用対象外。"},
+        {"axis_id": "D1", "axis_name": "入口の実装チェック", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "ナレーション冒頭『指を折り、数え始めました。』でpsychology.entryを正確に実装。"},
+        {"axis_id": "D2", "axis_name": "出口の実装チェック", "result": "pass", "severity": "high", "target_file": "multiple", "reason": "ナレーション末尾・テロップ『全部正直に→全数プロフィールに』・キャプションCTAでpsychology.exitを実装。"},
+        {"axis_id": "D3", "axis_name": "one_messageチェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "台本全体がtone_and_rules.one_messageに集約でき、第二のメッセージの混在はない。"},
+        {"axis_id": "E1", "axis_name": "ソフトCTA適切性チェック", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "テロップ最終行『全数プロフィールに』は事実の陳述でソフトCTAとして機能。"},
+        {"axis_id": "E2", "axis_name": "CTA非存在時の混入チェック", "result": "skip", "severity": "high", "target_file": "script.md", "reason": "cta_required=trueのため対象外。"},
+        {"axis_id": "E3", "axis_name": "テロップ内ハードCTA禁止チェック", "result": "pass", "severity": "critical", "target_file": "script.md", "reason": "『プロフィールを見て』等の直接誘導命令は存在せず、事実の陳述のみ。"},
+        {"axis_id": "F5", "axis_name": "語尾統一チェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション全文が『ました』（です・ます調）で統一。"},
+        {"axis_id": "G3", "axis_name": "内容分離チェック", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "ナレーション（感情的な体験描写）とテロップ（気づきの要約＋CTA）は異なるレイヤーで構成。"},
+        {"axis_id": "G4", "axis_name": "役割分離チェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション=感情、テロップ=論理の役割分離が明確。"},
+        {"axis_id": "H2", "axis_name": "キャプション内容の指示書一致チェック", "result": "pass", "severity": "high", "target_file": "caption", "reason": "caption.mdの全要素（hook/body/cta/hashtags）がep28.jsonのcaptionフィールドと完全一致。"},
+        {"axis_id": "I1", "axis_name": "過去epとの素材重複チェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "直近5作（ep23〜27）の主題（密閉環境・湿度実測・角質ケアパック・香りインソール・外側→内側）と、ep28の『全対策を指折り数える』というメタレベルの振り返りに重複なし。"},
+        {"axis_id": "I2", "axis_name": "テロップ視認性（意味的）チェック", "result": "pass", "severity": "low", "target_file": "script.md", "reason": "各テロップ行が独立して意味を持ち、1行で瞬時に理解可能。"},
+        {"axis_id": "I3", "axis_name": "イン・メディアス・レスチェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション冒頭が背景説明でなく、指を折って数える行為の真っ只中から開始している。"}
+      ],
+      "summary": {"pass": 23, "fail": 0, "skip": 1},
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highのfailなし。全軸pass又はskipのためPass。",
+      "action": "うたへ提示して一旦停止（Phase1運用ルール）。うた確認後、段3-Ω（omega²）へ進行。",
+      "phase": "中盤：共感の深化と正直さの蓄積"
+    }
+  ]
+}
