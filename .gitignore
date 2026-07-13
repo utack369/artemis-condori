@@ -15,3 +15,7 @@ output/instagram/*/episode_*.mp4
 # 編集前バックアップ（追跡しない）
 *.bak_*
 scripts/config.py
+
+# 棚卸し第1段：OS付随・キャッシュファイル
+.DS_Store
+__pycache__/
