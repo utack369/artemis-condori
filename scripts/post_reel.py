@@ -3,10 +3,11 @@
 Instagram Reels 予約投稿スクリプト（Zernio API + S3 署名付き URL 方式）
 
 使用方法:
-  python scripts/post_reel.py <ep_number>
+  python scripts/post_reel.py <ep_number> [--check-only]
 
 例:
   python scripts/post_reel.py 3
+  python scripts/post_reel.py 3 --check-only  # Step 0通過確認のみ・実投稿/予約なし
 
 前提:
   pip install requests boto3
@@ -48,9 +49,10 @@ PRESIGNED_URL_EXPIRY = 86400
 
 ZERNIO_API_BASE = "https://zernio.com/api/v1"
 
-# 検死ジョブ（切り離しプロセス方式）
+# 検死ジョブ（切り離しプロセス方式・絶対時刻ループ判定）
 VERIFY_LOG_DIR = Path.home() / "artemis-media/logs"
 VERIFY_DELAY_MINUTES = 10
+VERIFY_POLL_INTERVAL_SECONDS = 60
 
 
 # ---------------------------------------------------------------------------
@@ -209,13 +211,15 @@ def get_thumbnail_raw_url(ep_num: int, thumb_path: Path) -> str:
 # ---------------------------------------------------------------------------
 def schedule_verify_job(post_id: str, scheduled_dt: datetime) -> None:
     """
-    予約公開時刻の VERIFY_DELAY_MINUTES 分後に verify_post.py を実行する
-    切り離しプロセス（sleep 後に exec）を起動する。
+    予約公開時刻の VERIFY_DELAY_MINUTES 分後を目標時刻（絶対時刻・エポック秒）として固定し、
+    現在時刻がその目標時刻に達するまで VERIFY_POLL_INTERVAL_SECONDS 秒間隔でループ判定する
+    切り離しプロセスを起動する（判定成立で verify_post.py を実行）。
+    sleep 相対方式と異なり、Macがスリープしても復帰後 VERIFY_POLL_INTERVAL_SECONDS 秒以内に発火する。
     起動に失敗しても投稿自体は成功しているため、警告表示のみで続行する。
     """
     try:
         verify_dt = scheduled_dt + timedelta(minutes=VERIFY_DELAY_MINUTES)
-        wait_seconds = max(0, (verify_dt - datetime.now(JST)).total_seconds())
+        target_epoch = int(verify_dt.timestamp())
 
         VERIFY_LOG_DIR.mkdir(parents=True, exist_ok=True)
         log_path = VERIFY_LOG_DIR / f"verify_post_{post_id}.log"
@@ -225,11 +229,15 @@ def schedule_verify_job(post_id: str, scheduled_dt: datetime) -> None:
         verify_script = Path(__file__).resolve().parent / "verify_post.py"
 
         log_file = open(log_path, "a")
+        wait_loop = (
+            f'while [ "$(date +%s)" -lt {target_epoch} ]; do '
+            f"sleep {VERIFY_POLL_INTERVAL_SECONDS}; done"
+        )
         p = subprocess.Popen(
             [
                 "/bin/sh",
                 "-c",
-                f"sleep {int(wait_seconds)} && exec '{python_bin}' -u '{verify_script}' '{post_id}'",
+                f"{wait_loop} && exec '{python_bin}' -u '{verify_script}' '{post_id}'",
             ],
             stdout=log_file,
             stderr=log_file,
@@ -238,7 +246,10 @@ def schedule_verify_job(post_id: str, scheduled_dt: datetime) -> None:
         )
 
         verify_jst = verify_dt.strftime("%Y-%m-%d %H:%M JST")
-        print(f"  ✓ 検死プロセス起動: {verify_jst} に verify_post を自動実行（PID {p.pid}）")
+        print(
+            f"  ✓ 検死プロセス起動: {verify_jst} に verify_post を自動実行"
+            f"（PID {p.pid}、絶対時刻ループ判定・{VERIFY_POLL_INTERVAL_SECONDS}秒間隔）"
+        )
     except Exception as e:
         print(
             f"  ⚠ 検死プロセス起動に失敗しました（投稿自体は成功しています）: {e}",
@@ -303,11 +314,18 @@ def post_to_zernio(
 # エントリーポイント
 # ---------------------------------------------------------------------------
 def main() -> None:
-    if len(sys.argv) < 2:
-        print("使用方法: python scripts/post_reel.py <ep_number>", file=sys.stderr)
+    argv = sys.argv[1:]
+    check_only = "--check-only" in argv
+    positional = [a for a in argv if a != "--check-only"]
+
+    if not positional:
+        print(
+            "使用方法: python scripts/post_reel.py <ep_number> [--check-only]",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
-    ep_num = int(sys.argv[1])
+    ep_num = int(positional[0])
     project_root = Path(__file__).resolve().parent.parent
 
     # 設定
@@ -363,6 +381,15 @@ def main() -> None:
                 )
                 sys.exit(1)
             print(f"  ✓ サムネイルはorigin/mainに存在します: {rel_path}")
+        else:
+            print("Step 0: サムネイルなし（origin/main反映確認をスキップ）")
+
+        if check_only:
+            print(
+                "\n--check-only: Step 0 のチェックを通過しました。"
+                "実投稿・予約には進まず終了します。"
+            )
+            sys.exit(0)
 
         # Step 1: S3 に動画をアップロード
         print("Step 1: S3 へ動画アップロード")
