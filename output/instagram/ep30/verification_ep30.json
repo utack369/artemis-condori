@@ -1,0 +1,214 @@
+{
+  "ep_number": 30,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/解消」等の効果断定語は使用されていない。キャプションの「これさえやれば全部なくなる、というものには出会えませんでした」は否定文脈での使用であり、効果を断定しているのではなく魔法的解決が存在しないことを正直に述べている。「リセットできる」は心理的な絶望感の日々のリセットを指し、身体的効果の断定には該当しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ冒頭「魔法はない」が明示的に万能解決を否定し、「リセットはできる」は感情面の限定的な表現に留まる。CTA「全部プロフィールに」は情報所在の事実陳述であり「これを使えば解決する」という構造にはなっていない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも限定感・緊急性・煽り表現は一切含まれていない。キャプションCTAも「よかったら見てみてください」という非強制的な表現。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・キャプションともに和男の共感共闘トーン（当事者目線・非専門家・非売り込み）を維持している。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのすべてにおいて「変わった/変わる/変化した/変え」の語幹は一切使用されていない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master File.30テーマ「魔法はない。ただ、毎日の絶望感はリセットできる」に忠実に一致。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_1（失敗の正直な提示→本質への帰結）の心理構造を正しく実装。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.phase「終盤：12年間の記録の総括と正直な着地」に整合。30作目のシリーズ最終話として総括・正直な着地点を提示する構成。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要のため判定対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要のため判定対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2がskipのため判定不要。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entryに対し、ナレーション冒頭がイン・メディアス・レスから即座に正直な告白へ入っており、entryの心理構造を実現している。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exitに対し、ナレーション末尾が地に足のついた帰結を示し、テロップが信頼→プロフィール流入の導線を実現している。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "台本全体が一貫してone_messageに集約されている。第二のメッセージの混在はない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=trueの条件下、テロップ最終行「全部プロフィールに」は情報所在の事実陳述として機能するソフトCTA。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=trueのため判定対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "「全部プロフィールに」は所在の事実陳述であり、直接誘導表現・命令形・依頼形の動詞を伴わない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションの語尾は「来ました」「気づきました」でです・ます調に統一。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは体験的独白、テロップは概念的な三段構成。異なる角度から同じテーマを補完している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション=感情、テロップ=論理という役割の分離が明確。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素（hook_line/body/cta/hashtags）がep30.jsonのcaptionフィールドと完全一致。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作（ep25〜29）と照合。ep30は特定の対策素材ではなく「魔法はない/絶望感のリセット」というメタ的な総括・着地であり、主題の重複なし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち、1行で瞬時に理解できる。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭が行為の真っ只中から始まっており、背景説明や前置きなし。narration_guideline.opening_approachに合致。"
+        }
+      ],
+      "summary": {
+        "pass": 20,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "fail 0件。全軸pass又はskipのためPass。",
+      "action": "うたへ提示して一旦停止（Phase1運用ルール）。うた確認後、段3-Ω（omega²）へ進行。",
+      "phase": "終盤：12年間の記録の総括と正直な着地"
+    }
+  ]
+}
