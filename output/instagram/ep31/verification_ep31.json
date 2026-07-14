@@ -1,0 +1,214 @@
+{
+  "ep_number": 31,
+  "euphemism_required": true,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現は存在しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "台本は対人場面の追体験に終始し、「これを使えば解決する」と読み取れる構造を持たない。キャプションCTAも情報の存在を伝える事実陳述に留まる。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り表現はナレーション・テロップ・キャプションのいずれにも存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "和男の共感共闘トーンを一貫して維持。売り込みトーンや専門家トーンへの逸脱はない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「変わった/変わる/変化した」およびその活用形は使用されていない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterのテーマ「同僚に『お前、足大丈夫か』と言われた日の沈黙」と完全一致。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_2（日常の緊張場面の追体験→自分だけじゃないの着地）の心理構造が実装されている。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "パッケージ2の入口としてDMシェア誘発力の高い対人場面素材で構成されており、配置意図と整合。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "euphemism_dict.prohibited_directのいずれもナレーション・テロップに使用されていない。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "足元の具体的状態を語らず対人反応のみを描写しており、直接表現の回避が徹底されている。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1/C2の婉曲チェックはキャプションに適用除外。正しく制御されている。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entryに対し、ナレーション冒頭が指定された入口を正確に実装している。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「自分だけじゃない安心」がナレーション末尾・テロップの共感の余韻を通じて実現されている。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "台本全体がone_messageの1文に集約されており、第二のメッセージの混在はない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=falseのため判定対象外。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=falseの条件下、テロップにCTA要素は一切含まれていない。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップに直接誘導表現は存在しない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションの語尾は「です・ます」調で統一されている。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは内面描写、テロップは外的行動の事実提示で、内容が分離されている。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情、テロップ＝論理の役割分離が明確。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素がep31.jsonのcaptionフィールドと意味的に一致。別epの残骸混入もない。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作（ep26〜30）は製品・対策・個人の試行に焦点。ep31は職場での対人場面であり、素材の重複なし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち、瞬時に理解できる。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭が同僚の台詞から始まり、背景説明は一切ない。"
+        }
+      ],
+      "summary": {
+        "pass": 23,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highのfail 0件。全軸pass又はskipのためPass。",
+      "action": "うたへ提示して一旦停止（Phase1運用ルール）。うた確認後、段3-Ω（omega²）へ進行。",
+      "phase": "均等配置（フェーズ区分なし）"
+    }
+  ]
+}
