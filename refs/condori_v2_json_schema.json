@@ -1,0 +1,358 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "コンドリ 台本指示書（リール・カルーセル共通）",
+  "description": "パッケージの各話指示書を生成するためのJSON Schema v2。リールとカルーセルの両フォーマットに対応。omegaが生成し、alphaに渡して成果物を生成する。",
+  "type": "object",
+  "required": [
+    "meta",
+    "purpose",
+    "target_state",
+    "logic",
+    "psychology",
+    "caption",
+    "tone_and_rules",
+    "honesty_rule",
+    "euphemism_dict"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "description": "基本情報",
+      "required": ["file_number", "format", "phase", "phase_role"],
+      "properties": {
+        "file_number": {
+          "type": "integer",
+          "description": "ファイル番号（1〜60）",
+          "minimum": 1,
+          "maximum": 60
+        },
+        "format": {
+          "type": "string",
+          "description": "コンテンツ形式。reelの場合はscript.mdを出力、carouselの場合はcarousel_slides.mdを出力。",
+          "enum": ["reel", "carousel"]
+        },
+        "psychology_type": {
+          "type": "string",
+          "description": "適用する心理導線型。format=reelの場合に必須。format=carouselの場合は省略。",
+          "enum": [
+            "Type_1（プラットフォール・レビュー型）",
+            "Type_2（ナラティブ・サスペンス型）",
+            "Type_3（サンクコスト・リセット型）"
+          ]
+        },
+        "carousel_category": {
+          "type": "string",
+          "description": "カルーセルのカテゴリ。format=carouselの場合に必須。format=reelの場合は省略。",
+          "enum": [
+            "comparison（比較・検証型）",
+            "checklist（チェックリスト型）",
+            "warning（警告・逆効果型）"
+          ]
+        },
+        "euphemism": {
+          "type": "string",
+          "description": "この話で使用する婉曲表現の核（例：足元の違和感、蓄積ダメージ）。婉曲不要の場合は「直接表現可」と記載。"
+        },
+        "phase": {
+          "type": "string",
+          "description": "パッケージ内のフェーズ",
+          "enum": [
+            "序盤：感情的信頼の構築",
+            "中盤：徒労の受容",
+            "終盤：認知的信頼の完成",
+            "均等配置（フェーズ区分なし）"
+          ]
+        },
+        "phase_role": {
+          "type": "string",
+          "description": "フェーズ内での役割（例：パッケージの入口、中盤の山場、終盤の締め、保存狙い、シェア狙い等）"
+        }
+      }
+    },
+    "purpose": {
+      "type": "string",
+      "description": "このコンテンツで達成すべき目的。1〜2文で記述。"
+    },
+    "target_state": {
+      "type": "string",
+      "description": "ターゲットの現状。このコンテンツを偶然見た視聴者がどの心理状態にいるか。直列視聴を前提にしない。"
+    },
+    "logic": {
+      "type": "array",
+      "description": "盛り込むべき論理の骨格。2〜3項目。リールの場合はナレーションの論理構成、カルーセルの場合はスライド全体の論理構成。",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 2,
+      "maxItems": 3
+    },
+    "psychology": {
+      "type": "object",
+      "description": "心理導線設計。入口と出口。リール・カルーセル共通で適用。",
+      "required": ["entry", "exit"],
+      "properties": {
+        "entry": {
+          "type": "string",
+          "description": "入口：視聴者をどこから拾うか。リール：Type別の入口。カルーセル：1枚目（表紙）で何を提示するか。"
+        },
+        "exit": {
+          "type": "string",
+          "description": "出口：視聴後にどういう状態にするか。リール：Type別の出口。カルーセル：最終スライドで何を残すか。"
+        }
+      }
+    },
+    "narration_guideline": {
+      "type": "object",
+      "description": "ナレーション（音声）の設計指針。format=reelの場合に必須。format=carouselの場合は省略。",
+      "required": ["direction", "key_emotion", "opening_approach"],
+      "properties": {
+        "direction": {
+          "type": "string",
+          "description": "ナレーションの方向性。55〜65文字の共感ナラティブとしてどう語るかの指定。"
+        },
+        "key_emotion": {
+          "type": "string",
+          "description": "この話の核となる感情（例：孤独感、焦り、諦め、苦笑い）"
+        },
+        "opening_approach": {
+          "type": "string",
+          "description": "冒頭の入り方。イン・メディアス・レス（途中から開始）を推奨。背景説明から入らない。"
+        }
+      }
+    },
+    "telop_guideline": {
+      "type": "object",
+      "description": "テロップ（画面テキスト）の設計指針。format=reelの場合に必須。format=carouselの場合は省略。",
+      "required": ["direction", "cta_required"],
+      "properties": {
+        "direction": {
+          "type": "string",
+          "description": "テロップの方向性。2〜4行、1行最大10文字。ナレーション（感情）を補完する論理・気づきを配置。"
+        },
+        "cta_required": {
+          "type": "boolean",
+          "description": "テロップCTAの要否。Type_2はfalse、Type_1/Type_3はtrue。"
+        },
+        "cta_direction": {
+          "type": ["string", "null"],
+          "description": "CTAの方向性（cta_required=trueの場合のみ）。ソフトCTA（事実の陳述）に留める。ハードCTA禁止。"
+        }
+      }
+    },
+    "carousel_guideline": {
+      "type": "object",
+      "description": "カルーセルの設計指針。format=carouselの場合に必須。format=reelの場合は省略。",
+      "required": ["slide_count", "cover_hook", "content_direction", "closing_message", "reference_files"],
+      "properties": {
+        "slide_count": {
+          "type": "integer",
+          "description": "スライド枚数。7〜8枚。",
+          "minimum": 7,
+          "maximum": 8
+        },
+        "cover_hook": {
+          "type": "string",
+          "description": "1枚目（表紙）のフック文。スクロールを止める一言。ナンバリング（File.XX）を含む。"
+        },
+        "content_direction": {
+          "type": "string",
+          "description": "2〜6枚目の内容方針。comparison=対策の比較表、checklist=チェック項目の列挙、warning=逆効果の警告。"
+        },
+        "closing_message": {
+          "type": "string",
+          "description": "最終スライドのメッセージ。正直さ=(1)を体現する締めの一言。CTAは含めない。"
+        },
+        "reference_files": {
+          "type": "array",
+          "description": "このカルーセルが参照する過去のFile番号。過去リールへの回遊を促す。参照なしの場合は空配列。",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "cta_required": {
+          "type": "boolean",
+          "description": "カルーセルのCTA要否。固定値：false。カルーセルはDe-selling型のため全てCTAなし。",
+          "enum": [false]
+        }
+      }
+    },
+    "slides": {
+      "type": "array",
+      "description": "各スライドのテキスト内容指示。format=carouselの場合に必須。format=reelの場合は省略。alphaはこの指示に基づきcarousel_slides.mdを生成する。",
+      "items": {
+        "type": "object",
+        "required": ["slide_number", "content"],
+        "properties": {
+          "slide_number": {
+            "type": "integer",
+            "description": "スライド番号（1〜8）"
+          },
+          "content": {
+            "type": "string",
+            "description": "このスライドに表示するテキスト内容の指示。alphaが具体的な文言を生成する。"
+          },
+          "role": {
+            "type": "string",
+            "description": "このスライドの役割",
+            "enum": ["cover", "content", "summary", "personal_comment"]
+          }
+        }
+      },
+      "minItems": 7,
+      "maxItems": 8
+    },
+    "thumbnail_guideline": {
+      "type": "object",
+      "description": "サムネイル/表紙の設計指針。リール：サムネイル画像。カルーセル：1枚目の表紙デザイン。",
+      "required": ["direction", "tone", "selected_text"],
+      "properties": {
+        "direction": {
+          "type": "string",
+          "description": "サムネ/表紙の方向性"
+        },
+        "tone": {
+          "type": "string",
+          "description": "サムネ/表紙のトーン"
+        },
+        "selected_text": {
+          "type": "array",
+          "description": "サムネ/表紙テキスト。2〜4行、1行最大7文字。約物禁止。",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2,
+          "maxItems": 4
+        }
+      }
+    },
+    "caption": {
+      "type": "object",
+      "description": "キャプション文。リール・カルーセル共通。",
+      "required": ["hook_line", "body", "cta", "hashtags"],
+      "properties": {
+        "hook_line": {
+          "type": "string",
+          "description": "キャプション冒頭のフック。1文。"
+        },
+        "body": {
+          "type": "string",
+          "description": "キャプション本文。2〜4文。キーワードSEOを意識。"
+        },
+        "cta": {
+          "type": "string",
+          "description": "キャプションCTA。リール：ハードCTAはここのみに配置。カルーセル：CTAなしまたは軽い誘導（保存を促すのではなく、情報の補足に留める）。"
+        },
+        "hashtags": {
+          "type": "array",
+          "description": "ハッシュタグ。5個。中規模ニッチタグ。",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 5,
+          "maxItems": 5
+        }
+      }
+    },
+    "tone_and_rules": {
+      "type": "object",
+      "description": "トーンとルール。リール・カルーセル共通。",
+      "required": [
+        "persona",
+        "sentence_ending",
+        "prohibited_words",
+        "one_message",
+        "numbering"
+      ],
+      "properties": {
+        "persona": {
+          "type": "string",
+          "description": "ペルソナ。固定値：共感共闘型・和男（30代中旬・工場勤務12年・足元の悩みの当事者）"
+        },
+        "narration_duration": {
+          "type": "string",
+          "description": "ナレーション文字数。固定値：55〜65字。format=reelの場合のみ適用。"
+        },
+        "telop_lines": {
+          "type": "string",
+          "description": "テロップ行数。固定値：2〜4行。format=reelの場合のみ適用。"
+        },
+        "telop_max_chars_per_line": {
+          "type": "integer",
+          "description": "テロップ1行あたり最大文字数。固定値：10。format=reelの場合のみ適用。",
+          "maximum": 10
+        },
+        "slide_max_chars": {
+          "type": "integer",
+          "description": "カルーセル1スライドあたりの推奨最大文字数。固定値：60。format=carouselの場合のみ適用。",
+          "maximum": 60
+        },
+        "sentence_ending": {
+          "type": "string",
+          "description": "語尾。固定値：です・ます"
+        },
+        "prohibited_words": {
+          "type": "array",
+          "description": "禁止語リスト。リール：ナレーション・テロップ両方に適用。カルーセル：全スライドに適用。",
+          "items": {
+            "type": "string"
+          }
+        },
+        "one_message": {
+          "type": "string",
+          "description": "1コンテンツ1メッセージ基準。このコンテンツを見た人が一言で要約できる核心メッセージ。"
+        },
+        "numbering": {
+          "type": "string",
+          "description": "ナンバリング。リール：テロップに配置。カルーセル：1枚目（表紙）に配置。形式：安全靴と戦う12年の記録：File.XX"
+        }
+      }
+    },
+    "honesty_rule": {
+      "type": "object",
+      "description": "正直さ=(1)の判定基準。リール・カルーセル共通。beta品質チェックの核。",
+      "required": ["effect_claim", "guarantee", "purchase_pressure", "tone_consistency"],
+      "properties": {
+        "effect_claim": {
+          "type": "string",
+          "description": "固定値：効果を断定も暗示もしない。「効く」「治る」「消える」「改善する」は禁止。"
+        },
+        "guarantee": {
+          "type": "string",
+          "description": "固定値：保証しない。「必ず」「絶対」「確実に」は禁止。"
+        },
+        "purchase_pressure": {
+          "type": "string",
+          "description": "固定値：合わない人が買う確率を下げる設計。購入を急かす・限定感を出す表現は禁止。"
+        },
+        "tone_consistency": {
+          "type": "string",
+          "description": "固定値：気にならなくなった・保証しない・よかったら。この3語のトーンを一貫する。"
+        }
+      }
+    },
+    "euphemism_dict": {
+      "type": "object",
+      "description": "婉曲表現辞書。リール：ナレーション・テロップに適用。カルーセル：全スライドに適用。キャプションは対象外。",
+      "required": ["prohibited_direct", "conversion_table"],
+      "properties": {
+        "prohibited_direct": {
+          "type": "array",
+          "description": "直接使用禁止の表現",
+          "items": {
+            "type": "string"
+          }
+        },
+        "conversion_table": {
+          "type": "object",
+          "description": "NGワード→婉曲表現の変換テーブル",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
