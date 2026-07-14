@@ -51,7 +51,8 @@ FONT_CANDIDATES = [
 ]
 
 NUMBERING_PATTERN = re.compile(r"安全靴と戦う12年の記録：File\.\d+")
-BLOCK_PATTERN = re.compile(r"【スライド(\d+)｜(\w+)】")
+# 正規形式は【スライドN｜role】。生成揺れ（【N｜role】）も受容する（Postel の法則）
+BLOCK_PATTERN = re.compile(r"【(?:スライド)?(\d+)｜(\w+)】")
 
 
 def find_font_path():
