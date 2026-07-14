@@ -138,11 +138,6 @@ def main() -> None:
 
     ep_num = int(positional[0])
 
-    config = load_config()
-    zernio_api_key: str = config["zernio_api_key"]
-    bucket: str = config["s3_bucket_name"]
-    s3_client = build_s3_client(config)
-
     slide_paths, caption = get_carousel_files(ep_num)
     scheduled_iso = get_scheduled_iso()
     scheduled_jst = datetime.fromisoformat(scheduled_iso).strftime("%Y-%m-%d %H:%M JST")
@@ -160,6 +155,11 @@ def main() -> None:
     if check_only:
         print("--check-only: ファイル・枚数チェックを通過しました。実投稿・予約には進まず終了します。")
         sys.exit(0)
+
+    config = load_config()
+    zernio_api_key: str = config["zernio_api_key"]
+    bucket: str = config["s3_bucket_name"]
+    s3_client = build_s3_client(config)
 
     # Step 1: S3 にスライド画像をアップロード
     print("Step 1: S3 へスライド画像アップロード")

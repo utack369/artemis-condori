@@ -19,11 +19,11 @@ allowed-tools: Read, Grep, Glob
 
 | 入力 | 用途 |
 |---|---|
-| `script.md` | ナレーション・テロップの意味判定本体 |
+| `script.md`（format=reel）または `carousel_slides.md`（format=carousel） | 意味判定本体 |
 | `caption`（caption.md または caption_[N].txt） | A群(正直さ)とH2の判定対象 |
-| `ep[N].json` | 設計仕様。meta / psychology / honesty_rule / euphemism_dict / tone_and_rules / telop_guideline / caption を参照 |
-| design_master 該当File行 | B群(テーマ・型・配置の意図)の照合基準 |
-| 直近5作の script.md | I1(素材重複)の照合用 |
+| `ep[N].json` | 設計仕様。meta / psychology / honesty_rule / euphemism_dict / tone_and_rules / telop_guideline（reel）/ carousel_guideline・slides（carousel）/ caption を参照 |
+| design_master 該当File行 | B群(テーマ・型/カテゴリ・配置の意図)の照合基準 |
+| 直近5作の script.md または carousel_slides.md | I1(素材重複)の照合用 |
 
 入力に欠けがある場合は、その軸を `skip` とし、reasonに「入力不足のため判定不可」と明記する（捏造して判定しない）。
 
@@ -74,6 +74,30 @@ allowed-tools: Read, Grep, Glob
 - **I1 過去epとの素材重複**(medium)：ナレーション主題(素材・場面・対策)が直近5作と重複しない。
 - **I2 テロップ視認性（意味的）**(low)：各行が独立して意味を持ち、1行で瞬時に理解できる。
 - **I3 イン・メディアス・レス**(medium)：ナレーション冒頭が背景説明でなく途中から始まる。
+
+## 2C. format=carousel の判定規則（軸の読み替え）
+
+meta.format="carousel" の場合、判定本体は carousel_slides.md（全スライド）とし、24軸を以下の通り読み替える。基準の厳しさは変えない（正直さ=(1)は同一基準）。
+
+| 軸 | カルーセルでの扱い |
+|---|---|
+| A1〜A5（正直さ） | **全スライド＋caption**に同一基準で適用 |
+| B1 テーマの一致 | スライド全体が design_master 該当行のテーマを扱っている |
+| B2 型の実装 | **カテゴリの実装**に読み替え：comparison=比較の構成／checklist=チェック項目の列挙／warning=逆効果・落とし穴の警告が意味的に実装されている |
+| B3 フェーズ内役割 | 同一（配置の意図との整合） |
+| C1・C2 婉曲 | 適用条件は同一（婉曲要のときのみ）。対象は**全スライド**。C3のキャプション例外も同一 |
+| D1 入口 | psychology.entry が**1枚目（表紙）のフック**で実現している |
+| D2 出口 | psychology.exit が**最終スライドの締め**で実現している |
+| D3 one_message | カルーセル全体が one_message に集約できる |
+| E1 ソフトCTA適切性 | **skip**（カルーセルは常にcta_required=false） |
+| E2 CTA非存在 | **全スライド**にCTA要素（誘導・保存喚起・行動喚起）が一切ない |
+| E3 ハードCTA禁止 | **全スライド**に直接誘導がない（キャプションのみ許容は同一） |
+| F5 語尾統一 | 全スライドが「です・ます」調（体言止めの許容は表紙・締めの1箇所ずつまで） |
+| G3・G4 分離設計 | **skip**（ナレーション/テロップ分離はリール固有） |
+| H2 キャプション一致 | 同一 |
+| I1 素材重複 | スライドの主題が直近5作（script.md/carousel_slides.md）と重複しない。ただし**reference_files（過去File参照）として意図された再掲は重複とみなさない**（ep[N].jsonのcarousel_guideline.reference_filesを確認） |
+| I2 視認性 | 各スライドが独立して意味を持ち、1スライド1メッセージで瞬時に理解できる |
+| I3 イン・メディアス・レス | **skip**（ナレーション固有）。代わりに表紙フックの停止力はB2/D1で判定する |
 
 ## 3. 出力（厳守）
 
