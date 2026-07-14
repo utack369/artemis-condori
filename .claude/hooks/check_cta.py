@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# PreToolUse hook: ep[N].json Write 時に cta_required を設計図マスターと照合
+# PreToolUse hook: ep[N].json Write 時に cta_required（リール=telop_guideline／カルーセル=carousel_guideline）を設計図マスターと照合
 # 不一致: exit 2 + stderr でブロック。設計図マスター未定義エピソードは exit 0（安全側）。
 import sys, json, re, os
 
@@ -45,6 +45,9 @@ def main():
     try:
         data = json.loads(content)
         generated_cta = data.get('telop_guideline', {}).get('cta_required')
+        if generated_cta is None:
+            # カルーセルはtelop_guidelineを持たないため、carousel_guideline側を参照する
+            generated_cta = data.get('carousel_guideline', {}).get('cta_required')
         if generated_cta is None:
             sys.exit(0)
     except Exception:
