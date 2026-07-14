@@ -23,17 +23,25 @@ from PIL import Image, ImageDraw, ImageFont
 # ============================================================
 CANVAS_W = 1080
 CANVAS_H = 1350
-BG_COLOR = (244, 244, 242)        # 白グレー
-TEXT_COLOR = (43, 43, 43)         # 濃グレー
-SUB_COLOR = (120, 120, 120)       # 薄グレー（ナンバリング・ページ表示）
-ACCENT_COLOR = (60, 60, 60)       # 表紙の帯
-MARGIN_RATIO = 0.10               # 左右余白
-TEXT_AREA_RATIO = 0.80            # テキスト幅の上限（画面比）
-COVER_FONT_MAX = 96
+
+# 配色は3色以内（保存率設計の定石）：ダーク・オフホワイト・アクセント
+DARK_BG = (38, 38, 40)            # 表紙・締めの背景（フィードで反転して止める）
+LIGHT_BG = (244, 244, 242)        # 本文の背景
+TEXT_ON_DARK = (255, 255, 255)
+TEXT_ON_LIGHT = (43, 43, 43)
+SUB_ON_DARK = (170, 170, 170)
+SUB_ON_LIGHT = (140, 140, 140)
+NUM_COLOR = (210, 210, 206)       # 本文の大きな薄番号
+ACCENT_COLOR = (214, 177, 66)     # 黄土（誠実トーンの1差し色）
+
+MARGIN = 100                      # 左右余白
+COVER_FONT_MAX = 92
 BODY_FONT_MAX = 72
 FONT_MIN = 36
 LINE_SPACING_RATIO = 0.45         # 行間（フォントサイズ比）
-WRAP_MEASURE_STEP = 1
+
+# 行頭に置かない文字（禁則処理）
+KINSOKU_HEAD = "、。，．・：；？！」』）〉》】ゝゞ々ーぁぃぅぇぉっゃゅょァィゥェォッャュョ"
 
 FONT_CANDIDATES = [
     "/System/Library/Fonts/ヒラギノ角ゴシック W8.ttc",   # 本番Mac（太）
@@ -72,20 +80,27 @@ def parse_slides(md_text):
 
 
 def make_background(role, width, height):
-    """背景画像を返す。将来のGemini API背景生成はこの関数の差し替えで対応する。"""
-    return Image.new("RGB", (width, height), BG_COLOR)
+    """背景画像を返す。将来のGemini API背景生成はこの関数の差し替えで対応する。
+    表紙・締め＝ダーク（フィードで反転して止める）、本文＝オフホワイト（読みやすさ）。"""
+    is_dark = role in ("cover", "summary", "personal_comment")
+    return Image.new("RGB", (width, height), DARK_BG if is_dark else LIGHT_BG)
 
 
 def wrap_line(draw, text, font, max_width):
-    """1行のテキストを描画幅に収まるよう文字単位で折り返す。"""
+    """1行のテキストを描画幅に収まるよう文字単位で折り返す（行頭禁則処理付き）。"""
     wrapped = []
     current = ""
     for ch in text:
         trial = current + ch
         w = draw.textbbox((0, 0), trial, font=font)[2]
         if w > max_width and current:
-            wrapped.append(current)
-            current = ch
+            if ch in KINSOKU_HEAD:
+                # 行頭禁則文字はぶら下げ（前の行末に含める）
+                wrapped.append(current + ch)
+                current = ""
+            else:
+                wrapped.append(current)
+                current = ch
         else:
             current = trial
     if current:
@@ -113,58 +128,99 @@ def fit_font(draw, lines, font_path, max_font, max_width, max_height):
     return font, FONT_MIN, wrapped
 
 
-def draw_centered_lines(draw, wrapped, font, fontsize, y_start, canvas_w):
+def draw_left_lines(draw, wrapped, font, fontsize, y_start, fill):
+    """左揃えで複数行を描画する（読みの安定性を優先）。"""
     line_h = fontsize + int(fontsize * LINE_SPACING_RATIO)
     y = y_start
     for line in wrapped:
-        bbox = draw.textbbox((0, 0), line, font=font)
-        x = (canvas_w - (bbox[2] - bbox[0])) // 2
-        draw.text((x, y), line, font=font, fill=TEXT_COLOR)
+        draw.text((MARGIN, y), line, font=font, fill=fill)
         y += line_h
     return y
 
 
-def render_slide(slide, total, ep_num, font_path, output_dir):
-    is_cover = slide["role"] == "cover"
-    img = make_background(slide["role"], CANVAS_W, CANVAS_H)
-    draw = ImageDraw.Draw(img)
-
-    # ナンバリング行（表紙）を本文から分離
+def split_numbering(lines):
+    """ナンバリング行（安全靴と戦う12年の記録：File.XX）を本文から分離する。"""
     body_lines = []
     numbering = None
-    for line in slide["lines"]:
+    for line in lines:
         if NUMBERING_PATTERN.search(line):
             numbering = line
         else:
             body_lines.append(line)
+    return body_lines, numbering
 
-    max_width = int(CANVAS_W * TEXT_AREA_RATIO)
-    max_height = int(CANVAS_H * 0.55)
-    max_font = COVER_FONT_MAX if is_cover else BODY_FONT_MAX
 
+def render_cover(draw, body_lines, numbering, font_path):
+    """表紙：ダーク背景・左縦アクセント・シリーズ名／File番号を上部に配置。"""
+    draw.rectangle([60, 90, 64, CANVAS_H - 90], fill=ACCENT_COLOR)
+    series_font = ImageFont.truetype(font_path, 34)
+    file_font = ImageFont.truetype(font_path, 44)
+    series, file_no = "安全靴と戦う12年の記録", ""
+    if numbering:
+        parts = numbering.split("：")
+        series = parts[0]
+        file_no = parts[1] if len(parts) > 1 else ""
+    draw.text((MARGIN, 110), series, font=series_font, fill=SUB_ON_DARK)
+    if file_no:
+        draw.text((MARGIN, 170), file_no, font=file_font, fill=ACCENT_COLOR)
+
+    max_width = CANVAS_W - MARGIN * 2
     font, fontsize, wrapped = fit_font(
-        draw, body_lines, font_path, max_font, max_width, max_height
+        draw, body_lines, font_path, COVER_FONT_MAX, max_width, int(CANVAS_H * 0.5)
     )
     line_h = fontsize + int(fontsize * LINE_SPACING_RATIO)
-    total_h = line_h * len(wrapped)
-    y_start = (CANVAS_H - total_h) // 2
-    draw_centered_lines(draw, wrapped, font, fontsize, y_start, CANVAS_W)
+    y_start = (CANVAS_H - line_h * len(wrapped)) // 2 + 40
+    draw_left_lines(draw, wrapped, font, fontsize, y_start, TEXT_ON_DARK)
 
-    sub_font = ImageFont.truetype(font_path, 34)
 
-    if is_cover:
-        # 表紙：上部に帯、下部にナンバリング
-        draw.rectangle([0, 0, CANVAS_W, 14], fill=ACCENT_COLOR)
-        if numbering:
-            bbox = draw.textbbox((0, 0), numbering, font=sub_font)
-            x = (CANVAS_W - (bbox[2] - bbox[0])) // 2
-            draw.text((x, CANVAS_H - 140), numbering, font=sub_font, fill=SUB_COLOR)
+def render_content(draw, slide, total, body_lines, font_path):
+    """本文：オフホワイト背景・大きな薄番号で序列・区切り線・左揃え本文。"""
+    num_font = ImageFont.truetype(font_path, 150)
+    draw.text((MARGIN - 10, 100), f"{slide['number']:02d}", font=num_font, fill=NUM_COLOR)
+    draw.rectangle([MARGIN, 300, MARGIN + 140, 306], fill=ACCENT_COLOR)
+
+    max_width = CANVAS_W - MARGIN * 2
+    font, fontsize, wrapped = fit_font(
+        draw, body_lines, font_path, BODY_FONT_MAX, max_width, int(CANVAS_H * 0.5)
+    )
+    draw_left_lines(draw, wrapped, font, fontsize, 430, TEXT_ON_LIGHT)
+
+    foot_font = ImageFont.truetype(font_path, 30)
+    draw.text((MARGIN, CANVAS_H - 120), "安全靴と戦う12年の記録", font=foot_font, fill=SUB_ON_LIGHT)
+    page_font = ImageFont.truetype(font_path, 34)
+    page = f"{slide['number']} / {total}"
+    bbox = draw.textbbox((0, 0), page, font=page_font)
+    draw.text((CANVAS_W - bbox[2] - 90, CANVAS_H - 124), page, font=page_font, fill=SUB_ON_LIGHT)
+
+
+def render_closing(draw, slide, total, body_lines, font_path):
+    """締め：ダーク背景に戻して余韻で終える（表紙と対になる構成）。CTAは置かない。"""
+    max_width = CANVAS_W - MARGIN * 2 - 20
+    font, fontsize, wrapped = fit_font(
+        draw, body_lines, font_path, BODY_FONT_MAX, max_width, int(CANVAS_H * 0.5)
+    )
+    line_h = fontsize + int(fontsize * LINE_SPACING_RATIO)
+    y_start = (CANVAS_H - line_h * len(wrapped)) // 2
+    y_end = draw_left_lines(draw, wrapped, font, fontsize, y_start, (240, 240, 240))
+    draw.rectangle([MARGIN + 10, y_end + 40, MARGIN + 150, y_end + 46], fill=ACCENT_COLOR)
+
+    page_font = ImageFont.truetype(font_path, 34)
+    page = f"{slide['number']} / {total}"
+    bbox = draw.textbbox((0, 0), page, font=page_font)
+    draw.text(((CANVAS_W - bbox[2]) // 2, CANVAS_H - 120), page, font=page_font, fill=SUB_ON_DARK)
+
+
+def render_slide(slide, total, ep_num, font_path, output_dir):
+    img = make_background(slide["role"], CANVAS_W, CANVAS_H)
+    draw = ImageDraw.Draw(img)
+    body_lines, numbering = split_numbering(slide["lines"])
+
+    if slide["role"] == "cover":
+        render_cover(draw, body_lines, numbering, font_path)
+    elif slide["role"] in ("summary", "personal_comment"):
+        render_closing(draw, slide, total, body_lines, font_path)
     else:
-        # 本文・締め：下部中央にページ表示
-        page = f"{slide['number']} / {total}"
-        bbox = draw.textbbox((0, 0), page, font=sub_font)
-        x = (CANVAS_W - (bbox[2] - bbox[0])) // 2
-        draw.text((x, CANVAS_H - 110), page, font=sub_font, fill=SUB_COLOR)
+        render_content(draw, slide, total, body_lines, font_path)
 
     out_path = Path(output_dir) / f"slide_{ep_num}_{slide['number']:02d}.png"
     img.save(out_path)
