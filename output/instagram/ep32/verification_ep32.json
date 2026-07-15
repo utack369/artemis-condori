@@ -1,0 +1,214 @@
+{
+  "ep_number": 32,
+  "euphemism_required": false,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現は存在しない。靴を脱げなかった経験の描写のみで、対策→効果の因果関係が断定形で成立する箇所はない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション+テロップ+CTAの組み合わせ全体を通して「これを使えば解決する」と読み取れる構造は存在しない。テロップは共感の余韻で終わり、キャプションCTAも事実の陳述に留まっている。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感（今だけ/残りわずか）、緊急性、煽り表現はナレーション・テロップ・キャプションのいずれにも存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全体を通して和男の共感共闘トーンを維持。売り込みトーンや専門家トーンへの逸脱はない。キャプションも「盛らずに全部」と正直さの姿勢を堅持。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「変わった/変わる/変化した」の語は未使用。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterのテーマ「工場の休憩室で靴を脱げないまま過ごす昼休み」に対し、ナレーションは休憩室で同僚が靴を脱ぐ中、自分は脱がずに座る場面を描写しており、テーマと正確に一致する。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_2（日常の緊張場面の追体験→「自分だけじゃない」着地）を実装。ナレーション冒頭で日常の緊張場面を提示し、テロップで当事者が「自分もそうだった」と感じる余韻構造を実現。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "phase_role「共感を提示する。CTAなしで正直さの信頼蓄積を継続する」に対し、台本は共感描写のみでCTAなし。均等配置の役割と整合。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要のため、C1（婉曲要時のみ判定）は適用対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要のため、C2（婉曲要時のみ判定）は適用対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2がskipのため、C3の適用範囲制御も適用不要。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「日常の緊張場面：休憩室に入り、同僚が当たり前のように靴を脱いでくつろぐ中、自分だけ靴紐に手をかけたまま動けなくなる」がナレーション冒頭で正確に実装されている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「自分だけじゃない安心」に対し、テロップ末尾は当事者に「自分もそうだった」と感じさせる余韻構造で機能。結論や答えを出さない共感の余韻とも整合。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「工場の休憩室で、同僚が当たり前のように靴を脱いでくつろぐ中、自分だけ靴を脱げないまま昼休みを過ごしてきた、あなただけじゃない」に対し、台本全体がこの1メッセージに集約されている。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=falseのため、E1（cta_required=true時のみ判定）は適用対象外。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=falseの条件下、テロップにCTA要素（誘導・「続き」「詳しく」等）は一切なし。テロップは共感の余韻のみで終わっている。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現はない。ハードCTAはキャプションCTA行にのみ存在し、テロップは共感余韻のみ。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション「くつろいでいます」「座りました」はいずれも「です・ます」調。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは休憩室での情景・内面独白、テロップは凝縮されたキーワード。同一テキストの転記・要約ではなく、別内容として機能している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（当事者の内面独白）、テロップ＝論理（気づきの凝縮）。役割分離が機能している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素（hook_line・body・cta・hashtags）がep32.jsonのcaptionフィールドと意味的に整合。body内「手が止まります」への語尾丁寧化はsentence_ending=「です・ます」への正規化であり、意味的に同一。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ep32の主題「休憩室で靴を脱げないまま過ごす昼休み（無言の自己抑制）」は直近5作（ep27〜31）のいずれとも素材が異なる。ep31は同じ休憩室が舞台だが素材は「同僚からの言及に沈黙する」であり、ep32の「無言で脱がずに座り続ける自己抑制」とは場面・感情・対処行動が異なる。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行「脱げなかった」「結局そのまま」「昼休みが終わる」はいずれも独立して意味を持ち、1行で瞬時に理解できる。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「休憩室に入ると、同僚たちは当たり前のように靴を脱いでくつろいでいます」で場面の途中から即座に開始。背景説明は一切なし。"
+        }
+      ],
+      "summary": {
+        "pass": 20,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highのfail 0件。全軸pass又はskipのためPass。",
+      "action": "うたへ提示して一旦停止（Phase1運用ルール）。うた確認後、段3-Ω（omega²）へ進行。",
+      "phase": "均等配置（フェーズ区分なし）"
+    }
+  ]
+}
