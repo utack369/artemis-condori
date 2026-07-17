@@ -1,0 +1,42 @@
+{
+  "ep_number": 34,
+  "euphemism_required": false,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {"axis_id": "A1", "axis_name": "効果の断定チェック", "result": "pass", "severity": "critical"},
+        {"axis_id": "A2", "axis_name": "効果の暗示チェック", "result": "pass", "severity": "critical"},
+        {"axis_id": "A3", "axis_name": "購入圧力チェック", "result": "pass", "severity": "critical"},
+        {"axis_id": "A4", "axis_name": "トーン一貫性チェック", "result": "pass", "severity": "critical"},
+        {"axis_id": "A5", "axis_name": "「変わった」禁止チェック", "result": "pass", "severity": "critical"},
+        {"axis_id": "B1", "axis_name": "テーマの一致チェック", "result": "pass", "severity": "high"},
+        {"axis_id": "B2", "axis_name": "カテゴリの実装チェック（comparison）", "result": "pass", "severity": "high"},
+        {"axis_id": "B3", "axis_name": "フェーズ内役割チェック", "result": "pass", "severity": "medium"},
+        {"axis_id": "C1", "axis_name": "NGワードの意味的使用チェック", "result": "skip", "severity": "critical", "reason": "euphemism_required=falseのため対象外"},
+        {"axis_id": "C2", "axis_name": "婉曲変換の適切性チェック", "result": "skip", "severity": "medium", "reason": "euphemism_required=falseのため対象外"},
+        {"axis_id": "C3", "axis_name": "キャプション例外（制御ルール）", "result": "skip", "severity": "low", "reason": "C1/C2 skipのため対象外"},
+        {"axis_id": "D1", "axis_name": "入口の実装チェック", "result": "pass", "severity": "high"},
+        {"axis_id": "D2", "axis_name": "出口の実装チェック", "result": "pass", "severity": "high"},
+        {"axis_id": "D3", "axis_name": "one_messageチェック", "result": "pass", "severity": "medium"},
+        {"axis_id": "E1", "axis_name": "ソフトCTA適切性チェック", "result": "skip", "severity": "high", "reason": "カルーセルはcta_required=false固定のため対象外"},
+        {"axis_id": "E2", "axis_name": "CTA非存在チェック", "result": "pass", "severity": "high"},
+        {"axis_id": "E3", "axis_name": "テロップ内ハードCTA禁止チェック", "result": "pass", "severity": "critical"},
+        {"axis_id": "F5", "axis_name": "語尾統一チェック", "result": "pass", "severity": "medium"},
+        {"axis_id": "G3", "axis_name": "内容分離チェック", "result": "skip", "severity": "high", "reason": "リール固有軸のためカルーセルは対象外"},
+        {"axis_id": "G4", "axis_name": "役割分離チェック", "result": "skip", "severity": "medium", "reason": "リール固有軸のためカルーセルは対象外"},
+        {"axis_id": "H2", "axis_name": "キャプション内容の指示書一致チェック", "result": "pass", "severity": "high"},
+        {"axis_id": "I1", "axis_name": "過去epとの素材重複チェック", "result": "pass", "severity": "medium", "note": "ep29と「重曹」「五本指ソックス」が部分重複するが、reference_files=[3,6,7,14,19]の意図的参照免除規定に該当。形式・角度・深度が異なるためpass。既視感リスクとして付記。"},
+        {"axis_id": "I2", "axis_name": "スライド視認性チェック", "result": "pass", "severity": "low"},
+        {"axis_id": "I3", "axis_name": "イン・メディアス・レスチェック", "result": "skip", "severity": "medium", "reason": "リール固有軸（ナレーション）のためカルーセルは対象外"}
+      ],
+      "summary": {"pass": 17, "fail": 0, "skip": 7},
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass（critical/highのfail 0件）",
+      "action": "段3-Ωへ進行",
+      "phase": "段3-V"
+    }
+  ]
+}
