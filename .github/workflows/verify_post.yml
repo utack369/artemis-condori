@@ -1,0 +1,46 @@
+name: verify-post
+
+on:
+  schedule:
+    - cron: "15 11 * * *"  # 11:15 UTC = 20:15 JST（GitHub Actionsのcronは遅延5〜30分あり得る前提の設計）
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "dry-run（再試行・pending削除をスキップ）"
+        type: boolean
+        default: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests boto3
+
+      - name: Restore config.json
+        env:
+          CONFIG_JSON: ${{ secrets.ARTEMIS_CONFIG_JSON }}
+        run: |
+          if [ -z "$CONFIG_JSON" ]; then
+            echo "::error::Secret ARTEMIS_CONFIG_JSON が未登録です"
+            exit 1
+          fi
+          mkdir -p "$HOME/artemis-media/自動取得システム"
+          printf '%s' "$CONFIG_JSON" > "$HOME/artemis-media/自動取得システム/config.json"
+
+      - name: Run verify_post --from-s3
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python scripts/verify_post.py --from-s3 --dry-run
+          else
+            python scripts/verify_post.py --from-s3
+          fi
