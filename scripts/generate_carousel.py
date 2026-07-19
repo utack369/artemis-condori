@@ -42,6 +42,12 @@ LINE_SPACING_RATIO = 0.45         # 行間（フォントサイズ比）
 
 # 行頭に置かない文字（禁則処理）
 KINSOKU_HEAD = "、。，．・：；？！」』）〉》】ゝゞ々ーぁぃぅぇぉっゃゅょァィゥェォッャュョ"
+# ぶら下げを許容する文字（行頭禁則のうちこれだけは行幅超過を許して前行末に含める）
+BURASAGE = "、。，．"
+# 行末に置かない文字（開き括弧類。次行頭へ追い出す）
+KINSOKU_TAIL = "「『（〈《【"
+# 同一文字の連続を1トークンとして扱い、行またぎで分断しない記号（分離禁則）
+SEPARATION_CHARS = "…―‥"
 
 FONT_CANDIDATES = [
     "/System/Library/Fonts/ヒラギノ角ゴシック W8.ttc",   # 本番Mac（太）
@@ -87,23 +93,79 @@ def make_background(role, width, height):
     return Image.new("RGB", (width, height), DARK_BG if is_dark else LIGHT_BG)
 
 
+def _tokenize_for_wrap(text):
+    """通常は1文字=1トークン。SEPARATION_CHARSは同一文字の連続を1トークンにまとめる（分離禁則）。"""
+    tokens = []
+    i = 0
+    n = len(text)
+    while i < n:
+        ch = text[i]
+        if ch in SEPARATION_CHARS:
+            j = i + 1
+            while j < n and text[j] == ch:
+                j += 1
+            tokens.append(text[i:j])
+            i = j
+        else:
+            tokens.append(ch)
+            i += 1
+    return tokens
+
+
+def _build_wrap_units(draw, text, font, max_width):
+    """分離禁則トークンのうち、単体で行幅を超えるものだけ1文字単位に分割し直す。"""
+    units = []
+    for tok in _tokenize_for_wrap(text):
+        if len(tok) > 1:
+            w = draw.textbbox((0, 0), tok, font=font)[2]
+            if w > max_width:
+                units.extend(list(tok))
+                continue
+        units.append(tok)
+    return units
+
+
+def _trim_kinsoku_tail(line):
+    """行末がKINSOKU_TAIL（開き括弧類）なら、連続する分を次行送りにする（最低1文字は残す）。"""
+    carry = ""
+    while len(line) > 1 and line[-1] in KINSOKU_TAIL:
+        carry = line[-1] + carry
+        line = line[:-1]
+    return line, carry
+
+
+def _apply_oidashi(current, wrapped):
+    """新行の先頭がKINSOKU_HEADである間、前行末尾の文字を新行頭へ追い出す（前行に最低1文字残す）。"""
+    while current and current[0] in KINSOKU_HEAD and wrapped and len(wrapped[-1]) > 1:
+        current = wrapped[-1][-1] + current
+        wrapped[-1] = wrapped[-1][:-1]
+    return current
+
+
 def wrap_line(draw, text, font, max_width):
-    """1行のテキストを描画幅に収まるよう文字単位で折り返す（行頭禁則処理付き）。"""
+    """1行のテキストを描画幅に収まるよう折り返す（ぶら下げ限定・追い出し・行末禁則・分離禁則付き）。"""
     wrapped = []
     current = ""
-    for ch in text:
-        trial = current + ch
+    for unit in _build_wrap_units(draw, text, font, max_width):
+        starting_new_line = current == ""
+        trial = current + unit
         w = draw.textbbox((0, 0), trial, font=font)[2]
         if w > max_width and current:
-            if ch in KINSOKU_HEAD:
-                # 行頭禁則文字はぶら下げ（前の行末に含める）
-                wrapped.append(current + ch)
-                current = ""
-            else:
-                wrapped.append(current)
-                current = ch
+            if len(unit) == 1 and unit in BURASAGE:
+                # ぶら下げ：BURASAGEのみ行幅超過を許して前行末に含める（1行につき最大1文字）
+                line, carry = _trim_kinsoku_tail(current + unit)
+                wrapped.append(line)
+                current = carry
+                continue
+            # 追い出し対象の折り返し：前行を確定し、新行をunitから開始する
+            line, carry = _trim_kinsoku_tail(current)
+            wrapped.append(line)
+            current = carry + unit
+            starting_new_line = True
         else:
             current = trial
+        if starting_new_line and current:
+            current = _apply_oidashi(current, wrapped)
     if current:
         wrapped.append(current)
     return wrapped
