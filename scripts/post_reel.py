@@ -217,6 +217,29 @@ def schedule_verify_job(post_id: str, scheduled_dt: datetime) -> None:
     sleep 相対方式と異なり、Macがスリープしても復帰後 VERIFY_POLL_INTERVAL_SECONDS 秒以内に発火する。
     起動に失敗しても投稿自体は成功しているため、警告表示のみで続行する。
     """
+    # --- クラウド検死用: S3 に pending ファイルを書き込む（B1-S3方式） ---
+    # 失敗しても投稿自体は成功しているため、警告表示のみで続行する。
+    try:
+        config = load_config()
+        pending_key = f"verification/pending/{post_id}.json"
+        payload = {
+            "post_id": post_id,
+            "scheduled_iso": scheduled_dt.isoformat(),
+            "created_at": datetime.now(JST).isoformat(),
+        }
+        build_s3_client(config).put_object(
+            Bucket=config["s3_bucket_name"],
+            Key=pending_key,
+            Body=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
+            ContentType="application/json",
+        )
+        print(f"  ✓ クラウド検死用 pending 登録: s3://{config['s3_bucket_name']}/{pending_key}")
+    except Exception as e:
+        print(
+            f"  ⚠ クラウド検死用 pending 登録に失敗（投稿自体は成功しています）: {e}",
+            file=sys.stderr,
+        )
+
     try:
         verify_dt = scheduled_dt + timedelta(minutes=VERIFY_DELAY_MINUTES)
         target_epoch = int(verify_dt.timestamp())
