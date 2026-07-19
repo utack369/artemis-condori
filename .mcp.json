@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "verification": {
+      "command": ".venv/bin/python3",
+      "args": ["scripts/verification_mcp.py"]
+    }
+  }
+}

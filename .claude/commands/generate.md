@@ -22,8 +22,9 @@ beta が pass を出した成果物に対し、Coordinator が artemis-verifier 
 - 直近5作：output/instagram/ep[N-5..N-1]/ の script.md（reelのep）または carousel_slides.md（carouselのep）（I1 素材重複チェック用）
 
 **verifier の出力：**
-- refs/verification_result.schema.json の submit_verification ツールで 24 軸を pass/fail/skip で返す。
+- refs/verification_result.schema.json の submit_verification ツール（実体：mcp__verification__submit_verification。鉄則⑥準拠の実ツール化）で 24 軸を pass/fail/skip で返す。
 - overall（総合合否）は出力しない。集計は Coordinator が行う（鉄則⑨）。
+- Coordinator は verifier の判定を `.verification_spool/ep[N]_round[M].json`（サーバー側が保存した検証合格済みファイル）から読み取る。verifier の応答テキストを解釈しない。
 
 **Coordinator の決定論的集計ルール：**
 - critical または high に fail が1件以上 → Fail。omega² へ進めない。

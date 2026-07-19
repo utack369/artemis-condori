@@ -19,3 +19,6 @@ scripts/config.py
 # 棚卸し第1段：OS付随・キャッシュファイル
 .DS_Store
 __pycache__/
+
+# verification MCPサーバーの一時保存先（検証済み判定結果のスプール）
+.verification_spool/
