@@ -1,0 +1,42 @@
+{
+  "ep_number": 36,
+  "euphemism_required": true,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {"axis_id": "A1", "axis_name": "効果の断定チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション・テロップ・キャプションのいずれにも効果断定表現なし。台本全体が体験の描写に留まる。"},
+        {"axis_id": "A2", "axis_name": "効果の暗示チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "「使えば解決する」と読み取れる構造なし。キャプションCTAも事実の陳述に留まる。"},
+        {"axis_id": "A3", "axis_name": "購入圧力チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "限定感・緊急性・煽り表現なし。「同じ経験がある方へ」は共感的呼びかけであり購入圧力ではない。"},
+        {"axis_id": "A4", "axis_name": "トーン一貫性チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "共感共闘トーンで一貫。売り込み・専門家トーンへの逸脱なし。"},
+        {"axis_id": "A5", "axis_name": "「変わった」禁止チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "「変わった/変わる/変化した/変え」の語幹を含む表現なし。"},
+        {"axis_id": "B1", "axis_name": "テーマの一致", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "design_master該当行のテーマ「出張先のホテルで靴を廊下に出した夜」と台本内容が直接一致。"},
+        {"axis_id": "B2", "axis_name": "型の実装（意味的）", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "Type_2（日常の緊張場面の追体験→「自分だけじゃない」着地）の心理構造を実装。"},
+        {"axis_id": "B3", "axis_name": "フェーズ内役割", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "phase_role「CTAなしで正直さの信頼蓄積を継続する」と整合。"},
+        {"axis_id": "C1", "axis_name": "NGワードの意味的使用", "result": "pass", "severity": "critical", "target_file": "script.md", "reason": "prohibited_direct語のいずれもナレーション・テロップに使用されていない。"},
+        {"axis_id": "C2", "axis_name": "婉曲変換の適切性", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "直接表現を完全に回避し、行動描写のみで暗示する高度な間接表現を達成。"},
+        {"axis_id": "C3", "axis_name": "キャプション例外（制御ルール）", "result": "pass", "severity": "low", "target_file": "caption", "reason": "C1/C2の婉曲チェックはcaptionに適用していない（制御ルール通り）。"},
+        {"axis_id": "D1", "axis_name": "入口の実装", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "psychology.entryの設計意図をナレーション冒頭が正確に実装。"},
+        {"axis_id": "D2", "axis_name": "出口の実装", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "psychology.exit「自分だけじゃない安心」を告白形式で実装。共感の余韻で終わる設計と整合。"},
+        {"axis_id": "D3", "axis_name": "one_message", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "one_messageに台本全体が集約可能。第二のメッセージの混在なし。"},
+        {"axis_id": "E1", "axis_name": "ソフトCTA適切性", "result": "skip", "severity": "high", "target_file": "script.md", "reason": "cta_required=falseのため本軸は適用対象外。"},
+        {"axis_id": "E2", "axis_name": "CTA非存在時の混入", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "cta_required=falseの条件下、テロップにCTA要素が一切なし。"},
+        {"axis_id": "E3", "axis_name": "テロップ内ハードCTA禁止", "result": "pass", "severity": "critical", "target_file": "script.md", "reason": "テロップ全行に直接誘導表現なし。"},
+        {"axis_id": "F5", "axis_name": "語尾統一", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション2文ともです・ます調で統一。"},
+        {"axis_id": "G3", "axis_name": "内容分離", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "ナレーション（内面心理）とテロップ（時間軸の断片）が同一体験を異なる切り口で表現。転記・要約なし。"},
+        {"axis_id": "G4", "axis_name": "役割分離", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション＝感情（内面の迷い・不安）、テロップ＝気づき（因果と持続時間の可視化）の役割分担が成立。"},
+        {"axis_id": "H2", "axis_name": "キャプション内容の指示書一致", "result": "pass", "severity": "high", "target_file": "caption", "reason": "caption.mdの全要素がep36.jsonのcaptionフィールドと完全一致。"},
+        {"axis_id": "I1", "axis_name": "過去epとの素材重複", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "直近5作（ep31〜35）のいずれとも場面・対策・状況が異なる。出張ホテル×廊下×一晩の不安という組み合わせは初出。"},
+        {"axis_id": "I2", "axis_name": "テロップ視認性（意味的）", "result": "pass", "severity": "low", "target_file": "script.md", "reason": "テロップ各行が独立して意味を持ち、瞬時に理解可能。"},
+        {"axis_id": "I3", "axis_name": "イン・メディアス・レス", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション冒頭が行動の途中から始まり、背景説明を経由せず即座に入っている。"}
+      ],
+      "summary": {"pass": 23, "fail": 0, "skip": 1},
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass（critical/highのfail 0件）",
+      "action": "うたへ提示し一旦停止（Phase1運用ルール）。うた確認後、段3-Ω進行を判断。",
+      "phase": "段3-V"
+    }
+  ]
+}
