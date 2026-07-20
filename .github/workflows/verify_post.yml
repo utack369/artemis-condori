@@ -38,6 +38,8 @@ jobs:
           printf '%s' "$CONFIG_JSON" > "$HOME/artemis-media/自動取得システム/config.json"
 
       - name: Run verify_post --from-s3
+        env:
+          VERIFY_DISABLE_RETRY: "1"  # 並走期間中はクラウド再試行を停止（段階3切替時にこの2行を削除）
         run: |
           if [ "${{ inputs.dry_run }}" = "true" ]; then
             python scripts/verify_post.py --from-s3 --dry-run
