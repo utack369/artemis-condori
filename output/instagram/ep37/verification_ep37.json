@@ -1,0 +1,420 @@
+{
+  "ep_number": 37,
+  "euphemism_required": false,
+  "cta_required": false,
+  "current_round": 2,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライド・キャプションを通じて「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現は皆無。各スライドは行動パターン（密閉環境・ケア不足・1足使用・体質帰責・外側対策）を事実として列挙するのみであり、対策Xから効果Yへの因果を断定する構造は存在しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "カルーセル全体の構造は「やられる人の共通点を5つ列挙し、僕も全部当てはまっていたと告白する」であり、解決策・商品・改善手段への誘導は一切ない。キャプションCTAも「参考にしてみてください」に留まり、「これをすれば解決する」という暗示構造は読み取れない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現は全スライド・キャプションを通じて皆無。キャプションCTAは「よかったら保存しておいてください」であり、購入を急かす要素はない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全体を通じて共感共闘型・和男のトーンが一貫。「僕は5つ全部当てはまっていました」（自己開示）、「正直にチェックリストにしてみました」（正直さ）、「よかったら」（非押し付け）など、honesty_ruleの3語トーン（気にならなくなった・保証しない・よかったら）と整合。売り込み・専門家トーンへの逸脱はない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライド・キャプションを通じて「変わった/変わる/変化した」の語幹は一切使用されていない。足元・体調文脈での使用なし。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master該当行のテーマ「安全靴で足がやられる人の共通点5つ」と、表紙スライド「安全靴で足がやられる人の共通点5つ」が完全一致。コンテンツスライド2-6が5つの共通点を各1スライドで展開しており、テーマを正確に実装。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "カテゴリの実装チェック（checklist）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "carousel_category=checklist（チェックリスト型）に対し、①-⑤の番号付き5項目でチェック可能な行動特徴を列挙。各項目は「〜しています/ありません」の現在形で読者が自分に当てはまるか照合できる構造。チェックリスト型の意味的要件（チェック項目の列挙）を満たす。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "design_masterの配置意図「CTA:false」（情報提供に徹する）と整合。purposeの「CTAなしで情報提供に徹する」を忠実に実装。保存価値の高いチェックリストとして信頼積み重ね型の強度に相応。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要（直接表現可）のため、C1判定は適用対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要（直接表現可）のため、C2判定は適用対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2がskip（婉曲不要）のため、キャプション例外の制御対象が存在しない。A群の正直さチェックはキャプションに対してA1-A5で実施済み。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "ep[N].json",
+          "reason": "ep37.jsonにpsychology.entryフィールドが未定義のため判定不可。なお、表紙フックの停止力はB2（カテゴリ実装）で代替的に確認済み。carousel_guideline.cover_hookとスライド1の内容は整合している。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "ep[N].json",
+          "reason": "ep37.jsonにpsychology.exitフィールドが未定義のため判定不可。なお、carousel_guideline.closing_message「僕は5つ全部当てはまっていました。」とスライド7は完全一致しており、設計意図との整合は確認済み。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "tone_and_rules.one_message「安全靴で足がやられる人に共通する5つの特徴を、僕自身の告白とともに示したチェックリスト」に対し、カルーセル全体が（1）5つの共通特徴の列挙（スライド2-6）と（2）僕自身の告白（スライド7）の2要素で構成され、単一メッセージに集約。第2の競合メッセージ（商品紹介・解決策提示等）は混在していない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "カルーセル形式はcta_required=false固定のため、E1（cta_required=true時のみ適用）は適用対象外。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=falseに対し、全7スライドにCTA要素（誘導・保存喚起・行動喚起・「続き」「詳しく」等）は一切なし。スライド7「僕は5つ全部当てはまっていました。」は自己開示の余韻であり、CTA機能を持たない。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "全7スライドに「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現は皆無。キャプション内の「よかったら保存しておいてください」はキャプション許容範囲内であり、スライド内のハードCTA禁止に抵触しない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "スライド2「過ごしています」、スライド3「ありません」、スライド4「履いています」、スライド5「やめています」、スライド6「完結させています」、スライド7「当てはまっていました」――全コンテンツスライドがです・ます調で統一。スライド1（表紙）の体言止め「共通点5つ」は表紙の1箇所として許容範囲内。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "カルーセル形式のため、ナレーション/テロップの内容分離（リール固有軸）は適用対象外。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "カルーセル形式のため、ナレーション=感情/テロップ=論理の役割分離（リール固有軸）は適用対象外。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素をep37.jsonのcaptionフィールドと照合：hook_line「安全靴で足元がやられる人に共通する5つの特徴、正直にチェックリストにしてみました。」=完全一致、body（5項目要約＋告白）=完全一致、cta「当てはまるものがあれば、参考にしてみてください。よかったら保存しておいてください。」=完全一致、hashtags5個=完全一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との照合：ep32=休憩室で脱げない場面（場面描写）、ep33=新品靴でも同じ状態（体験記）、ep34=12年で試した対策一覧（試行した手段のリスト）、ep35=粉を3ヶ月続けた体験（体験記）、ep36=出張先で靴を出した夜（場面描写）。ep37の主題「やられる人に共通する行動パターン5つ」はいずれとも異なる。ep34は「対策」のリスト、ep37は「共通行動」のリストであり、切り口・目的が異なる。reference_files=空のため意図的再掲もなし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "スライド視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "全7スライドが各1メッセージで独立して意味を持つ。スライド2-6は各1つの行動特徴を1文で完結。スライド7は1文の自己開示。前のスライドを読まなくても各スライド単体で瞬時に理解可能。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "カルーセル形式のため、ナレーション冒頭のイン・メディアス・レス（リール固有軸）は適用対象外。表紙フックの停止力はB2（カテゴリ実装）およびD1（入口実装、今回はskip）で代替判定。"
+        }
+      ],
+      "summary": {
+        "pass": 15,
+        "fail": 0,
+        "skip": 9
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass（critical/highのfail 0件）",
+      "action": "うたへ提示し一旦停止（Phase1運用ルール）。うた確認後、段3-Ω進行を判断。",
+      "phase": "段3-V"
+    },
+    {
+      "round": 2,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライド及びcaptionに「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。各スライドは共通点の事実提示に留まり、「対策X→効果Y」の因果が断定形で成立する箇所は存在しない。captionの「見返したくなる日が来るかもしれません」も健康効果への言及ではなくコンテンツの保存価値への推量表現であり、効果断定に該当しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "スライド全体の構造は「やられる人の共通点を列挙し、僕も全部当てはまっていたと告白する」という情報提供型であり、「これを使えば/やめれば解決する」と読み取れる構造になっていない。締めスライド「僕は5つ全部当てはまっていました。」は自己開示であり、解決策の暗示ではない。captionの「参考にしてみてください」も強制力のない提案形にとどまる。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライド及びcaptionに「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現なし。商品への誘導も一切なく、情報提供に徹している。「見返したくなる日が来るかもしれません」は購入圧力ではなくコンテンツの保存価値への穏やかな示唆。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライドが和男の共感共闘トーンを維持。「正直にチェックリストにしてみました」「僕は5つ全部当てはまっていました」は当事者としての正直な告白であり、売り込みトーンや専門家トーンへの逸脱なし。captionも「参考にしてみてください」「見返したくなる日が来るかもしれません」と穏やかな共闘トーンを一貫している。honesty_ruleの「気にならなくなった・保証しない・よかったら」の3語トーンから逸脱する箇所なし。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライド及びcaptionに「変わった/変わる/変化した」の使用なし。足元・体調文脈でのこれらの表現は一切検出されない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "design_master該当行のテーマ「安全靴で足がやられる人の共通点5つ」に対し、スライド全体が安全靴で足がやられやすい人に共通する5つの特徴（密閉環境・ケア不足・1足履き・体質諦め・外側対策のみ）を提示しており、テーマと完全に一致する。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "カテゴリの実装チェック（checklist）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "carousel_category=checklist（チェックリスト型）に対し、スライド2〜6で①〜⑤のナンバリング付きチェック項目を列挙し、各項目が「自分に当てはまるか確認できる」形で提示されている。チェックリスト型の意味的構造（チェック項目の列挙）が正しく実装されている。締めスライドの「僕は5つ全部当てはまっていました」も自己照合の結果提示としてチェックリスト型の着地に合致する。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "design_master",
+          "reason": "design_masterの配置は「均等配置（フェーズ区分なし）」。ep37.jsonのphase_roleには「パッケージ2の7番目。保存価値の高いコンテンツとして提示する。CTAなしで情報提供に徹する」とあり、実際のスライドはCTAなしの情報提供に徹しており、配置の意図と整合する。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=「不要（直接表現可）」のため、婉曲チェックC1は適用対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=「不要（直接表現可）」のため、婉曲チェックC2は適用対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2がskipのため、キャプション例外の制御対象が存在しない。適用範囲の制御ルールとして判定対象なし。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry=「1枚目（表紙）で『安全靴で足がやられる人の共通点5つ』というフックを提示し、チェックリストへの興味と自分ごと化を引き出す」に対し、スライド1が「安全靴で足がやられる人の共通点5つ / 安全靴と戦う12年の記録：File.37」を提示しており、フックによる興味喚起と自分ごと化が表紙で正しく実現されている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit=「僕自身が5つ全部当てはまっていたという正直な告白を提示し、共感と保存・見返したくなる情報価値を残す」に対し、スライド7（summary）が「僕は5つ全部当てはまっていました。」で正直な告白を提示しており、共感と保存価値を残す出口が正しく実現されている。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message=「安全靴で足がやられる人に共通する5つの特徴を、僕自身の告白とともに示したチェックリスト」に対し、カルーセル全体がこの1文に集約できる。5つの共通点列挙＋僕も全部当てはまっていたという告白、という単一メッセージで構成されており、2メッセージの混在はない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "カルーセルは常にcta_required=falseのため、E1（cta_required=true時のみ適用）は判定対象外。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=falseに対し、全7スライドにCTA要素（誘導・「続き」「詳しく」・保存喚起・行動喚起）が一切ない。スライド7「僕は5つ全部当てはまっていました。」は自己開示の余韻で終わっており、行動喚起や保存指示を含まない。round1で指摘されたcaption内の「よかったら保存しておいてください」は「見返したくなる日が来るかもしれません」に修正済みだが、E2の判定スコープは全スライドであり、スライド内にCTA混入はない。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "全7スライドに「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現なし。各スライドは情報提示と告白のみで構成されており、ハードCTAは一切含まれない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "スライド2〜6はすべて「〜ています/〜ません」のです・ます調で統一。スライド7「当てはまっていました。」もです・ます調。スライド1（表紙）は体言止め（「共通点5つ」「File.37」）だが、表紙の1箇所として許容範囲内。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "カルーセル形式ではナレーション/テロップの分離設計はリール固有のため判定対象外。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "カルーセル形式ではナレーション/テロップの役割分離はリール固有のため判定対象外。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素がep37.jsonのcaptionフィールドと一致。hook_line「安全靴で足元がやられる人に共通する5つの特徴、正直にチェックリストにしてみました。」一致。body内容（5項目の要約＋12年の記録＋全部当てはまっていた告白）一致。cta「当てはまるものがあれば、参考にしてみてください。見返したくなる日が来るかもしれません。」はround2修正後の指示書と一致。hashtags5個（#安全靴 #工場勤務 #足元ケア #12年の記録 #チェックリスト）一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ep37の主題は「安全靴で足がやられる人に共通する5つの特徴（チェックリスト）」。直近5作との比較：ep32=休憩室で靴を脱げなかった場面、ep33=新品に履き替えても元に戻った場面、ep34=12年で試した対策を列挙（comparison型）、ep35=粉を3ヶ月試した場面、ep36=出張先ホテルで靴を出した場面。ep34が最も近いが、ep34は「自分が試した対策の結果」を列挙する一人称体験報告であり、ep37は「やられる人に共通する行動パターン」を俯瞰的にチェックリスト化したもの。視点・切り口・構造が異なり、素材重複には該当しない。スプレー・パウダーへの言及はep34/35にもあるが、ep37では共通パターンの一例として触れるのみであり、主題の重複ではない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "スライド視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "各スライドが1スライド1メッセージで独立して意味を持つ。スライド1=表紙フック、スライド2〜6=各1項目ずつの共通点提示、スライド7=自己告白の締め。いずれも瞬時に理解でき、複数メッセージの混在やスライド間の依存関係による理解困難はない。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "カルーセル形式ではイン・メディアス・レスはナレーション固有のため判定対象外。表紙フックの停止力はB2/D1で判定済み。"
+        }
+      ],
+      "summary": {
+        "pass": 17,
+        "fail": 0,
+        "skip": 7
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass（critical/highのfail 0件）。round1のE2関連指摘（caption.cta依頼形保存指示）はinput/instagram/ep37.json修正＋alpha再生成により解消を確認。",
+      "action": "うたへ提示し一旦停止（Phase1運用ルール）。うた確認後、段3-Ω進行を判断。",
+      "phase": "段3-V"
+    }
+  ]
+}
