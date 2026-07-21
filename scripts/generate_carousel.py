@@ -93,14 +93,25 @@ def make_background(role, width, height):
     return Image.new("RGB", (width, height), DARK_BG if is_dark else LIGHT_BG)
 
 
+def _is_katakana(ch):
+    """全角カタカナ（ァ〜ヴ）と長音「ー」を対象とする。中黒「・」は結合対象外。"""
+    return ("ァ" <= ch <= "ヺ") or ch == "ー"
+
+
 def _tokenize_for_wrap(text):
-    """通常は1文字=1トークン。SEPARATION_CHARSは同一文字の連続を1トークンにまとめる（分離禁則）。"""
+    """通常は1文字=1トークン。カタカナ連続（長音含む）とSEPARATION_CHARSの同一文字連続は1トークンにまとめる。"""
     tokens = []
     i = 0
     n = len(text)
     while i < n:
         ch = text[i]
-        if ch in SEPARATION_CHARS:
+        if _is_katakana(ch):
+            j = i + 1
+            while j < n and _is_katakana(text[j]):
+                j += 1
+            tokens.append(text[i:j])
+            i = j
+        elif ch in SEPARATION_CHARS:
             j = i + 1
             while j < n and text[j] == ch:
                 j += 1

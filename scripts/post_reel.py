@@ -18,6 +18,7 @@ config.json に以下のキーが必要:
 """
 
 import json
+import re
 import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
@@ -45,7 +46,7 @@ SCHEDULED_MINUTE = 0
 MIN_SCHEDULE_OFFSET_MIN = 10
 
 # S3 署名付き URL の有効期限（秒）
-PRESIGNED_URL_EXPIRY = 86400
+PRESIGNED_URL_EXPIRY = 604800  # 7日。クラウド検死cronの翌夜以降の再試行が24時間では失効するため（v49決定）
 
 ZERNIO_API_BASE = "https://zernio.com/api/v1"
 
@@ -157,7 +158,7 @@ def upload_to_s3(s3_client, bucket: str, video_path: Path, ep_num: int) -> str:
 
 
 def generate_presigned_url(s3_client, bucket: str, s3_key: str) -> str:
-    """署名付き URL（有効期限 1 時間）を生成して返す。"""
+    """署名付き URL（有効期限 PRESIGNED_URL_EXPIRY 秒）を生成して返す。"""
     url = s3_client.generate_presigned_url(
         "get_object",
         Params={"Bucket": bucket, "Key": s3_key},
@@ -281,6 +282,14 @@ def schedule_verify_job(post_id: str, scheduled_dt: datetime) -> None:
 
 
 # ---------------------------------------------------------------------------
+# ログマスキング
+# ---------------------------------------------------------------------------
+def mask_signed_urls(text: str) -> str:
+    """署名付きURLの認証クエリパラメータ（X-Amz-*等）をマスクして返す。"""
+    return re.sub(r"(X-Amz-[A-Za-z-]+|AWSAccessKeyId|Signature)=[^&\s\"']+", r"\1=***", text)
+
+
+# ---------------------------------------------------------------------------
 # Zernio API 投稿
 # ---------------------------------------------------------------------------
 def post_to_zernio(
@@ -319,7 +328,7 @@ def post_to_zernio(
 
     resp = requests.post(endpoint, headers=headers, json=payload, timeout=60)
     try:
-        print(f"[DEBUG] Zernio API Response ({resp.status_code}): {resp.text}")
+        print(f"[DEBUG] Zernio API Response ({resp.status_code}): {mask_signed_urls(resp.text)}")
         resp.raise_for_status()
     except requests.HTTPError:
         raise RuntimeError(
@@ -421,7 +430,7 @@ def main() -> None:
         # Step 2: 署名付き URL を生成
         print("\nStep 2: 署名付き URL 生成")
         presigned_url = generate_presigned_url(s3_client, bucket, s3_key)
-        print(f"  有効期限: {PRESIGNED_URL_EXPIRY // 60} 分")
+        print(f"  有効期限: {PRESIGNED_URL_EXPIRY // 86400} 日")
 
         # Step 2.5: メディア URL 到達性チェック
         print("\nStep 2.5: メディア URL 到達性チェック")

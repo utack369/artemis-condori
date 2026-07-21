@@ -36,6 +36,7 @@ from post_reel import (
     generate_presigned_url,
     get_scheduled_iso,
     load_config,
+    mask_signed_urls,
     schedule_verify_job,
 )
 
@@ -110,7 +111,7 @@ def post_carousel_to_zernio(
 
     resp = requests.post(endpoint, headers=headers, json=payload, timeout=60)
     try:
-        print(f"[DEBUG] Zernio API Response ({resp.status_code}): {resp.text[:300]}")
+        print(f"[DEBUG] Zernio API Response ({resp.status_code}): {mask_signed_urls(resp.text)[:300]}")
         resp.raise_for_status()
     except requests.HTTPError:
         raise RuntimeError(
@@ -171,7 +172,7 @@ def main() -> None:
     # Step 2: 署名付き URL を生成
     print("\nStep 2: 署名付き URL 生成")
     image_urls = [generate_presigned_url(s3_client, bucket, k) for k in s3_keys]
-    print(f"  {len(image_urls)}件生成（有効期限 {PRESIGNED_URL_EXPIRY // 3600} 時間）")
+    print(f"  {len(image_urls)}件生成（有効期限 {PRESIGNED_URL_EXPIRY // 86400} 日）")
 
     # Step 2.5: メディア URL 到達性チェック（全枚数）
     print("\nStep 2.5: メディア URL 到達性チェック")

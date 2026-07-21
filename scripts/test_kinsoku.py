@@ -26,6 +26,7 @@ from generate_carousel import (  # noqa: E402
     KINSOKU_HEAD,
     KINSOKU_TAIL,
     SEPARATION_CHARS,
+    _is_katakana,
     find_font_path,
     wrap_line,
 )
@@ -43,6 +44,10 @@ TEST_CASES = {
     "d_small_kana": (
         "ちょっと待ってください、あとでゆっくり話しましょう。"
         "急いでいるので、ちょっとだけ時間をください。"
+    ),
+    "e_katakana_continuous": (
+        "毎朝のケアにはパウダーやスプレーを使い分けています。"
+        "特にスプレー・タイプは即座に乾くので出勤前に便利です。"
     ),
 }
 
@@ -88,6 +93,17 @@ def assert_head_tail_and_width(name, draw, font, max_width, lines):
             )
 
 
+def assert_no_split_katakana(name, lines):
+    """カタカナ連続（長音「ー」含む）が行境界で分断されず1トークンのまま維持されていることを確認する。"""
+    for i in range(len(lines) - 1):
+        a, b = lines[i], lines[i + 1]
+        if a and b and _is_katakana(a[-1]) and _is_katakana(b[0]):
+            raise AssertionError(
+                f"[{name}] カタカナ連続分断：行{i}末尾『{a[-1]}』と行{i+1}先頭『{b[0]}』がカタカナ連続の語中で分断: "
+                f"{a!r} / {b!r}"
+            )
+
+
 def assert_no_char_loss(name, original, lines):
     joined = "".join(lines)
     if joined != original:
@@ -110,6 +126,7 @@ def main():
 
         assert_head_tail_and_width(name, draw, font, max_width, lines)
         assert_no_split_separation(name, lines)
+        assert_no_split_katakana(name, lines)
         assert_no_char_loss(name, text, lines)
         print(f"  ✓ {name} 合格（{len(lines)}行）\n")
 
