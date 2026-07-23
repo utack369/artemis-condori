@@ -11,6 +11,7 @@ EXCLUDED_PATHS = (
     ("tone_and_rules", "prohibited_words"),
     ("euphemism_dict",),
     ("honesty_rule",),
+    ("meta", "carousel_category"),
 )
 
 def is_excluded(path):
