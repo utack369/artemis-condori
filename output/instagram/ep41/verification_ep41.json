@@ -1,0 +1,214 @@
+{
+  "ep_number": 41,
+  "euphemism_required": true,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション「心の奥は静かなままでした」は効果の不在を述べており断定なし。テロップ「合う合わないがある」は個人差の事実を述べるのみ。キャプション「決定打にはなりませんでした」「合う合わないは人それぞれ」も効果否定・留保の文脈。「効/治/消え/改善/なくなる/解消」に該当する表現は全体を通じて存在しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの全体構造が「3種類試したが決定打にはならなかった」という失敗の記録であり、「これを使えば解決する」とは読み取れない。テロップ最終行「全部プロフィールに」も情報の所在を示すのみで、解決への暗示がない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り表現はナレーション・テロップ・キャプションのいずれにも存在しない。キャプションCTAの「よかったら見てみてください」は柔らかい表現で購入圧力なし。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体で和男の内面独白・共感共闘トーンを維持。キャプションCTA「よかったら」は3語トーンに合致。売り込み・専門家トーンへの逸脱なし。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「変わ/変化/変え」の語幹は未使用。使用感の相違は「違いました」で表現され「変わ」系語彙を回避。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master該当行のテーマ「足用石鹸3種を使い比べた正直な感想」と一致。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_1（プラットフォール・レビュー型）＝失敗の正直な提示→本質への帰結。ナレーション「今度はと思っていました（期待）→心の奥は静かなままでした（本質）」で構造を実装。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "中盤のレビュー回として、具体的対策レビュー＋CTAでのプロフィール誘導という配置意図に合致。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "euphemism_dict.prohibited_directの13語いずれも不在。「洗い心地」「香り」のみで構成。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直接表現を要する場面自体がなく、足元の悩みへの直接言及を完全に回避した構成。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "婉曲チェックはcaptionに適用しない制御ルールを確認。captionにはA群のみ適用し判定済み。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entryどおり、石鹸を試す場面から即座に入り体験ベースで淡々と語っている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exitどおり、正直な帰結を示しテロップでプロフィールへの自然な流入を実現。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "one_messageに台本全体が集約可能。2つ目のメッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "テロップ最終行「全部プロフィールに」は所在の陳述で命令形・依頼形を含まないソフトCTAとして機能。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_required=trueのため適用対象外。E1で判定済み。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップ全行に直接誘導表現なし。「全部プロフィールに」は所在の陳述でハードCTAに該当しない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文の語尾が「です・ます」調で統一。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーション（体験・内面描写）とテロップ（気づき・結論・CTA）が別内容で構成。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情、テロップ＝論理（気づき・CTA）の役割分離が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素（hook_line/body/cta/hashtags）がep41.jsonと完全一致。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作（ep36〜ep40）と照合し、主題「石鹸3種の使い比べ」はいずれとも重複しない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち、各行とも1行で瞬時に理解可能。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭が石鹸を洗っている場面の途中から始まり、背景説明なし。"
+        }
+      ],
+      "summary": {
+        "pass": 23,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "pass",
+      "coordinator_rule_applied": "critical/high severity fail 0件。全軸pass/skipのためPass。",
+      "phase": "段3-Vクリア（round1）。段3-Ω（omega²構造点検）へ進行可能。",
+      "action": "うたへ提示して停止。確認後、段3-Ωへ進行するかを判断する。"
+    }
+  ]
+}
