@@ -50,12 +50,6 @@ PRESIGNED_URL_EXPIRY = 604800  # 7日。クラウド検死cronの翌夜以降の
 
 ZERNIO_API_BASE = "https://zernio.com/api/v1"
 
-# 検死ジョブ（切り離しプロセス方式・絶対時刻ループ判定）
-VERIFY_LOG_DIR = Path.home() / "artemis-media/logs"
-VERIFY_DELAY_MINUTES = 10
-VERIFY_POLL_INTERVAL_SECONDS = 60
-
-
 # ---------------------------------------------------------------------------
 # 設定読み込み
 # ---------------------------------------------------------------------------
@@ -212,11 +206,9 @@ def get_thumbnail_raw_url(ep_num: int, thumb_path: Path) -> str:
 # ---------------------------------------------------------------------------
 def schedule_verify_job(post_id: str, scheduled_dt: datetime) -> None:
     """
-    予約公開時刻の VERIFY_DELAY_MINUTES 分後を目標時刻（絶対時刻・エポック秒）として固定し、
-    現在時刻がその目標時刻に達するまで VERIFY_POLL_INTERVAL_SECONDS 秒間隔でループ判定する
-    切り離しプロセスを起動する（判定成立で verify_post.py を実行）。
-    sleep 相対方式と異なり、Macがスリープしても復帰後 VERIFY_POLL_INTERVAL_SECONDS 秒以内に発火する。
-    起動に失敗しても投稿自体は成功しているため、警告表示のみで続行する。
+    S3 に pending ファイルを書き込み、検死（公開確認・再試行）をクラウド（GitHub Actions の
+    verify_post ワークフロー）に委譲する。書き込みに失敗しても投稿自体は成功しているため、
+    警告表示のみで続行する。
     """
     # --- クラウド検死用: S3 に pending ファイルを書き込む（B1-S3方式） ---
     # 失敗しても投稿自体は成功しているため、警告表示のみで続行する。
@@ -241,44 +233,7 @@ def schedule_verify_job(post_id: str, scheduled_dt: datetime) -> None:
             file=sys.stderr,
         )
 
-    try:
-        verify_dt = scheduled_dt + timedelta(minutes=VERIFY_DELAY_MINUTES)
-        target_epoch = int(verify_dt.timestamp())
-
-        VERIFY_LOG_DIR.mkdir(parents=True, exist_ok=True)
-        log_path = VERIFY_LOG_DIR / f"verify_post_{post_id}.log"
-
-        project_root = Path(__file__).resolve().parent.parent
-        python_bin = project_root / ".venv/bin/python3"
-        verify_script = Path(__file__).resolve().parent / "verify_post.py"
-
-        log_file = open(log_path, "a")
-        wait_loop = (
-            f'while [ "$(date +%s)" -lt {target_epoch} ]; do '
-            f"sleep {VERIFY_POLL_INTERVAL_SECONDS}; done"
-        )
-        p = subprocess.Popen(
-            [
-                "/bin/sh",
-                "-c",
-                f"{wait_loop} && exec '{python_bin}' -u '{verify_script}' '{post_id}'",
-            ],
-            stdout=log_file,
-            stderr=log_file,
-            start_new_session=True,
-            cwd=project_root,
-        )
-
-        verify_jst = verify_dt.strftime("%Y-%m-%d %H:%M JST")
-        print(
-            f"  ✓ 検死プロセス起動: {verify_jst} に verify_post を自動実行"
-            f"（PID {p.pid}、絶対時刻ループ判定・{VERIFY_POLL_INTERVAL_SECONDS}秒間隔）"
-        )
-    except Exception as e:
-        print(
-            f"  ⚠ 検死プロセス起動に失敗しました（投稿自体は成功しています）: {e}",
-            file=sys.stderr,
-        )
+    print("  ✓ 検死はクラウド（GitHub Actions run）に委譲")
 
 
 # ---------------------------------------------------------------------------
