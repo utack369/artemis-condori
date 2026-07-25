@@ -1,0 +1,214 @@
+{
+  "ep_number": 42,
+  "euphemism_required": true,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションいずれにも「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。「対策X→効果Y」の因果断定構造も存在しない。ナレーションは子どもの一言への衝撃と沈黙の描写に留まり、キャプションCTAも「試したこと」という事実記述のみ。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋キャプションCTAの組み合わせ全体を通読しても「これを使えば解決する」という構造は読み取れない。ナレーションは衝撃と沈黙の描写、テロップは「子どもの一言→言葉に詰まった→それでも歩き続けた」という経験の記録、キャプションCTAは「盛らずに全部プロフィールにまとめています」と事実陳述に留まる。効果への期待を喚起する導線は形成されていない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも限定感（今だけ/残りわずか）、緊急性（早く試さないと）、煽り表現は存在しない。全体が体験の共有に終始している。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション「そうだねとしか返せませんでした」、キャプション「言葉に詰まりました」「盛らずに全部」等、和男の共感共闘トーン（正直に体験を語る当事者視点）を一貫して維持。売り込みトーンや専門家トーンへの逸脱なし。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体で「変わった/変わる/変化した」の語幹を足元・体調文脈で使用している箇所なし。文脈判定対象となる紛らわしい使用も存在しない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「子どもに足のことを言われた日の帰り道」に対し、ナレーションは手をつないだ子どもが靴に目をやり「なんか気になる」と言った帰り道の場面を描写。テーマ素材を正確に扱っている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_2（ナラティブ・サスペンス型）の心理構造「日常の緊張場面の追体験→自分だけじゃない着地」を実装。ナレーション冒頭で保育園帰りの日常的緊張場面（子どもの屈託ない一言）に即座に引き込み、「同僚とも妻とも違う衝撃」で追体験を深化させ、テロップ「それでも歩き続けた」で共感的余韻（自分だけじゃない）に着地している。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "design_master配置の意図「家族からの指摘シリーズの3つ目。CTAなしで正直さの信頼蓄積を継続する」に対し、台本は子どもからの指摘という家族シリーズの継続をCTAなしの静かな強度で実装。中盤の信頼蓄積ポジションに相応しい。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "婉曲要のため判定実施。euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）のいずれもナレーション・テロップに使用されていない。子どもの発言は「なんか気になる」という婉曲表現で処理されている。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "子どもの発言「なんか気になる」はconversion_table「臭い→気になる」に整合。ナレーション全体も「靴に目をやり」「衝撃」等、直接表現を確実に回避しつつ意味が通る婉曲処理が施されている。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1/C2の婉曲チェックをキャプションには適用していない（制御ルール遵守）。なおA群（正直さ）はキャプションにも適用済み（A1-A5参照）。キャプション自体も直接表現を使用していないが、これはC3の判定対象外。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「日常の緊張場面：保育園帰りの道、手をつないだ子どもがふと靴に目をやり『なんか気になる』と口にする瞬間から視聴者を拾う」に対し、ナレーション冒頭「手をつないだ子どもが靴に目をやり、なんか気になるとだけ言いました」が正確に対応。背景説明なしで緊張場面から即座に入っている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「自分だけじゃない安心：子どもの何気ない一言に、この人も同じように刺さったことがあるんだ、という共感による孤独感の緩和」に対し、ナレーション末尾「そうだねとしか返せませんでした」の正直な無力さと、テロップ末尾「それでも歩き続けた」の共感的余韻により、同じ経験を持つ視聴者が「自分だけじゃない」と感じる構造が成立。Type_2の出口は明示的宣言ではなく、追体験による暗黙の共感認識で機能する。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「子どもが靴を見て『なんか気になる』と言った瞬間、屈託のない一言だからこそ核心を突かれた、あなただけじゃない」に対し、台本全体がこの1メッセージに集約可能。第2メッセージの混在なし。ナレーションもテロップも子どもの一言→衝撃→沈黙という単一の主題に収束している。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=falseのため本軸は適用対象外。E1はcta_required=trueの場合のみ判定する。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_required=falseのため判定実施。テロップ4行（ナンバリング含む）にフォロー・保存・いいね・コメント・シェア・リンク遷移・DMへの命令形・依頼形・勧誘形の直接指示なし。キャプションCTA「盛らずに全部プロフィールにまとめています」は事実の陳述（存在言及）であり、命令形・依頼形・勧誘形を含まない。E2定義の「婉曲なプロフィール言及は許容」に該当し、pass。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップ4行（ナンバリング/子どもの一言/言葉に詰まった/それでも歩き続けた）に「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現なし。テロップは全行が経験の記録・気づきに留まっている。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション語尾：「言いました」「返せませんでした」いずれも「です・ます」調。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーション＝子どもとの帰り道の経験を時系列で語る内面独白（靴に目をやる→なんか気になる→衝撃→そうだねとしか返せない）。テロップ＝「子どもの一言/言葉に詰まった/それでも歩き続けた」という抽象的な気づきラベル。同一テキストの転記・要約ではなく、別内容として機能している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：「同僚とも妻とも違う衝撃に、そうだねとしか返せませんでした」という体験的・感情的な語り。テロップ＝論理（気づき）：「子どもの一言→言葉に詰まった→それでも歩き続けた」という状況認識・行動の要約的フレーミング。感情と論理の役割分離が成立している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素がep42.jsonのcaptionフィールドと完全一致。hook_line「保育園帰りの道、子どもの何気ない一言に、僕は言葉を失いました。」、body4文、cta「同じ経験がある方へ。僕が12年間で試したことを、盛らずに全部プロフィールにまとめています。」、hashtags5個（#安全靴 #工場勤務 #子育て #足元ケア #12年の記録）すべて指示書と一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との主題比較：ep37=共通点5つ（チェックリスト）、ep38=メーカー問い合わせ、ep39=綿棒での爪間ケア2ヶ月、ep40=悪化させていた日常習慣3つ、ep41=3つの石鹸比較。ep42=子どもに靴を指摘された帰り道。素材（子どもの一言）・場面（保育園帰りの道）・角度（家族の無邪気な指摘による衝撃）のいずれも直近5作と重複しない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行（ナンバリング除く）：「子どもの一言」(6字)、「言葉に詰まった」(7字)、「それでも歩き続けた」(9字)。いずれも独立して意味を持ち、1行で瞬時に理解可能。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「手をつないだ子どもが靴に目をやり、なんか気になるとだけ言いました。」は場面の途中から即座に入っている。「足元に悩みがあって…」「安全靴を12年履いていて…」等の背景説明は一切なく、イン・メディアス・レスの要件を満たす。"
+        }
+      ],
+      "summary": {
+        "pass": 23,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "pass",
+      "coordinator_rule_applied": "critical/high severity fail 0件。全軸pass/skipのためPass。",
+      "phase": "段3-Vクリア（round1）。段3-Ω（omega²構造点検）へ進行可能。",
+      "action": "うたへ提示して停止。確認後、段3-Ωへ進行するかを判断する。"
+    }
+  ]
+}
