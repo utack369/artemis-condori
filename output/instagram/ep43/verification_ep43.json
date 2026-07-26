@@ -1,0 +1,214 @@
+{
+  "ep_number": 43,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現なし。「原因は靴ではなく、密閉そのものだった」は因果の気づきであり、対策→効果の断定構造は成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体を通じて「これを使えば解決する」と読み取れる構造は存在しない。密閉が原因だったという気づきの提示に留まり、具体的な解決策や製品への誘導はない。CTAはプロフィールに記録をまとめているという事実の陳述。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り表現（今だけ/残りわずか/早く試さないと等）はナレーション・テロップ・キャプションのいずれにも含まれない。CTAは「よかったら見てみてください」で典型的なソフトトーン。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション「驚きました」「気づかされました」は内省的で淡々としたトーン。キャプション「正直驚きました」「比べ物になりませんでした」「かもしれません」「よかったら見てみてください」も和男の共感共闘トーン（気にならなくなった・保証しない・よかったら）の範囲内。売り込み・専門家トーンへの逸脱なし。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全文を走査し、「変わった/変わる/変化した」およびその活用形が足元・体調文脈で使用されていないことを確認。該当語の出現自体がゼロ。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master該当行のテーマ「車に安全靴を一晩置き忘れた翌朝、密閉の本質を知った」に対し、ナレーションは車のドアを開けた瞬間の空気の強さ→密閉が原因という気づきを描写しており、テーマと完全に整合。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_1（失敗の正直な提示→本質への帰結）の心理構造が実装されている。前半「車のドアを開けた瞬間…空気の強さに驚きました」＝失敗（置き忘れ）の結果を正直に提示。後半「原因は靴ではなく、密閉そのものだったと気づかされました」＝本質（密閉）への帰結。落差構造が明確。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.phase_roleの記述（密閉が原因という論理的気づきを提示し、CTAありでプロフィールへ誘導）と台本の内容・強度・方向が整合。均等配置フェーズのため特別な山場指定もなく、標準強度で適切。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemismが「不要（直接表現可）」のためC1はskip対象。婉曲ルール適用外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemismが「不要（直接表現可）」のためC2はskip対象。婉曲ルール適用外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "本epは婉曲不要のためC1・C2自体がskip。キャプション例外の制御は正常に機能（C1・C2はcaptionに不適用）。A群（正直さ）はcaptionにも適用済み（A1-A5すべてpass）。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「過去の失敗の正直な提示：仕事終わりに安全靴を車に置き忘れてしまった場面から入り、翌朝ドアを開けた瞬間の空気の強さを淡々と提示する」に対し、ナレーション冒頭「車のドアを開けた瞬間、狭い車内にこもった一晩分の空気の強さに驚きました」は、イン・メディアス・レス（narration_guideline.opening_approach指定）に従い、置き忘れの結果である翌朝のドア開放場面から即座に入っている。失敗の結果を正直に提示するentryの意図は実現済み。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「密閉という環境そのものが原因だったと正直に認められる人間の記録なら信頼できる、という自然な興味とプロフィールへの流入」に対し、ナレーション末尾「原因は靴ではなく、密閉そのものだったと気づかされました」で正直な認知を示し、テロップ最終行「全部プロフィールに」でプロフィール流入を実現。出口の心理構造（正直さへの信頼→プロフィール流入）が成立している。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「車に安全靴を一晩置き忘れた翌朝、ドアを開けた瞬間の空気の強さに、原因は靴ではなく密閉という環境そのものだったと気づいた、12年目の正直な記録」に台本全体が集約できる。ナレーション・テロップともにこの1メッセージのみを伝えており、第2メッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=trueの条件下で判定。ナンバリング行「安全靴と戦う12年の記録：File.43」を除いた実質最終メッセージ行「全部プロフィールに」は事実の陳述（プロフィールにまとめてある旨）として機能しており、既存合格パターンと同型。結論行「密閉が原因だった」の後にCTA行が存在し、CTA機能の欠落なし。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_required=trueのためE2（cta_required=false専用軸）はskip対象。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップ全行を確認：「車に一晩放置／翌朝ドアを開けたら／密閉が原因だった／全部プロフィールに」。「全部プロフィールに」はプロフィールに情報がある旨の事実陳述の断片であり、「プロフィールを見て」「リンクから」「今すぐ」等の命令形・直接誘導には該当しない。ハードCTAなし。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション語尾：「驚きました」「気づかされました」。すべて「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは一人称の感情的体験（驚き・気づき）を完全な文章で描写。テロップは時系列を視覚的断片（放置→開けたら→原因→CTA）で提示し、ナレーションにないCTA行を含む。同一テキストの転記・要約ではなく、異なる角度から同じ物語を補完する関係。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（「驚きました」「気づかされました」という内面の感情反応を共感的に語る）。テロップ＝論理（「車に一晩放置→翌朝ドアを開けたら→密閉が原因だった」という因果の論理構成＋「全部プロフィールに」のCTA）。役割が明確に分離している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "hook_line：指示書と完全一致。body：表現は再構成されているが、置き忘れ→翌朝の衝撃→玄関との比較→密閉が原因→12年の総括という物語の各ビートと意味は整合。cta：完全一致。hashtags：5個すべて完全一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との比較：ep38＝メーカー問い合わせ、ep39＝爪の間のケア、ep40＝日常習慣3つ（carousel_slides.md）、ep41＝足用石鹸3種の比較、ep42＝子どもの一言。ep43の素材「車に安全靴を一晩放置→密閉が原因」は場面・対策・気づきの角度すべてにおいて直近5作と重複なし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "各テロップ行が独立して意味を持つ：「車に一晩放置」（状況）、「翌朝ドアを開けたら」（展開）、「密閉が原因だった」（気づき）、「全部プロフィールに」（CTA）。いずれも1行で瞬時に理解可能。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「車のドアを開けた瞬間」で翌朝のドア開放場面に即座に入っている。「足元の悩みがあって」「工場で安全靴を履いていて」等の背景説明は一切なし。イン・メディアス・レスの要件を満たす。"
+        }
+      ],
+      "summary": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "pass",
+      "coordinator_rule_applied": "critical/high severity fail 0件。全軸pass/skipのためPass。",
+      "phase": "段3-Vクリア（round1）。段3-Ω（omega²構造点検）へ進行可能。",
+      "action": "うたへ提示して停止。確認後、段3-Ωへ進行するかを判断する。"
+    }
+  ]
+}
