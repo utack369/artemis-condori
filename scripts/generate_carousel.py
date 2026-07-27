@@ -145,10 +145,26 @@ def _trim_kinsoku_tail(line):
     return line, carry
 
 
-def _apply_oidashi(current, wrapped):
-    """新行の先頭がKINSOKU_HEADである間、前行末尾の文字を新行頭へ追い出す（前行に最低1文字残す）。"""
-    while current and current[0] in KINSOKU_HEAD and wrapped and len(wrapped[-1]) > 1:
-        current = wrapped[-1][-1] + current
+def _apply_oidashi(current, wrapped, draw, font, max_width):
+    """新行の先頭がKINSOKU_HEADである間、前行末尾の文字を新行頭へ追い出す（前行に最低1文字残す）。
+    追い出しの結果、カタカナ連続（長音含む）または分離禁則記号（SEPARATION_CHARS）の同一文字連続が
+    行境界で語中分断される場合は、その連続の先頭までまとめて追い出す（トークン境界の保全）。
+    ただし連続保全のための追加追い出しは、新行が行幅（max_width）に収まる範囲でのみ行う
+    （行幅超過の長い連続は_build_wrap_unitsのフォールバックと同様に分断を許容する）。"""
+    while current and wrapped and len(wrapped[-1]) > 1:
+        head, tail = current[0], wrapped[-1][-1]
+        kinsoku_move = head in KINSOKU_HEAD
+        token_move = (_is_katakana(head) and _is_katakana(tail)) or (
+            head in SEPARATION_CHARS and tail == head
+        )
+        if not kinsoku_move and not token_move:
+            break
+        trial = tail + current
+        if not kinsoku_move:
+            w = draw.textbbox((0, 0), trial, font=font)[2]
+            if w > max_width:
+                break
+        current = trial
         wrapped[-1] = wrapped[-1][:-1]
     return current
 
@@ -176,7 +192,7 @@ def wrap_line(draw, text, font, max_width):
         else:
             current = trial
         if starting_new_line and current:
-            current = _apply_oidashi(current, wrapped)
+            current = _apply_oidashi(current, wrapped, draw, font, max_width)
     if current:
         wrapped.append(current)
     return wrapped

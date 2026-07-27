@@ -130,6 +130,21 @@ def main():
         assert_no_char_loss(name, text, lines)
         print(f"  ✓ {name} 合格（{len(lines)}行）\n")
 
+    # ep44表紙再現（92pt・max_width 880px）：_apply_oidashiトークン境界保全の回帰テスト
+    cover_text = "足用石鹸・スプレー・パウダー 正直な使い分けガイド"
+    font92 = ImageFont.truetype(font_path, 92)
+    cover_max_width = 880
+    lines = wrap_line(draw, cover_text, font92, cover_max_width)
+    print("--- f_cover_ep44_92pt ---")
+    print(f"  元テキスト: {cover_text}")
+    for i, line in enumerate(lines):
+        print(f"  行{i}: {line}")
+
+    assert_no_split_katakana("f_cover_ep44_92pt", lines)
+    assert_head_tail_and_width("f_cover_ep44_92pt", draw, font92, cover_max_width, lines)
+    assert_no_char_loss("f_cover_ep44_92pt", cover_text, lines)
+    print(f"  ✓ f_cover_ep44_92pt 合格（{len(lines)}行）\n")
+
     print("[TEST] 全ケース合格")
     sys.exit(0)
 
