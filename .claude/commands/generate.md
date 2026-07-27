@@ -31,8 +31,9 @@ beta が pass を出した成果物に対し、Coordinator が artemis-verifier 
 - medium/low のみ fail → Pass 扱い。警告として記録。
 - 全軸 pass または skip → Pass。
 
-**Phase1 運用ルール（現時点）：**
-Pass・Fail いずれの場合も、Coordinator は verifier 結果をうたへ提示して一旦停止する。自動リトライ・自動 post は行わない。うたの確認後、次のアクション（omega² 進行 or 差し戻し）を実行する。
+**段3-V 判定後の進行ルール（Phase1撤廃済み・2026-07-27）：**
+Pass の場合、Coordinator は停止せず段3-Ω（omega²）へ自動進行する。このとき verification_ep[N].json の action には「Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）」と記録する（標準文言・表記ゆれ防止）。
+Fail の場合は従来どおり、Coordinator は verifier 結果をうたへ提示して一旦停止する。自動リトライ・自動 post は行わない。うたの確認後、次のアクション（差し戻し等）を実行する。Fail 時の action には従来どおり停止と判断内容を記録する。
 
 **永続化：** 集計確定後、Coordinator は判定結果（verifier の24軸pass/fail/skipとCoordinatorのoverall）を直ちに output/instagram/ep[N]/verification_ep[N].json として永続化する（段5を待たない）。
 
