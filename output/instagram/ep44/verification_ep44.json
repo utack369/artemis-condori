@@ -1,0 +1,214 @@
+{
+  "ep_number": 44,
+  "euphemism_required": false,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライドおよびcaptionに「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。むしろ「どれも決定打にはなりませんでした」「保証はしません」と効果を否定する構成。対策X→効果Yの因果断定は成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "スライド全体＋captionの組み合わせで「これを使えば解決する」と読み取れる構造は存在しない。「マシだった順」の提示はあるが、「僕個人の体感です」「保証はしません」「合う合わないは人による」と三重に留保がかかっており、暗示構造は不成立。「変わった」表現も不使用。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライドおよびcaptionに限定感・緊急性・煽り（今だけ/残りわずか/早く試さないと等）は一切なし。「どれも決定打にはならなかった」という結論は購入圧力とは真逆の構成。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライドが和男の共感共闘トーンを維持。「正直に言うと」「僕個人の体感です」「保証はしません」は和男ペルソナの3語（気にならなくなった・保証しない・よかったら）のトーンと整合。専門家トーン・売り込みトーンへの逸脱なし。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライドおよびcaptionに「変わった/変わる/変化した」の使用なし。足元・体調文脈での当該語幹は一切登場しない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "design_masterのテーマ「足用石鹸・スプレー・パウダー 正直な使い分けガイド」に対し、スライド1の表紙が同一文言、スライド2-4で石鹸3種・スプレー3種・パウダー2種を比較、スライド5-7で正直な結論を提示。テーマ完全一致。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "カテゴリの実装（comparison）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "carousel_category=comparisonに対し、比較の構成が意味的に実装されている。スライド2（石鹸3種：洗浄力・値段・手間）、スライド3（スプレー3種：手応え・持続・副作用）、スライド4（パウダー2種：体感・汚れ・値段）と3カテゴリを軸ごとに比較し、スライド5で横断結論、スライド6でマシだった順を提示。比較型の心理構造を満たしている。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割の整合",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "phase_roleの指定「File.41の内容を拡張し、石鹸・スプレー・パウダー3カテゴリを横断的に整理する保存狙いのカルーセル。断定は一切しない」に対し、スライド構成がFile.41（石鹸単体）を土台にスプレー・パウダーへ拡張。断定なし。保存価値のある比較情報として機能している。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "meta.euphemism=不要（直接表現可）のためC1判定はskip。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "meta.euphemism=不要（直接表現可）のためC2判定はskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2がともにskip（婉曲不要）のため、キャプション例外の制御ルール自体が適用対象外。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.entryの指定「1枚目で『足用石鹸・スプレー・パウダー 正直な使い分けガイド』というフックで意思決定ニーズを引き出す」に対し、スライド1が同フックを表紙に配置。どれを選べばよいか迷っている読者の意思決定ニーズに直接応答する構成。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exitの指定「マシだった順を示しつつ、合う合わないは人による、僕の体感であって保証はしない、という誠実な締め」に対し、スライド6で「マシだったと感じた順はありました。僕個人の体感です」、スライド7で「合う合わないは人によります。僕の体感であって、保証はしません」と完全に実装。保存動機を残す誠実な締め。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message一貫性",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "one_message「足用石鹸・消臭スプレー・消臭パウダーを12年使い比べた結果、どれも決定打にはならなかったという正直な比較」に対し、カルーセル全体がこの1メッセージに集約できる。第二のメッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "カルーセルは常にcta_required=falseのためE1はskip。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_required=falseに対し、全スライドおよびcaptionにフォロー・保存・いいね・コメント・シェア・リンク遷移・DMへの命令形・依頼形・勧誘形による直接指示なし。captionの「自分に合うものを探す参考にしてみてください」は情報活用の提案であり、特定行動への直接指示には該当しない。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライドに「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現なし。ハードCTAは一切含まれていない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "スライド1（cover）は表紙タイトルとして体言止め（許容範囲内の1箇所）。スライド2-7はすべて「ました/ませんでした/です/ます/ません」のです・ます調で統一。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "ナレーション/テロップの分離設計はリール固有の軸。format=carouselのためskip。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "ナレーション/テロップの役割分離はリール固有の軸。format=carouselのためskip。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素がep44.jsonのcaptionフィールドと完全一致。hook_line（足用石鹸・消臭スプレー・消臭パウダー、12年使い比べた正直な感想をまとめました）、body（4行の本文）、cta（自分に合うものを探す参考にしてみてください）、hashtags（5つ）すべて指示書通り。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "直近5作との照合：ep39・ep42・ep43は主題が異なり重複なし。ep41（足用石鹸3種）はep44.jsonのreference_files=[41]で意図された参照拡張のため重複とみなさない。ep40（悪化させていた日常習慣）は消臭スプレーに言及があるが、「習慣としての誤り」vs「製品カテゴリの比較」と切り口が異なり素材重複には該当しない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "スライド視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "multiple",
+          "reason": "全7スライドが各1メッセージで独立して意味を持つ。スライド2=石鹸比較、3=スプレー比較、4=パウダー比較、5=横断結論、6=マシだった順、7=保証しない締め。各スライドが瞬時に理解可能な単一メッセージで構成されている。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "ナレーション固有の軸。format=carouselのためskip。表紙フックの停止力はB2（カテゴリ実装）およびD1（入口実装）で判定済み。"
+        }
+      ],
+      "summary": {
+        "pass": 17,
+        "fail": 0,
+        "skip": 7
+      },
+      "coordinator_overall": "pass",
+      "coordinator_rule_applied": "critical/high severity fail 0件（medium/lowにもfailなし）。全軸pass/skipのためPass。",
+      "phase": "段3-Vクリア（round1）。段3-Ω（omega²構造点検）へ進行可能。",
+      "action": "CC実行プロンプト（20260727・ep44）Step3の指示によりCP1で自動続行が承認済みのため、うたへの提示・停止は行わず段3-Ω（omega²）へ自動進行。"
+    }
+  ]
+}
