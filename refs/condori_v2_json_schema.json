@@ -127,7 +127,7 @@
       "properties": {
         "direction": {
           "type": "string",
-          "description": "テロップの方向性。2〜4行、1行最大10文字。ナレーション（感情）を補完する論理・気づきを配置。"
+          "description": "テロップの方向性。2〜4行（ナンバリング行除外・CTA行含む）、1行最大10文字。ナレーション（感情）を補完する論理・気づきを配置。"
         },
         "cta_required": {
           "type": "boolean",
@@ -274,7 +274,7 @@
         },
         "telop_lines": {
           "type": "string",
-          "description": "テロップ行数。固定値：2〜4行。format=reelの場合のみ適用。"
+          "description": "テロップ行数。固定値：2〜4行（ナンバリング行は除外・CTA行は含む）。format=reelの場合のみ適用。"
         },
         "telop_max_chars_per_line": {
           "type": "integer",
