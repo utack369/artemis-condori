@@ -10,6 +10,7 @@ allowed-tools: ["Read", "Glob", "Write"]
   ・話数 ep[N]
   ・パッケージ設計図パス（ep[N]行を参照。ep1〜30＝パッケージ1設計図、ep31〜60＝refs/condori_pkg2_design_complete.md）
   ・condori Schemaパス（出力スキーマ。ep1〜30＝condori_v1、ep31〜60＝refs/condori_v2_json_schema.json）
+  ・スキーマのrequired指定は省略不可。特に psychology.entry / psychology.exit は必須であり、未設定の指示書を生成してはならない
   ・テンプレートパス（生成ベース）
   ・knowledgeパス群（ブランドknowledge・正直さルール・婉曲表現辞書）
 - これらのパスは起動時に渡される値を用い、定義内にハードコードしない。
