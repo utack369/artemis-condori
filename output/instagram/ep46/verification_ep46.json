@@ -1,0 +1,214 @@
+{
+  "ep_number": 46,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体に「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。革靴と安全靴の物理的差異（軽さ・足首の可動・鉄芯・拘束時間）の事実描写に留まり、対策Xから効果Yへの因果断定は成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション+テロップ+CTAの構造全体を通読して、特定商品やケア手段で足元の悩みが解決するという暗示は読み取れない。革靴と安全靴の構造的差異を述べ、安全靴の特殊性を裏付ける情報提供に留まっている。CTA（続きはプロフィールに／よかったら見てみてください）も記録の存在案内であり、解決の約束ではない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションに限定感・緊急性・煽り表現（今だけ/残りわずか/早く試さないと等）なし。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーションは「驚くほど軽く」「別物だと納得しました」と淡々とした体験報告。キャプションも「よかったら見てみてください」で締め。和男の共感共闘トーン（当事者目線の正直な報告・売り込まない・専門家ぶらない）から逸脱なし。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体に「変わった/変わる/変化した/変え」の語は未使用。「違った」「違う」は別語であり、足元・体調文脈での効果暗示にも当たらない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterのテーマ「革靴と安全靴で次元が違う理由を現場から説明する」に対し、ナレーションは取引先での革靴体験から安全靴との物理的差異（軽さ・足首の可動域・脱げない拘束時間）を述べ「別物だと納得」と結論。テロップも「そもそも次元が違う」で帰結。テーマと完全に一致。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_1=失敗の正直な提示→本質への帰結。12年間安全靴を履き続けてきた中で革靴を履く機会が生じ、その瞬間に安全靴の特殊性（重さ・拘束）に気づかされる構造。安全靴の過酷さが暗黙の「失敗／困難」として提示され、「別物だと納得」が本質への帰結として機能。プラットフォール・レビュー型の心理構造が実装されている。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "phase_role「安全靴の特殊性を裏付ける内容として位置づけ、CTAありでプロフィールへの誘導につなげる」に対し、台本は革靴との比較で安全靴の特殊性を裏付け、テロップ・キャプション双方でCTA付きプロフィール誘導を実装。配置意図と整合。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要のためC1は判定対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要のためC2は判定対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2がskip（婉曲不要）のため、C3の制御対象となる婉曲チェックが存在しない。A群（正直さ）はcaptionにも適用済み（A1-A5すべてpass）。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「取引先との顔合わせで革靴を履いた場面から入り、いつもの安全靴との違いにその場で気づかされる様子を淡々と提示する」に対し、ナレーション冒頭は「取引先との顔合わせで革靴に足を入れた瞬間、驚くほど軽く、足首も自在に動きました」と、指示通り革靴を履いた場面から入り、安全靴との違いへの気づきを淡々と描写。entryが正確に実装されている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「安全靴の特殊性を現場目線で正直に解説できる人間の記録なら信頼できるという自然な興味と、プロフィールへの流入」に対し、ナレーション末尾「夕方まで脱げない安全靴とは別物だと納得しました」が現場目線の正直な解説で締め、テロップ「そもそも次元が違う→続きはプロフィールに」およびキャプションCTA「よかったら見てみてください」がプロフィールへの自然な流入を実装。exit定義と整合。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「革靴を履いた瞬間に気づいた安全靴との違いから、具体的な事実を現場目線で解説した12年目の正直な記録」に対し、台本全体は「革靴体験から安全靴の特殊性に気づいた」という単一メッセージに集約される。第二のメッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=true。テロップのナンバリング行「安全靴と戦う12年の記録：File.46」を除いた実質最終行「続きはプロフィールに」は、続きの存在場所を告げる体言止めの事実陳述であり、「見て/行って/クリック」等の命令形を含まない。ep17合格典型「まだ続きがあります」と同等のソフトCTAとして機能している。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_required=trueのためE2は判定対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップ全行を確認。「続きはプロフィールに」は存在場所の体言止め陳述であり、「プロフィールを見て/リンクから/今すぐ」等の命令形による直接誘導には該当しない。ハードCTAはテロップ内に存在しない。キャプションの「よかったら見てみてください」はキャプションであり許容範囲。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション「…動きました。…納得しました。」はです・ます調で統一。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは体験の具体描写（革靴の軽さ・足首の可動域・安全靴との比較で「別物だと納得」）。テロップは抽象的な気づきの三段構成（革靴を履いたら→安全靴は違った→そもそも次元が違う）+CTA。ナレーションの具体語（驚くほど軽く・足首も自在に・夕方まで脱げない）はテロップに転記されておらず、テロップはナレーションの要約でも転記でもない。別角度からの提示が成立。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション=感情面（革靴の軽さへの驚き、安全靴との違いへの納得という体験的感情）。テロップ=論理面（革靴→安全靴は違う→次元が違うという論理的気づきの段階提示+CTA）。感情/論理の役割分離が機能。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素をep46.jsonのcaptionフィールドと照合。hook_line（L1）=完全一致、body（L3-5）=完全一致（改行位置含む）、cta（L7）=完全一致、hashtags（L9）=5タグ完全一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との照合: ep41=足用石鹸3種比較、ep42=子どもの一言、ep43=車内一晩放置と密閉、ep44=石鹸・スプレー・パウダー使い分け(carousel)、ep45=竹炭インソール2ヶ月。ep46=取引先で革靴を履いた体験から安全靴との次元の違いに気づく。素材（革靴vs安全靴の比較）、場面（取引先の顔合わせ）、対策（なし・比較のみ）いずれも直近5作と重複しない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行「革靴を履いたら」(6字)「安全靴は違った」(7字)「そもそも次元が違う」(9字)「続きはプロフィールに」(9字) いずれも独立して意味を持ち、1行で瞬時に理解可能。文脈依存の断片や意味不明な行はない。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「取引先との顔合わせで革靴に足を入れた瞬間」は場面の途中（靴に足を入れる動作の瞬間）から開始。「足元の悩みがあって」「安全靴を12年履いてきた僕ですが」等の背景説明は一切なく、narration_guideline.opening_approachの指示通りイン・メディアス・レスが実装されている。"
+        }
+      ],
+      "summary": {
+        "pass": 20,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highのfailなし・全軸pass or skipのためPass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）"
+    }
+  ]
+}
