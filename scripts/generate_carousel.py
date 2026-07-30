@@ -98,8 +98,13 @@ def _is_katakana(ch):
     return ("ァ" <= ch <= "ヺ") or ch == "ー"
 
 
+def _is_digit(ch):
+    """半角数字・全角数字を対象とする（数字連続の行またぎ分断を防ぐ）。"""
+    return ch in "0123456789０１２３４５６７８９"
+
+
 def _tokenize_for_wrap(text):
-    """通常は1文字=1トークン。カタカナ連続（長音含む）とSEPARATION_CHARSの同一文字連続は1トークンにまとめる。"""
+    """通常は1文字=1トークン。カタカナ連続（長音含む）・数字連続・SEPARATION_CHARSの同一文字連続は1トークンにまとめる。"""
     tokens = []
     i = 0
     n = len(text)
@@ -108,6 +113,12 @@ def _tokenize_for_wrap(text):
         if _is_katakana(ch):
             j = i + 1
             while j < n and _is_katakana(text[j]):
+                j += 1
+            tokens.append(text[i:j])
+            i = j
+        elif _is_digit(ch):
+            j = i + 1
+            while j < n and _is_digit(text[j]):
                 j += 1
             tokens.append(text[i:j])
             i = j
@@ -147,7 +158,7 @@ def _trim_kinsoku_tail(line):
 
 def _apply_oidashi(current, wrapped, draw, font, max_width):
     """新行の先頭がKINSOKU_HEADである間、前行末尾の文字を新行頭へ追い出す（前行に最低1文字残す）。
-    追い出しの結果、カタカナ連続（長音含む）または分離禁則記号（SEPARATION_CHARS）の同一文字連続が
+    追い出しの結果、カタカナ連続（長音含む）・数字連続、または分離禁則記号（SEPARATION_CHARS）の同一文字連続が
     行境界で語中分断される場合は、その連続の先頭までまとめて追い出す（トークン境界の保全）。
     ただし連続保全のための追加追い出しは、新行が行幅（max_width）に収まる範囲でのみ行う
     （行幅超過の長い連続は_build_wrap_unitsのフォールバックと同様に分断を許容する）。"""
@@ -155,8 +166,8 @@ def _apply_oidashi(current, wrapped, draw, font, max_width):
         head, tail = current[0], wrapped[-1][-1]
         kinsoku_move = head in KINSOKU_HEAD
         token_move = (_is_katakana(head) and _is_katakana(tail)) or (
-            head in SEPARATION_CHARS and tail == head
-        )
+            _is_digit(head) and _is_digit(tail)
+        ) or (head in SEPARATION_CHARS and tail == head)
         if not kinsoku_move and not token_move:
             break
         trial = tail + current

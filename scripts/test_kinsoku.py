@@ -26,6 +26,7 @@ from generate_carousel import (  # noqa: E402
     KINSOKU_HEAD,
     KINSOKU_TAIL,
     SEPARATION_CHARS,
+    _is_digit,
     _is_katakana,
     find_font_path,
     wrap_line,
@@ -104,6 +105,17 @@ def assert_no_split_katakana(name, lines):
             )
 
 
+def assert_no_split_digits(name, lines):
+    """数字連続（半角・全角）が行境界で分断されず1トークンのまま維持されていることを確認する。"""
+    for i in range(len(lines) - 1):
+        a, b = lines[i], lines[i + 1]
+        if a and b and _is_digit(a[-1]) and _is_digit(b[0]):
+            raise AssertionError(
+                f"[{name}] 数字連続分断：行{i}末尾『{a[-1]}』と行{i+1}先頭『{b[0]}』が数字連続の語中で分断: "
+                f"{a!r} / {b!r}"
+            )
+
+
 def assert_no_char_loss(name, original, lines):
     joined = "".join(lines)
     if joined != original:
@@ -144,6 +156,23 @@ def main():
     assert_head_tail_and_width("f_cover_ep44_92pt", draw, font92, cover_max_width, lines)
     assert_no_char_loss("f_cover_ep44_92pt", cover_text, lines)
     print(f"  ✓ f_cover_ep44_92pt 合格（{len(lines)}行）\n")
+
+    # ep47本文再現（72pt・max_width 880px）：数字連続トークン保全の回帰テスト
+    font72 = ImageFont.truetype(font_path, 72)
+    for name, text in [
+        ("g_content_ep47_slide2_72pt", "①消臭スプレー代は、月500円として12年で計算すると7万2000円になります。"),
+        ("h_content_ep47_slide5_72pt", "④その他、石鹸やパウダー、クリーム、足湯器などで12年で6万円ほどかかっています。"),
+    ]:
+        lines = wrap_line(draw, text, font72, 880)
+        print(f"--- {name} ---")
+        print(f"  元テキスト: {text}")
+        for i, line in enumerate(lines):
+            print(f"  行{i}: {line}")
+
+        assert_no_split_digits(name, lines)
+        assert_head_tail_and_width(name, draw, font72, 880, lines)
+        assert_no_char_loss(name, text, lines)
+        print(f"  ✓ {name} 合格（{len(lines)}行）\n")
 
     print("[TEST] 全ケース合格")
     sys.exit(0)
