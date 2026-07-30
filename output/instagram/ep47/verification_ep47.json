@@ -1,0 +1,214 @@
+{
+  "ep_number": 47,
+  "euphemism_required": false,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライド・captionを通読し、「効く/治る/消える/改善する/なくなる/解消」等の断定表現を確認。内容は費用の金額換算のみで、対策Xから効果Yへの因果構造が一切存在しない。「目が覚めました」は費用総額への気づきであり効果の断定ではない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "スライド全体の構造は「12年間の対策費用を項目別に金額換算し合計を示す」もの。特定の対策やプロダクトの効果を暗示する導線（これを使えば解決する）は存在しない。キャプションも「参考程度に見てもらえたら」で終わり、効果の暗示構造なし。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライド・captionに「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現なし。費用の事実計算を淡々と提示する構成で、購入を急かす要素は皆無。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライドが和男の共感共闘トーンを維持。「計算すると○○円になります」「かかっています」「計算になりました」は淡々とした当事者の記録口調。「この金額が正解かどうかは分かりません」「参考程度に見てもらえたら」は正直さの表明。売り込み・専門家トーンへの逸脱なし。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "『変わった』禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライド・captionに「変わった/変わる/変化した」の語を含む文脈なし。費用計算に終始しており、足元・体調文脈での変化言及は存在しない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "design_masterテーマ「足元の対策に12年でいくら使ったか計算してみた」に対し、スライド全体が消臭スプレー代・靴下買い替え代・インソール代・その他を12年分金額換算し合計を提示する内容であり、テーマと完全に一致。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "カテゴリの実装（checklist型）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "carousel_category=checklist。スライド2-5で4つの費用項目（消臭スプレー代・靴下買い替え代・インソール代・その他）を番号付きで列挙し、スライド6で合計を提示。チェックリスト型の「項目を順に列挙して確認する」構造が意味的に実装されている。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "phase_roleは「パッケージ2のチェックリストカテゴリ3本の中間作。費用を項目ごとに金額換算して振り返るという新しい切り口。断定はせず概算として淡々と提示する」。スライド内容は費用の淡々とした金額換算であり、中間作として適切な強度。煽りも断定もなく配置意図と整合。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "meta.euphemism=不要のためC1はskip。なお実際の内容にもprohibited_direct（ニオイ/臭い等）の使用はない。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "meta.euphemism=不要のためC2はskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2がskip（婉曲不要）のため、キャプション例外の制御ルール自体も適用対象外。A群（正直さ）のcaptionへの適用はA1-A5で個別に実施済み。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.entry=「1枚目で『足元の対策に12年でいくら使ったか計算してみた』というフックを提示し、累計コストへの興味を引き出す」。スライド1の表紙フックがこの文言そのものであり、entry仕様が忠実に実装されている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exit=「合計金額を示した上で『この金額が正解かどうかは分からない。でも計算してみたら目が覚めた』という正直な気づきを提示」。スライド6で合計28万8000円を提示し、スライド7で「この金額が『正解』かどうかは分かりません。でも、計算してみたら目が覚めました。」と締めており、exit仕様が忠実に実装されている。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "one_message=「足元の対策に12年間でかかった費用を項目ごとに金額換算し、合計を正直に示したチェックリスト」。スライド全体がこの1メッセージに集約されており、第2のメッセージ（例：特定商品の推奨、行動喚起）の混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "カルーセルは常にcta_required=falseのためE1はskip。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_required=false。全スライドおよびcaptionに特定行動（フォロー・保存・いいね・コメント・シェア・リンク遷移・DM）への命令形・依頼形・勧誘形による直接指示なし。captionの「参考程度に見てもらえたらと思います」は行動指示ではなく状況描写的な添え書き。ハッシュタグも情報タグのみ。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "ハードCTA禁止（スライド内）",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全7スライドに「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現なし。スライド内容は費用計算と気づきのみ。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一（です・ます調）",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "スライド2-6の全文末が「なります/かかっています/なりました」（です・ます調）。スライド7も「分かりません/目が覚めました」で統一。スライド1表紙の「計算してみた」は表紙フック1箇所として許容範囲内（ルール：体言止めの許容は表紙・締めの1箇所ずつまで）。ナンバリング行は文末判定対象外。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "ナレーション/テロップ分離はリール固有。format=carouselのためskip。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "ナレーション/テロップ分離はリール固有。format=carouselのためskip。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素をep47.jsonのcaptionフィールドと照合。hook_line「足元の対策に12年でいくら使ったか、実際に計算してみました。」=一致。body「消臭スプレー、靴下、インソール...把握していませんでした。」=一致。cta「この金額が正解かどうかは分かりません。参考程度に見てもらえたらと思います。」=一致。hashtags全5個（#安全靴 #工場勤務 #足元ケア #12年の記録 #家計）=順序含め一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "直近5作との照合：ep42=子どもの一言、ep43=車内密閉、ep44=石鹸・スプレー・パウダーの使い分け比較、ep45=竹炭インソール試用、ep46=革靴と安全靴の比較。ep47の主題は「12年間の対策費用の金額換算チェックリスト」であり、切り口として独自。個別素材（スプレー・インソール）はep44・ep45と共通するが、ep47はそれらの効果ではなく費用総額を扱っており、主題としての重複はない。reference_files=空のため意図的再掲でもない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "スライド視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "multiple",
+          "reason": "全7スライドが1スライド1メッセージの原則を満たす。スライド2-5は各1項目の費用提示、スライド6は合計、スライド7は気づきの締め。各スライドが独立して意味を持ち、瞬時に理解可能。金額の計算も正確（72,000+108,000+48,000+60,000=288,000=28万8000円）。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "ナレーション固有の判定軸。format=carouselのためskip。表紙フックの停止力はB2・D1で判定済み。"
+        }
+      ],
+      "summary": {
+        "pass": 17,
+        "fail": 0,
+        "skip": 7
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highのfailなし・全軸pass or skipのためPass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）"
+    }
+  ]
+}
