@@ -1,0 +1,214 @@
+{
+  "ep_number": 48,
+  "euphemism_required": true,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現なし。ナレーションは行動の推移（手が止まった→シャワーで済ませた→断るようになった）を事実として記述するのみで、対策と効果の因果関係を断定する構造が存在しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋キャプションCTAの組み合わせ全体を通じて、特定の対策・商品を提示しておらず「これを使えば解決する」と読み取れる構造が存在しない。キャプションCTA「僕が12年間で試したことを、盛らずに全部プロフィールにまとめています」は事実の陳述であり、効果の暗示には該当しない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り表現（今だけ/残りわずか/早く試さないと等）がナレーション・テロップ・キャプションのいずれにも存在しない。購入を促す文脈自体がない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーションは和男の内面独白として銭湯での体験を静かに語る共感共闘トーンを維持。テロップ「あの日から/銭湯に/行けなくなった」も同様に余韻型。キャプション「同じ経験がある方へ」は共感の呼びかけであり、売り込み・専門家トーンへの逸脱なし。「気にならなくなった・保証しない・よかったら」の3語トーンと一貫している。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「変わった/変わる/変化した」の語幹が足元・体調文脈で使用されていない。行動変化の記述は「断るようになりました」「行けなくなった」「避けるようになった」で表現されており、禁止語に該当しない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master該当行のテーマ「銭湯に行けなくなった年のこと」に対し、ナレーションは慰安旅行での銭湯体験から一年間銭湯を避けるようになった経緯を語っており、テーマと完全に一致する。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_2（ナラティブ・サスペンス型）の心理構造「日常の緊張場面の追体験→自分だけじゃない着地」が実装されている。ナレーション冒頭で脱衣所での緊張場面を追体験させ、一年間の回避行動を提示することで、同じ経験を持つ視聴者に「自分だけじゃない」と感じさせる構造。結論や解決を出さず共感の余韻で終わるのはType_2の正しい着地。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "配置の意図「CTAなしで正直さの信頼蓄積を継続する」と整合。台本はCTAを含まず、個人的な体験を淡々と語ることで正直さの信頼蓄積を実現している。強度も静かな記録として適切。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）のいずれもナレーション・テロップに存在しない。足元の問題を直接名指しせず、行動描写（手が止まる・シャワーだけで済ませる・誘いを断る）のみで暗示する高度な婉曲を達成している。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションは問題の原因を一切名指しせず、行動の推移だけで状況を伝えている。conversion_tableの「足元の違和感」「足元の悩み」よりもさらに間接的な表現で、直接表現を確実に回避できている。婉曲の意図と整合。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2の婉曲チェックをキャプションに適用していないことを確認。キャプションにはA群（正直さ）を適用済み（A1-A5全pass）。なお、キャプション内でも「足元が気になって」という婉曲表現が使われており、禁止語は含まれていない。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「日常の緊張場面：会社の慰安旅行で立ち寄った銭湯、脱衣所で靴下を脱ぐ瞬間、足元が気になって手が止まる場面から視聴者を拾う」に対し、ナレーション冒頭「慰安旅行で立ち寄った銭湯、脱衣所で靴下を脱ぐ手が止まり」が指定された緊張場面から即座に入っており、正確に実装されている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「自分だけじゃない安心：銭湯や温泉を避けるようになった一年がある人は、自分だけじゃないという共感による孤独感の緩和」に対し、ナレーション末尾「それから一年、誘いを断るようになりました」＋テロップ「あの日から/銭湯に/行けなくなった」が、同じ経験を持つ視聴者に自己投影を促す開かれた終わり方になっており、Type_2の「自分だけじゃない」着地が構造的に実現されている。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「慰安旅行で立ち寄った銭湯、脱衣所で足元が気になり手が止まった日から、銭湯や温泉を避けるようになった一年間の、あなただけじゃない記録」に対し、ナレーション・テロップともにこの1メッセージに集約できる内容。第2のメッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=falseのため本軸は適用対象外。E2で非存在時の混入チェックを実施。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "テロップ「あの日から/銭湯に/行けなくなった」にCTA要素なし。キャプションCTA「僕が12年間で試したことを、盛らずに全部プロフィールにまとめています」は事実の存在言及（まとめています＝陳述形）であり、フォロー・保存・いいね・コメント・シェア・リンク遷移・DMへの命令形・依頼形・勧誘形による直接指示に該当しない。「婉曲なプロフィール言及」として許容範囲内。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップ4行（ナンバリング行含む）に「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現なし。テロップはナレーションの余韻を視覚化する内容のみで構成されている。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションの述語「済ませました」「断るようになりました」はいずれも「です・ます」調。途中の「手が止まり」は連用形接続（文中の接続）であり、「だ・である」調の混在には該当しない。語尾は統一されている。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは時系列の体験記述（脱衣所→シャワー→一年間の回避）、テロップは時間の重みを凝縮した三段構成（あの日から→銭湯に→行けなくなった）。同一テキストの転記・要約ではなく、異なる角度・異なる言葉で同じ主題を表現しており、内容分離が成立している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションは体験の追体験（感情・共感の役割）：脱衣所での緊張、シャワーだけで済ませた行動、断り続ける日々。テロップは「あの日から/銭湯に/行けなくなった」という気づきの結晶化（論理・認知の役割）。感情と論理の役割が分化している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素がep48.jsonのcaptionフィールドと完全一致。hook_line「銭湯に行けなくなって、もう一年になります。」、body4文、cta「同じ経験がある方へ。僕が12年間で試したことを、盛らずに全部プロフィールにまとめています。」、hashtags5個（#安全靴 #工場勤務 #銭湯 #足元ケア #12年の記録）すべて一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との比較：ep43（車内放置の密閉）、ep44（石鹸・スプレー・パウダー比較）、ep45（竹炭インソール試用）、ep46（革靴と安全靴の比較）、ep47（12年の対策費用計算）。ep48は「銭湯での社会的回避体験」という独自の素材であり、直近5作のいずれとも主題・場面・対策が重複しない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ実質3行「あの日から」「銭湯に」「行けなくなった」はいずれも短く、各行が独立して意味を持ち、1行で瞬時に理解できる。3行を通して読むと一つの文として成立する階段構造で、視認性は高い。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「慰安旅行で立ち寄った銭湯、脱衣所で靴下を脱ぐ手が止まり」は、背景説明（足元の悩みがあって…／安全靴を履いていて…等）を一切入れず、脱衣所の具体的場面の途中から即座に始まっている。イン・メディアス・レスが正確に実装されている。"
+        }
+      ],
+      "summary": {
+        "pass": 23,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highのfailなし・全軸pass or skipのためPass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）"
+    }
+  ]
+}
