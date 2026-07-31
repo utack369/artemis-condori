@@ -1,0 +1,214 @@
+{
+  "ep_number": 49,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現がない。足湯マッサージ器を使わなくなった経緯を語る構造であり、対策→効果の因果断定は成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTA全体の構造が「足湯マッサージ器を使って失敗した正直な記録」であり、「これを使えば解決する」という読み取りは不可能。プロフィール誘導も「12年間で試したことをまとめている」という事実の陳述に留まる。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも限定感・緊急性・煽り表現（今だけ/残りわずか/早く試さないと等）がない。購入を急かす構造は存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション「期待していましたが、気づけば手が止まり」は正直な自己開示。テロップ「毎晩のはずが/いつしか月イチ/今は棚の中」は淡々とした記録調。キャプション「期待した気持ちを否定するつもりはありません」「よかったら見てみてください」は共感共闘トーン。売り込み・専門家トーンへの逸脱なし。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「変わった/変わる/変化した」の足元・体調文脈での使用がない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterのテーマ「足湯マッサージ器を買って1ヶ月で棚に置いた話」と、ナレーション「棚の奥に足湯マッサージ器をしまいます。毎晩使うつもりで期待していましたが…」が合致。テーマを正確に扱っている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_3（努力の肯定→限界の受容→方向転換）の心理構造が実装されている。ナレーション「毎晩使うつもりで期待」=努力の肯定、「気づけば手が止まり」=限界の受容、「そのままになっていました」=棚にしまうという方向転換。テロップも「毎晩のはずが→月イチ→棚の中」で同構造を補強。キャプション「期待した気持ちを否定するつもりはありません」が否定せず手放す受容を明示。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ep49.json phase_role「パッケージ2の19番目。足湯マッサージ器を購入し…CTAありでプロフィールへの誘導につなげる」と台本の内容・強度・CTA有りが整合している。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要（直接表現可）のため、婉曲チェックC1は適用対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要（直接表現可）のため、婉曲チェックC2は適用対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2が婉曲不要によりskipのため、キャプション例外の適用範囲制御も実質的に適用対象外。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「サンクコストの真っ只中：足湯マッサージ器を使う頻度が落ちていき、棚の奥にしまう寸前のその瞬間から視聴者を拾う」に対し、ナレーション冒頭「棚の奥に足湯マッサージ器をしまいます」がまさにしまう寸前の瞬間から始まっており、entryを正確に実装している。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exit「家電に期待した気持ちを正直に認め、使わなくなったことも隠さない人間の記録なら信頼できるという自然な興味と、プロフィールへの流入」に対し、ナレーション末尾「気づけば手が止まり、そのままになっていました」が正直な告白、テロップ「本音はプロフィールに」がプロフィール流入を実装。キャプションCTA「よかったら見てみてください」も整合。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "one_message「足湯マッサージ器に期待して毎晩使うつもりだったが、1ヶ月足らずで棚の奥にしまうようになった、それでも期待した気持ちを否定しない12年目の正直な記録」に台本全体が集約される。ナレーション・テロップ・キャプションすべてがこの1メッセージの範囲内にあり、2メッセージの混在はない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=trueの回。ナンバリング行「安全靴と戦う12年の記録：File.49」を除いたテロップの実質最終行「本音はプロフィールに」は、本音がプロフィールにあるという事実の陳述であり、命令形（プロフィールを見て）ではない。ep17「まだ続きがあります」と同構造のソフトCTAとして機能している。結論のみで終わりCTA機能が欠落しているわけでもなく、プロフィールへの自然な誘導意図が読み取れる。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_required=trueの回のため、E2（cta_required=false専用）は適用対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現がない。「本音はプロフィールに」は事実の陳述であり、命令形・依頼形の直接誘導ではない。ハードCTAはテロップに混入していない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション「しまいます」「期待していましたが」「なっていました」はすべて「です・ます」調。「止まり」は連用形の文中接続であり、「だ・である」調の混在ではない。語尾統一が維持されている。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは「棚にしまう行為」と「期待していたが手が止まった」という内面心理を語る。テロップは「毎晩のはずが→月イチ→棚の中」と使用頻度の推移を時間軸で圧縮。同一テキストの転記・要約ではなく、異なる角度から同テーマを描写している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション「期待していましたが、気づけば手が止まり」=感情・共感の役割。テロップ「毎晩のはずが/いつしか月イチ/今は棚の中」=事実の推移を論理的に圧縮提示する気づきの役割。ナレーション=感情、テロップ=論理の役割分離が成立している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdのhook_line「足湯マッサージ器を買って、1ヶ月で棚の奥にしまいました。」はJSON指示書と完全一致。body部分は指示書の段落形式を一文ずつの改行形式に展開しているが、経緯（購入→期待→頻度低下→棚にしまう→期待は否定しない→正直に認める）が意味的に整合。CTA「この記録も含めて…よかったら見てみてください」とハッシュタグ5件もJSON指示書と一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との比較：ep44=石鹸・スプレー・パウダー比較、ep45=竹炭インソール、ep46=革靴vs安全靴、ep47=12年の費用計算、ep48=銭湯に行けなくなった話。ep49の素材「足湯マッサージ器」は直近5作のいずれとも異なる。ep45（竹炭インソール）と「期待→やめた」の型構造は類似するが素材・場面が異なるため重複ではない。ep47スライド5に「足湯器」の言及があるが金額計算の列挙の一項目であり主題ではない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行「毎晩のはずが」「いつしか月イチ」「今は棚の中」「本音はプロフィールに」はいずれも独立して意味を持ち、1行で瞬時に理解できる。文脈なしでも使用頻度の低下と現状が直感的に伝わる。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「棚の奥に足湯マッサージ器をしまいます」は、棚にしまう行為の真っ最中から始まるイン・メディアス・レス。「足元の悩みがあって」「安全靴を12年履いていて」等の背景説明は一切なく、narration_guideline.opening_approach「棚の奥にしまう場面から即座に入る」を正確に実装している。"
+        }
+      ],
+      "summary": {
+        "pass": 20,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highのfailなし・全軸pass or skipのためPass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）"
+    }
+  ]
+}
