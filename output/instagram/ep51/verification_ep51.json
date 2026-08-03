@@ -1,0 +1,420 @@
+{
+  "ep_number": 51,
+  "euphemism_required": false,
+  "cta_required": false,
+  "current_round": 2,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定が存在しない。ナレーションは身体感覚の描写のみ（汗が溜まる・音がする・黙々と続ける）。キャプションCTAも「試したことをまとめています」という事実陳述に留まり、対策X→効果Yの因果断定は成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体を通読しても「これを使えば解決する」と読み取れる構造が存在しない。ナレーションは感覚描写のみ、テロップは現象の提示のみ、キャプションCTAは「盛らずに全部プロフィールにまとめています」と事実を述べるだけで、解決を暗示する構造にはなっていない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも限定感（今だけ/残りわずか）、緊急性（早く試さないと）、煽り表現が存在しない。キャプションCTAも「同じ経験がある方へ」と対象を限定しているが、購入を急かす意図ではなく共感の呼びかけに留まる。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーションは和男の内面独白として身体感覚を淡々と語り、共感共闘トーン（気にならなくなった・保証しない・よかったら）の範囲内。キャプションも「僕には」「分かります」「続けています」と一人称の当事者語りで一貫。売り込みトーン・専門家トーンへの逸脱なし。「盛らずに」は正直さを強調する和男らしい表現。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「変わった/変わる/変化した」およびその活用形が存在しない。足元・体調文脈での使用なし。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterのテーマ「夏場の安全靴の中が水たまりになる日の話」に対し、ナレーションは夏の現場で靴の中に汗が水たまりのように溜まる身体感覚を描写しており、テーマと完全に一致している。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_2の心理構造「日常の緊張場面の追体験→自分だけじゃないの着地」が実装されている。ナレーションは夏の現場で靴の中の汗が溜まる感覚・一歩ごとの音・黙々と作業を続ける場面を追体験させる構成（日常の緊張場面の追体験）。テロップ末尾「水たまりになる」で共有体験の認知を喚起し、キャプション「同じ経験がある方へ」で「自分だけじゃない」の着地を実現している。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "phase_roleの指定「夏場、安全靴の中が汗で水たまりのようになる身体感覚を通じて、蒸れと湿気が限界に達する瞬間の不快感を提示する記録。CTAなしで正直さの信頼蓄積を継続する」に対し、台本は身体感覚を淡々と描写しCTAなしで終わっており、配置の意図と整合している。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要のためC1はskip。婉曲表現の適用対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要のためC2はskip。婉曲表現の適用対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "meta.euphemism=不要のためC1・C2がskipであり、キャプション例外の制御ルール自体の適用が不要。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「日常の緊張場面：夏の現場、安全靴の中で汗が水たまりのように溜まっていく感覚に気づく、その一瞬から視聴者を拾う」に対し、ナレーション冒頭「夏の現場で数時間が経つと、靴の中で汗が水たまりのように溜まっていき」が日常の緊張場面から即座に入っている。背景説明なしのイン・メディアス・レスで入口が実現されている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exit「自分だけじゃない安心：夏場、靴の中が水たまりのようになった経験がある人は、自分だけじゃない、という共感による孤独感の緩和」に対し、ナレーション末尾「黙々と作業を続けます」で同じ経験を持つ視聴者の共感認知を喚起し、テロップ「水たまりになる」で共有体験を視覚的に提示、キャプション「同じ経験がある方へ」で自分だけじゃない安心を明示的に実現している。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "one_message「夏場、安全靴の中で汗が水たまりのように溜まっていく感覚を、我慢しながら黙々と作業を続けてきた、あなただけじゃない記録」に対し、台本全体が「夏場の靴内の水たまり感覚を我慢しながら作業を続ける共感記録」の1メッセージに集約されている。第2メッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=falseのためE1はskip。ソフトCTA適切性の判定対象外。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "テロップにはCTA要素が一切なく純粋な内容提示のみ（夏になると/靴の中が/水たまりになる）。キャプションCTA「同じ経験がある方へ。僕が12年間で試したことを、盛らずに全部プロフィールにまとめています」は、フォロー・保存・いいね・コメント・シェア・リンク遷移・DMへの命令形・依頼形・勧誘形による直接指示を含まない。「まとめています」は事実の存在言及であり、E2定義の許容範囲「婉曲なプロフィール言及」に該当する。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップ4行（ナンバリング行＋内容3行）のいずれにも「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現が存在しない。テロップは純粋な内容提示のみで構成されている。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションの語尾は「続けます」（ます調）で統一されている。だ・である調の混在なし。文は1文構成で語尾が一貫している。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは身体感覚の時系列的推移（汗が溜まる→音がする→黙々と続ける）を内面独白で描写。テロップは「夏になると/靴の中が/水たまりになる」と現象を端的に宣言する三段構成。同一テキストの転記・要約ではなく、ナレーション=プロセス体験、テロップ=現象の視覚的提示という異なる角度で構成されている。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション=感情（共感）：「汗が水たまりのように溜まっていき、一歩ごとに音がするのを感じながら、黙々と作業を続けます」と内面の感覚・感情を追体験させる役割。テロップ=論理（気づき）：「夏になると/靴の中が/水たまりになる」と現象を端的に提示し、視聴者に認知的気づきを与える役割。役割分離が実現されている。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素をep51.jsonのcaptionフィールドと照合した結果、hook_line（夏場、安全靴の中が水たまりのようになる日があります。）、body（3文の本文）、cta（同じ経験がある方へ。僕が12年間で試したことを、盛らずに全部プロフィールにまとめています。）、hashtags（#安全靴 #工場勤務 #夏の現場 #足元ケア #12年の記録）のすべてが指示書と完全一致している。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との素材・場面・対策の重複なし。ep46=革靴との比較体験、ep47=12年間の対策コスト計算、ep48=銭湯に行けなくなった心理的回避、ep49=足湯マッサージ器の挫折、ep50=見落としがちな落とし穴3つ。ep51の「夏場の靴内の汗が水たまりのように溜まる身体感覚」は直近5作のいずれとも主題が異なる。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち、1行で瞬時に理解できる。「夏になると」（時間）→「靴の中が」（場所）→「水たまりになる」（現象）の三段構成で、各行が自然に次行へ接続しつつも単体で意味が成立する。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「夏の現場で数時間が経つと、靴の中で汗が水たまりのように溜まっていき」は、すでに作業が進行中の場面から始まっている。「足元の悩みがあって」「安全靴を12年履いてきて」等の背景説明は一切なく、身体感覚に気づく瞬間から即座に入るイン・メディアス・レスが実現されている。"
+        }
+      ],
+      "summary": {
+        "pass": 20,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highのfailなし・全軸pass or skipのためPass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）"
+    },
+    {
+      "round": 2,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現なし。「対策X→効果Y」の因果構造も存在しない。全体が身体感覚の記録に終始している。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋キャプションの組み合わせ全体を通じて、特定の製品・対策への言及がなく、「これを使えば解決する」と読み取れる構造は成立していない。「変わった」も未使用。身体感覚の共有のみで構成されている。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現なし。製品・サービスへの言及自体がなく、購入圧力が構造的に発生しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション「黙々と作業を続けます」、キャプション「同じ経験がある方は、少なくないと思います。今日も靴の中を気にしながら、現場に立っています。」はいずれも和男の共感共闘トーン（当事者が淡々と経験を語る）を維持。売り込み・専門家トーンへの逸脱なし。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体を確認し、「変わった/変わる/変化した」およびその活用形は一切使用されていない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master該当行のテーマ「夏場の安全靴の中が水たまりになる日の話」に対し、ナレーションは夏の現場で靴の中に汗が水たまりのように溜まる身体感覚を語っており、テーマと完全に一致する。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_2の心理構造（日常の緊張場面の追体験→「自分だけじゃない」着地）を実装。ナレーションは夏の現場で靴の中に汗が溜まり音がする緊張場面を追体験させ、キャプション末段「同じ経験がある方は、少なくないと思います」で「自分だけじゃない」着地を実現している。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "phase_role「CTAなしで正直さの信頼蓄積を継続する」に対し、台本はCTAを含まず身体感覚の記録に徹しており、信頼蓄積にふさわしい穏やかな強度で設計意図と整合する。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要のためC1はskip。婉曲表現チェックの適用対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要のためC2はskip。婉曲表現チェックの適用対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2がskip（婉曲不要）のため、C3（キャプションへの婉曲チェック非適用制御）も適用対象外。A群はcaptionに適用済み。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「日常の緊張場面：夏の現場、安全靴の中で汗が水たまりのように溜まっていく感覚に気づく、その一瞬から視聴者を拾う」に対し、ナレーション冒頭「夏の現場で数時間が経つと、靴の中で汗が水たまりのように溜まっていき」が日常の緊張場面から即座に入っており、entry指示を忠実に実装している。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exit「自分だけじゃない安心：共感による孤独感の緩和」に対し、ナレーション末尾「黙々と作業を続けます」が共有される忍耐の余韻を残し、テロップ全体「夏になると／靴の中が／水たまりになる」が普遍的な経験として提示。キャプション末段「同じ経験がある方は、少なくないと思います」がexit（自分だけじゃない安心）を明示的に実現している。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "one_message「夏場、安全靴の中で汗が水たまりのように溜まっていく感覚を、我慢しながら黙々と作業を続けてきた、あなただけじゃない記録」に対し、台本全体がこの1メッセージに集約されている。第2のメッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=falseのためE1（ソフトCTA適切性）はskip。E1はcta_required=trueのみ適用。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "【round2重点再判定】cta_required=falseの回として、テロップおよびキャプション全文を精査。テロップ4行（ナンバリング含む）にCTA的要素は皆無。キャプションround2修正後の末段「同じ経験がある方は、少なくないと思います。今日も靴の中を気にしながら、現場に立っています。」は(1)共感の事実認識と(2)和男の現在の状態描写のみで構成されており、フォロー・保存・いいね・コメント・シェア・リンク遷移・DM・プロフィールへの言及・誘導は一切含まれていない。round1で指摘された「プロフィールにまとめています」は完全に除去されている。命令形・依頼形・勧誘形による特定行動への直接指示も存在しない。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップ全4行（「安全靴と戦う12年の記録：File.51」「夏になると」「靴の中が」「水たまりになる」）に「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現なし。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションの主動詞「続けます」がです・ます調。文中の「溜まっていき」「感じながら」は連用形の接続であり、だ・である調の混在ではない。です・ます調で統一されている。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは身体感覚の時間的推移（汗が溜まる→一歩ごとに音がする→黙々と作業を続ける）を語り、テロップは現象を条件文的に提示（夏になると→靴の中が→水たまりになる）。同一テキストの転記・要約ではなく、異なる角度（体験プロセス vs. 現象の視覚的提示）で構成されている。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：汗が溜まる感覚、音を感じながら黙々と続ける内面の追体験。テロップ＝論理（気づき）：「夏になると／靴の中が／水たまりになる」という現象の認知的把握。感情と論理の役割分離が成立している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdのhook_line（1行目）はep51.jsonのcaption.hook_lineと完全一致。body（3-5行目）もcaption.bodyと一致。hashtags（9行目）もcaption.hashtagsと一致。末段（7行目）はep51.jsonのcaption.ctaから意図的に変更されている（round1でE2違反と判定されたプロフィール誘導文を除去するための差し戻し修正）が、新文「同じ経験がある方は、少なくないと思います。今日も靴の中を気にしながら、現場に立っています。」はep51のテーマ・目的と意味的に整合しており、別epの残骸混入は認められない。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作と照合：ep46=革靴との比較体験、ep47=12年間の対策費用計算、ep48=銭湯に行けなくなった社会的回避、ep49=足湯マッサージ器の棚行き、ep50=安全靴ユーザーの落とし穴。ep51の主題「夏場の安全靴の中が汗で水たまりになる身体感覚」はいずれとも重複しない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行「夏になると」「靴の中が」「水たまりになる」はいずれも独立して意味を持ち、1行で瞬時に理解可能。短く切れのある表現で視認性が高い。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「夏の現場で数時間が経つと、靴の中で汗が水たまりのように溜まっていき」は場面の途中から即座に入っている。「足元の悩みがあって」等の背景説明は一切なく、イン・メディアス・レスの要件を満たす。"
+        }
+      ],
+      "summary": {
+        "pass": 20,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highのfailなし・全軸pass or skipのためPass（round2・E2重点再判定含む）",
+      "action": "round1差し戻し理由（E2混入）はcaption末段の限定修正により解消。Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）"
+    }
+  ]
+}
