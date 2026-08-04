@@ -1,0 +1,214 @@
+{
+  "ep_number": 52,
+  "euphemism_required": true,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現は存在しない。内容は靴下の色を切り替えた経緯の事実記述に終始しており、対策Xから効果Yへの因果断定構造は成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション（色の違いに気づいて黒に切り替えた）＋テロップ（白だった頃→気づいてから→今は黒だけ）＋CTA（理由はプロフィールに）の組み合わせは、行動の推移を記録として提示する構造であり、「これを使えば解決する」という暗示は読み取れない。靴下の色を変えたこと自体を解決策として提示していない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションに「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現は一切含まれない。キャプションCTAも「よかったら見てみてください」と任意性を明示している。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション「気まずくて、いつしか黒だけになりました」は和男の内面独白・共感共闘トーン。キャプション「正直に話します」「よかったら見てみてください」も同トーン。売り込み・専門家トーンへの逸脱はない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全文を走査し、「変わった/変わる/変化した」の語幹（変わ・変化）は一切使用されていない。靴下の色の切り替えは「黒だけになりました」「黒しか選ばなくなりました」と表現されており、「変わった」系語彙は回避されている。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master File.52のテーマ「靴下を黒にした本当の理由」に対し、ナレーションは白い靴下の色の違いに気づいて黒に切り替えた経緯を語っており、テーマと完全に一致する。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_1（プラットフォール・レビュー型）の心理構造「失敗の正直な提示→本質への帰結」が実装されている。ナレーション冒頭で失敗（白い靴下の色の違いに気づかれる気まずさ）を正直に提示し、その結果として黒を選ぶようになったという本質（おしゃれではなく実用的理由）へ帰結している。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ep52.jsonのphase_roleが指定する「白い靴下→色の違い→黒への切り替えという経緯を正直に語り、CTAでプロフィールへ誘導する記録」と台本の構成が整合している。過度な山場演出もなく、記録としての適切な強度。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）のいずれもナレーション・テロップに使用されていない。足元の問題は「色の違い」という婉曲表現で処理されている。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "靴下の変色・汚れを「色の違い」と婉曲表現しており、直接表現を確実に回避できている。conversion_tableの「気になる」「違和感がある」の方向性とも整合する、自然な婉曲処理。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2の婉曲チェックはcaptionに適用していない（制御ルール通り）。A群（正直さ）はcaptionにも適用済み（A1-A5で確認）。なおcaptionでも「色の違い」という婉曲表現が使われており、直接表現は含まれていない。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「過去の失敗の正直な提示：白い靴下を脱いだときに色の違いに気づく、その瞬間から視聴者を拾う」に対し、ナレーション冒頭「靴を脱いだ瞬間、白い靴下の色の違いに気づいた日がありました」が正確に実装している。脱いだ瞬間→色の違い→気づきという指定通りの入口。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「靴下の色を切り替えた本当の理由まで正直に語れる人間の記録なら信頼できるという自然な興味と、プロフィールへの流入」に対し、ナレーション末尾の正直な告白（気まずさからの切り替え）＋テロップ最終行「理由はプロフィールに」が自然な興味→プロフィール流入の出口を実装している。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「白い靴下の色の違いに気づかれることが気まずくて、いつしか黒しか選ばなくなった。おしゃれではなく実用のためだったと正直に認める、12年目の記録」に台本全体が集約されている。第二のメッセージの混在はない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=true。テロップのナンバリング行（安全靴と戦う12年の記録：File.52）を除いた実質最終行「理由はプロフィールに」は事実の陳述（理由がプロフィールにある）として機能しており、ソフトCTAとして適切。命令形・依頼形ではなく、ep17「まだ続きがあります」と同型の事実提示型CTA。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_required=trueのため本軸は適用対象外。E1で判定済み。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップ最終行「理由はプロフィールに」は場所の事実陳述（理由はプロフィールにある）であり、「プロフィールを見て/リンクから/今すぐ」等の直接誘導（命令形・依頼形）ではない。ハードCTAに該当しない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション語尾「気づいた日がありました」「黒だけになりました」はいずれも「です・ます」調で統一されている。「だ・である」調の混在はない。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは経緯の物語（白い靴下→色の違いに気づく→気まずさ→黒だけに）を語り、テロップは時間軸の内面マーカー（白だった頃→気づいてから→今は黒だけ）＋CTAを提示している。ナレーションの転記・要約ではなく、異なる角度からの補完になっている。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（気まずさ、正直な告白という共感軸）、テロップ＝論理（時系列の気づきマーカー「白だった頃→気づいてから→今は黒だけ」＋CTA「理由はプロフィールに」）。感情と論理の役割分離が成立している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素がep52.jsonのcaptionフィールドと一致。hook_line「靴下を黒にした本当の理由、正直に話します。」→一致。body（安全靴12年→白い靴下→色の違い→実用的な選択）→一致。cta「靴下を黒に切り替えた理由も含めて...よかったら見てみてください。」→一致。hashtags 5個→一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との比較：ep47=足元対策の費用計算、ep48=銭湯に行けなくなった、ep49=足湯マッサージ器の放置、ep50=安全靴ユーザーの落とし穴、ep51=夏場の靴内水たまり。ep52の主題「靴下の色を黒に切り替えた理由」はいずれとも重複しない独自素材。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行「白だった頃」(5字)「気づいてから」(6字)「今は黒だけ」(5字)「理由はプロフィールに」(9字)はいずれも独立して意味を持ち、1行で瞬時に理解できる短文。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「靴を脱いだ瞬間、白い靴下の色の違いに気づいた日がありました」は靴を脱ぐ具体的場面から即座に開始しており、「足元の悩みがあって」「安全靴を12年履いてきて」等の背景説明は一切含まれない。ep52.jsonのopening_approach指定通りのイン・メディアス・レス。"
+        }
+      ],
+      "summary": {
+        "pass": 23,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "pass",
+      "coordinator_rule_applied": "critical/highのfailなし・全軸pass/skip → Pass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "phase1_skipped"
+    }
+  ]
+}
