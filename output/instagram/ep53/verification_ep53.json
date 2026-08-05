@@ -1,0 +1,222 @@
+{
+  "ep_number": 53,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現なし。「消臭グッズ」は商品カテゴリ名であり和男自身の効果断定ではない。「全部ハズレ」は失敗の事実陳述であり、対策X→効果Yの因果断定は成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体が「通販グッズは全部ハズレだった」という失敗を正直に認める構造であり、「これを使えば解決する」と読み取れる暗示構造は成立していない。CTAも「本音はプロフィールに」「よかったら見てみてください」で事実陳述に留まる。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも限定感（今だけ/残りわずか）、緊急性、煽り表現なし。キャプションCTAは「よかったら見てみてください」で購入を促す構造ではない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション「期待して選んだのに、気づけば手が止まっていました」は和男の内面独白として共感共闘トーンを維持。キャプション「後悔するつもりはありません」「正直に認めています」「よかったら見てみてください」もすべて和男トーン。売り込み・専門家トーンへの逸脱なし。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「変わった/変わる/変化した」の語幹なし。足元・体調文脈での使用は皆無。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「通販で買った消臭グッズが全部ハズレだった話」に対し、ナレーションは通販で買った消臭グッズが未開封のまま戸棚に並んでいる場面を描写し、テロップで「全部ハズレ」と結論。テーマと一致。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "Type_3（努力の肯定→限界の受容→方向転換）の三段構造が実装されている。努力の肯定：「期待して選んだ」（ナレーション）「期待して購入」（テロップ）。限界の受容：「気づけば手が止まっていました」（ナレーション）「全部ハズレ」（テロップ）。方向転換：「本音はプロフィールに」（テロップ）。キャプションでも同構造が展開されている。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "均等配置（フェーズ区分なし）で特別な山場指定はない。台本の強度は均等な配置に整合しており、過度な強度の振れもない。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要のため、婉曲チェックは適用対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要のため、婉曲チェックは適用対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "meta.euphemism=不要のため、C1/C2がskipであり本制御ルールも適用対象外。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション冒頭「戸棚を開けると、通販で買った消臭グッズが未開封のまま並んでいました。」",
+          "reason": "psychology.entry「サンクコストの真っ只中：戸棚に積み上がった未使用の消臭グッズを見つける、その瞬間から視聴者を拾う」が忠実に実装されている。戸棚を開けて未使用グッズを発見する瞬間から始まるイン・メディアス・レスで、サンクコストの只中に視聴者を配置している。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "location": "テロップ「全部ハズレ」「本音はプロフィールに」",
+          "reason": "psychology.exit「通販で買ったものが全部ハズレだったと正直に認められる人間の記録なら信頼できるという自然な興味と、プロフィールへの流入」が実装されている。テロップ「全部ハズレ」で正直に認める態度を提示し、「本音はプロフィールに」でプロフィールへの自然な流入を設計。キャプションCTAもこの出口を強化している。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「通販で消臭グッズを次々購入したが、どれも実感が続かず戸棚に積み上がっていった。全部ハズレだったと正直に認める、12年目の記録」に台本全体が集約できる。ナレーション・テロップとも同一メッセージの異なる面を提示しており、2メッセージの混在はない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "テロップ最終行「本音はプロフィールに」",
+          "reason": "ナンバリング行「安全靴と戦う12年の記録：File.53」を除いた実質最終メッセージ行「本音はプロフィールに」は事実の陳述（本音がプロフィールにまとめてあるという事実）に留まり、命令形・依頼形を含まない。ep17「まだ続きがあります」と同構造のソフトCTAとして機能している。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_required=trueのため、本軸は適用対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "location": "テロップ全行を確認",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導（命令形・依頼形）なし。「本音はプロフィールに」は事実の陳述であり、「プロフィールを見て」等のハードCTAではない。キャプションCTA「よかったら見てみてください」はキャプション限定のためハードCTA許容範囲内。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "location": "ナレーション語尾「並んでいました」「止まっていました」、キャプション語尾「でした/きました/買いました/上がりました/使いました/減っていきました/重なっていました/ありません/認めています/まとめています/ください」",
+          "reason": "ナレーションは「です・ます」調で統一。テロップは体言止め（「期待して購入」「気づけば未使用」「全部ハズレ」「本音はプロフィールに」）だが短文表示のため許容範囲。キャプションも「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション「期待して選んだのに」vsテロップ「期待して購入」、ナレーション「気づけば手が止まっていました」vsテロップ「気づけば未使用」",
+          "reason": "ナレーションは場面描写（戸棚を開けて未使用グッズを発見、手が止まった感覚）、テロップは内面の気づきの三段構成（期待→未使用→全部ハズレ）＋CTA。テロップ「全部ハズレ」「本音はプロフィールに」はナレーションにない独自内容。ただし「期待して選んだ」と「期待して購入」、「気づけば手が止まっていました」と「気づけば未使用」に骨格の近さがあり、telop_guideline「同じ動詞・同じ骨格の反復は避け」にやや抵触するものの、同一テキストの転記・要約には至っていないためpassと判定。次回以降のalpha指示で留意。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（戸棚を開けて発見する場面の追体験、期待と停止の感覚的描写）、テロップ＝論理（期待→未使用→全部ハズレという推移の気づき＋CTA）。感情/共感と論理/気づきの役割分離が成立している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "hook_line「通販で買った消臭グッズ、全部ハズレでした。」は指示書と完全一致。bodyは指示書の文案を短文分割で詳細化しているが意味的に整合。cta「通販で買ったグッズが全部ハズレだったことも含めて〜よかったら見てみてください。」は指示書と完全一致。hashtags 5個も指示書と完全一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ep49ナレーション「毎晩使うつもりで期待していましたが、気づけば手が止まり」との表現パターン類似",
+          "reason": "直近5作との素材照合：ep48=銭湯、ep49=足湯マッサージ器、ep50=落とし穴3つ、ep51=夏場の水たまり、ep52=靴下を黒にした理由。ep53=通販消臭グッズ。素材・対策はいずれも異なる。ただしep49と構造的パターン（期待して買った→使わなくなった→棚に置かれている）および表現（「期待して」「気づけば手が止まっていました」）に高い類似性あり。素材（マッサージ器vs消臭グッズ）と角度（1品の棚入れvs複数品の累積的発見）が異なるため主題重複には該当しないが、Coordinatorへ注記（表現の単調化リスク）。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行「期待して購入」(6字)「気づけば未使用」(7字)「全部ハズレ」(5字)「本音はプロフィールに」(10字)はいずれも独立して意味を持ち、1行で瞬時に理解可能。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション冒頭「戸棚を開けると、通販で買った消臭グッズが未開封のまま並んでいました。」",
+          "reason": "背景説明（「足元の悩みがあって」「通販で対策を探していて」等）を一切挟まず、戸棚を開ける動作という場面の途中から即座に始まっている。narration_guideline.opening_approach「イン・メディアス・レス」の要件を満たす。"
+        }
+      ],
+      "summary": {
+        "pass": 20,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "pass",
+      "coordinator_rule_applied": "critical/highのfailなし・全軸pass/skip → Pass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "phase1_skipped"
+    }
+  ]
+}
