@@ -49,6 +49,14 @@ KINSOKU_TAIL = "「『（〈《【"
 # 同一文字の連続を1トークンとして扱い、行またぎで分断しない記号（分離禁則）
 SEPARATION_CHARS = "…―‥"
 
+# 数字＋助数詞保全パッチ（案2）：数字列（桁区切りカンマ・小数点・範囲記号を含む）と
+# 直後の単位・助数詞を1トークンにまとめ、行またぎで「1,／200円」のように分断されるのを防ぐ。
+UNIT_WORDS = ["時間", "週間", "ヶ月", "セット", "円", "日", "本", "組", "個", "種", "枚", "年"]
+NUMBER_UNIT_PATTERN = re.compile(
+    r"[0-9０-９]+(?:[,，.．][0-9０-９]+)*(?:[〜~][0-9０-９]+(?:[,，.．][0-9０-９]+)*)?"
+    r"(?:" + "|".join(sorted(UNIT_WORDS, key=len, reverse=True)) + r")?"
+)
+
 FONT_CANDIDATES = [
     "/System/Library/Fonts/ヒラギノ角ゴシック W8.ttc",   # 本番Mac（太）
     "/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc",   # 本番Mac（細）
@@ -104,21 +112,21 @@ def _is_digit(ch):
 
 
 def _tokenize_for_wrap(text):
-    """通常は1文字=1トークン。カタカナ連続（長音含む）・数字連続・SEPARATION_CHARSの同一文字連続は1トークンにまとめる。"""
+    """通常は1文字=1トークン。カタカナ連続（長音含む）・数字連続・SEPARATION_CHARSの同一文字連続は1トークンにまとめる。
+    数字列は桁区切りカンマ・小数点・範囲記号（〜／~）を含めて1トークンとし、直後に続く単位・助数詞（UNIT_WORDS）があれば
+    同じトークンに束ねる（数字＋助数詞保全パッチ）。"""
     tokens = []
     i = 0
     n = len(text)
     while i < n:
         ch = text[i]
-        if _is_katakana(ch):
+        if _is_digit(ch):
+            m = NUMBER_UNIT_PATTERN.match(text, i)
+            tokens.append(text[i:m.end()])
+            i = m.end()
+        elif _is_katakana(ch):
             j = i + 1
             while j < n and _is_katakana(text[j]):
-                j += 1
-            tokens.append(text[i:j])
-            i = j
-        elif _is_digit(ch):
-            j = i + 1
-            while j < n and _is_digit(text[j]):
                 j += 1
             tokens.append(text[i:j])
             i = j
