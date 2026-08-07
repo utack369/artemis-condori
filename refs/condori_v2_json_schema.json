@@ -195,6 +195,11 @@
             "type": "string",
             "description": "このスライドの役割",
             "enum": ["cover", "content", "summary", "personal_comment"]
+          },
+          "expression": {
+            "type": "string",
+            "description": "このスライドに合成する和男の表情。assets/kazuo/kazuo_{値}.pngに対応。省略時は合成なし。format=carouselの場合のみ使用。",
+            "enum": ["normal", "troubled", "wry", "relieved", "surprised"]
           }
         }
       },

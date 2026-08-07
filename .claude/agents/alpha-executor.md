@@ -61,6 +61,7 @@ Coordinatorから渡される実行指示に基づき、meta.formatに応じて�
 - 1スライド最大60文字（表紙のナンバリング部分はカウント対象外）
 - roleはslides[].role（cover / content / summary / personal_comment）を転記
 - ナンバリング「安全靴と戦う12年の記録：File.XX」は1枚目（表紙）に配置
+- expressionが指定されている場合、ブロックヘッダは【スライドN｜role｜expression】とする（例：【スライド1｜cover｜normal】）。値はslides[].expression（normal／troubled／wry／relieved／surprised）をそのまま転記する。expressionが無いスライドは従来どおり【スライドN｜role】とする
 
 ## カルーセル生成ルール（format=carouselの場合）
 

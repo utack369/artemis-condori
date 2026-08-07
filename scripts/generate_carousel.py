@@ -64,9 +64,18 @@ FONT_CANDIDATES = [
     "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
 ]
 
+KAZUO_DIR = Path(__file__).resolve().parent.parent / "assets" / "kazuo"
+KAZUO_WIDTH = 380            # 合成幅px（2048正方形→縮小）
+KAZUO_MARGIN_RIGHT = 60
+KAZUO_MARGIN_BOTTOM = 140    # contentフッター（y≈1230）に非干渉
+KAZUO_EXPRESSIONS = ("normal", "troubled", "wry", "relieved", "surprised")
+KAZUO_MIN_WIDTH = 160        # これ未満は表情が視認困難→合成スキップ
+KAZUO_TEXT_PADDING = 40      # 本文下端と和男上端の最小間隔px
+
 NUMBERING_PATTERN = re.compile(r"安全靴と戦う12年の記録：File\.\d+")
 # 正規形式は【スライドN｜role】。生成揺れ（【N｜role】）も受容する（Postel の法則）
-BLOCK_PATTERN = re.compile(r"【(?:スライド)?(\d+)｜(\w+)】")
+# 第3セグメント（expression）は任意＝旧形式（【N｜role】）も一致する
+BLOCK_PATTERN = re.compile(r"【(?:スライド)?(\d+)｜(\w+)(?:｜(\w+))?】")
 
 
 def find_font_path():
@@ -86,10 +95,14 @@ def parse_slides(md_text):
         start = m.end()
         end = matches[i + 1].start() if i + 1 < len(matches) else len(md_text)
         lines = [l.strip() for l in md_text[start:end].strip().splitlines() if l.strip()]
+        expression = m.group(3)
+        if expression is not None and expression not in KAZUO_EXPRESSIONS:
+            raise ValueError(f"未知のexpression: {expression}（スライド{m.group(1)}）")
         slides.append({
             "number": int(m.group(1)),
             "role": m.group(2),
             "lines": lines,
+            "expression": expression,
         })
     return slides
 
@@ -99,6 +112,23 @@ def make_background(role, width, height):
     表紙・締め＝ダーク（フィードで反転して止める）、本文＝オフホワイト（読みやすさ）。"""
     is_dark = role in ("cover", "summary", "personal_comment")
     return Image.new("RGB", (width, height), DARK_BG if is_dark else LIGHT_BG)
+
+
+def composite_kazuo(img, expression, y_text_end, slide_number):
+    """本文下端より下の空きに収まるサイズで和男を右下に合成する。
+    空きが下限未満なら合成をスキップし警告を出力する（重なりを構造的に回避）。"""
+    path = KAZUO_DIR / f"kazuo_{expression}.png"
+    if not path.is_file():
+        raise ValueError(f"和男アセットが見つかりません: {path}")
+    bottom = CANVAS_H - KAZUO_MARGIN_BOTTOM
+    available = bottom - (y_text_end + KAZUO_TEXT_PADDING)
+    size = min(KAZUO_WIDTH, available)
+    if size < KAZUO_MIN_WIDTH:
+        print(f"⚠ スライド{slide_number}: 本文が長いため和男合成を省略"
+              f"（空き{available}px < 下限{KAZUO_MIN_WIDTH}px）")
+        return
+    kazuo = Image.open(path).convert("RGBA").resize((size, size), Image.LANCZOS)
+    img.paste(kazuo, (CANVAS_W - size - KAZUO_MARGIN_RIGHT, bottom - size), kazuo)
 
 
 def _is_katakana(ch):
@@ -279,7 +309,7 @@ def render_cover(draw, body_lines, numbering, font_path):
     )
     line_h = fontsize + int(fontsize * LINE_SPACING_RATIO)
     y_start = (CANVAS_H - line_h * len(wrapped)) // 2 + 40
-    draw_left_lines(draw, wrapped, font, fontsize, y_start, TEXT_ON_DARK)
+    return draw_left_lines(draw, wrapped, font, fontsize, y_start, TEXT_ON_DARK)
 
 
 def render_content(draw, slide, total, body_lines, font_path):
@@ -292,7 +322,7 @@ def render_content(draw, slide, total, body_lines, font_path):
     font, fontsize, wrapped = fit_font(
         draw, body_lines, font_path, BODY_FONT_MAX, max_width, int(CANVAS_H * 0.5)
     )
-    draw_left_lines(draw, wrapped, font, fontsize, 430, TEXT_ON_LIGHT)
+    y_text_end = draw_left_lines(draw, wrapped, font, fontsize, 430, TEXT_ON_LIGHT)
 
     foot_font = ImageFont.truetype(font_path, 30)
     draw.text((MARGIN, CANVAS_H - 120), "安全靴と戦う12年の記録", font=foot_font, fill=SUB_ON_LIGHT)
@@ -300,6 +330,7 @@ def render_content(draw, slide, total, body_lines, font_path):
     page = f"{slide['number']} / {total}"
     bbox = draw.textbbox((0, 0), page, font=page_font)
     draw.text((CANVAS_W - bbox[2] - 90, CANVAS_H - 124), page, font=page_font, fill=SUB_ON_LIGHT)
+    return y_text_end
 
 
 def render_closing(draw, slide, total, body_lines, font_path):
@@ -317,6 +348,7 @@ def render_closing(draw, slide, total, body_lines, font_path):
     page = f"{slide['number']} / {total}"
     bbox = draw.textbbox((0, 0), page, font=page_font)
     draw.text(((CANVAS_W - bbox[2]) // 2, CANVAS_H - 120), page, font=page_font, fill=SUB_ON_DARK)
+    return y_end + 46
 
 
 def render_slide(slide, total, ep_num, font_path, output_dir):
@@ -325,11 +357,14 @@ def render_slide(slide, total, ep_num, font_path, output_dir):
     body_lines, numbering = split_numbering(slide["lines"])
 
     if slide["role"] == "cover":
-        render_cover(draw, body_lines, numbering, font_path)
+        y_text_end = render_cover(draw, body_lines, numbering, font_path)
     elif slide["role"] in ("summary", "personal_comment"):
-        render_closing(draw, slide, total, body_lines, font_path)
+        y_text_end = render_closing(draw, slide, total, body_lines, font_path)
     else:
-        render_content(draw, slide, total, body_lines, font_path)
+        y_text_end = render_content(draw, slide, total, body_lines, font_path)
+
+    if slide.get("expression"):
+        composite_kazuo(img, slide["expression"], y_text_end, slide["number"])
 
     out_path = Path(output_dir) / f"slide_{ep_num}_{slide['number']:02d}.png"
     img.save(out_path)
@@ -366,10 +401,14 @@ def main():
 
     print(f"[CAROUSEL] ep{ep_num}: {len(slides)}枚のスライドを生成します")
     paths = []
-    for slide in slides:
-        out = render_slide(slide, len(slides), ep_num, font_path, output_dir)
-        paths.append(out)
-        print(f"  → {out.name}（role={slide['role']}）")
+    try:
+        for slide in slides:
+            out = render_slide(slide, len(slides), ep_num, font_path, output_dir)
+            paths.append(out)
+            print(f"  → {out.name}（role={slide['role']}）")
+    except ValueError as e:
+        print(f"✗ 合成エラー: {e}")
+        sys.exit(1)
     print(f"[CAROUSEL] 完了: {len(paths)}枚 → {output_dir}")
 
 
