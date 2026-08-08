@@ -1,0 +1,42 @@
+{
+  "ep_number": 56,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {"axis_id": "A1", "axis_name": "効果の断定チェック", "result": "pass", "severity": "critical"},
+        {"axis_id": "A2", "axis_name": "効果の暗示チェック", "result": "pass", "severity": "critical"},
+        {"axis_id": "A3", "axis_name": "購入圧力チェック", "result": "pass", "severity": "critical"},
+        {"axis_id": "A4", "axis_name": "トーン一貫性チェック", "result": "pass", "severity": "critical"},
+        {"axis_id": "A5", "axis_name": "「変わった」禁止チェック", "result": "pass", "severity": "critical"},
+        {"axis_id": "B1", "axis_name": "テーマの一致チェック", "result": "pass", "severity": "high"},
+        {"axis_id": "B2", "axis_name": "型の実装（意味的）チェック", "result": "pass", "severity": "high"},
+        {"axis_id": "B3", "axis_name": "フェーズ内役割チェック", "result": "pass", "severity": "medium"},
+        {"axis_id": "C1", "axis_name": "NGワードの意味的使用チェック", "result": "skip", "severity": "critical", "reason": "meta.euphemism=「不要（直接表現可）」のため判定対象外。euphemism_dictのprohibited_directは適用されない。"},
+        {"axis_id": "C2", "axis_name": "婉曲変換の適切性チェック", "result": "skip", "severity": "medium", "reason": "meta.euphemism=「不要（直接表現可）」のため判定対象外。"},
+        {"axis_id": "C3", "axis_name": "キャプション例外（制御ルール）", "result": "skip", "severity": "low", "reason": "C1・C2がskip（婉曲不要）のため、C3の適用範囲制御も実質的に対象外。"},
+        {"axis_id": "D1", "axis_name": "入口の実装チェック", "result": "pass", "severity": "high"},
+        {"axis_id": "D2", "axis_name": "出口の実装チェック", "result": "pass", "severity": "high"},
+        {"axis_id": "D3", "axis_name": "one_messageチェック", "result": "pass", "severity": "medium"},
+        {"axis_id": "E1", "axis_name": "ソフトCTA適切性チェック", "result": "pass", "severity": "high", "target_file": "script.md", "location": "テロップ最終行（ナンバリング除く）：「記録はプロフィールに」", "reason": "cta_required=trueで有効判定。事実の陳述であり命令形ではない。ep17合格典型「まだ続きがあります」と同様の構造で、CTA機能（プロフィールへの流入誘導）として十分に機能している。"},
+        {"axis_id": "E2", "axis_name": "CTA非存在時の混入チェック", "result": "skip", "severity": "high", "reason": "telop_guideline.cta_required=trueのため判定対象外。E2はcta_required=falseの場合にのみ適用される軸。"},
+        {"axis_id": "E3", "axis_name": "テロップ内ハードCTA禁止チェック", "result": "pass", "severity": "critical"},
+        {"axis_id": "F5", "axis_name": "語尾統一チェック", "result": "pass", "severity": "medium"},
+        {"axis_id": "G3", "axis_name": "内容分離チェック", "result": "pass", "severity": "high"},
+        {"axis_id": "G4", "axis_name": "役割分離チェック", "result": "pass", "severity": "medium"},
+        {"axis_id": "H2", "axis_name": "キャプション内容の指示書一致チェック", "result": "pass", "severity": "high"},
+        {"axis_id": "I1", "axis_name": "過去epとの素材重複チェック", "result": "pass", "severity": "medium", "reason": "直近5作（ep51〜55）と主題比較し独立を確認。ep52との書き出し類似（「靴を脱いだ瞬間」vs「靴下を脱いだ瞬間」）はあるが主題が異なり重複ではない。phase_role記載の差別化（File.46・43・33との着地差異）も実装済み。"},
+        {"axis_id": "I2", "axis_name": "テロップ視認性（意味的）チェック", "result": "pass", "severity": "low"},
+        {"axis_id": "I3", "axis_name": "イン・メディアス・レスチェック", "result": "pass", "severity": "medium"}
+      ],
+      "summary": {"pass": 20, "fail": 0, "skip": 4},
+      "coordinator_overall": "pass",
+      "coordinator_rule_applied": "critical/highのfailなし。全軸pass または skip → Pass",
+      "phase": "段3-Ω（omega²）",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）"
+    }
+  ]
+}
