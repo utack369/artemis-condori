@@ -1,0 +1,214 @@
+{
+  "ep_number": 57,
+  "euphemism_required": false,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "phase": "段3-V",
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライドおよびcaptionに「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。「続けて良かったです」「やめて良かったです」は個人の実践感想であり、対策X→効果Yの因果を断定形で成立させる表現ではない。prohibited_words（効/治/消え/改善）も検出されない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "スライド全体の構造が「これを使えば解決する」と読み取れる設計になっていない。スライド4「大きな期待はしていませんでした」、スライド5「体感差はあまりありませんでした」、スライド6「コストに見合う手応えはありませんでした」、スライド7「全部に納得できたわけではありません」と随所に正直な留保が配置されており、効果の暗示構造が成立しない。captionも「あくまで僕自身がたどり着いた実践上の結論です」と限定している。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライドおよびcaptionに限定感・緊急性・煽り表現（今だけ/残りわずか/早く試さないと等）なし。スライド6では高価なアイテムについて「やめて良かった」「コストに見合う手応えはありませんでした」と購入を抑制する方向の記述すらあり、購入圧力は皆無。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライドが和男の共感共闘トーン（個人の12年の実践体験を正直に振り返る語り口）を維持。「良かったです」「正直どちらでも」「手応えはありませんでした」「記録として残しておきます」等、売り込みトーンや専門家トーンへの逸脱なし。captionも「僕自身がたどり着いた実践上の結論です」と一人称の実体験報告に終始。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全スライドおよびcaptionに「変わった/変わる/変化した」の語幹を含む表現なし。足元・体調文脈での使用は検出されない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master該当行のテーマ「外側の対策を12年試した僕の結論チェックリスト」とスライド1の表紙フック「外側の対策を12年試した僕の結論チェックリスト」が完全一致。スライド2〜6は外側の対策5カテゴリ（消臭スプレー・防臭靴下・インソール・乾燥剤/重曹・高価アイテム）の結論を列挙しており、テーマに沿っている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "カテゴリの実装チェック（型→カテゴリ読替）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "carousel_category=checklistの意味的実装を確認。5つのカテゴリ（①〜⑤）が番号付きで列挙され、各項目に「続けて良かった」「どちらでも良かった」「やめて良かった」という明確な結論判定が付与されている。チェックリスト型の「チェック項目の列挙」が構造的に実装されている。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ep57.jsonのphase_roleに記載の通り、パッケージ2チェックリストカテゴリ3本（File.37/47/57）の最終作として、File.37（共通する特徴の列挙）・File.47（金額換算）とは異なる切り口「結論の是非を淡々と言い切る文体」を実装。数値比較（ep54的）でも警告（ep50的）でもなく、個人の結論を列挙する構成で差別化されている。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要（直接表現可）のため、C1（婉曲要時のみ適用）は判定対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=不要（直接表現可）のため、C2（婉曲要時のみ適用）は判定対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "meta.euphemism=不要のためC1・C2がskipであり、C3（婉曲チェックのキャプション適用除外制御）も適用場面がないためskip。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「1枚目で『外側の対策を12年試した僕の結論チェックリスト』というフックを提示し、共感を引き出す」がスライド1で完全に実現。表紙テキスト「外側の対策を12年試した僕の結論チェックリスト」がフック文言と一致し、同じように色々試してきたが整理できていない読者の停止力として機能する。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「外側の対策だけで全部に納得できたわけではないが、続けてきた記録として残しておきたい」がスライド7で実現。実際の文言「外側の対策だけで全部に納得できたわけではありません。それでも続けてきた記録として残しておきます。」は指定の意味内容と整合し、読者自身の振り返りを促す着地になっている。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「外側からの対策を12年試してきた和男が、続けてよかったこと・やめてよかったことを結論だけ正直に並べたカルーセル」に全スライドが集約される。スライド2〜6は各カテゴリの「続けて/やめて良かった」結論、スライド7は総括。第2のメッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "ソフトCTA適切性チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_required=falseのため、E1（ソフトCTA適切性）は判定対象外。カルーセルは常にcta_required=false。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "全スライドおよびcaptionに、特定行動（フォロー・保存・いいね・コメント・シェア・リンク遷移・DM）への命令形・依頼形・勧誘形による指示なし。スライド7「記録として残しておきます」は自己行為の陳述であり読者への行動要請ではない。captionも事実の記述と個人の経験報告に終始し、CTA文言の混入は検出されない。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "全スライドに「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現なし。スライド内容はすべてチェックリスト項目と締めメッセージのみで構成されている。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "スライド2〜7の全文末が「です・ます」調（良かったです/続けられました/いませんでした/ありませんでした/ありません/残しておきます）で統一。スライド1表紙の体言止め「結論チェックリスト」は表紙に許容される1箇所以内。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "format=carouselのため、G3（ナレーション/テロップの内容分離）はリール固有の判定軸であり適用対象外。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "format=carouselのため、G4（ナレーション=感情/テロップ=論理の役割分離）はリール固有の判定軸であり適用対象外。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素がep57.jsonのcaptionフィールドと一致。hook_line「外側の対策を12年試してきた僕の結論だけを、チェックリストとしてまとめました。」完全一致。body3文完全一致。cta欄空＝caption内CTA不在と整合。hashtags5個（#安全靴 #工場勤務 #足元ケア #12年の記録 #外側の対策）完全一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との主題重複なし。ep54（市販消臭アイテム5種のコスト・持続時間比較）と消臭スプレー・乾燥剤・重曹ボールの言及が一部重なるが、(1)ep54はreference_files=[37,47,53,54]に含まれており意図された参照であり重複とみなさない、(2)ep54は数値比較型・ep57は結論是非型であり切り口が明確に異なる。ep52（靴下の色の話）・ep53（通販消臭グッズの失敗談）・ep55（座敷を断る話）・ep56（足裏の皮の話）とはテーマ・素材・場面いずれも重複しない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "スライド視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "各スライドが独立して意味を持ち、1スライド1メッセージ構成。スライド2〜6は「カテゴリ名＋結論＋理由1文」の統一構造で瞬時に理解可能。スライド7は1文の締めメッセージで独立完結。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "format=carouselのため、I3（ナレーション冒頭のイン・メディアス・レス）は適用対象外。表紙フックの停止力はB2（カテゴリの実装）およびD1（入口の実装）で判定済み。"
+        }
+      ],
+      "summary": {
+        "pass": 17,
+        "fail": 0,
+        "skip": 7
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/high fail 0件・全軸pass または skip のため Pass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）"
+    }
+  ]
+}
