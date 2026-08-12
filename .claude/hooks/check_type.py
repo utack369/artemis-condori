@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# PreToolUse hook: ep[N].json Write 時に psychology_type（リール）/ carousel_category（カルーセル）を設計図マスターと照合
+# PreToolUse hook: ep[N].json Write 時に psychology_type（リール）/ carousel_category（カルーセル）を設計図マスターと照合 Type_A/B/C（P3・v3スキーマ）対応。
 # 不一致: exit 2 + stderr でブロック。設計図マスター未定義エピソードは exit 0（安全側）。
 import sys, json, re, os
 
@@ -21,7 +21,7 @@ def get_design_entry(n):
     for line in open(MASTER_PATH, encoding='utf-8'):
         line = line.strip()
         if line.startswith(key + ' '):
-            m = re.search(r'(Type_\d+)', line)
+            m = re.search(r'(Type_(?:\d+|[ABC]))', line)
             if m:
                 return ('type', m.group(1))
             m2 = re.search(r'Carousel:(comparison|checklist|warning)', line)
@@ -53,7 +53,7 @@ def main():
         meta = data.get('meta', {})
         fmt = meta.get('format')
         generated_type_full = meta.get('psychology_type', '')
-        m = re.match(r'(Type_\d+)', generated_type_full)
+        m = re.match(r'(Type_(?:\d+|[ABC]))', generated_type_full)
         generated_type = m.group(1) if m else generated_type_full
         generated_cat_full = meta.get('carousel_category', '')
         generated_cat = generated_cat_full.split('（')[0]

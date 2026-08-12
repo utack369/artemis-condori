@@ -5,6 +5,7 @@
 # パッケージ2（File.31〜60）のカルーセルは Type_N の代わりに Carousel:カテゴリ を記載する。
 # 書式: File.NN Carousel:comparison|checklist|warning CTA:false 婉曲:要/不要 テーマ:（1文）
 # 現行Hookはカルーセル行のType照合を安全にスキップする（Carousel対応Hookは第2段階で拡張予定）。
+# パッケージ3（File.61〜90）は20-30秒リール専用。書式: File.NN Type_A|B|C CTA:DM誘導|ソフトCTA|なし 婉曲:要/不要 テーマ:（1文）
 File.01 Type_2 CTA:false 婉曲:不要 テーマ:飲み会の店が座敷だと知った瞬間の絶望
 File.02 Type_2 CTA:false 婉曲:要 テーマ:帰宅後、玄関で家族が一瞬黙るあの空気
 File.03 Type_3 CTA:true 婉曲:要 テーマ:5本指ソックスへの期待と残酷な現実
@@ -66,3 +67,34 @@ File.57 Carousel:checklist CTA:false 婉曲:不要 テーマ:外側の対策を1
 File.58 Type_3 CTA:true 婉曲:不要 テーマ:足指パッドを3種類試して全部やめた理由
 File.59 Type_2 CTA:false 婉曲:要 テーマ:妻が靴箱の消臭剤を無言で2つに増やした日
 File.60 Carousel:warning CTA:false 婉曲:不要 テーマ:12年の記録で分かった、やめた方がいい対策の共通パターン
+# ===== パッケージ3（File.61〜90）出典: refs/condori_pkg3_design_complete.md =====
+File.61 Type_A CTA:DM誘導 婉曲:不要 テーマ:なぜ60本も記録を続けているのか、自分でも分からない
+File.62 Type_A CTA:なし 婉曲:要 テーマ:後輩が入社してきた日、自分の足元が気になった
+File.63 Type_B CTA:ソフトCTA 婉曲:不要 テーマ:12年で分かったこと：効く対策は人に言えない
+File.64 Type_C CTA:なし 婉曲:要 テーマ:帰宅して最初にやること、12年間変わらない
+File.65 Type_A CTA:DM誘導 婉曲:要 テーマ:同僚に「最近気にならなくなったな」と言われた日
+File.66 Type_B CTA:ソフトCTA 婉曲:不要 テーマ:安全靴の中敷きを月1で交換する理由
+File.67 Type_A CTA:なし 婉曲:要 テーマ:金曜の夜、友人に誘われた飲み会を断った理由
+File.68 Type_C CTA:なし 婉曲:不要 テーマ:靴下を3足まとめ買いする時の基準
+File.69 Type_A CTA:DM誘導 婉曲:要 テーマ:会社の健康診断で足を見せる瞬間の話
+File.70 Type_B CTA:ソフトCTA 婉曲:不要 テーマ:12年記録して分かった、季節で変わること
+File.71 Type_A CTA:DM誘導 婉曲:不要 テーマ:正直に言う。僕が続けているものを勧めたくない理由
+File.72 Type_C CTA:なし 婉曲:要 テーマ:出張のホテルで靴を二重袋に入れる手順
+File.73 Type_B CTA:ソフトCTA 婉曲:不要 テーマ:12年間で一番効果があったのは、たぶん「諦め」
+File.74 Type_A CTA:なし 婉曲:要 テーマ:夏場のロッカールームで自分だけ着替えが遅い理由
+File.75 Type_B CTA:ソフトCTA 婉曲:不要 テーマ:ネットで対策を調べなくなった日のこと
+File.76 Type_A CTA:DM誘導 婉曲:要 テーマ:先輩が退職する日、足元のことで初めて話した
+File.77 Type_C CTA:なし 婉曲:不要 テーマ:梅雨の安全靴は別の生き物になる
+File.78 Type_B CTA:ソフトCTA 婉曲:不要 テーマ:「それ、本当に効くの？」と聞かれた時の正直な答え
+File.79 Type_A CTA:DM誘導 婉曲:要 テーマ:友人の結婚式で革靴を履いた日のこと
+File.80 Type_B CTA:ソフトCTA 婉曲:不要 テーマ:12年の記録を振り返って、消したい回が3つある
+File.81 Type_A CTA:DM誘導 婉曲:要 テーマ:新しい同僚が同じ悩みを持っていることに気づいた日
+File.82 Type_C CTA:なし 婉曲:要 テーマ:安全靴を買い替える時に店員に聞かれたくないこと
+File.83 Type_B CTA:ソフトCTA 婉曲:不要 テーマ:12年で試した対策を金額で振り返ると、正直ゾッとする
+File.84 Type_A CTA:なし 婉曲:要 テーマ:足元の悩みは、他の全部の自信を奪っていく
+File.85 Type_C CTA:なし 婉曲:不要 テーマ:休日に靴を全部並べて乾かす朝のルーティン
+File.86 Type_A CTA:DM誘導 婉曲:不要 テーマ:同じ現場で働く人に、この記録を見せたことがある
+File.87 Type_A CTA:DM誘導 婉曲:要 テーマ:帰省した実家で靴を脱ぐ瞬間、毎回緊張する
+File.88 Type_B CTA:ソフトCTA 婉曲:不要 テーマ:正直に言う。僕が記録を続ける本当の理由
+File.89 Type_C CTA:なし 婉曲:不要 テーマ:今日も安全靴を履いた。明日も履く。それだけの話
+File.90 Type_A CTA:DM誘導 婉曲:不要 テーマ:90本目。まだ続ける理由は、まだ分からないことがあるから

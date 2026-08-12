@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """PreToolUse hook: scripts/post_reel.py・scripts/post_carousel.py 実行直前の機械検証。
-検証1=成果物実在／検証2=design_master整合／検証3=HEAD一致・クリーン。
+検証1=成果物実在／検証2=design_master整合（Type_A/B/C＝P3対応）／検証3=HEAD一致・クリーン。
 1つでもNGならexit 2でツール実行をブロックする。exit 1は使わない（公式仕様：exit 2=ブロック）。
 実投稿・commit/pushはこのHook自体は一切行わない。標準ライブラリのみで実装。
 """
@@ -76,7 +76,7 @@ def get_design_entry(root: Path, ep: int):
     for line in master_path.read_text(encoding="utf-8").splitlines():
         line = line.strip()
         if line.startswith(key + " "):
-            m = re.search(r"(Type_\d+)", line)
+            m = re.search(r"(Type_(?:\d+|[ABC]))", line)
             if m:
                 return ("type", m.group(1))
             m2 = re.search(r"Carousel:(comparison|checklist|warning)", line)

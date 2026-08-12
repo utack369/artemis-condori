@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# PreToolUse hook: ep[N].json Write 時に cta_required（リール=telop_guideline／カルーセル=carousel_guideline）を設計図マスターと照合
+# PreToolUse hook: ep[N].json Write 時に cta_required（リール=telop_guideline／カルーセル=carousel_guideline）を設計図マスターと照合 v3（File.61以降）はmeta.cta_typeの3値照合。
 # 不一致: exit 2 + stderr でブロック。設計図マスター未定義エピソードは exit 0（安全側）。
 import sys, json, re, os
 
@@ -23,6 +23,9 @@ def get_design_cta(n):
             m = re.search(r'CTA:(true|false)', line)
             if m:
                 return m.group(1) == 'true'
+            m3 = re.search(r'CTA:(DM誘導|ソフトCTA|なし)', line)
+            if m3:
+                return m3.group(1)
     return None
 
 def main():
@@ -44,6 +47,25 @@ def main():
     content = tool_input.get('content') or ''
     try:
         data = json.loads(content)
+    except Exception:
+        sys.exit(0)
+    if isinstance(design_cta, str):
+        # v3（File.61以降）：meta.cta_type と文字列照合（fail-closed）
+        try:
+            generated_cta_type = (data.get('meta') or {}).get('cta_type')
+        except Exception:
+            generated_cta_type = None
+        if generated_cta_type is None:
+            sys.stderr.write('⛔ meta.cta_type が存在しません（v3指示書の必須フィールド）\n')
+            sys.stderr.write(f'対象: {path}\n')
+            sys.exit(2)
+        if generated_cta_type != design_cta:
+            sys.stderr.write(f'⛔ CTA不一致：設計図={design_cta}、生成={generated_cta_type}\n')
+            sys.stderr.write(f'対象: {path}\n')
+            sys.stderr.write(f'→ design_master.md の File.{n:02d} を確認し、cta_type={design_cta} で再生成してください。\n')
+            sys.exit(2)
+        sys.exit(0)
+    try:
         generated_cta = data.get('telop_guideline', {}).get('cta_required')
         if generated_cta is None:
             # カルーセルはtelop_guidelineを持たないため、carousel_guideline側を参照する

@@ -1,0 +1,317 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "コンドリ 台本指示書（20-30秒リール専用）",
+  "description": "パッケージ3（File.61-90）の各話指示書を生成するためのJSON Schema v3。20-30秒リール専用。P1/P2のv2から、カルーセル・7秒リールを廃止し、20-30秒リール用に再設計。omegaが生成し、alphaに渡して成果物を生成する。",
+  "type": "object",
+  "required": [
+    "meta",
+    "purpose",
+    "target_state",
+    "logic",
+    "psychology",
+    "narration_guideline",
+    "telop_guideline",
+    "thumbnail_guideline",
+    "caption",
+    "tone_and_rules",
+    "honesty_rule",
+    "euphemism_dict"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "description": "基本情報",
+      "required": ["file_number", "psychology_type", "cta_type", "euphemism", "phase", "phase_role"],
+      "properties": {
+        "file_number": {
+          "type": "integer",
+          "description": "ファイル番号（61〜90）",
+          "minimum": 61,
+          "maximum": 90
+        },
+        "psychology_type": {
+          "type": "string",
+          "description": "適用する心理導線型。P3では20-30秒の尺に合わせて再定義したType_A/B/Cを使用。",
+          "enum": [
+            "Type_A（告白・独白型）",
+            "Type_B（気づき・発見型）",
+            "Type_C（日常スケッチ型）"
+          ]
+        },
+        "cta_type": {
+          "type": "string",
+          "description": "CTAの種別。Type_Aは原則DM誘導またはなし、Type_Bは原則ソフトCTA、Type_Cは原則なし。設計図の配置に従う。",
+          "enum": [
+            "DM誘導",
+            "ソフトCTA",
+            "なし"
+          ]
+        },
+        "euphemism": {
+          "type": "string",
+          "description": "この話で使用する婉曲表現の核（例：足元の違和感、蓄積ダメージ）。婉曲不要の場合は「直接表現可」と記載。"
+        },
+        "phase": {
+          "type": "string",
+          "description": "パッケージ3内のフェーズ",
+          "enum": [
+            "前半（File.61-70）：対話の扉を開く",
+            "中盤（File.71-80）：人柄の深い伝達",
+            "後半（File.81-90）：DM発生の最大化"
+          ]
+        },
+        "phase_role": {
+          "type": "string",
+          "description": "フェーズ内での役割（例：P3の入口、中盤の核、後半のクライマックス、P4への接続等）"
+        }
+      }
+    },
+    "purpose": {
+      "type": "string",
+      "description": "このコンテンツで達成すべき目的。1〜2文で記述。P3全体の目的「和男と話したい→DM発生→紹介登録」に対するこの1本の寄与を明確にする。"
+    },
+    "target_state": {
+      "type": "string",
+      "description": "ターゲットの現状。このコンテンツを偶然見た視聴者がどの心理状態にいるか。直列視聴を前提にしない。P1-P2を経た視聴者の場合は「和男を知っている人」として、初見は「足元の悩みを持つ30-50代男性」として記述。"
+    },
+    "logic": {
+      "type": "array",
+      "description": "盛り込むべき論理の骨格。2〜3項目。ナレーションとテロップの設計根拠。",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 2,
+      "maxItems": 3
+    },
+    "psychology": {
+      "type": "object",
+      "description": "心理導線設計。入口と出口。psychology_typeに応じた設計。",
+      "required": ["entry", "exit"],
+      "properties": {
+        "entry": {
+          "type": "string",
+          "description": "入口：視聴者をどこから拾うか。Type_A=弱さ・本音への共感、Type_B=知的好奇心、Type_C=日常の共感。"
+        },
+        "exit": {
+          "type": "string",
+          "description": "出口：視聴後にどういう状態にするか。Type_A=「この人に話したい」、Type_B=「もっと聞きたい」、Type_C=人柄の深い理解。"
+        }
+      }
+    },
+    "narration_guideline": {
+      "type": "object",
+      "description": "ナレーション（音声）の設計指針。20-30秒リール用。",
+      "required": ["direction", "key_emotion", "opening_approach", "pacing"],
+      "properties": {
+        "direction": {
+          "type": "string",
+          "description": "ナレーションの方向性。140〜200文字の共感ナラティブとしてどう語るかの指定。P1/P2の55-65文字から拡大した尺を活かし、「間」や「沈黙」を意識した構成を指示。"
+        },
+        "key_emotion": {
+          "type": "string",
+          "description": "この話の核となる感情（例：孤独感、焦り、諦め、苦笑い、安堵、緊張）"
+        },
+        "opening_approach": {
+          "type": "string",
+          "description": "冒頭の入り方。イン・メディアス・レス（途中から開始）を推奨。背景説明から入らない。20-30秒の尺があるため、冒頭2-3秒でフックし、残りで展開→着地の3構成。"
+        },
+        "pacing": {
+          "type": "string",
+          "description": "テンポ設計。20-30秒の尺における緩急。Type_A=前半ゆっくり→後半沈黙、Type_B=一定テンポで情報提示、Type_C=淡々と一定。句点の位置で「間」を作る箇所を指定。"
+        }
+      }
+    },
+    "telop_guideline": {
+      "type": "object",
+      "description": "テロップ（画面テキスト）の設計指針。",
+      "required": ["direction", "cta_expression"],
+      "properties": {
+        "direction": {
+          "type": "string",
+          "description": "テロップの方向性。3〜6行、1行最大10文字。ナレーション（感情）を補完する論理・気づきを配置。20-30秒の尺に合わせ、テロップの表示タイミング（前半/中盤/後半）も指定。"
+        },
+        "cta_expression": {
+          "type": ["string", "null"],
+          "description": "CTAの具体的な表現。meta.cta_type=DM誘導の場合：テロップ最終行にDM誘導文（「ひとこと送ってください」系のトーン）。meta.cta_type=ソフトCTAの場合：テロップ最終行にプロフィール誘導（事実の陳述）。meta.cta_type=なしの場合：null。"
+        }
+      }
+    },
+    "thumbnail_guideline": {
+      "type": "object",
+      "description": "サムネイル画像の設計指針。",
+      "required": ["direction", "tone", "selected_text"],
+      "properties": {
+        "direction": {
+          "type": "string",
+          "description": "サムネテキストの方向性"
+        },
+        "tone": {
+          "type": "string",
+          "description": "サムネのトーン"
+        },
+        "selected_text": {
+          "type": "array",
+          "description": "サムネテキスト。2〜4行、1行最大7文字。約物禁止。",
+          "items": {
+            "type": "string",
+            "maxLength": 7
+          },
+          "minItems": 2,
+          "maxItems": 4
+        }
+      }
+    },
+    "caption": {
+      "type": "object",
+      "description": "キャプション文。",
+      "required": ["hook_line", "body", "cta", "hashtags"],
+      "properties": {
+        "hook_line": {
+          "type": "string",
+          "description": "キャプション冒頭のフック。1文。"
+        },
+        "body": {
+          "type": "string",
+          "description": "キャプション本文。2〜4文。キーワードSEOを意識。"
+        },
+        "cta": {
+          "type": "string",
+          "description": "キャプションCTA。meta.cta_type=DM誘導の場合：DM誘導文（ハードCTAはここのみに配置可。テロップのDM誘導と呼応させる）。meta.cta_type=ソフトCTAの場合：プロフィールリンク誘導。meta.cta_type=なしの場合：CTAなし（空文字列を許容）。"
+        },
+        "hashtags": {
+          "type": "array",
+          "description": "ハッシュタグ。5個。中規模ニッチタグ。",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 5,
+          "maxItems": 5
+        }
+      }
+    },
+    "tone_and_rules": {
+      "type": "object",
+      "description": "トーンとルール。",
+      "required": [
+        "persona",
+        "narration_duration",
+        "narration_chars",
+        "telop_lines",
+        "telop_max_chars_per_line",
+        "sentence_ending",
+        "prohibited_words",
+        "one_message",
+        "numbering",
+        "marriage_constraint"
+      ],
+      "properties": {
+        "persona": {
+          "type": "string",
+          "description": "ペルソナ。固定値：共感共闘型・和男（30代中旬・工場勤務12年・未婚・一人暮らし・足元の悩みの当事者）",
+          "const": "共感共闘型・和男（30代中旬・工場勤務12年・未婚・一人暮らし・足元の悩みの当事者）"
+        },
+        "narration_duration": {
+          "type": "string",
+          "description": "ナレーション尺。固定値：20〜30秒。導入（2-3秒）→展開（12-20秒）→着地（3-5秒）の3構成。",
+          "const": "20〜30秒。導入（2-3秒）→展開（12-20秒）→着地（3-5秒）の3構成"
+        },
+        "narration_chars": {
+          "type": "string",
+          "description": "ナレーション文字数。固定値：140〜200字。句点で文区切り＝音声の分割単位。Type_Aは140-170字（間を多く）、Type_B/Cは160-200字（情報密度高め）を目安とする。",
+          "const": "140〜200字"
+        },
+        "telop_lines": {
+          "type": "string",
+          "description": "テロップ行数。固定値：3〜6行（20-30秒の尺に合わせP1/P2の2-4行から拡大）。",
+          "const": "3〜6行"
+        },
+        "telop_max_chars_per_line": {
+          "type": "integer",
+          "description": "テロップ1行あたり最大文字数。固定値：10。",
+          "const": 10
+        },
+        "sentence_ending": {
+          "type": "string",
+          "description": "語尾。固定値：です・ます",
+          "const": "です・ます"
+        },
+        "prohibited_words": {
+          "type": "array",
+          "description": "禁止語リスト。ナレーション・テロップ両方に適用。「変わった」は効果の暗示に近いため禁止。「気にならなくなった」に統一。",
+          "items": {
+            "type": "string"
+          }
+        },
+        "one_message": {
+          "type": "string",
+          "description": "1コンテンツ1メッセージ基準。このコンテンツを見た人が一言で要約できる核心メッセージ。"
+        },
+        "numbering": {
+          "type": "string",
+          "description": "ナンバリング。テロップに配置。形式：安全靴と戦う12年の記録：File.XX"
+        },
+        "marriage_constraint": {
+          "type": "string",
+          "description": "婚姻制約。固定値：和男は未婚。妻・子ども・家族（実家の親を除く）の話は使用禁止。人間関係は職場・友人・知人・一人暮らしの日常・内面の範囲で構成する。",
+          "const": "和男は未婚。妻・子ども・家族（実家の親を除く）の話は使用禁止。人間関係は職場・友人・知人・一人暮らしの日常・内面の範囲で構成する。"
+        }
+      }
+    },
+    "honesty_rule": {
+      "type": "object",
+      "description": "正直さ=(1)の判定基準。beta品質チェックの核。P3全体で最重要のルール。",
+      "required": ["effect_claim", "guarantee", "purchase_pressure", "tone_consistency", "changed_prohibition"],
+      "properties": {
+        "effect_claim": {
+          "type": "string",
+          "description": "固定値：効果を断定も暗示もしない。「効く」「治る」「消える」「改善する」は禁止。",
+          "const": "効果を断定も暗示もしない。「効く」「治る」「消える」「改善する」は禁止。"
+        },
+        "guarantee": {
+          "type": "string",
+          "description": "固定値：保証しない。「必ず」「絶対」「確実に」は禁止。",
+          "const": "保証しない。「必ず」「絶対」「確実に」は禁止。"
+        },
+        "purchase_pressure": {
+          "type": "string",
+          "description": "固定値：合わない人が買う確率を下げる設計。購入を急かす・限定感を出す表現は禁止。",
+          "const": "合わない人が買う確率を下げる設計。購入を急かす・限定感を出す表現は禁止。"
+        },
+        "tone_consistency": {
+          "type": "string",
+          "description": "固定値：気にならなくなった・保証しない・よかったら。この3語のトーンを一貫する。",
+          "const": "気にならなくなった・保証しない・よかったら。この3語のトーンを一貫する。"
+        },
+        "changed_prohibition": {
+          "type": "string",
+          "description": "固定値：「変わった」は効果の暗示に近いため使用禁止。体験談は「気にならなくなった」に統一。「変わった」「変化があった」「変化を感じた」等の表現はすべて禁止。",
+          "const": "「変わった」は効果の暗示に近いため使用禁止。体験談は「気にならなくなった」に統一。「変わった」「変化があった」「変化を感じた」等の表現はすべて禁止。"
+        }
+      }
+    },
+    "euphemism_dict": {
+      "type": "object",
+      "description": "婉曲表現辞書。ナレーション・テロップに適用。キャプションは対象外。",
+      "required": ["prohibited_direct", "conversion_table"],
+      "properties": {
+        "prohibited_direct": {
+          "type": "array",
+          "description": "直接使用禁止の表現",
+          "items": {
+            "type": "string"
+          }
+        },
+        "conversion_table": {
+          "type": "object",
+          "description": "NGワード→婉曲表現の変換テーブル",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
