@@ -1113,8 +1113,8 @@ def main():
     if telop_lines:
         # 新形式（B方式）：ナレーション文字数チェック
         char_count = len(narration_text)
-        if char_count < 40 or char_count > 80:
-            print(f"エラー：ナレーションが{char_count}字です。55〜65字目安（許容40〜80字）。")
+        if char_count < 120 or char_count > 220:
+            print(f"エラー：ナレーションが{char_count}字です。140〜200字目安（許容120〜220字）。")
             sys.exit(1)
         print(f"  B方式: ナレーション {len(narration_text)}字 / テロップ {len(telop_lines)}行")
         text = narration_text

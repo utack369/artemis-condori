@@ -90,8 +90,8 @@ def main():
         _narr_part = script_text.split("【テロップ】")[0].split("【ナレーション】", 1)[1].strip()
         _narr_count = len(_narr_part)
         print(f"  → B方式検出: ナレーション {_narr_count}字")
-        if _narr_count < 40 or _narr_count > 80:
-            print(f"  ⚠ 警告: ナレーションが想定範囲（55〜65字）から大きく外れています")
+        if _narr_count < 120 or _narr_count > 220:
+            print(f"  ⚠ 警告: ナレーションが想定範囲（140〜200字）から大きく外れています")
     else:
         if char_count < 200 or char_count > 450:
             print(f"  ⚠ 警告: 文字数が想定範囲（320〜360字）から大きく外れています")
