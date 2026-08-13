@@ -1,0 +1,222 @@
+{
+  "ep_number": 61,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現は使用されていない。本回は対策・商品への言及が一切なく、記録を続ける理由の自問のみで構成されているため、効果の因果構造自体が存在しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体を通読しても「これを使えば解決する」と読み取れる構造は存在しない。対策も商品も登場せず、60本の記録を振り返る内省に終始している。CTAも「ひとこと送ってください」であり、効果を暗示する文脈はない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現はナレーション・テロップ・キャプションのいずれにも存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション「正直、自分でもうまく説明できません」「分かりません。それでも、僕はまだ書いています」は和男の共感共闘トーン（弱さ・正直な戸惑いの開示）そのもの。売り込みトーン・専門家トーンへの逸脱はない。テロップ・キャプションも同トーンを維持。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック（文脈判定）",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」は使用されていない。足元・体調文脈での使用は皆無。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterのテーマ「なぜ60本も記録を続けているのか、自分でも分からない」に対し、ナレーションは「気づけば、記録は60本になっていました」から始まり「今も書き続けている理由は、正直、自分でもうまく説明できません」「分かりません。それでも、僕はまだ書いています」と展開。テーマを正確に実装している。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の意味的実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を正しく実装。弱さ・本音の正直な開示＝「自分でもうまく説明できません」「分かりません」という戸惑いの率直な告白。着地＝テロップ「ひとこと/送ってください」＋ナレーション「それでも、僕はまだ書いています」で「この人に話したい」への導線が成立。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.phase_role「P3全体の入口。記録という行為そのものをメタ視点で見つめ直す回。問いを立てるだけで答えを出さずに終える構成」に対し、ナレーションは記録60本を振り返り「なぜ続けているのか分からない」と問いを立て、答えを出さず「分かりません。それでも書いています」で終えている。phase_roleの指定通り。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のため、C1は判定対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のため、C2は判定対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2がともにskipのため、キャプション適用範囲の制御確認は不要。なお、A群（正直さ）のキャプション適用は各A軸で個別に実施済み。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感入口。60本も続けているのに理由が自分でも分からないという戸惑いをそのまま開示」に対し、ナレーション冒頭で「気づけば記録は60本」→「今も書き続けている理由は、正直、自分でもうまく説明できません」と戸惑いを即座に開示。Type_Aの弱さ・本音への共感入口として機能している。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「この人に話したい。答えを出さずに問いを抱えたまま生きている姿」に対し、ナレーション末尾「分かりません。それでも、僕はまだ書いています」で答えなき問いを抱える姿を提示し、テロップ「ひとこと/送ってください」で「この人に話したい」→DM送信の着地を実現。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「60本続けてきた記録の理由を自分でも説明できないまま、それでも続けている和男の正直な戸惑いの記録」に対し、台本全体がこの1メッセージに集約される。第2のメッセージ（対策の紹介・商品への誘導等）は混在していない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=DM誘導。テロップのナンバリング行「安全靴と戦う12年の記録：File.61」を除いた実質最終メッセージ行は「ひとこと/送ってください」。telop_guideline.cta_expression「同じように記録している人がいたら、ひとこと送ってください」の核心部分を短縮形で反映。依頼形だがDM誘導回では許容。「今すぐDMして」等の強圧的命令ではなく招待トーン。キャプションCTAはcta_expressionのフル版を正確に反映。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "meta.cta_type=DM誘導のため、E2（cta_type=なし専用軸）は判定対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等のハードCTA（外部リンク誘導・強圧的命令）は存在しない。テロップの「ひとこと/送ってください」はDM誘導回に許容される招待トーンの依頼形であり、ハードCTAには該当しない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全6文の語尾を確認：「なっていました」「覚えています」「説明できません」「書き続けていました」「分かりません」「書いています」。全て「です・ます」調で統一されており、「だ・である」調の混在はない。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは詳細な独白（理由を覚えている、でも今の理由は説明できない、誰かに見せるためでもなく...）。テロップは「気づいたら/60本目/なぜ続けてる/自分でもわからない」と骨格のみを短い語で提示。同一テキストの転記や要約ではなく、別の角度で内容を補完している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：「正直、自分でもうまく説明できません」「分かりません。それでも、僕はまだ書いています」と内面の戸惑い・感情を表現。テロップ＝論理（気づき・CTA）：「気づいたら/60本目/なぜ続けてる/自分でもわからない」で事実と問いの骨格を提示し、「ひとこと/送ってください」でCTA機能を担う。役割分離が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素をep61.jsonのcaptionフィールドと照合。hook_line「60本目を書きながら、ふと手が止まりました。」→一致。body（安全靴12年の記録60本、理由は覚えている、今の理由は説明できない、気づいたら書き続けていた、分からないまま続けているのが正直な気持ち）→指示書bodyと意味的に一致（改行位置の差のみ）。cta「同じように何かを記録し続けている人...ひとこと送ってください」→一致。hashtags「#安全靴 #工場勤務 #12年の記録 #足元ケア #継続の理由」→指示書の5タグと完全一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作の主題：ep56=足裏の皮むけ原因調査、ep57=外側対策のチェックリスト、ep58=足指パッド3種の試用放棄、ep59=妻が消臭剤を増やした日、ep60=やめた方がいい対策の共通パターン。ep61の主題は「60本の記録を振り返り、なぜ続けているか分からないという内省」であり、素材・場面・対策のいずれも直近5作と重複しない。ep60も記録に触れるがep60は対策パターンの分析、ep61は記録行為そのものへの自問であり、切り口が異なる。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行を確認：「気づいたら」「60本目」「なぜ続けてる」「自分でもわからない」→各行が独立して意味を持ち1行で瞬時に理解可能。「ひとこと」「送ってください」→CTA部分が2行に分割されているが、順次表示の文脈で自然に連結して理解できる。視認性に問題なし。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「気づけば、記録は60本になっていました。」は背景説明（「安全靴を12年履いてきて…」等）を挟まず、記録本数という事実の提示から即座に始まっている。narration_guideline.opening_approachの「イン・メディアス・レス。記録本数というフックから即座に入る」と整合。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "婚姻制約チェック（v3新設・Coordinator追記）",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも妻・子ども・家族（実家の親を除く）の登場・存在の示唆はない。人間関係は一人称の内面の範囲で完結しており、tone_and_rules.marriage_constraintに適合。特記：verification_result.schema.jsonのaxis_id enumにJ1が未収載のため、verifierはsubmit_verificationツールの構造化出力にJ1を含められず、応答テキストで補足報告した。この結果をCoordinatorが本ファイルに手動で追記している（スキーマ改修が必要な既知の齟齬。判断は本部）。"
+        }
+      ],
+      "summary": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highのfail 0件・全軸pass/skipのためPass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）へ自動進行"
+    }
+  ]
+}
