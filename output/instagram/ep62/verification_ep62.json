@@ -1,0 +1,222 @@
+{
+  "ep_number": 62,
+  "euphemism_required": true,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現が存在しない。足元の悩みに対する対策・製品への因果断定は一切なく、後輩の入社をきっかけとした自意識の変化を描写するのみ。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体を通じて「これを使えば解決する」と読み取れる構造が存在しない。製品・対策への言及自体がなく、和男の内面の緊張を描写する独白に終始している。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現がナレーション・テロップ・キャプションのいずれにも存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「なぜか近く感じました」「ふと気になり始めました」「少しだけ身構える自分がいます」等、和男の共感共闘トーン（正直な内省・弱さの開示）が全体を通じて一貫。売り込みトーン・専門家トーンへの逸脱がない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体で「変わった/変わる/変化した/変化があった/変化を感じた」の使用なし。足元・体調文脈での「変」語幹の出現がゼロ。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterのFile.62テーマ「後輩が入社してきた日、自分の足元が気になった」に対し、ナレーションは後輩の入社をきっかけに足元を意識するようになった過程を正確に描写しており、テーマが一致している。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装している。弱さ・本音の正直な開示＝後輩の前で足元を気にしてしまう自意識の告白。着地＝「靴を脱ぐ場面になると、少しだけ身構える自分がいます」で和男の内面の緊張を率直に開示し、テロップ「誰にも言えず」と合わせて「この人に話したい」という共感の着地を実現。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "phase_roleの指定どおり、P3前半のType_A連続2本目として、ep61のメタ視点の独白から切り替え、「後輩の入社」という具体的な出来事・具体的な他者を起点に据えている。語彙もep61の「60本」「分からない」「記録」を用いず、「後輩」「距離」「視線」「気になる」を軸に据えており、phase_roleの要求と整合。強度もP3前半の静かな導入にふさわしい。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "婉曲:要のため判定実施。euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）のいずれもナレーション・テロップに存在しない。足元の悩みは「足元のこと」「気になり始めました」「身構える」等の婉曲表現で一貫して描写されている。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションで使用されている「足元のこと」はconversion_tableの「足のニオイ→足元の違和感/足元の悩み」に整合。「気になり始めました」は「臭い→気になる」の変換パターンと合致。直接表現を確実に回避しつつ、文脈で十分に意味が伝わる婉曲が成立している。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1/C2の婉曲チェックはcaptionに適用しない制御を遵守。captionにはA群（正直さ）を適用済み（A1-A5すべてpass）。なお、captionでも「自分の足元がふと気になる」「意識するようになりました」等の婉曲表現が使用されており、直接表現の使用はない。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entryの指定「弱さ・本音への共感入口。後輩が入ってきたという些細な出来事をきっかけに、足元への不安がふと顔を出した正直な戸惑い」に対し、ナレーション冒頭「後輩が入ってきた日、これまでと同じはずの距離が、なぜか近く感じました」がType_A入口（弱さ・本音への共感）を正確に実装。背景説明なしに些細な出来事と戸惑いから入っている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exitの指定「『この人に話したい』。誰にも言わずに一人で抱えている緊張に触れ、共感を寄せたくなる状態」に対し、ナレーション末尾「靴を脱ぐ場面になると、少しだけ身構える自分がいます」＋テロップ「誰にも言えず」が、誰にも言えない一人の緊張を率直に提示し、Type_Aの「この人に話したい」着地を実現。CTAなしの余韻で終える点もexit指定と整合。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「後輩の入社をきっかけに、これまで意識していなかった足元の存在にふと気づいた和男の静かな緊張の記録」に対し、台本全体がこの1メッセージに集約されている。対策の話題・製品の言及・別テーマの混入がなく、2メッセージの混在は認められない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=なしのためE1はskip。CTA実装の適切性はDM誘導回・ソフトCTA回のみ判定対象。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=なし回のため判定実施。テロップ5行（ナンバリング除く）「後輩が/入ってきた日/距離が/気になった/誰にも言えず」にフォロー・保存・いいね・コメント・シェア・リンク遷移・DM等の行動指示（命令形・依頼形・勧誘形）が存在しない。ナレーションも純粋な独白で行動喚起なし。キャプションもCTAフィールドが空、本文にDM誘導文・行動指示の混入なし。ハッシュタグも情報提示のみ。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導が存在しない。CTA:なし回のためキャプションもハードCTA不可だが、キャプション内にもハードCTA表現は存在しない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文の語尾を確認：「感じました」「ありません」「気になり始めました」「測るようになりました」「自分がいます」。すべてです・ます調で統一されており、だ・である調の混在がない。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは出来事の経緯と内面の動きを文章で詳細に語る独白体。テロップは「後輩が/入ってきた日/距離が/気になった/誰にも言えず」と断片的なキーワードで骨格を提示。同一テキストの転記・要約ではなく、表現方法と内容の粒度が明確に異なっている。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：後輩との距離に対する戸惑い・自意識・身構える緊張感を感情的に描写。テロップ＝論理（気づき）：「後輩が/入ってきた日」（出来事の提示）→「距離が/気になった」（気づきの構造提示）→「誰にも言えず」（結論の提示）と、出来事→気づき→帰結の論理骨格を短い言葉で提示。役割分離が成立している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素がep62.jsonのcaptionフィールドと完全一致。hook_line「後輩が入ってきた日、いつもと違うことに気づきました。」＝一致。body 3段落＝一致。CTAフィールド空＝一致。hashtags 5個（#安全靴 #工場勤務 #12年の記録 #新しい職場 #足元の悩み）＝一致。他epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ep62の主題「後輩の入社をきっかけとした足元の自意識」は直近5作（ep57:外側対策チェックリスト、ep58:足指パッド3種、ep59:妻が消臭剤を増やした日、ep60:やめた方がいい対策パターン、ep61:60本の記録を続ける理由）のいずれとも素材・場面・対策が重複しない。「後輩」「新しい視線」「距離感」という切り口は過去5作に出現していない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち、瞬時に理解可能。「後輩が」(3字)「入ってきた日」(6字)「距離が」(3字)「気になった」(5字)「誰にも言えず」(6字)。すべて10字以内で、1行で即座に読み取れる。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「後輩が入ってきた日、これまでと同じはずの距離が、なぜか近く感じました」は、出来事の途中から入るイン・メディアス・レス構成。「安全靴のことで悩んでいて…」「僕は工場で12年…」等の背景説明を挟まず、具体的な場面に即座に視聴者を引き込んでいる。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraintチェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体で妻・子ども・家族（実家の親を除く）の登場・存在の示唆がない。人間関係は「後輩」（職場）と和男自身の内面のみで構成。配偶者・子の存在を暗示する描写（「家族が待っている」等）もない。tone_and_rules.marriage_constraint「和男は未婚」の制約を完全に遵守。"
+        }
+      ],
+      "summary": {
+        "pass": 24,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highのfail 0件・全軸pass/skipのためPass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）へ自動進行"
+    }
+  ]
+}
