@@ -1,0 +1,43 @@
+{
+  "ep_number": 64,
+  "euphemism_required": true,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {"axis_id": "A1", "axis_name": "効果の断定", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション・テロップ・captionのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。台本全体が帰宅後の日課の描写に終始しており、対策→効果の因果構造が存在しない。"},
+        {"axis_id": "A2", "axis_name": "効果の暗示", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション＋テロップ＋captionの組み合わせ全体で「これを使えば解決する」と読み取れる構造が存在しない。商品・対策への言及自体がなく、日課の描写のみで完結している。"},
+        {"axis_id": "A3", "axis_name": "購入圧力", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現なし。購入を示唆する文脈自体が存在しない。"},
+        {"axis_id": "A4", "axis_name": "トーン一貫性", "result": "pass", "severity": "critical", "target_file": "script.md", "reason": "「特別な理由があるわけではありません」「いつもの手順になっています」「今日も、いつも通りでした」等、和男の共感共闘トーン（淡々と自分の日常を語る当事者視点）が全編一貫。売り込み・専門家トーンへの逸脱なし。"},
+        {"axis_id": "A5", "axis_name": "「変わった」禁止", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション・テロップ・captionのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」の使用なし。design_master行の「12年間変わらない」は設計図記述であり台本本文ではない。台本本文では「十二年間続いています」「今日も同じ」と別表現で処理されている。"},
+        {"axis_id": "B1", "axis_name": "テーマの一致", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "design_master「帰宅して最初にやること、12年間変わらない」に対し、ナレーションは帰宅→靴を脱ぐ→足元と向き合う→12年間同じ手順という構成で、テーマを正確に実装している。"},
+        {"axis_id": "B2", "axis_name": "型の実装（意味的）", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "Type_C（日常スケッチ型）の心理構造を実装。日常の淡々とした描写（帰宅→靴を脱ぐ→足元と向き合う→いつも通り）が、告白でも気づきの提示でもなく、和男の生活の一コマとして描かれ、「この人はこういう人なのだ」という人柄の深い理解に着地している。"},
+        {"axis_id": "B3", "axis_name": "フェーズ内役割", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "meta.phase_role記載のとおり、P3前半でType_A連続2本→Type_B→本作で初Type_C切替。台本の強度は低く抑えられ、日常の静かなスケッチとして、山場ではなく人柄の蓄積を担う位置づけに整合。"},
+        {"axis_id": "C1", "axis_name": "NGワードの意味的使用", "result": "pass", "severity": "critical", "target_file": "script.md", "reason": "婉曲要。euphemism_dict.prohibited_direct（ニオイ/臭い/クサい/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策等）のいずれもナレーション・テロップで直接使用されていない。足元の悩みは「足元と向き合う」「足元を見る」という婉曲表現で処理されている。"},
+        {"axis_id": "C2", "axis_name": "婉曲変換の適切性", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "婉曲要。ナレーション「足元と向き合う」はconversion_table（ニオイ対策→足元と向き合う）と整合。テロップ「足元を見る」も直接表現を確実に回避した間接表現として機能。"},
+        {"axis_id": "C3", "axis_name": "キャプション例外（制御ルール）", "result": "pass", "severity": "low", "target_file": "caption", "reason": "C1/C2はcaptionに適用しない制御ルールが正しく適用されている。captionには「足元と向き合う」と婉曲表現が使われているが、これは制御ルールとは無関係に本文側の判定対象。A群（正直さ）はcaptionにも適用済み。"},
+        {"axis_id": "D1", "axis_name": "入口の実装", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "psychology.entry「日常の共感入口。帰宅して玄関で靴を脱いだ瞬間、真っ先に足元と向き合うという事実の提示から日常的な共感を拾う」に対し、ナレーション冒頭「玄関のドアを開けたら、真っ先にやることがあります」が日常の動作から即座に入り、Type_Cの日常の共感入口を実現。"},
+        {"axis_id": "D2", "axis_name": "出口の実装", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "psychology.exit「人柄の深い理解。毎晩同じ手順を淡々と繰り返す和男の生活そのものに触れ、行動を促さず日常の情景だけを残して終える」に対し、ナレーション末尾「今日も、いつも通りでした」＋テロップ「今日も同じ」が、特別な感情を足さず静かに終え、Type_Cの人柄の深い理解に着地。"},
+        {"axis_id": "D3", "axis_name": "one_message", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "one_message「帰宅して玄関で靴を脱いだ瞬間、真っ先に足元と向き合うという、12年間同じ手順を続けてきた和男の日常の一コマ」。台本全体がこの1メッセージに集約されており、第2のメッセージの混在なし。"},
+        {"axis_id": "E1", "axis_name": "CTA実装の適切性", "result": "skip", "severity": "high", "target_file": "script.md", "reason": "cta_type=なしのため判定対象外。E1はcta_type=DM誘導またはソフトCTAの場合のみ判定する。"},
+        {"axis_id": "E2", "axis_name": "CTA非存在時の混入", "result": "pass", "severity": "high", "target_file": "multiple", "reason": "cta_type=なし回として判定。テロップ全行（帰ってきて/まず靴を脱ぐ/真っ先に/足元を見る/今日も同じ）に特定行動（フォロー・保存・いいね・コメント・シェア・リンク遷移・DM）への命令形・依頼形・勧誘形による指示なし。DM誘導文の混入なし。captionにも行動喚起なし（cta欄は空文字列、本文は日課の描写のみ）。"},
+        {"axis_id": "E3", "axis_name": "テロップ内ハードCTA禁止", "result": "pass", "severity": "critical", "target_file": "script.md", "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。全行が日課の描写に終始。cta_type=なし回のcaptionにもハードCTAなし。"},
+        {"axis_id": "F5", "axis_name": "語尾統一", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション全文の語尾：「あります」「ことです」「ありません」「なっています」「きました」「います」「でした」。すべてです・ます調で統一。だ・である調の混在なし。"},
+        {"axis_id": "G3", "axis_name": "内容分離", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "ナレーションは帰宅後の日課を感情・反省・時間軸を交えて語る（「特別な理由があるわけではありません」「一人の部屋で毎晩静かに繰り返してきました」「十二年間続いています」）。テロップは動作の視覚的ビートを短いフレーズで提示（帰ってきて/まず靴を脱ぐ/真っ先に/足元を見る/今日も同じ）。同一テキストの転記・要約ではなく、動詞も異なる（向き合う→見る、ドアを開けたら→帰ってきて）。"},
+        {"axis_id": "G4", "axis_name": "役割分離", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション＝感情（共感）：内省的・共感的語り。テロップ＝論理（気づき）：行動の時系列的・論理的提示。CTA:なし回のためCTA機能は不要。"},
+        {"axis_id": "H2", "axis_name": "キャプション内容の指示書一致", "result": "pass", "severity": "high", "target_file": "caption", "reason": "caption.mdの各要素がep64.jsonのcaptionフィールドと完全一致。hook_line「帰宅して、真っ先にやることがあります。」一致。body3段落すべて一致。cta欄は空（指示書どおり）。hashtags 5個一致。別epの残骸混入なし。"},
+        {"axis_id": "I1", "axis_name": "過去epとの素材重複", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ep64主題（帰宅直後に靴を脱いで足元と向き合う日課）は直近5作と重複しない。ep59=靴箱の消臭剤（妻の配慮）、ep60=やめた方がいい対策パターン（カルーセル）、ep61=60本の記録を続ける理由、ep62=後輩入社と距離感、ep63=12年で一番良かったもの。いずれも素材・場面・対策が異なる。"},
+        {"axis_id": "I2", "axis_name": "テロップ視認性（意味的）", "result": "pass", "severity": "low", "target_file": "script.md", "reason": "テロップ各行が短く独立して意味を持つ。「帰ってきて」(4字)「まず靴を脱ぐ」(6字)「真っ先に」(4字)「足元を見る」(5字)「今日も同じ」(5字)。いずれも1行で瞬時に理解可能。"},
+        {"axis_id": "I3", "axis_name": "イン・メディアス・レス", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション冒頭「玄関のドアを開けたら、真っ先にやることがあります。」が帰宅直後の動作の途中から始まっており、背景説明（自己紹介・経緯説明等）を挟まない。narration_guideline.opening_approach「イン・メディアス・レス」の指示どおり実装。"},
+        {"axis_id": "J1", "axis_name": "marriage_constraint", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション「一人の部屋で毎晩静かに繰り返してきました」、caption「誰に見せるでもない、一人暮らしの部屋での小さな習慣です」と一人暮らし描写が明示的。妻・子ども・家族の登場・存在の示唆は一切なし。人間関係は一人暮らしの日常・内面の範囲で構成されており、marriage_constraintに完全準拠。"}
+      ],
+      "summary": {"pass": 23, "fail": 0, "skip": 1},
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highにfail 0件・全軸pass または skip → Pass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）へ自動進行"
+    }
+  ]
+}
