@@ -1,14 +1,22 @@
 name: verify-post
 
+# 冪等性: pending無し／published済みなら何もしない。複数回実行は安全。
 on:
   schedule:
-    - cron: "15 11 * * *"  # 11:15 UTC = 20:15 JST（GitHub Actionsのcronは遅延5〜30分あり得る前提の設計）
+    - cron: "15 11 * * *"   # 20:15 JST 初回検死（公開15分後）
+    - cron: "15 12 * * *"   # 21:15 JST 再試行後の再検証
+    - cron: "15 14 * * *"   # 23:15 JST 遅延公開・2回目再試行の検証
+    - cron: "0 22 * * *"    # 07:00 JST 最終確認（監視③7:30の前）
   workflow_dispatch:
     inputs:
       dry_run:
         description: "dry-run（再試行・pending削除をスキップ）"
         type: boolean
         default: false
+
+concurrency:
+  group: verify-post
+  cancel-in-progress: false
 
 jobs:
   verify:
