@@ -1,0 +1,246 @@
+{
+  "ep_number": 65,
+  "euphemism_required": true,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション全文・テロップ全行・caption全文",
+          "reason": "「効く/治る/消える/改善する/なくなる/解消」等の断定語が足元の悩み文脈で使用されていない。「気にならなくなった」は心理的実感の報告であり、特定の対策Xから効果Yが生じるという因果構造を伴っていないため、効果の断定には該当しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション・テロップ・CTA全体の組み合わせ",
+          "reason": "台本全体を通じて具体的な対策・商品・方法への言及が一切なく、「これを使えば解決する」と読み取れる構造が存在しない。同僚からの観察をきっかけに自分の実感に気づいたという体験の報告にとどまり、因果的な効果暗示の回路が成立していない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション・テロップ・caption全文",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現が存在しない。CTA部分も「同じ悩みなら/送ってもらえたら」という招待トーンであり、購入を急かす構造は皆無。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション全文・caption CTA部",
+          "reason": "ナレーションは「え、と思いました」「少し驚きました」「気にならなくなっていました」と淡々とした告白調で、和男の共感共闘トーンを一貫して維持している。売り込みトーン・専門家トーンへの逸脱箇所なし。caption CTA「嬉しいです」「教えてください」もDM誘導回として許容される招待トーンの範囲内。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション・テロップ・caption全文を語幹走査",
+          "reason": "「変わった/変わる/変化した/変化があった/変化を感じた」の語が足元・体調文脈で使用されていない。体験談はhonesty_rule.changed_prohibition準拠で「気にならなくなった」に統一されている。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション冒頭『「最近、気にならなくなったな」。同僚から、不意にそう言われました。』",
+          "reason": "design_masterのテーマ「同僚に『最近気にならなくなったな』と言われた日」を正確に扱っている。同僚の一言を起点に自分の内面の実感に気づく構造が、テーマの意図と完全に一致。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション全体の構造",
+          "reason": "Type_A（告白・独白型）の心理構造が実装されている。弱さ・本音の正直な開示として「え、と思いました」「何のことか、最初は分かりませんでした」という戸惑いの開示があり、「自分から言葉にしたことは、一度もありません」という告白性がある。着地はテロップCTA「同じ悩みなら/送ってもらえたら」で「この人に話したい」の出口が実現されている。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "台本全体の強度・方向",
+          "reason": "meta.phase_roleに記載の「P3前半のDM誘導回のうちFile.61に続く2本目」として、ep61（メタ視点・自問）と異なる「外部の出来事（同僚の一言）を起点に据える」構造を実現。DM誘導回として開いた着地（分かち合いたい気持ち）で終えており、ep62（閉じた着地・緊張のまま終える）との対照も設計図の意図通り。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "location": "ナレーション・テロップ全文",
+          "reason": "euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）のいずれもナレーション・テロップに使用されていない。悩みの具体的内容には「何のことか」と曖昧にとどめ、直接表現を完全に回避している。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション全文",
+          "reason": "直接表現を一切使用せず、「気にしていない自分」「気にならなくなっていました」等の婉曲表現で統一。悩みの内容を具体的に言語化する場面自体がなく、conversion_tableの変換が必要になる局面が発生しない高い婉曲設計。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "location": "caption CTA部『同じ悩みがあるなら、ひとこと送ってもらえたら嬉しいです。同じように「気にならなくなった」と感じたことがある人も、ぜひ教えてください。』",
+          "reason": "caption本文およびCTA内にprohibited_direct語（ニオイ/臭い/クサい等）の混入なし。「悩み」はprohibited_directリストに含まれない一般語。婉曲チェック(C1/C2)はcaptionに適用しない制御ルールが正しく機能する前提で、captionのDM誘導文言にも直接表現が混入していないことを確認済。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション冒頭『「最近、気にならなくなったな」。同僚から、不意にそう言われました。え、と思いました。何のことか、最初は分かりませんでした。』",
+          "reason": "psychology.entry「弱さ・本音への共感入口。同僚の何気ない一言によって、自分でも気づいていなかった心の状態にふと触れてしまった和男の戸惑いから視聴者を拾う」が正確に実現されている。同僚の引用→「え、と思いました」の戸惑い→「何のことか、最初は分かりませんでした」の困惑という流れで、Type_Aの弱さ・本音への共感入口が機能。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション末尾『気にならなくなっていました。』＋テロップCTA『同じ悩みなら/送ってもらえたら』",
+          "reason": "psychology.exit「『この人に話したい』。他者からの観察をきっかけに芽生えた小さな安堵を、誰かと分かち合いたくなり、和男にひとこと送りたくなる状態にする」が実現されている。ナレーション着地の静かな実感（「気にならなくなっていました。」）が安堵を伝え、テロップCTA「同じ悩みなら/送ってもらえたら」が「この人にひとこと送りたい」という行動動機を自然に生んでいる。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "台本全体",
+          "reason": "one_message「同僚の何気ない一言がきっかけで、自分でも気づいていなかった『気にならなくなった』という実感に気づいた和男の静かな告白」に台本全体が集約されている。サブテーマや第二のメッセージの混在なし。同僚の一言→驚き→内面の気づき→静かな受容という一本の線上に全要素が乗っている。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "テロップ最終2行『同じ悩みなら/送ってもらえたら』",
+          "reason": "cta_type=DM誘導。ナンバリング行（安全靴と戦う12年の記録：File.65）を除いた実質最終メッセージ行「同じ悩みなら/送ってもらえたら」が、telop_guideline.cta_expression「同じ悩みがあるなら、ひとこと送ってもらえたら」をテロップの行分割・短縮形で再現している。「〜もらえたら」は仮定形による柔らかな招待トーンであり、DM誘導回で許容される依頼形の範囲内。強圧的命令（「今すぐDMして」等）・取引型餌付けトーンのいずれにも該当しない。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=DM誘導のため本軸は対象外。E2はcta_type=なしの場合のみ適用。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "テロップ全行・ナレーション全文",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導が存在しない。テロップCTA「同じ悩みなら/送ってもらえたら」は「〜たら」の仮定形による柔らかな招待であり、ハードCTAには該当しない。ナレーションにもハードCTA要素なし。DM誘導回のハードCTAはcaptionのみ許容であり、caption CTA「ひとこと送ってもらえたら嬉しいです」「ぜひ教えてください」はcaption内に収まっているため問題なし。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション全文の文末表現",
+          "reason": "ナレーション内の全文末が「です・ます」調で統一：「言われました」「思いました」「分かりませんでした」「います」「ありません」「驚きました」「気にならなくなっていました」。同僚の引用部「気にならなくなったな」は直接話法の台詞であり、ナレーターの語尾ではないため判定対象外。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション全文 vs テロップ全行",
+          "reason": "ナレーションは同僚の一言からの内面の動き（戸惑い→驚き→静かな受容）を感情的に描写。テロップは「同僚に/言われた一言/気にならなく/なってた」と出来事の断片をキーワード的に提示し、最終行でCTAを配置。ナレーションの全文転記・要約ではなく、別角度の情報提示になっている。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション（感情層）vs テロップ（論理層）",
+          "reason": "ナレーションは「え、と思いました」「少し驚きました」等の感情・共感の層を担う。テロップは「同僚に/言われた一言」（事実の提示）→「気にならなく/なってた」（気づきの提示）→「同じ悩みなら/送ってもらえたら」（CTA）と論理・気づきの層を担う。ナレーション＝感情(共感)、テロップ＝論理(気づき・CTA)の役割分離が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "location": "caption.md全文 vs ep65.json caption各フィールド",
+          "reason": "hook_line「同僚に、こう言われました。」→caption.md 1行目と完全一致。body 3段落→caption.md 3-5行目と完全一致。cta「同じ悩みがあるなら、ひとこと送ってもらえたら嬉しいです。同じように『気にならなくなった』と感じたことがある人も、ぜひ教えてください。」→caption.md 7行目と完全一致。hashtags 5個→caption.md 9行目と完全一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ep65ナレーション主題 vs ep60-64の主題比較",
+          "reason": "ep60（やめた方がいい対策パターン/カルーセル）、ep61（記録60本のメタ自問）、ep62（後輩入社/距離の不安）、ep63（一番良かった対策/言えないもの）、ep64（帰宅後の足元ケア習慣/日常スケッチ）のいずれとも素材・場面・対策が重複しない。ep62の「後輩」とep65の「同僚」は別の人間関係であり、感情の方向も逆（不安の芽生え vs 安堵の自覚）。中核語も「同僚」「言われた」「気にならなくなった」と直近5作の中核語（60本/記録/後輩/距離/帰宅/玄関）と重複なし。Type_A既往のep61・ep62との骨格も、起点（自問 vs 外部の一言）、着地構造（閉 vs 開）、感情方向（不明 vs 安堵）が明確に異なる。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "location": "テロップ全6行",
+          "reason": "各行が短く独立して意味を持つ。「同僚に」(3字)→「言われた一言」(5字)→「気にならなく」(6字)→「なってた」(4字)→「同じ悩みなら」(6字)→「送ってもらえたら」(8字)。いずれも1行で瞬時に理解可能。「気にならなく/なってた」は2行分割だがテロップ表示上のペア提示として自然。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション冒頭『「最近、気にならなくなったな」。同僚から、不意にそう言われました。』",
+          "reason": "同僚の発言の直接引用から即座に開始し、「安全靴のことで悩んでいて…」「僕は工場で12年…」のような背景説明を一切挟んでいない。narration_guideline.opening_approachで指定された「『最近気にならなくなったな』と言われた瞬間の再現から即座に入る」イン・メディアス・レスが正確に実現されている。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション・テロップ・caption全文",
+          "reason": "登場する人間関係は「同僚」のみであり、妻・子ども・家族（実家の親を除く）の登場・存在の示唆は一切ない。「同僚から、不意にそう言われました」は職場の人間関係の範囲内。「自分から言葉にしたことは、一度もありません」等の記述も一人暮らし・内面の範囲の描写であり、配偶者・子の存在を暗示する描写は含まれない。tone_and_rules.marriage_constraint「和男は未婚」の制約を遵守。"
+        }
+      ],
+      "summary": {
+        "pass": 24,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highにfailなし、全軸pass/skipのためPass",
+      "phase": "段3-Ω（omega²）へ自動進行",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）"
+    }
+  ]
+}
