@@ -35,6 +35,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 from datetime import datetime, timedelta
 from typing import Optional, Tuple
 from urllib.parse import urlparse
@@ -58,14 +59,58 @@ MAX_RETRY = 3
 PENDING_PREFIX = "verification/pending/"
 STALE_SCHEDULED_HOURS = 3
 
+# Zernio API 照会（get_post/delete_post）のリトライ設定
+ZERNIO_HTTP_MAX_ATTEMPTS = 3
+ZERNIO_HTTP_BACKOFF_SECONDS = [2, 4]  # 1回目失敗後2秒・2回目失敗後4秒
+
 
 # ---------------------------------------------------------------------------
 # Zernio API
 # ---------------------------------------------------------------------------
+def _zernio_request(method: str, url: str, headers: dict, timeout: int = 30) -> requests.Response:
+    """requests.request をリトライ付きで実行。
+    リトライ対象: requests.exceptions.ConnectionError / Timeout（ReadTimeout含む）、HTTP 429・5xx。
+    非対象（即return）: 2xx・4xx（429除く）。
+    全回失敗時は最後の例外を送出（HTTP 5xxの場合は resp を返す＝呼び出し側で扱う）。"""
+    last_exception: Optional[Exception] = None
+    last_response: Optional[requests.Response] = None
+
+    for attempt in range(ZERNIO_HTTP_MAX_ATTEMPTS):
+        try:
+            resp = requests.request(method, url, headers=headers, timeout=timeout)
+        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
+            last_exception = e
+            last_response = None
+            if attempt < len(ZERNIO_HTTP_BACKOFF_SECONDS):
+                print(
+                    f"△ Zernio照会リトライ {attempt + 1}/{ZERNIO_HTTP_MAX_ATTEMPTS} "
+                    f"({type(e).__name__})"
+                )
+                time.sleep(ZERNIO_HTTP_BACKOFF_SECONDS[attempt])
+            continue
+
+        if resp.status_code == 429 or resp.status_code >= 500:
+            last_exception = None
+            last_response = resp
+            if attempt < len(ZERNIO_HTTP_BACKOFF_SECONDS):
+                print(
+                    f"△ Zernio照会リトライ {attempt + 1}/{ZERNIO_HTTP_MAX_ATTEMPTS} "
+                    f"(HTTP {resp.status_code})"
+                )
+                time.sleep(ZERNIO_HTTP_BACKOFF_SECONDS[attempt])
+            continue
+
+        return resp
+
+    if last_exception is not None:
+        raise last_exception
+    return last_response
+
+
 def get_post(zernio_api_key: str, post_id: str) -> dict:
     endpoint = f"{ZERNIO_API_BASE}/posts/{post_id}"
     headers = {"Authorization": f"Bearer {zernio_api_key}"}
-    resp = requests.get(endpoint, headers=headers, timeout=30)
+    resp = _zernio_request("GET", endpoint, headers, timeout=30)
     resp.raise_for_status()
     return resp.json()["post"]
 
@@ -74,7 +119,7 @@ def delete_post(zernio_api_key: str, post_id: str) -> int:
     """DELETE /posts/{post_id}。HTTPステータスコードを返す（例外は呼び出し側で扱う）。"""
     endpoint = f"{ZERNIO_API_BASE}/posts/{post_id}"
     headers = {"Authorization": f"Bearer {zernio_api_key}"}
-    resp = requests.delete(endpoint, headers=headers, timeout=30)
+    resp = _zernio_request("DELETE", endpoint, headers, timeout=30)
     return resp.status_code
 
 

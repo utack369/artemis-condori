@@ -15,6 +15,8 @@ import unittest
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
+import requests
+
 sys.path.insert(0, str(Path(__file__).parent))
 
 import verify_post  # noqa: E402
@@ -396,6 +398,94 @@ class NotifyChatworkEnvVarTests(unittest.TestCase):
         self.assertIn("テスト本文", kwargs["data"]["body"])
         self.assertEqual(kwargs["headers"]["X-ChatWorkToken"], "dummy-token")
         self.assertIn("12345", m_requests.post.call_args[0][0])
+
+
+class ZernioRequestRetryTests(unittest.TestCase):
+    # 17. get_post：1回目 ReadTimeout→2回目 200 → 結果が返り、request呼び出し2回・sleep 1回（2秒）
+    def test_get_post_retries_on_read_timeout_then_succeeds(self):
+        mock_resp_ok = MagicMock()
+        mock_resp_ok.status_code = 200
+        mock_resp_ok.json.return_value = {"post": {"_id": "p1", "status": "published"}}
+        mock_resp_ok.raise_for_status.return_value = None
+
+        with patch.object(
+            verify_post.requests,
+            "request",
+            side_effect=[requests.exceptions.ReadTimeout("timeout"), mock_resp_ok],
+        ) as m_request, patch.object(verify_post.time, "sleep") as m_sleep:
+            result = verify_post.get_post("dummy-key", "p1")
+
+        self.assertEqual(result, {"_id": "p1", "status": "published"})
+        self.assertEqual(m_request.call_count, 2)
+        m_sleep.assert_called_once_with(2)
+
+    # 18. get_post：3回とも ReadTimeout → 例外送出・request呼び出し3回・sleep 2回（2秒・4秒）
+    def test_get_post_raises_after_three_read_timeouts(self):
+        with patch.object(
+            verify_post.requests,
+            "request",
+            side_effect=[
+                requests.exceptions.ReadTimeout("t1"),
+                requests.exceptions.ReadTimeout("t2"),
+                requests.exceptions.ReadTimeout("t3"),
+            ],
+        ) as m_request, patch.object(verify_post.time, "sleep") as m_sleep:
+            with self.assertRaises(requests.exceptions.ReadTimeout):
+                verify_post.get_post("dummy-key", "p1")
+
+        self.assertEqual(m_request.call_count, 3)
+        self.assertEqual(m_sleep.call_count, 2)
+        m_sleep.assert_any_call(2)
+        m_sleep.assert_any_call(4)
+
+    # 19. get_post：1回目 HTTP 503→2回目 200 → 結果が返る（5xxリトライ）
+    def test_get_post_retries_on_http_503_then_succeeds(self):
+        mock_resp_503 = MagicMock()
+        mock_resp_503.status_code = 503
+        mock_resp_ok = MagicMock()
+        mock_resp_ok.status_code = 200
+        mock_resp_ok.json.return_value = {"post": {"_id": "p1", "status": "published"}}
+        mock_resp_ok.raise_for_status.return_value = None
+
+        with patch.object(
+            verify_post.requests, "request", side_effect=[mock_resp_503, mock_resp_ok]
+        ) as m_request, patch.object(verify_post.time, "sleep") as m_sleep:
+            result = verify_post.get_post("dummy-key", "p1")
+
+        self.assertEqual(result, {"_id": "p1", "status": "published"})
+        self.assertEqual(m_request.call_count, 2)
+        m_sleep.assert_called_once_with(2)
+
+    # 20. get_post：HTTP 404 → リトライせず即座に扱われる（request呼び出し1回）
+    def test_get_post_404_does_not_retry(self):
+        mock_resp_404 = MagicMock()
+        mock_resp_404.status_code = 404
+        mock_resp_404.raise_for_status.side_effect = requests.exceptions.HTTPError("404")
+
+        with patch.object(
+            verify_post.requests, "request", return_value=mock_resp_404
+        ) as m_request, patch.object(verify_post.time, "sleep") as m_sleep:
+            with self.assertRaises(requests.exceptions.HTTPError):
+                verify_post.get_post("dummy-key", "p1")
+
+        self.assertEqual(m_request.call_count, 1)
+        m_sleep.assert_not_called()
+
+    # 21. delete_post：1回目 ConnectionError→2回目 200 → 200が返る
+    def test_delete_post_retries_on_connection_error_then_succeeds(self):
+        mock_resp_ok = MagicMock()
+        mock_resp_ok.status_code = 200
+
+        with patch.object(
+            verify_post.requests,
+            "request",
+            side_effect=[requests.exceptions.ConnectionError("conn"), mock_resp_ok],
+        ) as m_request, patch.object(verify_post.time, "sleep") as m_sleep:
+            code = verify_post.delete_post("dummy-key", "p1")
+
+        self.assertEqual(code, 200)
+        self.assertEqual(m_request.call_count, 2)
+        m_sleep.assert_called_once_with(2)
 
 
 if __name__ == "__main__":
