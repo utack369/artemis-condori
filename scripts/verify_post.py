@@ -42,6 +42,7 @@ from post_reel import (
     load_config,
     post_to_zernio,
 )
+from notify_chatwork import notify
 
 RETRY_DELAY_MINUTES = 15
 MAX_RETRY = 3
@@ -256,6 +257,17 @@ def delete_pending(s3_client, bucket: str, key: str) -> None:
 
 
 # ---------------------------------------------------------------------------
+# Chatwork通知（クラウドモード専用。ローカルモードは notify_macos のまま）
+# ---------------------------------------------------------------------------
+def _notify_event(dry_run: bool, message: str) -> None:
+    if dry_run:
+        print("[dry-run] 通知スキップ")
+        return
+    if not notify(message):
+        print("⚠ Chatwork通知に失敗しました（run結果には影響しません）", file=sys.stderr)
+
+
+# ---------------------------------------------------------------------------
 # クラウドモード（--from-s3）
 # ---------------------------------------------------------------------------
 def verify_one_pending(
@@ -292,6 +304,10 @@ def verify_one_pending(
                         f"✗ {status} のまま {STALE_SCHEDULED_HOURS} 時間以上滞留"
                         f"（予定時刻: {scheduled_iso}）"
                     )
+                    _notify_event(
+                        dry_run,
+                        f"⚠️ 投稿が{status}のまま24h超 ep{ep_number} post={post_id}",
+                    )
                     return 1
             except ValueError:
                 print(f"⚠ scheduled_iso を解釈できません: {scheduled_iso}")
@@ -309,32 +325,61 @@ def verify_one_pending(
             original_post_id=original_post_id,
             post_id=post_id,
         )
+        error_snippet = (extract_error_message(post) or "")[:80]
         if new_post_id is not None:
+            new_retry_count = retry_count + 1
             new_key = write_pending(
                 s3_client,
                 bucket,
                 new_post_id,
                 get_retry_scheduled_iso(),
                 ep_number=ep_number,
-                retry_count=retry_count + 1,
+                retry_count=new_retry_count,
                 original_post_id=original_post_id,
             )
             print(f"✓ 再試行分の pending 登録: {new_key}")
             delete_pending(s3_client, bucket, key)
             print(f"✓ 旧 pending 削除: {key}")
+            _notify_event(
+                dry_run,
+                f"⚠️ 投稿failed→自動再試行 ep{ep_number} retry {new_retry_count}/{MAX_RETRY} "
+                f"新ID={new_post_id} 理由={error_snippet}",
+            )
+        elif rc == 2:
+            _notify_event(
+                dry_run,
+                f"🚨 再試行上限到達・要手動対応 ep{ep_number} original={original_post_id} "
+                f"last={post_id} 理由={error_snippet}",
+            )
         return rc
 
     print(f"△ 未知のステータス: {status}")
+    _notify_event(
+        dry_run,
+        f"⚠️ 検死run異常 ep{ep_number} post={post_id} status={status} / 未知ステータス",
+    )
     return 1
 
 
 def main_from_s3(dry_run: bool) -> int:
-    config = load_config()
-    zernio_api_key: str = config["zernio_api_key"]
-    bucket: str = config["s3_bucket_name"]
-    s3_client = build_s3_client(config)
+    """
+    未捕捉例外（config/S3クライアント準備段階のReadTimeout等）が起きても、
+    ここで1回通知してから従来どおり非ゼロで終了する（main_from_s3()全体の保護）。
+    """
+    try:
+        config = load_config()
+        zernio_api_key: str = config["zernio_api_key"]
+        bucket: str = config["s3_bucket_name"]
+        s3_client = build_s3_client(config)
+        keys = list_pending(s3_client, bucket)
+    except Exception as e:
+        print(f"✗ 検死run異常（準備段階の未捕捉例外）: {type(e).__name__}: {e}", file=sys.stderr)
+        _notify_event(
+            dry_run,
+            f"⚠️ 検死run異常 ep? post=? status=- / {type(e).__name__}: {str(e)[:80]}",
+        )
+        return 1
 
-    keys = list_pending(s3_client, bucket)
     if not keys:
         print("pending なし（検死対象はありません）")
         return 0
@@ -347,6 +392,15 @@ def main_from_s3(dry_run: bool) -> int:
             rc = verify_one_pending(s3_client, bucket, key, config, zernio_api_key, dry_run)
         except Exception as e:
             print(f"✗ 検死処理エラー ({key}): {e}", file=sys.stderr)
+            post_id_guess = (
+                key[len(PENDING_PREFIX):-len(".json")]
+                if key.startswith(PENDING_PREFIX) and key.endswith(".json")
+                else key
+            )
+            _notify_event(
+                dry_run,
+                f"⚠️ 検死run異常 ep? post={post_id_guess} status=- / {type(e).__name__}: {str(e)[:80]}",
+            )
             rc = 1
         worst = max(worst, rc)
     return worst

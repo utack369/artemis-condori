@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """Chatwork通知共通モジュール（夜間照合 例外検知型移行）v2。
 
-config.json から chatwork_api_token / chatwork_room_id / chatwork_to を読み、
-Chatwork API v2 にメッセージを投稿する。chatwork_to が設定されていれば
+環境変数 ARTEMIS_CONFIG_JSON が設定されていればそのJSON文字列を優先して読み、
+未設定なら config.json から chatwork_api_token / chatwork_room_id / chatwork_to
+を読む（GitHub Actions・ローカル両対応）。chatwork_to が設定されていれば
 本文先頭にメンション（[toall] または [To:ID]）を付与する。
-失敗時はローカルログに記録する。
+失敗時はローカルログとstderrに記録する。
 """
 from __future__ import annotations
 
 import sys
 import json
+import os
 import datetime
 from pathlib import Path
 
@@ -32,8 +34,12 @@ def _log(line: str) -> None:
 
 
 def _load_creds() -> tuple[str, str, str]:
-    with open(CONFIG_PATH, encoding="utf-8") as f:
-        cfg = json.load(f)
+    env_json = os.environ.get("ARTEMIS_CONFIG_JSON")
+    if env_json:
+        cfg = json.loads(env_json)
+    else:
+        with open(CONFIG_PATH, encoding="utf-8") as f:
+            cfg = json.load(f)
     return (
         cfg["chatwork_api_token"],
         str(cfg["chatwork_room_id"]),
@@ -54,7 +60,9 @@ def notify(message: str) -> bool:
     try:
         token, room_id, to_value = _load_creds()
     except Exception as e:
-        _log(f"[config-error] {type(e).__name__}: {e}")
+        line = f"[config-error] {type(e).__name__}: {e}"
+        _log(line)
+        print(f"[notify_chatwork] {line}", file=sys.stderr)
         return False
     body = _mention_prefix(to_value) + message
     url = f"{API_BASE}/rooms/{room_id}/messages"
