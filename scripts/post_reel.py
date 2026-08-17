@@ -21,6 +21,7 @@ import json
 import re
 import subprocess
 import sys
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Optional, Tuple
@@ -49,6 +50,13 @@ MIN_SCHEDULE_OFFSET_MIN = 10
 PRESIGNED_URL_EXPIRY = 604800  # 7日。クラウド検死cronの翌夜以降の再試行が24時間では失効するため（v49決定）
 
 ZERNIO_API_BASE = "https://zernio.com/api/v1"
+
+# クラウド検死用 pending の S3 プレフィックス（verify_post.py と共通）
+PENDING_PREFIX = "verification/pending/"
+
+# schedule_verify_job() の pending 登録リトライ設定
+PENDING_PUT_MAX_ATTEMPTS = 3
+PENDING_PUT_RETRY_DELAYS = [1, 2]  # 秒。attempt1失敗後1秒、attempt2失敗後2秒待って再試行
 
 # ---------------------------------------------------------------------------
 # 設定読み込み
@@ -170,6 +178,21 @@ def delete_from_s3(s3_client, bucket: str, s3_key: str) -> None:
         print(f"  S3削除失敗（無視して続行）: {e}", file=sys.stderr)
 
 
+def find_existing_pending(s3_client, bucket: str, ep_num: int) -> list[dict]:
+    """verification/pending/ を列挙し、ep_number == ep_num の pending を返す（旧形式＝ep_number無しは対象外）。"""
+    resp = s3_client.list_objects_v2(Bucket=bucket, Prefix=PENDING_PREFIX)
+    matches: list[dict] = []
+    for obj in resp.get("Contents", []):
+        key = obj["Key"]
+        if not key.endswith(".json"):
+            continue
+        body = s3_client.get_object(Bucket=bucket, Key=key)["Body"].read()
+        pending = json.loads(body)
+        if pending.get("ep_number") == ep_num:
+            matches.append(pending)
+    return matches
+
+
 # ---------------------------------------------------------------------------
 # メディア URL 到達性チェック
 # ---------------------------------------------------------------------------
@@ -207,36 +230,53 @@ def get_thumbnail_raw_url(ep_num: int, thumb_path: Path) -> str:
 def schedule_verify_job(post_id: str, scheduled_dt: datetime, ep_num: int) -> None:
     """
     S3 に pending ファイルを書き込み、検死（公開確認・再試行）をクラウド（GitHub Actions の
-    verify_post ワークフロー）に委譲する。書き込みに失敗しても投稿自体は成功しているため、
-    警告表示のみで続行する。
+    verify_post ワークフロー）に委譲する。put_object は最大 PENDING_PUT_MAX_ATTEMPTS 回
+    （PENDING_PUT_RETRY_DELAYS 間隔）再試行する。全回失敗した場合、Zernio 予約自体は
+    成立済み（検死対象から漏れる）であることを明示して sys.exit(1) する。
     """
-    # --- クラウド検死用: S3 に pending ファイルを書き込む（B1-S3方式） ---
-    # 失敗しても投稿自体は成功しているため、警告表示のみで続行する。
-    try:
-        config = load_config()
-        pending_key = f"verification/pending/{post_id}.json"
-        payload = {
-            "post_id": post_id,
-            "scheduled_iso": scheduled_dt.isoformat(),
-            "created_at": datetime.now(JST).isoformat(),
-            "ep_number": ep_num,
-            "retry_count": 0,
-            "original_post_id": post_id,
-        }
-        build_s3_client(config).put_object(
-            Bucket=config["s3_bucket_name"],
-            Key=pending_key,
-            Body=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
-            ContentType="application/json",
-        )
-        print(f"  ✓ クラウド検死用 pending 登録: s3://{config['s3_bucket_name']}/{pending_key}")
-    except Exception as e:
-        print(
-            f"  ⚠ クラウド検死用 pending 登録に失敗（投稿自体は成功しています）: {e}",
-            file=sys.stderr,
-        )
+    config = load_config()
+    scheduled_iso = scheduled_dt.isoformat()
+    pending_key = f"{PENDING_PREFIX}{post_id}.json"
+    payload = {
+        "post_id": post_id,
+        "scheduled_iso": scheduled_iso,
+        "created_at": datetime.now(JST).isoformat(),
+        "ep_number": ep_num,
+        "retry_count": 0,
+        "original_post_id": post_id,
+    }
+    body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+    s3_client = build_s3_client(config)
 
-    print("  ✓ 検死はクラウド（GitHub Actions run）に委譲")
+    last_error: Optional[Exception] = None
+    for attempt in range(PENDING_PUT_MAX_ATTEMPTS):
+        try:
+            s3_client.put_object(
+                Bucket=config["s3_bucket_name"],
+                Key=pending_key,
+                Body=body,
+                ContentType="application/json",
+            )
+            print(f"  ✓ クラウド検死用 pending 登録: s3://{config['s3_bucket_name']}/{pending_key}")
+            print("  ✓ 検死はクラウド（GitHub Actions run）に委譲")
+            return
+        except Exception as e:
+            last_error = e
+            if attempt < len(PENDING_PUT_RETRY_DELAYS):
+                time.sleep(PENDING_PUT_RETRY_DELAYS[attempt])
+
+    print(
+        f"✗ pending登録に{PENDING_PUT_MAX_ATTEMPTS}回失敗"
+        f"（Zernio予約は成立済み・検死対象から漏れます）: {last_error}",
+        file=sys.stderr,
+    )
+    print(
+        f"  post_id={post_id} ep={ep_num} scheduled_iso={scheduled_iso} "
+        f"pending_key={pending_key}",
+        file=sys.stderr,
+    )
+    print("  → 手動登録が必要です（本部へ報告）", file=sys.stderr)
+    sys.exit(1)
 
 
 # ---------------------------------------------------------------------------
@@ -306,11 +346,12 @@ def post_to_zernio(
 def main() -> None:
     argv = sys.argv[1:]
     check_only = "--check-only" in argv
-    positional = [a for a in argv if a != "--check-only"]
+    force = "--force" in argv
+    positional = [a for a in argv if a not in ("--check-only", "--force")]
 
     if not positional:
         print(
-            "使用方法: python scripts/post_reel.py <ep_number> [--check-only]",
+            "使用方法: python scripts/post_reel.py <ep_number> [--check-only] [--force]",
             file=sys.stderr,
         )
         sys.exit(1)
@@ -380,6 +421,29 @@ def main() -> None:
                 "実投稿・予約には進まず終了します。"
             )
             sys.exit(0)
+
+        # 二重実行ガード（同一epのpendingが既に存在する場合は中止）
+        try:
+            existing_pending = find_existing_pending(s3_client, bucket, ep_num)
+        except Exception as e:
+            print(f"✗ pending照会に失敗（ガード判定不能）: {e}", file=sys.stderr)
+            sys.exit(1)
+
+        if existing_pending:
+            pending_lines = "\n".join(
+                f"   - post_id={p.get('post_id')} scheduled_iso={p.get('scheduled_iso')} "
+                f"retry_count={p.get('retry_count')}"
+                for p in existing_pending
+            )
+            if force:
+                print(f"⚠ --force により続行:\n{pending_lines}")
+            else:
+                print(
+                    f"✗ ep{ep_num} の pending が既に存在します（二重投稿防止のため中止）:\n"
+                    f"{pending_lines}\n"
+                    f"  再投稿が本当に必要な場合は --force を付けて実行してください。"
+                )
+                sys.exit(1)
 
         # Step 1: S3 に動画をアップロード
         print("Step 1: S3 へ動画アップロード")

@@ -20,6 +20,7 @@
 
 3. 上記の要件を満たしたら、以下を実行する
    - `.venv/bin/python scripts/post_reel.py $ARGUMENTS`
+   - 同一epのpendingが残っている場合はガードで停止する（二重投稿防止）。再投稿が必要と本部が判断した場合のみ `--force` を付ける
 
 ### format=carousel の場合
 
