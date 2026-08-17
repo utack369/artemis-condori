@@ -29,17 +29,18 @@ class VerifyOnePendingRetryTests(unittest.TestCase):
         self.zernio_api_key = "dummy-key"
         self.key = "verification/pending/p1.json"
 
-    def _run(self, pending, post, dry_run=False):
+    def _run(self, pending, post, dry_run=False, delete_post_code=200):
         with patch.object(verify_post, "read_pending", return_value=pending) as m_read, \
              patch.object(verify_post, "get_post", return_value=post) as m_get_post, \
              patch.object(verify_post, "retry_post", return_value="new-post-id") as m_retry, \
              patch.object(verify_post, "write_pending", return_value="verification/pending/new-post-id.json") as m_write, \
              patch.object(verify_post, "delete_pending") as m_delete, \
-             patch.object(verify_post, "notify", return_value=True) as m_notify:
+             patch.object(verify_post, "notify", return_value=True) as m_notify, \
+             patch.object(verify_post, "delete_post", return_value=delete_post_code) as m_delete_post:
             rc = verify_post.verify_one_pending(
                 self.s3_client, self.bucket, self.key, self.config, self.zernio_api_key, dry_run
             )
-        return rc, m_read, m_get_post, m_retry, m_write, m_delete, m_notify
+        return rc, m_read, m_get_post, m_retry, m_write, m_delete, m_notify, m_delete_post
 
     # 1. 旧形式pending（ep_number等なし）＋status=failed
     #    → retry_postが1回呼ばれ、write_pendingが retry_count=1 で呼ばれる
@@ -51,7 +52,7 @@ class VerifyOnePendingRetryTests(unittest.TestCase):
         }
         post = {"status": "failed", "_id": "p1", "publishAttempts": 1}
 
-        rc, _, _, m_retry, m_write, m_delete, m_notify = self._run(pending, post)
+        rc, _, _, m_retry, m_write, m_delete, m_notify, m_delete_post = self._run(pending, post)
 
         m_retry.assert_called_once_with(post, self.config, self.zernio_api_key)
         m_write.assert_called_once()
@@ -74,7 +75,7 @@ class VerifyOnePendingRetryTests(unittest.TestCase):
         }
         post = {"status": "failed", "_id": "p1", "publishAttempts": 3}
 
-        rc, _, _, m_retry, m_write, m_delete, m_notify = self._run(pending, post)
+        rc, _, _, m_retry, m_write, m_delete, m_notify, m_delete_post = self._run(pending, post)
 
         m_retry.assert_called_once_with(post, self.config, self.zernio_api_key)
         _, kwargs = m_write.call_args
@@ -95,7 +96,7 @@ class VerifyOnePendingRetryTests(unittest.TestCase):
         }
         post = {"status": "failed", "_id": "p1", "publishAttempts": 4}
 
-        rc, _, _, m_retry, m_write, m_delete, m_notify = self._run(pending, post)
+        rc, _, _, m_retry, m_write, m_delete, m_notify, m_delete_post = self._run(pending, post)
 
         m_retry.assert_not_called()
         m_write.assert_not_called()
@@ -114,7 +115,7 @@ class VerifyOnePendingRetryTests(unittest.TestCase):
         }
         post = {"status": "publishing", "_id": "p1"}
 
-        rc, _, _, m_retry, m_write, m_delete, m_notify = self._run(pending, post)
+        rc, _, _, m_retry, m_write, m_delete, m_notify, m_delete_post = self._run(pending, post)
 
         m_retry.assert_not_called()
         m_write.assert_not_called()
@@ -133,7 +134,7 @@ class VerifyOnePendingRetryTests(unittest.TestCase):
         }
         post = {"status": "partial", "_id": "p1", "publishAttempts": 1}
 
-        rc, _, _, m_retry, m_write, m_delete, m_notify = self._run(pending, post)
+        rc, _, _, m_retry, m_write, m_delete, m_notify, m_delete_post = self._run(pending, post)
 
         m_retry.assert_called_once_with(post, self.config, self.zernio_api_key)
         _, kwargs = m_write.call_args
@@ -150,7 +151,7 @@ class VerifyOnePendingRetryTests(unittest.TestCase):
         }
         post = {"status": "published", "_id": "p1"}
 
-        rc, _, _, m_retry, m_write, m_delete, m_notify = self._run(pending, post)
+        rc, _, _, m_retry, m_write, m_delete, m_notify, m_delete_post = self._run(pending, post)
 
         m_retry.assert_not_called()
         m_write.assert_not_called()
@@ -174,7 +175,7 @@ class VerifyOnePendingRetryTests(unittest.TestCase):
             "errorMessage": "media download failed",
         }
 
-        rc, _, _, m_retry, m_write, m_delete, m_notify = self._run(pending, post)
+        rc, _, _, m_retry, m_write, m_delete, m_notify, m_delete_post = self._run(pending, post)
 
         m_notify.assert_called_once()
         (message,), _ = m_notify.call_args
@@ -199,7 +200,7 @@ class VerifyOnePendingRetryTests(unittest.TestCase):
             "errorMessage": "media download failed",
         }
 
-        rc, _, _, m_retry, m_write, m_delete, m_notify = self._run(pending, post)
+        rc, _, _, m_retry, m_write, m_delete, m_notify, m_delete_post = self._run(pending, post)
 
         m_retry.assert_not_called()
         m_notify.assert_called_once()
@@ -216,7 +217,7 @@ class VerifyOnePendingRetryTests(unittest.TestCase):
         }
         post = {"status": "published", "_id": "p1"}
 
-        rc, _, _, m_retry, m_write, m_delete, m_notify = self._run(pending, post)
+        rc, _, _, m_retry, m_write, m_delete, m_notify, m_delete_post = self._run(pending, post)
 
         m_notify.assert_not_called()
         self.assertEqual(rc, 0)
@@ -233,8 +234,138 @@ class VerifyOnePendingRetryTests(unittest.TestCase):
         }
         post = {"status": "failed", "_id": "p1", "publishAttempts": 1}
 
-        rc, _, _, m_retry, m_write, m_delete, m_notify = self._run(pending, post, dry_run=True)
+        rc, _, _, m_retry, m_write, m_delete, m_notify, m_delete_post = self._run(pending, post, dry_run=True)
 
+        m_notify.assert_not_called()
+        self.assertEqual(rc, 1)
+
+    # 12. scheduled・予定時刻から4h経過・retry_count=0
+    #     → delete_postが1回、retry_postが1回、write_pendingがretry_count=1、旧pending削除、
+    #       notify 1回（本文に「取消し再予約」）、rc=1
+    def test_stale_deletes_old_post_and_reposts(self):
+        from datetime import timedelta
+
+        scheduled_iso = (verify_post.datetime.now(verify_post.JST) - timedelta(hours=4)).isoformat()
+        pending = {
+            "post_id": "p1",
+            "scheduled_iso": scheduled_iso,
+            "created_at": scheduled_iso,
+            "ep_number": 65,
+            "retry_count": 0,
+            "original_post_id": "p1",
+        }
+        post = {"status": "scheduled", "_id": "p1"}
+
+        rc, _, _, m_retry, m_write, m_delete, m_notify, m_delete_post = self._run(
+            pending, post, delete_post_code=200
+        )
+
+        m_delete_post.assert_called_once_with(self.zernio_api_key, "p1")
+        m_retry.assert_called_once_with(post, self.config, self.zernio_api_key)
+        _, kwargs = m_write.call_args
+        self.assertEqual(kwargs["retry_count"], 1)
+        m_delete.assert_called_once_with(self.s3_client, self.bucket, self.key)
+        m_notify.assert_called_once()
+        (message,), _ = m_notify.call_args
+        self.assertIn("取消し再予約", message)
+        self.assertEqual(rc, 1)
+
+    # 13. 同条件でdelete_postが400 → retry_post呼ばれない・delete_pending呼ばれない・
+    #     notify 1回（本文に「取消失敗」）、rc=1
+    def test_stale_delete_post_failure_does_not_repost(self):
+        from datetime import timedelta
+
+        scheduled_iso = (verify_post.datetime.now(verify_post.JST) - timedelta(hours=4)).isoformat()
+        pending = {
+            "post_id": "p1",
+            "scheduled_iso": scheduled_iso,
+            "created_at": scheduled_iso,
+            "ep_number": 65,
+            "retry_count": 0,
+            "original_post_id": "p1",
+        }
+        post = {"status": "scheduled", "_id": "p1"}
+
+        rc, _, _, m_retry, m_write, m_delete, m_notify, m_delete_post = self._run(
+            pending, post, delete_post_code=400
+        )
+
+        m_delete_post.assert_called_once_with(self.zernio_api_key, "p1")
+        m_retry.assert_not_called()
+        m_delete.assert_not_called()
+        m_notify.assert_called_once()
+        (message,), _ = m_notify.call_args
+        self.assertIn("取消失敗", message)
+        self.assertEqual(rc, 1)
+
+    # 14. scheduled・4h経過・retry_count=3 → delete_postもretry_postも呼ばれない・
+    #     rc=2・notify 1回（上限到達）
+    def test_stale_retry_count_3_gives_up(self):
+        from datetime import timedelta
+
+        scheduled_iso = (verify_post.datetime.now(verify_post.JST) - timedelta(hours=4)).isoformat()
+        pending = {
+            "post_id": "p1",
+            "scheduled_iso": scheduled_iso,
+            "created_at": scheduled_iso,
+            "ep_number": 65,
+            "retry_count": 3,
+            "original_post_id": "p0",
+        }
+        post = {"status": "scheduled", "_id": "p1"}
+
+        rc, _, _, m_retry, m_write, m_delete, m_notify, m_delete_post = self._run(pending, post)
+
+        m_delete_post.assert_not_called()
+        m_retry.assert_not_called()
+        m_notify.assert_called_once()
+        (message,), _ = m_notify.call_args
+        self.assertIn("再試行上限到達", message)
+        self.assertEqual(rc, 2)
+
+    # 15. scheduled・予定時刻から2h経過 → 何も呼ばれない・rc=0（STALE=3hの境界確認）
+    def test_stale_within_3h_does_nothing(self):
+        from datetime import timedelta
+
+        scheduled_iso = (verify_post.datetime.now(verify_post.JST) - timedelta(hours=2)).isoformat()
+        pending = {
+            "post_id": "p1",
+            "scheduled_iso": scheduled_iso,
+            "created_at": scheduled_iso,
+            "ep_number": 65,
+            "retry_count": 0,
+            "original_post_id": "p1",
+        }
+        post = {"status": "scheduled", "_id": "p1"}
+
+        rc, _, _, m_retry, m_write, m_delete, m_notify, m_delete_post = self._run(pending, post)
+
+        m_delete_post.assert_not_called()
+        m_retry.assert_not_called()
+        m_delete.assert_not_called()
+        m_notify.assert_not_called()
+        self.assertEqual(rc, 0)
+
+    # 16. dry_run・4h経過 → delete_post呼ばれない・notify呼ばれない・rc=1
+    def test_stale_dry_run_does_not_delete_or_notify(self):
+        from datetime import timedelta
+
+        scheduled_iso = (verify_post.datetime.now(verify_post.JST) - timedelta(hours=4)).isoformat()
+        pending = {
+            "post_id": "p1",
+            "scheduled_iso": scheduled_iso,
+            "created_at": scheduled_iso,
+            "ep_number": 65,
+            "retry_count": 0,
+            "original_post_id": "p1",
+        }
+        post = {"status": "scheduled", "_id": "p1"}
+
+        rc, _, _, m_retry, m_write, m_delete, m_notify, m_delete_post = self._run(
+            pending, post, dry_run=True
+        )
+
+        m_delete_post.assert_not_called()
         m_notify.assert_not_called()
         self.assertEqual(rc, 1)
 
