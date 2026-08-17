@@ -10,13 +10,14 @@ Zernio 投稿 検死・自動再試行スクリプト（post_reel.py の投稿�
 
 --from-s3 モード:
   S3 の verification/pending/ 配下にある pending ファイルを全件検死する。
-    - published              → 公開確認 OK。pending を削除
-    - scheduled（24h 未満）  → 時刻前/処理中とみなし pending を保持（翌回再チェック）
-    - scheduled（24h 以上）  → 滞留として exit 1（要通知）
-    - failed                 → 自動再試行し、新 post_id の pending を登録。exit 1（要通知）
-    - 未知ステータス         → exit 1（要通知）
-  環境変数 VERIFY_DISABLE_RETRY=1 のとき、failed でも再試行せず pending を保持して exit 1（並走期間用）。
-  exit 1 は GitHub Actions の run 失敗となり、GitHub からメール通知される。
+    - published                    → 公開確認 OK。pending を削除
+    - scheduled/publishing（24h 未満） → 時刻前/処理中とみなし pending を保持（翌回再チェック）
+    - scheduled/publishing（24h 以上） → 滞留として exit 1（要通知）
+    - failed/partial（retry_count < MAX_RETRY） → 自動再試行し、retry_count+1 の新 pending を登録。exit 1（要通知）
+    - failed/partial（retry_count >= MAX_RETRY） → 再試行せず GIVE_UP をログ出力、pending は保持。exit 2（要通知）
+    - 未知ステータス               → exit 1（要通知）
+  環境変数 VERIFY_DISABLE_RETRY=1 のとき、failed/partial でも再試行せず pending を保持して exit 1（並走期間用）。
+  exit 1・exit 2 は GitHub Actions の run 失敗となり、GitHub からメール通知される。
 
 前提:
   post_reel.py と同じ config.json（同じパス・同じキー名）を使用する。
@@ -28,7 +29,7 @@ import os
 import subprocess
 import sys
 from datetime import datetime, timedelta
-from typing import Optional
+from typing import Optional, Tuple
 from urllib.parse import urlparse
 
 import requests
@@ -43,6 +44,7 @@ from post_reel import (
 )
 
 RETRY_DELAY_MINUTES = 15
+MAX_RETRY = 3
 
 # クラウド検死（--from-s3）用
 PENDING_PREFIX = "verification/pending/"
@@ -134,19 +136,68 @@ def retry_post(post: dict, config: dict, zernio_api_key: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# ステータス別ハンドラ（ローカルモード・従来挙動）
+# 再試行上限ロジック（ローカルモード・クラウドモード共通）
 # ---------------------------------------------------------------------------
-def handle_failed(post: dict, config: dict, zernio_api_key: str, dry_run: bool) -> int:
+def _retry_or_give_up(
+    post: dict,
+    config: dict,
+    zernio_api_key: str,
+    dry_run: bool,
+    retry_count: int,
+    ep_number: Optional[int],
+    original_post_id: str,
+    post_id: str,
+) -> Tuple[int, Optional[str]]:
+    """
+    failed/partial 判定後の共通処理。
+    戻り値: (return_code, new_post_id)。
+      new_post_id が None でなければ再試行が実施されたことを示す。
+      return_code: 1=再試行実施またはスキップ（要通知）、2=上限到達で断念（要通知・pending保持）。
+    """
     print(f"✗ 投稿失敗を検出: {extract_error_message(post)}")
-    notify_macos("ep投稿がfailedです。自動再試行します", "Zernio検死")
+
+    if retry_count >= MAX_RETRY:
+        print(
+            f"GIVE_UP ep={ep_number} original={original_post_id} "
+            f"last={post_id} retries={retry_count}"
+        )
+        return 2, None
+
+    if os.environ.get("VERIFY_DISABLE_RETRY") == "1":
+        print("△ VERIFY_DISABLE_RETRY=1: 再試行をスキップ（pending 保持・要手動対応）")
+        return 1, None
 
     if dry_run:
         print("[dry-run] 再スケジュールをスキップ")
-        return 2
+        return 1, None
 
     new_post_id = retry_post(post, config, zernio_api_key)
+    new_retry_count = retry_count + 1
     print(f"✓ 再登録完了: 新規投稿ID={new_post_id}")
-    return 0
+    print(f"retry {new_retry_count}/{MAX_RETRY} publishAttempts={post.get('publishAttempts')}")
+    return 1, new_post_id
+
+
+# ---------------------------------------------------------------------------
+# ステータス別ハンドラ（ローカルモード・従来挙動）
+# ---------------------------------------------------------------------------
+def handle_failed(post: dict, config: dict, zernio_api_key: str, dry_run: bool) -> int:
+    notify_macos("ep投稿がfailedです。自動再試行します", "Zernio検死")
+
+    post_id = post.get("_id", "")
+    rc, new_post_id = _retry_or_give_up(
+        post,
+        config,
+        zernio_api_key,
+        dry_run,
+        retry_count=0,
+        ep_number=None,
+        original_post_id=post_id,
+        post_id=post_id,
+    )
+    if new_post_id is not None:
+        return 0
+    return 2
 
 
 def log(post_id: str, status: str) -> None:
@@ -172,13 +223,24 @@ def read_pending(s3_client, bucket: str, key: str) -> dict:
     return json.loads(body)
 
 
-def write_pending(s3_client, bucket: str, post_id: str, scheduled_iso: str) -> str:
+def write_pending(
+    s3_client,
+    bucket: str,
+    post_id: str,
+    scheduled_iso: str,
+    ep_number: Optional[int] = None,
+    retry_count: int = 0,
+    original_post_id: Optional[str] = None,
+) -> str:
     """pending ファイルを登録し、S3 キーを返す（再試行後の新 post_id 用）。"""
     key = f"{PENDING_PREFIX}{post_id}.json"
     payload = {
         "post_id": post_id,
         "scheduled_iso": scheduled_iso,
         "created_at": datetime.now(JST).isoformat(),
+        "ep_number": ep_number,
+        "retry_count": retry_count,
+        "original_post_id": original_post_id if original_post_id is not None else post_id,
     }
     s3_client.put_object(
         Bucket=bucket,
@@ -199,9 +261,12 @@ def delete_pending(s3_client, bucket: str, key: str) -> None:
 def verify_one_pending(
     s3_client, bucket: str, key: str, config: dict, zernio_api_key: str, dry_run: bool
 ) -> int:
-    """pending 1 件を検死する。0=正常、1=要通知（run 失敗にする）。"""
+    """pending 1 件を検死する。0=正常、1=要通知（run 失敗にする）、2=再試行上限到達（要通知・pending保持）。"""
     pending = read_pending(s3_client, bucket, key)
     post_id = pending["post_id"]
+    retry_count = pending.get("retry_count", 0)
+    ep_number = pending.get("ep_number")
+    original_post_id = pending.get("original_post_id", pending["post_id"])
 
     post = get_post(zernio_api_key, post_id)
     status = post.get("status")
@@ -216,7 +281,7 @@ def verify_one_pending(
             print(f"✓ pending 削除: {key}")
         return 0
 
-    if status == "scheduled":
+    if status in ("scheduled", "publishing"):
         scheduled_iso = pending.get("scheduled_iso")
         if scheduled_iso:
             try:
@@ -224,7 +289,7 @@ def verify_one_pending(
                 elapsed = datetime.now(JST) - scheduled_dt
                 if elapsed > timedelta(hours=STALE_SCHEDULED_HOURS):
                     print(
-                        f"✗ scheduled のまま {STALE_SCHEDULED_HOURS} 時間以上滞留"
+                        f"✗ {status} のまま {STALE_SCHEDULED_HOURS} 時間以上滞留"
                         f"（予定時刻: {scheduled_iso}）"
                     )
                     return 1
@@ -233,21 +298,31 @@ def verify_one_pending(
         print("△ まだ公開時刻前または処理中（pending 保持・翌回再チェック）")
         return 0
 
-    if status == "failed":
-        print(f"✗ 投稿失敗を検出: {extract_error_message(post)}")
-        if os.environ.get("VERIFY_DISABLE_RETRY") == "1":
-            print("△ VERIFY_DISABLE_RETRY=1: 再試行をスキップ（pending 保持・要手動対応）")
-            return 1
-        if dry_run:
-            print("[dry-run] 再スケジュールをスキップ")
-            return 1
-        new_post_id = retry_post(post, config, zernio_api_key)
-        print(f"✓ 再登録完了: 新規投稿ID={new_post_id}")
-        new_key = write_pending(s3_client, bucket, new_post_id, get_retry_scheduled_iso())
-        print(f"✓ 再試行分の pending 登録: {new_key}")
-        delete_pending(s3_client, bucket, key)
-        print(f"✓ 旧 pending 削除: {key}")
-        return 1  # 再試行が発生した事実を通知するため run は失敗扱いにする
+    if status in ("failed", "partial"):
+        rc, new_post_id = _retry_or_give_up(
+            post,
+            config,
+            zernio_api_key,
+            dry_run,
+            retry_count=retry_count,
+            ep_number=ep_number,
+            original_post_id=original_post_id,
+            post_id=post_id,
+        )
+        if new_post_id is not None:
+            new_key = write_pending(
+                s3_client,
+                bucket,
+                new_post_id,
+                get_retry_scheduled_iso(),
+                ep_number=ep_number,
+                retry_count=retry_count + 1,
+                original_post_id=original_post_id,
+            )
+            print(f"✓ 再試行分の pending 登録: {new_key}")
+            delete_pending(s3_client, bucket, key)
+            print(f"✓ 旧 pending 削除: {key}")
+        return rc
 
     print(f"△ 未知のステータス: {status}")
     return 1

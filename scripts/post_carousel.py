@@ -192,7 +192,7 @@ def main() -> None:
 
     # Step 4: 検死ジョブ登録
     print("\nStep 4: 検死ジョブ登録")
-    schedule_verify_job(post_id, datetime.fromisoformat(scheduled_iso))
+    schedule_verify_job(post_id, datetime.fromisoformat(scheduled_iso), ep_num)
 
     print(f"\n{'=' * 52}")
     print(f"  予約投稿完了!")

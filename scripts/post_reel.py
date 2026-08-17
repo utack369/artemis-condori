@@ -204,7 +204,7 @@ def get_thumbnail_raw_url(ep_num: int, thumb_path: Path) -> str:
 # ---------------------------------------------------------------------------
 # 検死ジョブ登録（切り離しプロセス方式）
 # ---------------------------------------------------------------------------
-def schedule_verify_job(post_id: str, scheduled_dt: datetime) -> None:
+def schedule_verify_job(post_id: str, scheduled_dt: datetime, ep_num: int) -> None:
     """
     S3 に pending ファイルを書き込み、検死（公開確認・再試行）をクラウド（GitHub Actions の
     verify_post ワークフロー）に委譲する。書き込みに失敗しても投稿自体は成功しているため、
@@ -219,6 +219,9 @@ def schedule_verify_job(post_id: str, scheduled_dt: datetime) -> None:
             "post_id": post_id,
             "scheduled_iso": scheduled_dt.isoformat(),
             "created_at": datetime.now(JST).isoformat(),
+            "ep_number": ep_num,
+            "retry_count": 0,
+            "original_post_id": post_id,
         }
         build_s3_client(config).put_object(
             Bucket=config["s3_bucket_name"],
@@ -408,7 +411,7 @@ def main() -> None:
 
         # Step 4: 検死ジョブ登録
         print("\nStep 4: 検死ジョブ登録")
-        schedule_verify_job(post_id, datetime.fromisoformat(scheduled_iso))
+        schedule_verify_job(post_id, datetime.fromisoformat(scheduled_iso), ep_num)
 
         print(f"\n{'='*52}")
         print(f"  予約投稿完了!")
