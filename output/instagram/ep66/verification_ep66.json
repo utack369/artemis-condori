@@ -1,0 +1,222 @@
+{
+  "ep_number": 66,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現なし。中敷き交換の習慣とその判断基準（沈み込み）を事実として述べるのみで、対策Xから効果Yへの因果断定構造は成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体を通読しても、「中敷きを交換すれば足元の悩みが解決する」という暗示構造は読み取れない。中敷きのクッション劣化という物理的事実を述べており、悩みの改善・解消とは接続していない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現なし。中敷き交換の習慣を淡々と述べるのみで、特定商品の購入を促す文脈も存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション全体が和男の共感共闘トーン（個人の経験を淡々と語る当事者視点）で一貫。「交換すると決めています」「それが、今のやり方です」等、自分の習慣を正直に共有する語り口であり、売り込みトーン・専門家トーンへの逸脱なし。キャプションも同様のトーンを維持。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」の使用なし。足元・体調文脈での当該表現は皆無。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterのテーマ「安全靴の中敷きを月1で交換する理由」に対し、ナレーションは中敷きを月に一度交換する習慣と、その理由（クッションの沈み込みが約1ヶ月で甘くなる）を12年の記録に基づいて提示しており、テーマと完全に一致。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_B（気づき・発見型）の心理構造を実装。冒頭で「月に一度交換する」という具体的習慣を提示し、展開で12年の記録から沈み込みのタイミングが約1ヶ月と分かったという気づきを開示。テロップ末尾「他にも記録/プロフィールから」で「もっと聞きたい」着地を実現。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.phase_roleの記述（File.65のType_A告白・独白から切り替え、Type_Bとして具体的な日常習慣とその理由を淡々と提示する構成）と台本の強度・方向が整合。過度な感情的強度はなく、実用情報の落ち着いた提示として適切な強度。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のため判定対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のため判定対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2が婉曲不要によりskipされているため、適用範囲の制御であるC3も判定不要。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entryの指定「知的好奇心入口。『中敷きは、月に一度交換します』という具体的な習慣の提示から理由への好奇心で視聴者を拾う」に対し、ナレーション冒頭が『中敷きは、月に一度交換します。』で始まり、Type_Bの知的好奇心入口を正確に実装。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exitの指定「『もっと聞きたい』。実用的な気づきを提示し切り、他にも記録している習慣があるという期待を残す」に対し、ナレーション末尾『それが、今のやり方です。』で気づきを完結させ、テロップ末尾『他にも記録/プロフィールから』で他の記録への期待を残すType_B出口を実装。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「安全靴の中敷きを月に一度交換するようになった、12年の記録から見えた和男の具体的な判断基準」に対し、台本全体が「中敷きの月1交換→理由は沈み込みが約1ヶ月で甘くなる→見た目でなく沈み込みが基準」という単一メッセージで貫かれており、2メッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=ソフトCTA。ナンバリング行『安全靴と戦う12年の記録：File.66』を除いたテロップ実質最終2行は『他にも記録/プロフィールから』。事実の陳述（他にも記録が存在するという事実＋その場所の提示）として機能しており、依頼形・勧誘形は含まない。cta_expression『他にも試したことを記録しています。プロフィールから』のテロップ向け圧縮として整合。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTAのため判定対象外（E2はcta_type=なしの回のみ適用）。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導（命令形によるハードCTA）なし。『プロフィールから』は場所の事実提示であり命令形ではない。キャプションCTA『よかったら覗いてみてください』は「よかったら」緩和付きの依頼形であり、ハードCTA（命令形の直接誘導）には該当しない。ただしソフトCTA回のキャプションであり、指示書caption.ctaで指定された表現と一致。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文の語尾を確認：交換します/決めています/続けてきました/分かっています/交換しています/基準にしています/やり方です。全て「です・ます」調で統一されており、「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは中敷き交換の習慣を文章で語る共感的な描写。テロップは『中敷きは/月1で交換/沈み込みが/甘くなる頃』とキーワードを視覚的に短く提示。同一テキストの転記・要約ではなく、動詞・語順・文体が異なる別構成。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：『交換すると決めています』『十二年間、同じ習慣を続けてきました』『それが、今のやり方です』と和男の個人的経験・心情を語る。テロップ＝論理（気づき・CTA）：『月1で交換』『沈み込みが/甘くなる頃』と気づきのポイントを論理的に提示し、『他にも記録/プロフィールから』でCTA。役割が分離。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素をep66.jsonのcaptionフィールドと照合。hook_line『中敷きは、月に一度交換しています。』→一致。body（3行）→一致。cta『他にも試したことは、プロフィールにまとめて記録しています。よかったら覗いてみてください。』→一致。hashtags 5個（#安全靴 #工場勤務 #12年の記録 #中敷き交換 #足元ケア）→一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との主題照合：ep61=記録を60本続ける動機の自問、ep62=後輩入社で足元が気になった、ep63=12年で一番良かった対策が言えない、ep64=帰宅後のルーティン、ep65=同僚の一言。ep66の主題「中敷きの月1交換と沈み込み基準」はいずれとも重複しない。ep63は対策全般に触れるが中敷きを特定素材にしておらず差別化されている。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行（中敷きは/月1で交換/沈み込みが/甘くなる頃/他にも記録/プロフィールから）がいずれも短く、1行で瞬時に理解可能。隣接2行の組（沈み込みが＋甘くなる頃）も連続表示で即座に意味が通る。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭『中敷きは、月に一度交換します。』は結論・行動の事実提示から即座に始まっており、『安全靴を12年履いていて…』等の背景説明は挟まない。イン・メディアス・レスの構成を満たす。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。人間関係は登場せず、和男個人の中敷き交換習慣のみで構成。配偶者・子の存在を暗示する描写も皆無。"
+        }
+      ],
+      "summary": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/high fail 0件・medium/low fail 0件・全軸pass/skip → Pass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）へ自動進行"
+    }
+  ]
+}
