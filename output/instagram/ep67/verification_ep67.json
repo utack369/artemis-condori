@@ -1,0 +1,224 @@
+{
+  "ep_number": 67,
+  "euphemism_required": true,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現が存在しない。台本全体が飲み会の誘いを断った経緯の独白であり、対策→効果の因果構造自体が含まれていない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・CTAの組み合わせ全体を通じて「これを使えば解決する」と読み取れる構造が存在しない。商品・対策・方法への言及自体がなく、暗示の成立する余地がない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現がナレーション・テロップ・キャプションのいずれにも存在しない。購入や行動を急かす構造がない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション全体が和男の内面の吐露（「指が止まりました」「理由をうまく言葉にできないまま」「応えたかった」「ひとりで静かに過ごしました」）で構成され、共感共闘トーンを一貫して維持している。売り込み・専門家トーンへの逸脱なし。キャプションも「今も少し申し訳なさが残っています」と同じ共感トーンを保持。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」の使用なし。足元・体調文脈での使用はもとより、全文脈で未使用。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master File.67のテーマ「金曜の夜、友人に誘われた飲み会を断った理由」に対し、ナレーションは「金曜の夜、友人からグループ飲み会に誘われました…断りました」と当該テーマを正確に扱っている。座敷のある店と知って気持ちが引いた→理由を言えず断った、という構成がテーマに忠実。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装。弱さ・本音の正直な開示＝理由を言えないまま飲み会を断った和男の回避判断の告白。「指が止まりました」「理由をうまく言葉にできないまま」「応えたかった」が弱さと本音を開示し、「ひとりで静かに過ごしました」の余韻が「この人に話したい」着地を成立させている。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P3前半のFile.65（DM誘導・Type_A・同僚の一言）、File.66（ソフトCTA・Type_B・中敷き交換）に続く回として、CTAなし・Type_Aの静かな告白は適切な強度。行動喚起なしで余韻を残す構成がphase_role（対話の扉を開く）と整合する。職場外の友人関係を起点にする点で領域の棲み分けも成立。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）のいずれもナレーション・テロップに未使用。足元の問題は「座敷のある店だと分かった瞬間、指が止まりました」という行動描写のみで間接的に示されており、直接表現を完全に回避している。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "conversion_tableの婉曲語を直接使用するのではなく、行動と感覚の描写（座敷と知り指が止まった・気持ちが引けた・理由を言えない）のみで問題を示す、最も高度な婉曲手法を採用。直接表現の回避が確実に達成されている。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "キャプションはC1/C2の婉曲チェック対象外（制御ルール通り）。なおキャプション自体にもprohibited_direct語は含まれていない。A群（正直さ）はキャプションにも適用済み（A1-A5すべてpass）。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entryが「弱さ・本音への共感入口。友人からの誘いを金曜の夜に断った、理由を言えないまま行動だけを選んだ和男の正直な回避から視聴者を拾う」と定義。ナレーション冒頭「金曜の夜、友人からグループ飲み会に誘われました。最初は行くつもりで、既読をつけて考えていました」がType_Aの弱さ・本音への共感入口として機能し、指定通りの入口を実装。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exitが「この人に話したい」着地をCTAなしで余韻だけ残して終えると定義。ナレーション末尾「誘ってくれた気持ちには応えたかった。それでも、その夜はひとりで静かに過ごしました」が理由を言えない和男の内面を見せ、視聴者に「自分にも同じ判断がある」と重ねさせる構造。テロップ末尾「声にできず/断った」も余韻を補強。行動喚起なし。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「友人からの誘いを金曜の夜に断った、理由を言えないまま行動だけを選んだ和男の正直な回避判断の記録」に台本全体が集約されている。誘いを受ける→座敷と知る→断る→ひとりで過ごす、の一本道で構成され、第2のメッセージが混在していない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=なしのため、実装すべきCTAが存在しない。本軸はcta_type=DM誘導またはソフトCTAの場合のみ判定対象。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=なしのため本軸は有効。テロップ全行（ナンバリング行＋金曜の夜/誘いが来た/座敷と知り/気持ちが引けた/声にできず/断った）にCTA的表現なし。ナレーションにもフォロー・保存・いいね・コメント・シェア・リンク遷移・DM・プロフィールへの言及なし。キャプション本文にも行動喚起・誘導表現なし（cta欄も空）。ハッシュタグ5個は情報整理用で行動喚起を含まない。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現なし。キャプションにもハードCTA表現なし（cta_type=なしのためキャプションでもハードCTA不可、その要件を充足）。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "fail",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション5文目「誘ってくれた気持ちには応えたかった。」",
+          "reason": "ナレーション全6文のうち5文が「ました」（です・ます調）で統一されているが、5文目「誘ってくれた気持ちには応えたかった。」のみ常体（plain past「〜たかった」）で終わっている。tone_and_rules.sentence_endingが「です・ます」を指定しており、だ・である調の混在に該当する。ep62-66の全ナレーションがです・ます調を厳守しており、本作のみ逸脱。",
+          "suggested_fix": "「誘ってくれた気持ちには応えたかった。」→「誘ってくれた気持ちには、応えたいと思っていました。」に修正することで、です・ます調を維持しつつ同等の感情表現を保てる。代替案：「応えたい気持ちがありました。」"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは感情を伴う独白（既読をつけて考えた・指が止まった・応えたかった・ひとりで静かに過ごした）であり、テロップは「金曜の夜/誘いが来た/座敷と知り/気持ちが引けた/声にできず/断った」と骨格のみを異なる語彙で提示。同一テキストの転記・要約ではなく、telop_guideline.direction「ナレーションの独白をそのまま文字化せず、短い言葉で骨格だけを提示する」に合致。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：「指が止まりました」「理由をうまく言葉にできないまま」「応えたかった」「ひとりで静かに過ごしました」と感情・内面描写を担当。テロップ＝論理（気づき）：「金曜の夜→誘いが来た→座敷と知り→気持ちが引けた→声にできず→断った」と事実の推移を論理的に配列。役割が分離されている。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素がep67.jsonのcaptionフィールドと一致。hook_line「金曜の夜、友人からの誘いを断った理由があります。」＝一致。body（友人からグループ飲み会〜申し訳なさが残っています）＝一致。cta＝空（ep67.json cta:\"\"と整合）。hashtags「#安全靴 #工場勤務 #12年の記録 #金曜の夜 #断る理由」＝5個すべて一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との主題比較：ep62＝後輩入社による距離感の変化（職場）、ep63＝12年で一番良かった対策（内省）、ep64＝帰宅後の靴脱ぎ日課（一人暮らし）、ep65＝同僚の「気にならなくなったな」（職場）、ep66＝中敷き月1交換（実用習慣）。ep67＝友人の飲み会の誘いを座敷と知り断った（友人関係・社会的場面）。素材（友人・金曜の夜・座敷・飲み会の誘い）、場面（職場外の社交的誘い）、対策（なし）のいずれも重複しない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "各テロップ行が独立して意味を持ち、1行で瞬時に理解可能。「金曜の夜」(5字)「誘いが来た」(5字)「座敷と知り」(5字)「気持ちが引けた」(7字)「声にできず」(5字)「断った」(3字)。すべて10字以内で視認性良好。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「金曜の夜、友人からグループ飲み会に誘われました。」が場面の途中から即座に入っている。「安全靴を12年履いていて…」「僕は工場で働いていて…」等の背景説明を挟まず、narration_guideline.opening_approach指定の「金曜の夜、誘いが届いた場面の提示から即座に入る」イン・メディアス・レスを実装。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのすべてにおいて、妻・子ども・家族（実家の親を除く）の登場・存在の示唆がない。人間関係は「友人」のみで構成され、「ひとりで静かに過ごしました」は一人暮らし描写としてpass。友人の描写が家族の示唆に転じる箇所もなし。tone_and_rules.marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 23,
+        "fail": 1,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "medium/lowのみfail（F5:medium 1件）→Pass扱い（警告として記録）。critical/high failなし。",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω"
+    }
+  ]
+}
