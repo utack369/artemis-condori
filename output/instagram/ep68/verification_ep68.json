@@ -1,0 +1,43 @@
+{
+  "ep_number": 68,
+  "euphemism_required": false,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        { "axis_id": "A1", "axis_name": "効果の断定チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション・テロップ・キャプションいずれにも「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。靴下の購入習慣の描写のみで、対策X→効果Yの因果断定構造は存在しない。" },
+        { "axis_id": "A2", "axis_name": "効果の暗示チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション＋テロップ＋キャプションの組み合わせ全体を通じて「これを使えば解決する」と読み取れる構造なし。靴下を同じ色・同じ厚みで3足揃える購入基準の描写であり、商品効果の暗示は構造的に不在。" },
+        { "axis_id": "A3", "axis_name": "購入圧力チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現なし。日常の買い物習慣を淡々と描写するのみ。" },
+        { "axis_id": "A4", "axis_name": "トーン一貫性チェック", "result": "pass", "severity": "critical", "target_file": "script.md", "reason": "全文が和男の共感共闘トーン（淡々とした一人称の日常描写）で一貫。売り込みトーン・専門家トーンへの逸脱なし。「気になって仕方がありません」「だから最初から選択肢を絞っています」等、当事者としての率直な語り口が維持されている。" },
+        { "axis_id": "A5", "axis_name": "「変わった」禁止チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション・テロップ・キャプションのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」の語幹なし。足元・体調文脈での使用も皆無。" },
+        { "axis_id": "B1", "axis_name": "テーマの一致チェック", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "design_master File.68のテーマ「靴下を3足まとめ買いする時の基準」と一致。ナレーションは靴下売り場で同じ色・同じ厚みの靴下を3足まとめて選ぶ基準（厚みの違いによる履き心地の差を避ける）を描写しており、テーマを正確に扱っている。" },
+        { "axis_id": "B2", "axis_name": "型の実装（意味的）チェック", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "Type_C（日常スケッチ型）の心理構造を実装。日常の淡々とした描写（靴下売り場に立つ→同じ棚→3足選ぶ→理由→12年の習慣→今日も同じ）で構成され、告白や気づきの提示ではなく生活の一コマとして描かれている。着地「今日も、同じ3足でした。」が人柄の深い理解（几帳面さ）に帰結する。" },
+        { "axis_id": "B3", "axis_name": "フェーズ内役割チェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "phase_roleの指定通り、ep66（Type_B・ソフトCTA）・ep67（Type_A・CTAなし）に続く型戻しとして、感情の押し付けなく低強度の日常スケッチを提供。P3前半における人柄理解の静かな積み重ね役として適切な強度。" },
+        { "axis_id": "C1", "axis_name": "NGワードの意味的使用チェック", "result": "skip", "severity": "critical", "target_file": "script.md", "reason": "meta.euphemism=直接表現可（婉曲不要）のため判定対象外。" },
+        { "axis_id": "C2", "axis_name": "婉曲変換の適切性チェック", "result": "skip", "severity": "medium", "target_file": "script.md", "reason": "meta.euphemism=直接表現可（婉曲不要）のため判定対象外。" },
+        { "axis_id": "C3", "axis_name": "キャプション例外（制御ルール）", "result": "skip", "severity": "low", "target_file": "caption", "reason": "meta.euphemism=直接表現可（婉曲不要）のため、C1・C2自体がskipであり本制御ルールも適用不要。" },
+        { "axis_id": "D1", "axis_name": "入口の実装チェック", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "psychology.entryの指定「日常の共感入口。靴下売り場でいつも同じ色・同じ厚みのものを3足まとめて選ぶという、買い物のときの小さなこだわりの提示」がナレーション冒頭「靴下売り場に立つと、いつも同じ棚に向かいます。並んでいるのは、色も厚みも決まったものばかりです。」で実現。Type_Cの日常の共感入口として適切。" },
+        { "axis_id": "D2", "axis_name": "出口の実装チェック", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "psychology.exitの指定「人柄の深い理解。特別なことを語らず、靴下選びという小さな場面での几帳面さに触れ、この人はこういう人なのだという静かな理解が残る状態」がナレーション末尾「今日も、同じ3足でした。」およびテロップ最終行「今日も同じ」で実現。CTAなし指定通り行動喚起なく、日常の情景だけを残して終えている。" },
+        { "axis_id": "D3", "axis_name": "one_messageチェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "one_message「靴下を買うとき、いつも同じ色・同じ厚みのものを3足まとめて選ぶという、和男の几帳面な購入習慣」に台本全体が集約可能。第2のメッセージの混在なし。" },
+        { "axis_id": "E1", "axis_name": "CTA実装の適切性チェック", "result": "skip", "severity": "high", "target_file": "script.md", "reason": "meta.cta_type=なし のため判定対象外。" },
+        { "axis_id": "E2", "axis_name": "CTA非存在時の混入チェック", "result": "pass", "severity": "high", "target_file": "multiple", "reason": "テロップ全行（靴下売り場/いつも同じ棚/色も厚みも/揃えて3足/今日も同じ）に特定行動への命令形・依頼形・勧誘形の指示なし。キャプションにもフォロー・保存・いいね・コメント・シェア・リンク遷移・DM誘導文の混入なし。ナレーションも日常描写のみ。cta_type=なし指定に適合。" },
+        { "axis_id": "E3", "axis_name": "テロップ内ハードCTA禁止チェック", "result": "pass", "severity": "critical", "target_file": "script.md", "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現なし。全行が日常場面の短い描写語句のみ。" },
+        { "axis_id": "F5", "axis_name": "語尾統一チェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション全7文の語尾を精査。(1)向かいます(2)です(3)向かいます(4)ありません(5)います(6)なりました(7)でした。すべて「です・ます」調で統一されており、「だ・である」調の混在なし。ep67で第5文のみ常体混入によりfailした前例を踏まえ厳密に確認し、問題なし。" },
+        { "axis_id": "G3", "axis_name": "内容分離チェック", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "ナレーションは完全な文章で購入習慣の理由・経緯を語り、テロップは「靴下売り場」「いつも同じ棚」「色も厚みも」「揃えて3足」「今日も同じ」と印象的な短語句で場面を視覚的に提示。同一テキストの転記・要約ではなく、それぞれ異なる表現で別内容を担っている。" },
+        { "axis_id": "G4", "axis_name": "役割分離チェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション＝感情（共感）：当事者視点の心情描写（「気になって仕方がありません」「だから最初から選択肢を絞っています」）。テロップ＝論理（気づき）：場面の視覚的アンカー（靴下売り場→同じ棚→色も厚みも→揃えて3足→今日も同じ）として論理的な流れを提示。役割分離が維持されている。" },
+        { "axis_id": "H2", "axis_name": "キャプション内容の指示書一致チェック", "result": "pass", "severity": "high", "target_file": "caption", "reason": "caption.mdの各要素がep68.jsonのcaptionフィールドと完全一致。hook_line「靴下を買うとき、決めていることがあります。」一致、body3文一致、cta空欄一致、hashtags5件（#安全靴 #工場勤務 #12年の記録 #一人暮らし #靴下選び）一致。別epの残骸混入なし。" },
+        { "axis_id": "I1", "axis_name": "過去epとの素材重複チェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "直近5作との照合：ep63=秘密の対策、ep64=帰宅後の靴脱ぎ習慣、ep65=同僚の一言、ep66=中敷き月1交換、ep67=飲み会を断った理由。ep68の「靴下売り場での3足まとめ買い基準」は主題（素材・場面・行為）がいずれとも重複しない。ep64（玄関での靴脱ぎ）・ep66（中敷き交換）とは場面（店頭vs帰宅後vs使用中）・行為（購入vs脱靴vs交換）・時間軸（不定期の買い物vs毎晩vs月1）が明確に異なる。" },
+        { "axis_id": "I2", "axis_name": "テロップ視認性（意味的）チェック", "result": "pass", "severity": "low", "target_file": "script.md", "reason": "テロップ各行が独立して意味を持ち、5-6文字程度で瞬時理解可能。「靴下売り場」「いつも同じ棚」「色も厚みも」「揃えて3足」「今日も同じ」いずれも前後の行がなくても意味が通る。" },
+        { "axis_id": "I3", "axis_name": "イン・メディアス・レスチェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション冒頭「靴下売り場に立つと、いつも同じ棚に向かいます。」が場面の途中から始まっている。「12年間工場で働いていて…」等の背景説明なし。narration_guideline.opening_approachの指定（イン・メディアス・レス）通り。" },
+        { "axis_id": "J1", "axis_name": "marriage_constraintチェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション・テロップ・キャプション全体を通じて、妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。人間関係は一人暮らしの日常・内面の範囲で構成（「自分の中の決まり」「誰かに教わったわけではなく」）。キャプションのハッシュタグ「#一人暮らし」も一人暮らし設定と整合。配偶者・子の存在を暗示する描写は皆無。" }
+      ],
+      "summary": { "pass": 21, "fail": 0, "skip": 4 },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸pass または skip（critical/highのfailなし）のためPass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）へ自動進行"
+    }
+  ]
+}
