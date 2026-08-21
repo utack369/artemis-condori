@@ -1,0 +1,222 @@
+{
+  "ep_number": 69,
+  "euphemism_required": true,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の断定語なし。「対策X→効果Y」の因果断定構造も存在しない。台本は健康診断での身構えの告白に終始し、何らかの効果を主張する文脈が一切ない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション+テロップ+CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造が存在しない。台本は健康診断での数秒間の緊張を語る独白であり、製品・対策の効果を暗示する要素がない。DM誘導も共感の対話への招待であり、解決策の提示ではない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り表現なし。「今だけ/残りわずか/早く試さないと」等の購入圧力表現がナレーション・テロップ・captionのいずれにも含まれない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "共感共闘型・和男のトーンを一貫して維持。「少し身構えます」「自分だけがそう感じているのかもしれません」は弱さの正直な開示であり、売り込みトーン・専門家トーンへの逸脱がない。テロップ「伝わる人にだけ」「DMで教えて」も招待トーンで共感共闘の範囲内。captionの「DMでひとこと送ってください」も依頼形の柔らかい誘いで逸脱なし。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」の使用なし。足元・体調文脈での「変わ」系語幹が一切存在しない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master File.69のテーマ「会社の健康診断で足を見せる瞬間の話」に対し、ナレーションは健康診断で「靴下を脱いでください」と言われ身構える数秒間の独白を展開しており、テーマに正確に一致する。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装。ナレーション全体が「少し身構えます」「自分だけがそう感じているのかもしれません」という弱さ・本音の正直な開示で構成され、テロップ「伝わる人にだけ」「DMで教えて」で「この人に話したい」着地を実現している。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P3前半のFile.67（CTAなし）・File.68（CTAなし）に続くv3初のDM誘導回として、対話の扉を開く強度を持つ。押し込みすぎず柔らかい招待トーンのDM誘導であり、meta.phase_roleの「DM発生を狙う一本」という配置意図と整合。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "婉曲要のため判定実施。euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）のいずれもナレーション・テロップに使用されていない。悩みの内容を直接言語化せず「身構えます」「緊張」「あの数秒」で描写しており、婉曲が徹底されている。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直接表現を完全に回避。足元の悩みの具体的内容には一切触れず、「身構え」「緊張」「数秒」「あの数秒だけ」という感情・時間の描写で場面を構成。conversion_tableの精神（直接的に匂い・悩みを言わず感情・場面で描写する）に沿っている。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "婉曲チェック(C1/C2)をcaptionに適用していない。A群(正直さ)はcaptionにも適用済み（A1-A5で判定完了）。制御ルールとして適正に運用。なおcaptionにも直接表現は含まれておらず、「足を見せる順番」「身構えている」と婉曲的な記述に留まっている。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entryが定義済み（「弱さ・本音への共感入口。年に一度の健康診断で靴下を脱いで足を見せる場面での言葉にしにくい緊張の開示」）。ナレーション冒頭は看護師の台詞「靴下を脱いでください」から即座に「その一言に少し身構えます」と弱さ・本音の開示に入っており、Type_Aの共感入口を正確に実装。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exitが定義済み（「この人に話したい」着地→DM誘導への自然な接続）。ナレーション末尾「来年もまた、同じ数秒が来ることは分かっています」で告白の余韻を残し、テロップ「伝わる人にだけ」「DMで教えて」で「この人に話したい」着地からDM誘導への自然な接続を実現。Type_A出口として機能。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「会社の健康診断で靴下を脱いで足を見せる瞬間、他の検査項目にはない緊張が毎年静かに湧き上がるという和男の告白」に台本全体が集約されている。健康診断の数秒間の身構えという一つのメッセージのみで構成され、2メッセージの混在がない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=DM誘導のため判定実施。ナンバリング行「安全靴と戦う12年の記録：File.69」を除いたテロップ実質最終2行「伝わる人にだけ」「DMで教えて」が、cta_expression「これ、伝わる人にだけ伝わると思う。DMで教えてください」の圧縮版として機能。テロップ1行10文字制限下での自然な短縮であり、DM誘導文として意味的に整合。「DMで教えて」は口語的な依頼形で招待トーンの範囲内、強圧的命令（「今すぐDMして」等）・取引型の餌付けトーンには該当しない。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導のためE2は適用対象外。E2はcta_type=なしの場合のみ判定する軸。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等のハードCTA（プラットフォーム外・プロフィールへの直接誘導）が含まれない。テロップの「DMで教えて」はDM誘導文であり、E1でDM誘導回のテロップに配置が求められる依頼形の招待トーン。強圧的命令にも該当しない。captionの「DMでひとこと送ってください」はDM誘導回のキャプションで許容されるCTA（v3スキーマcaption.cta準拠）。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文末を確認。「身構えます」「湧き上がります」「ありません」「かもしれません」「戻ります」「分かっています」の6文末すべてが「です・ます」調で統一。冒頭の「靴下を脱いでください」は看護師の台詞（会話文）であり語尾統一の判定対象外。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは健康診断での身構えの心情を独白として展開。テロップは「健康診断」「靴下を脱ぐ」「あの数秒だけ」と場面のキーワードを視覚的軸として提示し、「伝わる人にだけ」「DMで教えて」でCTAを配置。ナレーションの同一テキスト転記・要約ではなく、テロップ独自のキーワード抽出＋CTA配置による別内容構成。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション=感情（身構え・緊張・来年もまた同じ数秒という受容の共有）。テロップ=論理（場面のキーワード整理「健康診断」「靴下を脱ぐ」「あの数秒だけ」）+CTA（「伝わる人にだけ」「DMで教えて」）。感情と論理の役割分離が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素をep69.jsonのcaptionフィールドと照合。hook_line「会社の健康診断で、毎年同じ数秒があります。」=完全一致。body 3文=完全一致。cta「同じ数秒に覚えがあるなら、DMでひとこと送ってください。」=完全一致。hashtags「#安全靴 #工場勤務 #12年の記録 #健康診断 #足元の悩み」=5個すべて一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との照合完了。ep64（帰宅後の足元ケア習慣）・ep66（中敷き月1交換）・ep68（靴下まとめ買い基準）はテーマ・場面が完全に異なる。ep65（同僚の一言・DM誘導）とは同じDM誘導回だが、構図が「他者の発言起点の気づき」vs「自身が毎年迎える公的場面での身構え」で異なり、「同僚」「言われた」「気にならなくなった」の語も未使用。ep67（座敷と知り飲み会を断る回避判断）とは「回避できる社会的誘い」vs「避けられない公的義務」で構図が反転し、「金曜」「誘い」「座敷」「断る」の語も未使用。素材重複なし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ全5行（ナンバリング除く）がそれぞれ独立して意味を持ち、1行で瞬時に理解可能。「健康診断」(4字)・「靴下を脱ぐ」(5字)・「あの数秒だけ」(6字)・「伝わる人にだけ」(7字)・「DMで教えて」(6字)。いずれも前後の行に依存せず単独で意味が成立。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭が「靴下を脱いでください」という看護師の台詞から場面の途中に即座に入っている。「会社の健康診断とは」「毎年受けている」等の背景説明を挟まず、診察室での具体的瞬間からイン・メディアス・レスで開始。narration_guidelineのopening_approach指示とも整合。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "File.69（ep61以降）のため判定実施。ナレーション・テロップ・captionの全文を確認。登場人物は「看護師さん」のみで、妻・子ども・家族（実家の親を除く）の登場・存在の示唆が一切ない。人間関係は職場の健康診断という範囲に留まり、一人暮らしの内面の範囲で構成されている。marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 24,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸pass/skip（critical/highのfailなし）→ Pass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω自動進行"
+    }
+  ]
+}
