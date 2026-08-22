@@ -1,0 +1,43 @@
+{
+  "ep_number": 70,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        { "axis_id": "A1", "axis_name": "効果の断定", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。内容は12年分のノートの季節差という観察事実の提示であり、対策X→効果Yの因果構造は存在しない。" },
+        { "axis_id": "A2", "axis_name": "効果の暗示", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体を通読しても「これを使えば解決する」と読み取れる構造はない。記録の季節差という発見を共有するだけで、商品や対策への帰結がない。" },
+        { "axis_id": "A3", "axis_name": "購入圧力", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "限定感・緊急性・煽り表現（今だけ/残りわずか/早く試さないと等）はナレーション・テロップ・キャプションのいずれにも存在しない。" },
+        { "axis_id": "A4", "axis_name": "トーン一貫性", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーションは「気づきました」「思います」「確信しました」と和男の一人称の内省で構成され、共感共闘トーンを維持。キャプションCTAも「よかったら覗いてみてください」で和男のトーンと一致。売り込み・専門家トーンへの逸脱なし。" },
+        { "axis_id": "A5", "axis_name": "変わった禁止", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション・テロップ・キャプションに「変わった/変わる/変化した/変化があった/変化を感じた」は未使用。季節差の表現は「全然違う」で統一されており、design_masterテーマ行の「変わること」は設計側の記述であり成果物には反映されていない。" },
+        { "axis_id": "B1", "axis_name": "テーマの一致", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "design_masterテーマ「12年記録して分かった、季節で変わること」に対し、ナレーションは12年分のノートを見返して季節ごとに書く量が全然違うという気づきを扱っており、テーマ素材と一致。" },
+        { "axis_id": "B2", "axis_name": "型の実装（意味的）", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "Type_B（気づき・発見型）の心理構造を実装。冒頭で「季節によって書く量が全然違うことに気づきました」と発見を提示し、夏冬の対比で展開、末尾「記録の量そのものが季節を映しているという事実だけは確信しました」で事実として着地。理由を明かさず終えることで「もっと聞きたい」の余韻を残す構成。" },
+        { "axis_id": "B3", "axis_name": "フェーズ内役割", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "phase_roleの指示通り、ep69のType_A告白からType_Bの気づき型へ戻し、12年分のノートという長期記録からの観察事実を淡々と提示するデータ観察型の構図。P3前半「対話の扉を開く」フェーズの落ち着いた知的好奇心喚起として強度・方向が整合。" },
+        { "axis_id": "C1", "axis_name": "NGワードの意味的使用", "result": "skip", "severity": "critical", "target_file": "script.md", "reason": "meta.euphemism=直接表現可（婉曲不要）のため判定対象外。" },
+        { "axis_id": "C2", "axis_name": "婉曲変換の適切性", "result": "skip", "severity": "medium", "target_file": "script.md", "reason": "meta.euphemism=直接表現可（婉曲不要）のため判定対象外。" },
+        { "axis_id": "C3", "axis_name": "キャプション例外（制御ルール）", "result": "skip", "severity": "low", "target_file": "caption", "reason": "C1・C2がskipのため、キャプション例外の適用範囲制御も判定不要。" },
+        { "axis_id": "D1", "axis_name": "入口の実装", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "psychology.entryで指定された知的好奇心入口を実装。ナレーション冒頭「12年分のノートを見返すと、季節によって書く量が全然違うことに気づきました」が、記録そのものへの気づきを即座に提示し、Type_Bの知的好奇心で視聴者を拾う構造と一致。" },
+        { "axis_id": "D2", "axis_name": "出口の実装", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "psychology.exitで指定された「もっと聞きたい」着地を実装。ナレーション末尾「記録の量そのものが季節を映しているという事実だけは、12年分を見返して確信しました」で事実を提示し切り、理由には踏み込まず余韻を残す。テロップ末尾「季節の記録は/プロフィールから」が保存・プロフィール遷移を自然に促す。" },
+        { "axis_id": "D3", "axis_name": "one_message", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "台本全体が「12年分のノートを見返して気づいた、季節によって書く量が全然違うという発見」の1メッセージに集約されている。夏冬の対比・理由不明の着地もすべてこの1メッセージの展開であり、第2メッセージの混在なし。" },
+        { "axis_id": "E1", "axis_name": "CTA実装の適切性", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "cta_type=ソフトCTA。テロップのナンバリング行「安全靴と戦う12年の記録：File.70」を除いた実質最終メッセージ行は「季節の記録は/プロフィールから」。これは事実の陳述形であり、依頼形・勧誘形ではない。cta_expression「季節ごとの記録はプロフィールのリンクから」を10字制限内で簡潔化した表現で、ソフトCTAとして機能している。" },
+        { "axis_id": "E2", "axis_name": "CTA非存在時の混入", "result": "skip", "severity": "high", "target_file": "multiple", "reason": "cta_type=ソフトCTA（「なし」ではない）のため判定対象外。" },
+        { "axis_id": "E3", "axis_name": "テロップ内ハードCTA禁止", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。テロップ末尾「季節の記録は/プロフィールから」は所在を示す陳述形であり、命令形・直接誘導には該当しない。キャプションCTA「よかったら覗いてみてください」も「よかったら」緩和を伴う柔らかい表現であり、ハードCTAではない。" },
+        { "axis_id": "F5", "axis_name": "語尾統一", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション全文の語尾を確認。「気づきました/増えていきます/ほとんどでした/思います/確信しました」すべてです・ます調で統一。だ・である調の混在なし。" },
+        { "axis_id": "G3", "axis_name": "内容分離", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "ナレーションは「汗をかいた分だけメモも増えていきます」等の情感・内省を含む文章体。テロップは「12年分の/ノートを見ると/夏は数行/冬はわずか」と異なる語彙・構造の短句で視覚的キーワードを提示。同一テキストの転記・要約ではない。" },
+        { "axis_id": "G4", "axis_name": "役割分離", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーションは「気づきました」「思います」「確信しました」と和男の感情・共感を担う。テロップは気づきの論理構造を視覚的に提示し、末尾でCTAを配置。感情(ナレーション)と論理(テロップ)の役割分離が成立。" },
+        { "axis_id": "H2", "axis_name": "キャプション内容の指示書一致", "result": "pass", "severity": "high", "target_file": "caption", "reason": "caption.mdの各要素をep70.jsonのcaptionフィールドと照合。hook_line・body3文・cta・ハッシュタグ5個すべて完全一致。別epの残骸混入なし。" },
+        { "axis_id": "I1", "axis_name": "過去epとの素材重複", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "直近5作と照合。ep65=同僚の一言、ep66=中敷き交換基準、ep67=飲み会を断った理由、ep68=靴下まとめ買い基準、ep69=健康診断の緊張。ep70の主題「12年分のノートの季節による記録量の違い」はいずれとも素材・場面・対策が重複しない。" },
+        { "axis_id": "I2", "axis_name": "テロップ視認性（意味的）", "result": "pass", "severity": "low", "target_file": "script.md", "reason": "テロップ全6行（ナンバリング除く）がそれぞれ独立して意味を持つ短句。いずれも1行で瞬時に理解可能。" },
+        { "axis_id": "I3", "axis_name": "イン・メディアス・レス", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション冒頭「12年分のノートを見返すと、季節によって書く量が全然違うことに気づきました」は振り返りの行為と発見を即座に提示するイン・メディアス・レス。背景説明から始めていない。" },
+        { "axis_id": "J1", "axis_name": "marriage_constraint", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "File.70（>=File.61）のため判定有効。ナレーション・テロップ・キャプション全体を通読し、妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。内容は12年分の個人ノートを一人で見返すという一人暮らしの内省の範囲で完結。配偶者・子の存在を暗示する描写もない。" }
+      ],
+      "summary": { "pass": 21, "fail": 0, "skip": 4 },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highのfail 0件・全軸pass or skipのためPass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）へ自動進行"
+    }
+  ]
+}
