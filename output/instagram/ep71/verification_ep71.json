@@ -1,0 +1,436 @@
+{
+  "ep_number": 71,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 2,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションに「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現はない。「自分に合っている」は個人的相性の陳述であり、対策→効果の因果断定には該当しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション+テロップ+CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造はない。むしろ「勧めない」というDe-selling構造であり、効果暗示とは対極の設計。DM誘導も「理由を聞いてください」であり購入・試用の促しではない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感（今だけ/残りわずか）・緊急性・煽り表現はナレーション・テロップ・キャプションのいずれにも含まれない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "「聞かれたら答えます。でも、自分からは勧めません。それが、僕なりの誠実さだと思っています。」は和男の共感共闘トーンに沿っている。売り込みトーン・専門家トーンへの逸脱はない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションに「変わった/変わる/変化した/変化があった/変化を感じた」は一切使用されていない。足元・体調文脈での紛らわしい使用もない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「正直に言う。僕が続けているものを勧めたくない理由」に対し、ナレーションは12年間続けている足元ケアを人には勧めない理由を正直に告白する内容であり、テーマと一致する。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装している。弱さ・本音の正直な開示=「人に勧めたことは一度もありません」「正直分かりません」という内面の告白。着地=「それが、僕なりの誠実さだと思っています」で和男の人柄への信頼を残し、「この人に話したい」を引き出す構造。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.phase_role「P3中盤の入口・正直さの極致を示すP3中核コンテンツ」に対し、「続けているのに勧めない」というDe-selling構図は正直さの極致として十分な強度を持つ。中盤入口にふさわしい人柄開示となっている。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のためskip。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のためskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2がskip（婉曲不要）のため、適用範囲の制御ルール確認も不要。A群のcaption適用は各A軸で個別に実施済み。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感入口。12年間続けているものがあるのに人には勧めないという一見矛盾した内心の開示」に対し、ナレーション冒頭「12年間、僕が毎日欠かさず続けているものがあります。それを、人に勧めたことは一度もありません。」が矛盾の開示で共感を拾うType_Aの入口を正確に実装している。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「『この人に話したい』着地。勧めない理由を最後まで正直に語り切ることで誠実さへの信頼を残す」に対し、ナレーション末尾「それが、僕なりの誠実さだと思っています。」が誠実さへの信頼を残す着地を実現。Type_Aの「この人に話したい」心理を喚起する構造として機能している。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「12年間続けている足元ケアを、合う人が違うからという理由で人には勧めないという和男の正直な告白」に台本全体が集約されている。第2のメッセージの混在はない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "fail",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "テロップ実質最終行「理由があります」（script.md 10行目）",
+          "reason": "cta_type=DM誘導の場合、テロップの実質最終行がcta_expression「勧めたくない理由、気になったらDMで聞いてください」と整合するDM誘導文として機能する必要がある。実質最終行「理由があります」は事実の陳述であり、DM誘導文として機能していない。なお、captionにはcta_expressionと完全一致するDM誘導「勧めたくない理由、気になったらDMで聞いてください。」が実装されている。指示書telop_guideline.directionに「テロップにハードCTA・直接誘導表現は置かず、DM誘導はcaption側で実装する」との記載があり指示書内部で矛盾があるが、E1判定基準に照らしテロップのDM誘導欠落はfailと判定する。",
+          "suggested_fix": "テロップ最終行を「理由、DMで聞いて」等のDM誘導文（10字以内・招待トーン）に差し替える。または、指示書telop_guidelineの「DM誘導はcaption側で実装する」設計を意図的と判断する場合は、Coordinatorの裁量でE1をoverride可。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導のためskip（E2はcta_type=なしのみ判定）。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導・ハードCTAは含まれない。キャプションのDM誘導「勧めたくない理由、気になったらDMで聞いてください。」はDM誘導回のキャプションとして許容範囲内（招待トーン・強圧的命令でない）。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションの語尾がすべて「です・ます」調で統一されている：あります/ありません/ありません/分かりません/答えます/勧めません/思っています。だ・である調の混在はない。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーション＝告白の詳細な感情・理由開示（なぜ勧めないかの内面描写）。テロップ＝「12年間」「続けているもの」「勧めたことは」「一度もない」「理由があります」のキーワード的視覚提示。同一テキストの転記・要約ではなく別内容として機能している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（告白・内面の正直な開示・共感）。テロップ＝論理（事実のキーワード提示・気づきの構造化）。役割分離が維持されている。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素がep71.jsonのcaptionフィールドと完全一致。hook_line「12年間、続けているものがあります。」、body（3文の告白）、cta「勧めたくない理由、気になったらDMで聞いてください。」、hashtags5個すべて一致。別epの残骸混入もない。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ep71の主題「続けているものを人に勧めない理由の告白」は、直近5作（ep66:中敷き月1交換/ep67:飲み会を断った理由/ep68:靴下3足まとめ買い/ep69:健康診断の瞬間/ep70:季節ごとのノート記録量）のいずれとも素材・場面・対策が重複しない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "各テロップ行が独立して意味を持ち、1行で瞬時に理解できる。「12年間」「続けているもの」「勧めたことは」「一度もない」「理由があります」いずれも短く明瞭。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「12年間、僕が毎日欠かさず続けているものがあります。」は背景説明（職業・状況の前置き）なしに途中から始まっている。冒頭2-3秒で「続けているのに勧めない」というフックを提示するイン・メディアス・レス構成。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションに妻・子ども・家族（実家の親を除く）の登場・存在の示唆はない。語りは「僕が」「自分に」等の一人称内面に閉じており、配偶者・子の存在を暗示する描写は一切ない。一人暮らしの日常・内面の範囲で構成されている。"
+        }
+      ],
+      "summary": {
+        "pass": 20,
+        "fail": 1,
+        "skip": 4
+      },
+      "coordinator_overall": "Fail",
+      "coordinator_rule_applied": "critical/highのfailが1件以上のためFail（E1: high severity fail）。omega²へは進行しない。",
+      "action": "Failのため、Coordinatorはverifier結果をうたへ提示して一旦停止。自動リトライ・自動post・段3-Ωへの進行は行わない。02_CC完了報告_ep71.mdに詳細を記載し、Step5連鎖待機へ移行して本部の次の指示（差し戻し修正指示、またはE1override判断等）を待つ。"
+    },
+    {
+      "round": 2,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現なし。対策X→効果Yの因果断定構造も存在しない。台本全体がDe-selling（勧めない）構図であり、効果主張と対極の内容。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション+テロップ+CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造は成立しない。むしろ「自分に合っているだけで他の人にも合うかは分からない」という逆方向の構造。「変わった」系表現も未使用。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り表現（今だけ/残りわずか/早く試さないと等）はナレーション・テロップ・captionのいずれにも存在しない。「勧めない」という姿勢が一貫しており、購入圧力と対極の設計。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「正直分かりません」「聞かれたら答えます」「僕なりの誠実さだと思っています」はいずれも和男の共感共闘トーン。売り込みトーン・専門家トーンへの逸脱なし。CTA「理由DMで聞いて」も招待トーンで一貫。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionに「変わった/変わる/変化した/変化があった/変化を感じた」の使用なし。足元・体調文脈での該当表現は皆無。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「正直に言う。僕が続けているものを勧めたくない理由」に対し、ナレーションは12年間続けているものを人に勧めない理由を正直に告白する内容。テーマ素材と一致。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装。弱さ・本音の正直な開示=「自分に合っているだけで他の人にも合うかは正直分かりません」、「この人に話したい」着地=「僕なりの誠実さだと思っています」で誠実さへの信頼を残しDM誘導へ接続。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.phase_role「P3中盤の入口。正直さの極致を示すP3中核コンテンツ」に対し、De-selling構図で正直さの極致を実装。中盤入口・中核コンテンツにふさわしい強度と方向性。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のためスキップ。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のためスキップ。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1/C2が婉曲不要によりskipのため、captionへの婉曲チェック除外は自明に成立。A群（正直さ）はcaptionにも適用済み（A1-A5すべてcaptionを含めて判定しpass）。制御ルールとして正しく運用。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感入口。12年間続けているものがあるのに人には勧めないという一見矛盾した内心の開示」に対し、ナレーション冒頭「12年間、僕が毎日欠かさず続けているものがあります。それを、人に勧めたことは一度もありません。」で矛盾の開示から即座に入り、Type_A入口として実装。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exit「この人に話したい着地。勧めない理由を最後まで正直に語り切ることで誠実さへの信頼を残しDM誘導へ接続」に対し、ナレーション末尾「それが、僕なりの誠実さだと思っています」で誠実さへの信頼、テロップ最終行「理由DMで聞いて」でDM誘導へ接続。Type_A出口として機能。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「12年間続けている自分なりの足元ケアを、自信がないからではなく合う人が違うからという理由で人には勧めないという和男の正直な告白」に台本全体が集約される。2メッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=DM誘導。ナンバリング行「安全靴と戦う12年の記録：File.71」を除いた実質最終行「理由DMで聞いて」（8字）を判定。cta_expression「勧めたくない理由、気になったらDMで聞いてください」の圧縮形として意味的に整合。依頼形（「聞いて」=聞いてくださいの略）はDM誘導回で許容される招待トーン。強圧的命令（「今すぐDMして」等）ではなく、取引型の餌付けトーンでもない。round1 failの指摘事項（DM誘導文として機能していない）が解消された。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=DM誘導のためスキップ。E2はcta_type=なしの場合のみ適用。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等のハードCTA・直接誘導表現なし。テロップ最終行「理由DMで聞いて」は招待トーンの依頼形であり、ハードCTA（強圧的命令）には該当しない。ep69テロップ最終行「DMで教えて」と同パターンで、DM誘導回のテロップ実質最終行として許容範囲。キャプションCTA「勧めたくない理由、気になったらDMで聞いてください」はDM誘導回キャプションとして許容（v3スキーマcaption.cta準拠）。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文の語尾を確認。「あります/ありません/ではありません/分かりません/答えます/勧めません/思っています」すべて「です・ます」調で統一。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーション=告白的な語りで勧めない理由を感情とともに展開。テロップ=「12年間」「続けているもの」「勧めたことは」「一度もない」「理由DMで聞いて」とキーワードを視覚的に提示。同一テキストの転記・要約ではなく、別形式で情報を補完。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション=感情（共感）。「正直分かりません」「僕なりの誠実さだと思っています」等の感情・共感の語り。テロップ=論理（気づき・CTA）。事実のキーワード提示と最終行のDM誘導。役割分離が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption各要素がep71.jsonのcaptionフィールドと一致。hook_line「12年間、続けているものがあります。」=一致、body=一致、cta「勧めたくない理由、気になったらDMで聞いてください。」=一致、hashtags 5個=一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作と照合。ep66=中敷き月1交換、ep67=金曜飲み会を断る、ep68=靴下3足まとめ買い、ep69=健康診断で靴下を脱ぐ、ep70=12年ノートの季節差。ep71=続けているものを勧めない理由。主題・素材・場面・対策のいずれも重複なし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "各テロップ行を確認。「12年間」「続けているもの」「勧めたことは」「一度もない」「理由DMで聞いて」いずれも短く、独立またはペアで即座に意味を把握可能。1行で瞬時に理解できる視認性を確保。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「12年間、僕が毎日欠かさず続けているものがあります。」は背景説明ではなく事実の途中提示から入る構成。narration_guideline.opening_approach「イン・メディアス・レス」に準拠。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraintチェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "File.71（61以降）のため適用。ナレーション・テロップ・captionに妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。人間関係は内面の範囲のみで構成。「一人暮らし」を暗示する描写もなく、配偶者・子の存在を示唆する描写も皆無。marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸pass/skipのためPass。E1 round1 failはround2の修正（テロップ実質最終行を「理由DMで聞いて」に変更）で解消。",
+      "action": "Passのため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）"
+    }
+  ]
+}
