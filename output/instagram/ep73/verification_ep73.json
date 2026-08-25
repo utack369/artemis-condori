@@ -1,0 +1,43 @@
+{
+  "ep_number": 73,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        { "axis_id": "A1", "axis_name": "効果の断定チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション「一番役に立ったのは...「諦め」だったかもしれません」「気がします」と推量形で緩和。テロップ「たどり着いたのは/諦めでした」は心理的発見の陳述であり対策→効果の因果断定ではない。キャプション「たぶん『諦め』でした」も「たぶん」で緩和。禁止語（効く/治る/消える/改善する/なくなる/解消）の断定形使用なし。" },
+        { "axis_id": "A2", "axis_name": "効果の暗示チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション+テロップ+CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造にない。むしろ「対策グッズではなく」と商品効果を明示的に否定し、心理的な持ちよう（力を抜くこと）が主題。プロフィール遷移CTAも事実陳述に留まり、商品購入への暗示導線なし。" },
+        { "axis_id": "A3", "axis_name": "購入圧力チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション・テロップ・キャプション全体に限定感（今だけ/残りわずか）・緊急性・煽り表現なし。「よかったら覗いてみてください」は緩和された案内であり購入圧力に該当しない。" },
+        { "axis_id": "A4", "axis_name": "トーン一貫性チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション全体が「かもしれません」「気がします」「感覚です」と和男の共感共闘トーン（保証しない・よかったら）を一貫。キャプション「よかったら覗いてみてください」も招待トーン。売り込み・専門家トーンへの逸脱なし。" },
+        { "axis_id": "A5", "axis_name": "「変わった」禁止チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "ナレーション・テロップ・キャプション全文に「変わった/変わる/変化した/変化があった/変化を感じた」の使用なし。体験は「できる範囲でいいと思えるようになった」「距離の取り方が分かった」と表現されており、changed_prohibition準拠。" },
+        { "axis_id": "B1", "axis_name": "テーマの一致チェック", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "design_masterテーマ「12年間で一番効果があったのは、たぶん「諦め」」に対し、ナレーションは核心（12年間×諦め×一番）を忠実に実装。「効果」→「役に立った」の変換はprohibited_words「効」の遵守による適切な言い換え。" },
+        { "axis_id": "B2", "axis_name": "型の実装（意味的）チェック", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "Type_B（気づき・発見型）の心理構造を実装。冒頭で意外な気づきを提示し、中盤で理由を展開、テロップCTAで「もっと聞きたい」着地。気づき→好奇心→遷移の導線が成立。" },
+        { "axis_id": "B3", "axis_name": "フェーズ内役割チェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "P3中盤（File.71-80）のType_BソフトCTA回として、12年の試行錯誤から得た穏やかな気づきを提示。前回ep72からの流れで強度を上げすぎず、発見型の知的提示として適切な位置。" },
+        { "axis_id": "C1", "axis_name": "NGワードの意味的使用チェック", "result": "skip", "severity": "critical", "target_file": "script.md", "reason": "meta.euphemism=「直接表現可」（婉曲不要回）のためC1はskip対象。" },
+        { "axis_id": "C2", "axis_name": "婉曲変換の適切性チェック", "result": "skip", "severity": "medium", "target_file": "script.md", "reason": "meta.euphemism=「直接表現可」（婉曲不要回）のためC2はskip対象。" },
+        { "axis_id": "C3", "axis_name": "キャプション例外（制御ルール）", "result": "skip", "severity": "low", "target_file": "caption", "reason": "meta.euphemism=「直接表現可」（婉曲不要回）のためC3はskip対象。婉曲チェック自体が不適用。" },
+        { "axis_id": "D1", "axis_name": "入口の実装チェック", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "psychology.entryの知的好奇心入口に対し、ナレーション冒頭で意外な結論を提示し実装。" },
+        { "axis_id": "D2", "axis_name": "出口の実装チェック", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "psychology.exit「もっと聞きたい」に対し、結論を着地させつつテロップで先の気づきへの好奇心を残す構造。" },
+        { "axis_id": "D3", "axis_name": "one_messageチェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "one_messageに台本全体が収束。別テーマの混在や2メッセージの競合なし。" },
+        { "axis_id": "E1", "axis_name": "CTA実装の適切性チェック", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "cta_type=ソフトCTA。テロップ実質最終2行は事実陳述に留まり依頼形・勧誘形を含まない。telop_guideline.cta_expressionと整合。CTA行の欠落なし。ソフトCTAの要件を充足。" },
+        { "axis_id": "E2", "axis_name": "CTA非存在時の混入チェック", "result": "skip", "severity": "high", "target_file": "multiple", "reason": "cta_type=ソフトCTA（CTA存在回）のためE2はskip対象。E2はcta_type=なしのみ適用。" },
+        { "axis_id": "E3", "axis_name": "テロップ内ハードCTA禁止チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "テロップに直接誘導なし。「この話の続きは/プロフィールに」は事実陳述形であり命令・直接誘導に該当しない。キャプションもソフトCTA準拠でハードCTA非該当。" },
+        { "axis_id": "F5", "axis_name": "語尾統一チェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション全文がです・ます調で統一。だ・である調の混在なし。" },
+        { "axis_id": "G3", "axis_name": "内容分離チェック", "result": "pass", "severity": "high", "target_file": "script.md", "reason": "ナレーションとテロップで表現形式・動詞が分離。File.63との骨格近接については、答えを明示開示し理由まで語り切る点で方向が反転しており骨格は分離。" },
+        { "axis_id": "G4", "axis_name": "役割分離チェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション=感情、テロップ=論理（気づき・CTA）と役割分離が成立。" },
+        { "axis_id": "H2", "axis_name": "キャプション内容の指示書一致チェック", "result": "pass", "severity": "high", "target_file": "caption", "reason": "caption.mdの各要素がep73.json captionフィールドと完全一致。別epの残骸混入なし。" },
+        { "axis_id": "I1", "axis_name": "過去epとの素材重複チェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "直近5作（ep68〜72）との主題比較で重複なし。ep70との「12年」共通はあるが対象（外部観察物vs内面の発見）で切り分け済。phase_role指定の回避語も未使用。" },
+        { "axis_id": "I2", "axis_name": "テロップ視認性（意味的）チェック", "result": "pass", "severity": "low", "target_file": "script.md", "reason": "テロップ各行が独立して意味を持ち瞬時に理解可能。最長行7文字、10文字以内。" },
+        { "axis_id": "I3", "axis_name": "イン・メディアス・レスチェック", "result": "pass", "severity": "medium", "target_file": "script.md", "reason": "ナレーション冒頭が振り返りの結論提示から即座に入り、背景説明を挟まない。opening_approach指定通り。" },
+        { "axis_id": "J1", "axis_name": "婚姻制約チェック", "result": "pass", "severity": "critical", "target_file": "multiple", "reason": "全ファイルに妻・子ども・家族（実家の親を除く）の登場・示唆なし。人間関係は内面の範囲で完結。marriage_constraint準拠。" }
+      ],
+      "summary": { "pass": 21, "fail": 0, "skip": 4 },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highのfail0件・全軸pass/skipのためPass",
+      "phase": "段3-Ω（omega²）へ自動進行",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）"
+    }
+  ]
+}
