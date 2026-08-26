@@ -1,0 +1,222 @@
+{
+  "ep_number": 74,
+  "euphemism_required": true,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現なし。台本全体が『ロッカールームで最後まで残る習慣』の事実描写に徹しており、対策→効果の因果構造が存在しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋captionの組み合わせ全体を通読しても、対策・商品・ケア手法への言及が一切なく、「これを使えば解決する」と読み取れる構造が成立していない。純粋な日常の告白に留まっている。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現なし。購入を示唆する語句自体が存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション全体が和男の共感共闘トーン（当事者としての淡々とした独白）を維持。「僕は支度が遅いわけではなく」「理由を聞かれたことは一度もありませんが」等、売り込み・専門家トーンへの逸脱なし。captionも同一トーン。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」の使用なし。足元・体調文脈での「変」語幹は未出現。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master File.74のテーマ『夏場のロッカールームで自分だけ着替えが遅い理由』に対し、ナレーションは『夏になると、仕事終わりのロッカールームで、いつも最後まで残ってしまいます』から始まり、人が少なくなるのを待って着替える習慣を描いている。テーマ素材と一致。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装。弱さ・本音の正直な開示＝『人が少なくなるのを待ってから動いている』という誰にも言えない習慣の告白。着地＝理由を明かさないまま『今日も最後の一人になってから、ゆっくり支度をしました』で静かに締め、『この人に話したい』感覚を喚起する構造。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P3中盤（File.71-80：人柄の深い伝達）の位置づけに対し、台本は山場ではなく静かな日常の独白で、穏やかに人柄を伝達する強度。phase_roleの『CTAなし・静かな独白の余韻だけで終える』指定とも整合。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "婉曲要。euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）のいずれもナレーション・テロップに未使用。着替えが遅い理由そのものを直接言及せず、行動描写に徹している。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "婉曲要。着替えが遅い理由を直接表現で述べず、『人が少なくなるのを待ってから、自分のペースで動いているだけ』という行動描写のみで察させる構造。禁止直接表現を完全に回避しつつ、足元の事情を文脈から読み取らせる婉曲技法として適切。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1/C2の婉曲チェックはcaptionに適用しない制御ルールに準拠。なおcaptionにもprohibited_directのNGワードは含まれていない。A群（正直さ）はcaptionにも適用済み（A1-A5各軸でcaptionを含めて判定）。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry『弱さ・本音への共感入口。夏の仕事終わりのロッカールームで、自分だけがいつも最後まで残ってしまうという習慣の開示』に対し、ナレーション冒頭『夏になると、仕事終わりのロッカールームで、いつも最後まで残ってしまいます』が即座に弱さの開示として機能。Type_Aの入口と一致。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exit『「この人に話したい」着地。理由を明かさないまま静かな余韻で終える』に対し、ナレーション末尾『理由を聞かれたことは一度もありませんが、今日も最後の一人になってから、ゆっくり支度をしました。』が理由未開示のまま余韻を残して着地。テロップ末尾『今日も同じでした』も静かな余韻。CTAなしで行動喚起なく、Type_Aの出口を実装。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message『夏の仕事終わりのロッカールームで、理由を明かさないまま、他の人より着替えに時間がかかってしまうという和男の告白』に対し、台本全体がこの1メッセージに集約されている。第2のメッセージ（別の気づき・別テーマ）の混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=なし。CTA実装の適切性はDM誘導またはソフトCTAの場合のみ判定対象のため、本軸はskip。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=なし。テロップ全行（ナンバリング行含む）にフォロー・保存・いいね・コメント・シェア・リンク遷移・DMへの命令形・依頼形・勧誘形の指示なし。DM誘導文の混入もなし。captionにも行動指示・DM誘導文なし。ハッシュタグのみ。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。cta_type=なしの回であり、テロップは場面描写のキーワードのみで構成。captionにもハードCTAなし（cta_type=なしの回のためcaptionでもハードCTA不可、かつ混入なし）。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文の語尾を確認：『残ってしまいます』『出ていきます』『動いているだけです』『支度をしました』。すべて「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは心理描写を含む詳細な独白（『支度が遅いわけではなく、人が少なくなるのを待ってから』『理由を聞かれたことは一度もありませんが』等）。テロップは『夏の仕事終わり』『最後まで残る』『みんなは先に』等の短いキーワード的場面スケッチ。ナレーションの心理描写・理由開示部分はテロップに含まれず、同一テキストの転記・要約ではない。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：当事者としての心理吐露（『支度が遅いわけではなく』『理由を聞かれたことは一度もありませんが』）で共感を喚起。テロップ＝論理（事実提示）：『夏の仕事終わり』『最後まで残る』『みんなは先に』『僕はゆっくり』と場面の事実を短く提示。感情表現はテロップに含まれず、役割分離が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素がep74.jsonのcaptionフィールドと完全一致。hook_line『夏のロッカールームで、いつも最後まで残っています。』、body 3文、cta空、hashtags『#安全靴 #工場勤務 #12年の記録 #夏の日常 #一人暮らし』すべて指示書通り。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作（ep69:健康診断で靴下を脱ぐ緊張／ep70:12年分ノートの季節別記録量／ep71:続けているものを人に勧めない理由／ep72:出張先ホテルで靴を二重袋に包む手順／ep73:12年間で一番効果があったのは諦め）のいずれとも、場面（ロッカールーム）・行動（人が減るまで待つ）・主題（着替えの習慣）が重複しない。ep69の健康診断とは公的検査vs日常の着替え、ep72の出張先とは場面が異なる。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち、瞬時に理解可能。『夏の仕事終わり』(7字)『最後まで残る』(6字)『みんなは先に』(6字)『僕はゆっくり』(6字)『今日も同じでした』(8字)。いずれも短く、前後の行を読まなくても単独で意味が成立。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭『夏になると、仕事終わりのロッカールームで、いつも最後まで残ってしまいます。』が場面の途中から即座に始まっている。「足元に悩みがある」「12年間記録している」等の背景説明・前提の導入なし。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも妻・子ども・家族の登場・存在の示唆なし。人間関係は職場の同僚（『みんなはさっと着替えて』）のみで構成。captionのハッシュタグ『#一人暮らし』も一人暮らし描写であり、配偶者・子の存在を暗示する描写は皆無。marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 24,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highにfail0件、全軸pass/skipのためPass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω自動進行"
+    }
+  ]
+}
