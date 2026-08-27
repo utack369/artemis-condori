@@ -1,0 +1,222 @@
+{
+  "ep_number": 75,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。「自分なりの向き合い方が定まった」は対策→効果の因果構造ではなく、心理的態度の変化の陳述であり断定に該当しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造になっていない。特定の製品・対策を推奨せず、検索をやめた経緯と心理的な落ち着きを述べるに留まる。CTAも「その後の話はプロフィールから」という事実の陳述であり、効果の暗示構造を形成しない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り表現（今だけ/残りわずか/早く試さないと等）は全成果物に存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "ナレーション全体が和男の一人称による内省的・共感共闘トーンで統一されている。「僕にとってはちょうどいいと感じています」等、売り込みや専門家口調への逸脱なし。キャプションも同様のトーンを維持。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」は未使用。足元・体調文脈での当該語幹は一切出現しない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterのテーマ「ネットで対策を調べなくなった日のこと」に対し、ナレーションは仕事終わりにスマホで対策情報を検索していたのがいつの間にか止まっていたという内容であり、テーマと一致する。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_B（気づき・発見型）の心理構造を実装している。冒頭「気づいたら、検索しなくなっていました」で意外な気づきを提示し、その理由を展開した上で、テロップ最終部「その後の話は/プロフィールから」で「もっと聞きたい」着地を実現している。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "design_master該当行に配置の意図・phase_roleの明示指定なし。台本の強度は内省的・中程度であり、Type_Bの標準的な構成として整合する。特段の山場指定に反する不整合は認められない。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=「直接表現可」（婉曲不要）のためC1はskip対象。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=「直接表現可」（婉曲不要）のためC2はskip対象。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2が婉曲不要によりskipされており、キャプションへの婉曲チェック適用も発生しない。A群（正直さ）はキャプションにも適用済み（A1-A5で判定済）。制御ルール通りの運用。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entryの「知的好奇心入口。検索しなくなっていたことに気づいたという意外な事実の提示」に対し、ナレーション冒頭「気づいたら、検索しなくなっていました」が意外な事実として好奇心を喚起する形で実装されている。Type_Bの知的好奇心入口として適切。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exitの「もっと聞きたい。検索しなくなった節目は語り切りつつ、その先の詳しい経緯が気になる状態を作る」に対し、ナレーション末尾で向き合い方が定まった旨を述べた上で、テロップ「その後の話は/プロフィールから」で続きへの好奇心を残す構造を実現。Type_Bの「もっと聞きたい」出口として機能している。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "tone_and_rules.one_message「仕事終わりによく検索していた和男が、いつからか検索しなくなっていたことに気づいた、情報との向き合い方が定まったという気づき」に台本全体が集約されている。第二のメッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=ソフトCTA。ナンバリング行「安全靴と戦う12年の記録：File.75」を除いた実質最終メッセージは「その後の話は/プロフィールから」。これは事実の陳述に留まり、依頼形・勧誘形を含まない。telop_guideline.cta_expression「調べるのをやめた後の話は、プロフィールから読めます」と意味的に整合（テロップ特有の簡潔化の範囲内）。ソフトCTAの要件を満たす。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTA（「なし」ではない）のためE2はskip対象。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現なし。「その後の話は/プロフィールから」は場所の事実提示であり、命令形・直接誘導には該当しない。キャプションCTA「よかったら覗いてみてください」は「よかったら」で緩和された柔和な招待表現であり、ソフトCTA回のキャプションとして許容範囲内（ハードCTAではない）。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文が「です・ます」調で統一。「検索しなくなっていました/あります/なっていました/思います/感じています」。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは検索をやめた経緯の内省的物語、テロップは「仕事終わりに/調べていました/気づけば/やめていました」とキーワード的な気づきの足跡＋CTA。同一テキストの転記・要約ではなく、別内容として構成されている。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝「自分なりの向き合い方が定まった」「ちょうどいいと感じています」等の感情・共感の表現。テロップ＝「仕事終わりに/調べていました/気づけば/やめていました」の論理的な気づきのステップ＋CTA。感情(ナレーション)と論理(テロップ)の役割分離が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "hook_line「いつからか、検索しなくなっていました。」は指示書と完全一致。body部は「スマホでよく調べていた」（指示書「ネットでいろいろ調べていた」）等の表現差があるが、意味的に整合。cta「調べるのをやめた後の話は、プロフィールにまとめています。よかったら覗いてみてください。」は指示書と完全一致。ハッシュタグ5つも指示書と完全一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との比較：ep70（季節による記録量の差）、ep71（人に勧めないという誠実さ）、ep72（出張先の二重袋）、ep73（諦めという発見）、ep74（ロッカールームで最後まで残る）。ep75の素材「ネット検索をやめた」は具体的場面・行動として独立。ep73と「自分なりの向き合い方」という結論に主題的近接があるが、素材（諦めの発見 vs ネット検索の中止）・場面（総括的振り返り vs 仕事終わりのスマホ操作）は明確に異なり、重複には至らない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "各テロップ行が短く、独立して意味を持つ。「仕事終わりに」「調べていました」「気づけば」「やめていました」「その後の話は」「プロフィールから」の各行が瞬時に理解可能。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「気づいたら、検索しなくなっていました。」は背景説明ではなく、気づきの瞬間から途中参入する構造。時系列的背景説明で始まっていない。イン・メディアス・レスの要件を満たす。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "File.75（61以降のため適用対象）。ナレーション・テロップ・キャプションのいずれにも妻・子ども・家族の登場や存在示唆なし。人間関係描写は登場せず、和男個人の内面的行動（検索する/やめる）のみで構成されている。marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/highのfail0件・全軸pass/skipのためPass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-V"
+    }
+  ]
+}
