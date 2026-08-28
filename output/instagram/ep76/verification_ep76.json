@@ -1,0 +1,222 @@
+{
+  "ep_number": 76,
+  "euphemism_required": true,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "reason": "ナレーション・テロップ・captionいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定語がない。「ほっとしている」は効果ではなく感情の描写であり、対策X→効果Yの因果断定は成立していない。",
+          "target_file": "multiple"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "reason": "台本全体は「先輩に悩みを初めて話せた」という行為の告白であり、商品・対策による解決を暗示する構造は存在しない。ナレーション・テロップ・CTAの組み合わせで「これを使えば解決する」と読み取れるメッセージは形成されていない。",
+          "target_file": "multiple"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現がナレーション・テロップ・captionのいずれにも存在しない。",
+          "target_file": "multiple"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "reason": "「僕はほっとしている自分がいました」「話せてよかったと、今は静かにそう思います」は和男の共感共闘トーンそのもの。売り込みトーン・専門家トーンへの逸脱は認められない。captionの「ひとこと送ってください」も招待トーンの範囲内。",
+          "target_file": "multiple"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "reason": "ナレーション・テロップ・captionのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」は使用されていない。足元・体調文脈での「変わ」「変化」の語幹なし。",
+          "target_file": "multiple"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "reason": "design_masterテーマ「先輩が退職する日、足元のことで初めて話した」に対し、ナレーションは「十二年一緒に働いた先輩が会社を去る日に、足元の悩みについて初めて言葉にした」を扱っており、テーマと完全に一致する。",
+          "target_file": "script.md"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "reason": "Type_A（告白・独白型）の心理構造を実装。弱さ・本音の正直な開示＝「これまで一度も言えなかった足元の悩みについて、最後だからと言葉にした」。「この人に話したい」着地＝「ほっとしている自分がいました」「話せてよかった」の安堵とテロップ「職場で同じ人は」によるDM誘導への接続。",
+          "target_file": "script.md"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "reason": "P3中盤（File.71-80）「人柄の深い伝達」に対し、12年間一度も言えなかった悩みを退職する先輩に初めて打ち明けるという場面は、和男の人柄を深く伝える内容として整合。山場指定はなく、中盤回として適切な強度。",
+          "target_file": "script.md"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "pass",
+          "severity": "critical",
+          "reason": "euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）のいずれもナレーション・テロップに使用されていない。悩みの描写は「足元の悩み」という間接表現のみ。",
+          "target_file": "script.md"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "pass",
+          "severity": "medium",
+          "reason": "使用中の婉曲表現「足元の悩み」はconversion_tableの「足のニオイ→足元の悩み」と一致。直接表現を確実に回避できている。悩みの内実の直接描写は一切なく、meta.euphemismの指針通り間接的な言葉に留まっている。",
+          "target_file": "script.md"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）チェック",
+          "result": "pass",
+          "severity": "low",
+          "reason": "C1/C2はcaptionに適用しない制御を確認。captionでも「足元の悩み」という婉曲表現が使用されており直接表現の混入もない。A群はcaptionにも適用済み（A1-A5で判定済）。",
+          "target_file": "caption"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "reason": "psychology.entry「弱さ・本音への共感入口」が冒頭で実現。「今日、十二年一緒に働いた先輩が、会社を去ります。挨拶を交わすだけのつもりでした。けれど最後だからと思うと、言葉が出ました」で、言えなかった悩みを最後の日に口にしたという内心の開示から共感を拾う。Type_Aの弱さ・本音への共感入口として適切。",
+          "target_file": "script.md"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "reason": "psychology.exit「この人に話したい着地」が実現。ナレーション末尾「話せてよかったと、今は静かにそう思います」で安堵の着地。テロップ最終行「職場で同じ人は」で同じ経験を持つ人への問いかけに繋がり、DM誘導への自然な接続を形成。",
+          "target_file": "script.md"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "reason": "one_message「12年一緒に働いた先輩の退職の日、これまで一度も言えなかった足元の悩みを初めて言葉にできたという和男の告白」に台本全体が集約できる。副次的テーマや2つ目のメッセージの混在は認められない。",
+          "target_file": "script.md"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "reason": "cta_type=DM誘導。テロップ実質最終行「職場で同じ人は」はtelop_guideline.cta_expression「職場で同じ経験がある人、いますか」の圧縮形であり、telop_guideline.directionの「招待トーンの圧縮のみ」「DM誘導の本体表現はcaption側で実装」に準拠。caption CTA「職場で同じ経験がある人、いますか。ひとこと送ってください。」は依頼形の招待トーンで、強圧的命令・取引型の餌付けトーンではない。CTA行の欠落なし。",
+          "target_file": "multiple"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "reason": "cta_type=DM誘導のためE2はskip対象。E2はcta_type=なしの場合のみ判定。",
+          "target_file": "multiple"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "reason": "テロップ全行に「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現がない。最終行「職場で同じ人は」は問いかけの断片であり、プロフィール・リンク・DMへの直接誘導語を含まず、招待トーンの圧縮として適切。DM誘導回のcaption CTA「ひとこと送ってください」はv3スキーマcaption.cta準拠で許容。",
+          "target_file": "script.md"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "reason": "ナレーション全6文の語尾：去ります/でした/出ました/についてです/いました/思います。すべて「です・ます」調で統一されており、「だ・である」調の混在は認められない。",
+          "target_file": "script.md"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "reason": "ナレーションは退職の日に悩みを話した告白と安堵の感情を語り、テロップは「今日で/先輩が退職/12年/初めて話した/職場で同じ人は」とキーワード断片・事実・CTAを提示。同一テキストの転記・要約ではなく、別内容として機能している。",
+          "target_file": "script.md"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "reason": "ナレーション＝感情（共感）：「ほっとしている自分がいました」「話せてよかったと、今は静かにそう思います」。テロップ＝論理（気づき・CTA）：「今日で」「先輩が退職」「12年」は事実提示、「初めて話した」は気づき、「職場で同じ人は」はCTA。役割分離が成立。",
+          "target_file": "script.md"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "reason": "caption.mdの全要素がep76.jsonのcaptionフィールドと完全一致。hook_line「今日、12年一緒に働いた先輩が退職しました。」、body3文、cta「職場で同じ経験がある人、いますか。ひとこと送ってください。」、hashtags5個すべて一致。別epの残骸混入なし。",
+          "target_file": "caption"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "reason": "直近5作と主題・場面・構造が異なる。ep71（足元ケアを勧めない理由）・ep72（出張先の二重袋の習慣）・ep73（試行錯誤の末の諦め）・ep74（ロッカールームで最後の一人）・ep75（検索をやめた内面変化）に対し、ep76は「先輩の退職の日に初めて悩みを話した」という固有の場面・行動・テーマ。ep74との近接リスクも、場面（ロッカー vs 退職の日）・行動（受動的待機 vs 能動的発話）が異なり重複なし。",
+          "target_file": "script.md"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "reason": "テロップ各行「今日で」「先輩が退職」「12年」「初めて話した」「職場で同じ人は」はいずれも独立して意味を持ち、1行で瞬時に理解できる短い断片。",
+          "target_file": "script.md"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "reason": "冒頭「今日、十二年一緒に働いた先輩が、会社を去ります」は場面の途中からの提示であり、背景説明（和男の経歴や悩みの説明等）から始めていない。「今日」の即時性で退職の日という場面に直接入っており、イン・メディアス・レスが成立。",
+          "target_file": "script.md"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraintチェック",
+          "result": "pass",
+          "severity": "critical",
+          "reason": "ナレーション・テロップ・captionのすべてにおいて、登場する人間関係は「先輩」（職場の人間関係）のみ。妻・子ども・家族（実家の親を除く）の登場・存在の示唆は一切ない。「家に帰っても一人」等の一人暮らし描写もないが、配偶者・子の存在を暗示する描写も存在せず、人間関係は職場・内面の範囲で構成されている。tone_and_rules.marriage_constraint準拠。",
+          "target_file": "multiple"
+        }
+      ],
+      "summary": {
+        "pass": 24,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "pass",
+      "coordinator_rule_applied": "critical/highのfailなし・全軸pass又はskip → Pass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）へ自動進行"
+    }
+  ]
+}
