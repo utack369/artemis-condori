@@ -1,0 +1,222 @@
+{
+  "ep_number": 77,
+  "euphemism_required": false,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "ナレーション・テロップ全体に『効く/治る/消える/改善する/解消』等の効果断定語や、対策→効果の因果断定構造が存在しない。梅雨の靴の重さ・色・乾きにくさという物理観察と手入れの反復のみで構成されている。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTA(なし)の組み合わせ全体で『これを使えば解決する』と読み取れる構造がない。新聞紙と扇風機は靴の乾燥手順の描写であり、足元の悩みの解決策として提示されていない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り表現（今だけ/残りわずか/早く試さないと等）がナレーション・テロップ・captionのいずれにも存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "『淡々と繰り返しています』という着地が和男の共感共闘トーンに沿っており、売り込み・専門家トーンへの逸脱がない。季節の一コマを軽いユーモアで受け止める人柄が一貫している。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "『変わった/変わる/変化した/変化があった/変化を感じた』のいずれもナレーション・テロップ・captionに使用されていない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "design_master File.77『梅雨の安全靴は別の生き物になる』というテーマが、ナレーション冒頭『梅雨に入ると、安全靴は少しだけ別の生き物になります』にそのまま実装されている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_C（日常スケッチ型）の心理構造どおり、梅雨の靴の手入れという日常の淡々とした描写に終始し、対人場面や独白的告白を含まない。感情の起伏を作らず事実を積み重ねる構成が型に一致している。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "meta.phase_role（P3中盤・人柄の深い伝達、File.76の対人告白から季節の一コマへ構図を切り替える回）どおり、山場ではなく軽いトーンの観察回として設計され、台本の強度もそれに一致している。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "ep[N].json",
+          "reason": "meta.euphemism=『直接表現可』（婉曲不要）のため判定対象外。加えて、euphemism_dict.prohibited_directの語群（ニオイ/臭い等）自体がナレーション・テロップに使用されていないことも確認済み。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "ep[N].json",
+          "reason": "meta.euphemism=『直接表現可』（婉曲不要）のため、婉曲変換の適切性そのものが判定対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "本ep自体がC1・C2をskipとしているため、キャプション適用除外という制御ルールの出番がなく、適用の前提条件（C1/C2が有効であること）が成立しない。skipとして記載する。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry『日常の共感入口。梅雨どきに安全靴が普段と違う姿を見せるという季節の一コマから共感を拾う』が、ナレーション冒頭『梅雨に入ると、安全靴は少しだけ別の生き物になります』でそのまま実現されている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exit『人柄の深い理解。CTAなしで行動を促さず、几帳面さと丁寧さの余韻を残す』どおり、ナレーション末尾『今年もこの手入れを淡々と繰り返しています』、テロップ最終行『今年も繰り返す日々』のいずれも行動喚起を含まず、几帳面な人柄の余韻で終わっている。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "台本全体が one_message『梅雨どきに安全靴が普段と違う姿を見せるという季節の一コマを、ユーモアを含む軽いトーンで淡々と手入れする和男の几帳面さ』の1文に集約でき、複数メッセージの混在がない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "ep[N].json",
+          "reason": "meta.cta_type=『なし』のため、CTA実装自体が存在せず判定対象外。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "テロップ4行（梅雨の靴は/少し重くなる/新聞紙と扇風機で/今年も繰り返す日々）とcaption（本文＋ハッシュタグのみ、cta=\"\"で空欄）のいずれにも、フォロー・保存・いいね・コメント・シェア・リンク遷移・DMへの命令形・依頼形・勧誘形の指示、およびDM誘導文が一切ない。前作ep73・ep75にあった『この話の続きはプロフィールに』のような誘導行も本作には存在せず、事実描写の陳述のみで完結している。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップに『プロフィールを見て/リンクから/今すぐ』等の直接誘導が存在しない。cta_type=なし回のためcaptionにおけるハードCTA許容例外も適用されないが、caption.mdにもそのような表現は存在しない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文が『なります。/見えます。/伝わってきます。/手順です。/繰り返しています。』とです・ます調で統一されており、だ・である調の混在がない。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは重さ・色・湿り気という感覚的観察と手入れの手順を詳述する一方、テロップは『梅雨の靴は/少し重くなる/新聞紙と扇風機で/今年も繰り返す日々』と要点を短く異なる語順・表現で提示しており、同一テキストの転記にはなっていない。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションは指先の湿り気や心なしか濃く見える革の色といった感覚的・情緒的描写を担い、テロップは季節の事実と手入れの手順という論理的要点の提示に徹しており、役割が分離している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdのhook_line・body・ハッシュタグはep77.json caption フィールド（hook_line/body/hashtags）と完全一致し、cta=\"\"（空）もcaption.md上にCTA文言が存在しないことと整合している。別epの残骸混入もない。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "直近5作（ep72:出張先ホテルでの二重梱包、ep73:12年の試行錯誤と諦め、ep74:ロッカールームで最後の一人、ep75:検索習慣をやめた気づき、ep76:先輩の退職と初めての告白）のいずれとも主題・場面・対策が重複しない。ep76の『先輩』『退職』、ep75の『調べる習慣の節目』、ep74の『ロッカールーム』『着替え』『最後の一人』も未使用で、梅雨・季節と安全靴というモノの観察に軸を置いた本作固有の素材になっている。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行（梅雨の靴は／少し重くなる／新聞紙と扇風機で／今年も繰り返す日々）はいずれも単独で意味が完結しており、1行で瞬時に理解できる。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭が『梅雨に入ると、安全靴は少しだけ別の生き物になります』と場面の途中から始まっており、背景説明を挟んでいない。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも妻・子ども・家族（実家の親を除く）の登場・示唆がない。登場人物は本人のみで、玄関・靴という一人暮らしの日常描写にとどまっている。"
+        }
+      ],
+      "summary": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "pass",
+      "coordinator_rule_applied": "critical/highのfailなし・全軸pass又はskip → Pass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）へ自動進行"
+    }
+  ]
+}
