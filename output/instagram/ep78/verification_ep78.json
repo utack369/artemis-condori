@@ -1,0 +1,222 @@
+{
+  "ep_number": 78,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/解消」等の断定はなく、「対策X→効果Y」の因果を断定形で成立させる箇所もない。唯一の実感表現「僕自身は気にならなくなりましたが」はhonesty_rule.tone_consistencyが指定する容認表現であり、直後に「そう感じているだけで、根拠にはなりません」（caption「それが答えになるとは思っていません」）が置かれ、続けている行為との因果として結ばれていない。テーマが効果への問いそのものであるにもかかわらず、「意味がある」とも「意味がない」とも言い切っていない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの全体構造を通読しても「これを使えば解決する」と読み取れる構造になっていない。具体的な製品・対策は一切名指しされず、提示されるのは「分かりません」という返答と「人に勧められるだけの根拠が、僕にはない」という自己申告の非保証のみ。指示書が最重点として警告した否定文による裏返しの暗示（例：「意味がないわけではありません」型）も不在で、本作の否定文（「根拠が、僕にはないからです」「根拠にはなりません」「それが答えになるとは思っていません」）はいずれも主張を打ち消す方向にのみ働き、効果を裏返しに肯定する構造を作っていない。CTA「正直な答えは／プロフィールに」も効果の存在を約束する文言を含まない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り（今だけ／残りわずか／早く試さないと等）は全成果物に存在しない。キャプションCTAも「よかったら覗いてみてください」という緩和された招待に留まり、購入・行動を急かす圧力はない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「気にならなくなった」「根拠にはなりません（保証しない）」「よかったら」の3語トーンが全て揃っており、和男の共感共闘トーンから逸脱していない。問われて言葉を探し、飾らずに答えるという一人称の語りに終始し、売り込み口調・専門家口調への逸脱はない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "script.md・caption.mdのいずれにも「変わった／変わる／変化した／変化があった／変化を感じた」は出現しない。実感の記述は「気にならなくなりました」に統一されており、honesty_rule.changed_prohibitionに準拠。文脈上も紛らわしい代替表現（推移・推移的言い換え）による実質的な「変わった」表現は見当たらない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "design_master File.78の作業テーマ（置換後）『「それ、本当に意味あるの？」と聞かれた時の正直な答え』を、ナレーション冒頭の被問いかけ場面と「分かりません、とだけ返しました」という返答、着地の「分からないまま、それでも続けている自分がいます」で正面から扱っている。テロップ・キャプションも同一テーマ上にある。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_B（気づき・発見型）の骨格＝問い→正直な返答→気づき、が実装されている。起点が自発的な内面の吐露ではなく他者からの問いという外的契機であり、Type_A（告白・独白型）の弱さの開示先行にはなっていない。また対人のやり取りと結論提示が軸で、モノや情景の淡々とした描写に終始するType_C（日常スケッチ型）にも寄っていない。着地「今の正直なところは、それだけです」は発見の提示として機能し、テロップCTAで「もっと聞きたい」へ接続している。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "meta.phase_role「P3中盤（File.71-80）：人柄の深い伝達」に対し、感情を煽らず淡々と正直さそのものを見せる強度で構成されており、山場指定のない中盤回として適正。直前のFile.77（Type_C・日常スケッチ）から対話起点のType_Bへ方向を切り替えており、配置の意図と整合する。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "meta.euphemism=「直接表現可」（婉曲不要回）のため判定対象外。なお参考情報として、euphemism_dict.prohibited_directの語はナレーション・テロップのいずれにも出現していない。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "meta.euphemism=「直接表現可」（婉曲不要回）のため、conversion_tableとの照合は適用対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "婉曲チェック（C1/C2）自体がskipのため、その適用範囲を制御するC3も対象外。ただしA群（正直さ）はcaption.mdにも適用して判定済み（A1〜A5参照）。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「知的好奇心入口。『それ、本当に意味あるの』と正面から問われた場面の提示から、和男がその場でどう答えたのかという結末への好奇心で視聴者を拾う」に対し、ナレーション冒頭「それ、本当に意味あるの、と作業の合間に問われました。」が問いそのものをフックとして即座に置き、回答への好奇心を喚起している。Type_Bの知的好奇心入口として実装済み。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exit「もっと聞きたい」に対し、ナレーション末尾「分からないまま、それでも続けている自分がいます。今の正直なところは、それだけです。」で答えを語り切りつつ、なぜ分からないまま続けているのかという背景への関心を残す。テロップ最終メッセージ「正直な答えは／プロフィールに」がその関心の遷移先を提示しており、Type_Bの出口として機能している。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "tone_and_rules.one_message（同僚に問われ、分かりませんと正直に答え、分からないまま続けている自分がいるという事実だけを差し出した気づき）の1文に台本全体が集約でき、第2のメッセージ（対策の推奨・効果の主張・別テーマの気づき）は混在していない。キャプションも同一メッセージ上にある。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTA。テロップのナンバリング行「安全靴と戦う12年の記録：File.78」を除いた実質最終メッセージ「正直な答えは／プロフィールに」は事実の陳述に留まり、依頼形・勧誘形・命令形を含まない。telop_guideline.cta_expression「正直な答えは、プロフィールにまとめています」と意味的に整合しており（行分割・述部省略はテロップの視認性制約内の圧縮でep73・ep75の前例と同処理）、CTA行の欠落もない。ソフトCTAの要件を満たす。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTA（CTAが存在する回）のため、E2（cta_type=なしのみ適用）は判定対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップに「プロフィールを見て／リンクから／今すぐ」等の直接誘導・強圧的命令は存在せず、最終2行は所在を示す事実陳述形に留まる。キャプションCTA「正直な答えを全部まとめた場所が、プロフィールにあります。よかったら覗いてみてください。」は「よかったら」で緩和された招待トーンであり、ハードCTA（命令形・強圧的直接誘導）には該当しない。ソフトCTA回のキャプション表現としてep73・ep75の前例と同水準で、ep78.json caption.ctaとも完全一致している。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全7文の語尾が「問われました／一言です／返しました／ないからです／なりません／自分がいます／それだけです」と全て です・ます調で統一されており、だ・である調の混在はない。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "テロップはナレーションの同一テキストの転記ではない。ナレーションが「問われました／返しました」と一人称の受け答えの機微（とっさに言葉を探した／根拠がない自覚）まで語るのに対し、テロップは「聞かれました／答えました」と別動詞で問いと答えの骨格のみを提示し、ナレーションにない遷移先（正直な答えは／プロフィールに）を担う。逆にナレーションの着地（分からないまま続けている自分がいます）はテロップに置かれておらず、両者の情報が重なり切っていない。telop_guidelineの「同じ動詞・同じ語順の反復は避ける」指示にも適合。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションは「とっさに言葉を探しましたが」「根拠にはなりません」など感情と内面の揺れを担い、テロップは問い→答え→遷移先というCTAを含む論理骨格を担っており、感情（ナレーション）／論理（テロップ）の役割分離が成立している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素がep78.jsonのcaptionフィールドと一致。hook_line（「それ、本当に意味あるの」と、聞かれたことがあります。）、body（作業の合間に…今の正直なところは、それだけです。／改行分割のみで文言一致）、cta（正直な答えを全部まとめた場所が、プロフィールにあります。よかったら覗いてみてください。）、hashtags（#安全靴 #工場勤務 #12年の記録 #正直な話 #足元と向き合う）のいずれも指示書と一致し、別epの残骸混入は見られない。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "直近5作（ep73:12年の試行錯誤と「諦め」／ep74:夏のロッカールームで最後の一人／ep75:検索をやめた気づき／ep76:先輩の退職と初めての告白／ep77:梅雨の安全靴の手入れ）のいずれとも、素材・場面・対策が重複しない。ep78は「作業の合間に同僚から問いを向けられる」という被問いかけの対話が中核で、指示書が禁じたep77の『梅雨』『安全靴の観察』、ep76の『先輩』『退職』、ep75の『検索』『調べる』、ep73の『一番』『諦め』、ep74の『ロッカールーム』『着替え』『最後の一人』はいずれも未使用。ep76と同じ職場の対人場面ではあるが、ep76が自分から打ち明ける節目の告白であるのに対しep78は相手から問われる何気ない一場面であり、構図が切り分けられている。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップは「意味あるのと→聞かれました」「分かりませんと→答えました」「正直な答えは→プロフィールに」の2行1組×3で構成され、各組が瞬時に理解できる短い意味単位を形成している。行分割位置は助詞・引用助詞の直後で自然に区切られ、telop_guidelineが例示した構成（『意味あるのと』→『聞かれました』）に一致。ep73・ep75と同じ対行方式であり、視認性上の破綻はない。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "冒頭が「それ、本当に意味あるの、と作業の合間に問われました。」と問いの台詞そのものから始まり、状況説明や前置き（12年続けている背景等）を挟まずに場面の途中から入っている。背景情報（職場の同僚からの何気ない一言）は第2文で最小限に補足されるに留まる。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "File.61以降のため適用。script.md・caption.mdのいずれにも妻・子ども・家族（実家の親を除く）の登場や存在の示唆はない。問いを向けてくる相手は「職場の同僚」と明示され、人間関係は職場の範囲に限定されている。家庭生活を想起させる描写（帰宅後の家族、待つ人等）も一切なく、tone_and_rules.marriage_constraintに準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "pass",
+      "coordinator_rule_applied": "critical/highのfailなし・全軸pass又はskip → Pass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）へ自動進行"
+    }
+  ]
+}
