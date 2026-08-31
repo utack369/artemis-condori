@@ -1,0 +1,222 @@
+{
+  "ep_number": 79,
+  "euphemism_required": true,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体を確認。「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。内容は友人の結婚式での内心の告白に終始し、対策→効果の因果構造が存在しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・CTA（caption含む）の組み合わせ全体を確認。特定の製品・対策への言及がなく、「これを使えば解決する」と読み取れる構造が存在しない。台本全体が結婚式での緊張の告白であり、解決策の提示・暗示はゼロ。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションに限定感（今だけ/残りわずか）・緊急性・煽り表現なし。DM誘導のCTA「分かる人がいたら、ひとこと送ってください」も招待トーンであり購入圧力に該当しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション全体が和男の共感共闘トーン（静かな告白・弱さの開示）で一貫。「友人の晴れの日に水を差したくなくて、最後まで黙っていました」「誰にも気づかれないまま、一日を終えました」はいずれも本音の正直な開示であり、売り込み・専門家トーンへの逸脱なし。キャプションCTAも「分かる人がいたら」の招待トーンで整合。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全文に「変わった/変わる/変化した/変化があった/変化を感じた」の使用なし。足元・体調文脈を含む全文脈で未使用。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「友人の結婚式で革靴を履いた日のこと」に対し、ナレーションは友人の結婚式に出席し慣れない革靴で一日を過ごした体験を告白として描いており、テーマと完全一致。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装。弱さ・本音の正直な開示：「いつもの足元の悩みが、頭から離れませんでした」「友人の晴れの日に水を差したくなくて、最後まで黙っていました」。→「この人に話したい」着地：「誰にも気づかれないまま、一日を終えました」で、誰にも言えなかった孤独が視聴者の共感を喚起し、DM誘導への自然な接続を生成。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P3中盤（File.71-80）「人柄の深い伝達」のフェーズ。phase_roleで指定された「Type_Aの告白・独白として、友人の結婚式で慣れない革靴を履いた一日の内面を描く」という役割を、ナレーション全体が静かな告白のトーンで実装。前回ep78（Type_B・同僚の問い）との差別化も実現されており、フェーズ内の強度・方向が整合。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "婉曲:要。euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）のいずれもナレーション・テロップに未使用。足元の悩みの内実は「足元の悩み」「緊張」という間接表現のみで処理。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "婉曲:要。conversion_tableで「足のニオイ」→「足元の悩み」が定義されており、ナレーション・テロップともに「足元の悩み」を使用。直接表現を確実に回避しつつ、文脈上何について悩んでいるかが伝わる適切な婉曲変換。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "キャプションには婉曲チェック（C1/C2）を適用しない制御ルールが正しく適用されている。なおキャプションでも「足元の悩み」という間接表現が使用されており、A群（正直さ）はキャプションにも適用済（A1-A5で判定）。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感入口。友人の結婚式という特別な一日、普段と違う革靴を履いたことで、いつもの足元の悩みが頭から離れなかったという内心の開示」に対し、ナレーション冒頭「今日は、友人の結婚式でした。普段履いている安全靴ではなく、慣れない革靴で一日を過ごしました。」が弱さ・本音への共感をType_Aの入口として正しく実装。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「『この人に話したい』着地。誰にも気づかれないまま一日を終えた緊張の告白」に対し、ナレーション末尾「友人の晴れの日に水を差したくなくて、最後まで黙っていました。誰にも気づかれないまま、一日を終えました。」が孤独な告白として「この人に話したい」感情を喚起。テロップ最終行「あの緊張感」→キャプションCTA「分かる人がいたら、ひとこと送ってください」へのDM誘導接続も自然。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「友人の結婚式で慣れない革靴を履いた一日、いつもの足元の悩みが頭から離れなかったという和男の告白」に対し、台本全体がこの1メッセージに集約。第二のメッセージ（対策提案・商品紹介等）の混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導。テロップのナンバリング行「安全靴と戦う12年の記録：File.79」を除いた実質最終行「あの緊張感」は、telop_guideline.cta_expression「あの緊張感、分かる人にだけ分かると思う」の冒頭断片であり、招待トーンの圧縮実装として機能。DM誘導の本体はキャプションCTA「あの緊張感、分かる人がいたら、ひとこと送ってください。」で実装済。依頼形「送ってください」は招待トーン（DM誘導回に許容）であり、強圧的命令・取引型の餌付けトーンではない。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導のため、E2（cta_type=なしのみ適用）は判定対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップ全行を確認：「友人の結婚式/慣れない革靴/足元の悩み/誰にも言わず/あの緊張感」。「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現なし。最終行「あの緊張感」は感情断片であり、ハードCTAに該当しない。DM誘導回であっても強圧的命令はテロップに不可であるところ、テロップは招待トーンの圧縮に留まり合格。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全6文の語尾を確認：「でした/ました/ませんでした/ました/ました/ました」。すべてです・ます調で統一。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは感情を伴う物語的告白（時系列の体験描写）。テロップは「友人の結婚式/慣れない革靴/足元の悩み/誰にも言わず/あの緊張感」というキーワード型の視覚提示。ナレーション文の転記・要約ではなく、別の表現形式で内容を補完しており分離が成立。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：結婚式での内心の緊張・孤独・黙っていた心理を告白。テロップ＝論理（気づき・CTA）：場面設定キーワード（結婚式・革靴）→気づき（足元の悩み・誰にも言わず）→CTA断片（あの緊張感）の論理的配置。役割分離が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素をep79.jsonのcaptionフィールドと照合。hook_line「今日、友人の結婚式で、慣れない革靴を履きました。」→一致。body「普段は安全靴です。今日だけは革靴で…誰にも気づかれないまま、一日を終えました。」→一致。cta「あの緊張感、分かる人がいたら、ひとこと送ってください。」→一致。hashtags 5個→一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作と照合。ep74（夏のロッカールーム・着替え）、ep75（検索しなくなった・調べる習慣）、ep76（先輩の退職・初めて足元の話）、ep77（梅雨の安全靴・手入れ）、ep78（同僚の問い・意味あるの）。ep79の主題「友人の結婚式・革靴・慶事の場での緊張」は素材・場面・対策いずれも直近5作と重複なし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行「友人の結婚式/慣れない革靴/足元の悩み/誰にも言わず/あの緊張感」はいずれも独立して意味を持ち、5文字以内の短い語句で瞬時に理解可能。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「今日は、友人の結婚式でした。」は背景説明（和男の仕事・安全靴歴等）を挟まず、場面の途中から即座に入るイン・メディアス・レス構造。narration_guidelineのopening_approach指定とも整合。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraintチェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全文を5観点で確認。(1)結婚式は「友人の結婚式」（ナレーション冒頭・キャプション冒頭・テロップ2行目）として明示的に友人のイベント。(2)本人の配偶者・恋人・将来の結婚への言及・示唆はゼロ。(3)描写は本人の足元（慣れない革靴・足元の悩み・緊張）と場面（式・披露宴・二次会）に絞られている。(4)新郎新婦は「友人」としてのみ最小限に登場（「友人の結婚式」「友人の晴れの日」の2箇所のみ）。(5)帰宅後の家庭描写なし。ナレーション末尾「誰にも気づかれないまま、一日を終えました」で一人で一日を終える描写に留まり、家族が待つ・家で誰かに話す等の家庭描写は一切ない。marriage_constraint（未婚・一人暮らし設定）に完全適合。"
+        }
+      ],
+      "summary": {
+        "pass": 24,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "pass",
+      "coordinator_rule_applied": "critical/highのfailなし・全軸pass又はskip → Pass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）へ自動進行"
+    }
+  ]
+}
