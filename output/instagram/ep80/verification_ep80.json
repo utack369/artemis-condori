@@ -1,0 +1,222 @@
+{
+  "ep_number": 80,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "script.md・caption.mdともに『対策X→効果Y』の断定的因果表現なし。narrationは12年分の記録を読み返した気づきの開示であり、足元の悩みに対する効果・改善の断定は一切登場しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・CTAの全体構造を確認したが、対策・習慣・商品が役立った/解決したという含みは一切ない。本回は記録を読み返す行為そのものへの気づきと恥ずかしさの告白のみで構成されており、『これを使えば解決する』と読み取れる構造は存在しない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り表現（今だけ/残りわずか等）はscript.md・caption.mdのいずれにも見当たらない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "『それでも、消さずにそのまま残しています』『よかったら覗いてみてください』など、honesty_rule.tone_consistencyが指定する共感共闘トーン（保証しない・よかったら）から逸脱していない。売り込み・専門家トーンへの逸脱は見られない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止／現在との対比表現",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "【重点確認】narration・telop・captionいずれにも『変わった/変わる/変化した/変化があった/変化を感じた』の語は未使用。さらに本回特有のリスクである現在との対比・現在の優位を示す表現（『今ならこうする』『あの頃より良い』『今は違う』等）も一切なく、3つの回への感想は『恥ずかしくなります』という自分に向けた率直な感想のみで閉じている。meta.phase_role【構図の厳守(2)】の要求と完全に整合する。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "design_master File.80『12年の記録を振り返って、消したい回が3つある』というテーマが、ナレーションの主題（12年分を読み返し、消したい回が3つあることに気づく）とそのまま一致している。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_B（気づき・発見型）の心理構造『気づき・発見の提示→もっと聞きたい着地』を実装。『消したい回が3つあることに気づいた』という発見を提示しつつ、3つの回の具体的な中身の詳細（どの記録か）は明かさず、静かな受け止めで終える構成は、Type_Bとして知的好奇心を残す着地になっている。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "design_masterの配置の意図・meta.phase_role（File.79のDM誘導回に続く、P3中盤の静かな内省回）と、本回の落ち着いた強度・トーンが整合している。山場指定のない回として過不足のない強度。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "ep[N].json",
+          "reason": "ep80.json meta.euphemism=『直接表現可』（婉曲不要）のため、本軸は判定対象外（skip指定）。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "ep[N].json",
+          "reason": "ep80.json meta.euphemism=『直接表現可』（婉曲不要）のため、本軸は判定対象外（skip指定）。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1/C2自体が婉曲不要により非適用のため、caption除外の制御ルールも本回では機能する対象がない。適用範囲制御としての判定は不要のためskip。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry『知的好奇心入口。12年分を振り返って気づいた消したい回が3つあるという発見の提示』が、ナレーション冒頭『12年分の記録を、久しぶりに全部読み返しました。その中に、消したいと思う回が、3つあることに気づきました。』でそのまま実現されている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exit『もっと聞きたい。3つの回の具体的な中身は明かされないまま、それでも消さずに残しているという静かな受け止めで終える』が、ナレーション末尾『それでも、消さずにそのまま残しています。』とテロップ末尾『記録はプロフィールに』で実装されている。3つの回はいずれも抽象的な型のみで具体エピソードは明かされていない。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "台本全体がtone_and_rules.one_message『12年分の記録を読み返した和男が、消したいと思う回が3つあることに気づき、恥ずかしさを正直に認めながらも、それでも消さずに残しているという静かな受け止め』の1文に集約できる。2つ目のメッセージの混在はない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "【判定対象】cta_type=ソフトCTAのため判定。テロップのナンバリング行を除いた実質最終行『記録はプロフィールに』はtelop_guideline.cta_expression『12年分の記録は、プロフィールにまとめています』と整合する事実の陳述に留まっており、依頼形・勧誘形ではない（ep17型の合格典型と同構造）。caption.ctaの『消したい回も含めて、12年分の記録がプロフィールにあります。よかったら覗いてみてください。』も、事実陳述＋招待トーンという、同じくソフトCTA回であったep75・ep78のcaption.cta（『よかったら覗いてみてください』を結びに使う型）と同一の既承認パターンであり、CTA行の欠落・cta_expressionとの不整合もない。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "ep[N].json",
+          "reason": "cta_type=ソフトCTA（CTAが存在する回）のため、cta_type=なし専用の本軸は非適用（skip指定）。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップに『プロフィールを見て』『リンクから』『今すぐ』等の直接誘導はなく、最終行『記録はプロフィールに』は事実陳述の圧縮実装に留まっている。captionのCTAも『よかったら覗いてみてください』という招待トーンでハードCTAではなく、cta_type=ソフトCTA回のcaptionとして適切（ハードCTAはDM誘導回のcaptionのみ許容というルールにも抵触しない）。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文が『読み返しました』『気づきました』『回です』『恥ずかしくなります』『残しています』と、です・ます調で統一されている。だ・である調の混在はない。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは3つの回の中身（勢いで言い切った/格好をつけた/受け売り）や恥ずかしさの感情を詳述する一方、テロップは『12年分を/読み返した』『消したい回が/3つあった』『記録はプロフィールに』という要点のみの骨格で構成され、同一テキストの転記・要約になっていない。telop_guidelineの指示（3つの回の中身をテロップに列挙しない）通りに実装されている。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝恥ずかしさ・静かな受け止めという感情軸、テロップ＝読み返した事実と発見の論理軸＋CTAという役割分離が保たれている。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "caption.mdのhook_line・body・cta・hashtagsは、ep80.json caption フィールドの値と文字列レベルで完全一致している。他epの残骸混入はない。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "【重点確認】ep75(検索習慣)・ep76(先輩の退職)・ep77(梅雨の靴手入れ)・ep78(同僚に問われる)・ep79(友人の結婚式)のいずれとも、具体的な場面・素材・対策の重複はない。本回の3つの回は『勢いで言い切った/格好をつけた/受け売りだった』という抽象的な失敗の型として描かれており、過去回の具体テーマ・本文表現の引用・名指しは一切ない。meta.phase_roleが明示する差別化対象語（友人の結婚式・革靴・意味あるの・同僚の問い・梅雨・先輩・退職・調べる習慣等）もいずれも本文に登場しない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "各行は短い対句形式（『12年分を』→『読み返した』、『消したい回が』→『3つあった』）で、1行ずつ瞬時に理解できる。この2行1組で1文を構成する視覚リズムは、ep75〜ep79までの既承認パターンと同じ house style であり、視認性を損なわない。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭『12年分の記録を、久しぶりに全部読み返しました。』は背景説明を挟まず、行動の場面から即座に始まっている。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "【重点確認】ナレーション・テロップ・captionのいずれにも妻・子ども・家族（実家の親を除く）の登場・存在の示唆はない。『12年分の記録』の振り返りは仕事・足元の記録という範囲にとどまっており、私生活の変遷（結婚・子ども等）には一切及んでいない。一人暮らし・職場・友人関係の範囲を逸脱する記述もない。"
+        }
+      ],
+      "summary": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-V"
+    }
+  ]
+}
