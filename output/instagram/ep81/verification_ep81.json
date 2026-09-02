@@ -1,0 +1,222 @@
+{
+  "ep_number": 81,
+  "euphemism_required": true,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionいずれにも「効く/治る/消える/改善する/なくなる/解消」等の断定表現は存在しない。本回は新しい同僚の仕草に気づいたという内面の告白であり、対策X→効果Yという因果の断定構造自体が存在しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "本回のナレーション・テロップ・captionには対策・習慣・アイテムへの言及自体が一切なく、「これを使えば解決する」と読み取れる構造も、助言・教示・被教示の展開（誰かに何かを教える・教えられる場面）も存在しない。内容は同僚の仕草を見て自分と同じ悩みかもしれないと直感した気づきの告白のみで完結しており、効果の暗示に該当する余地がない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現はナレーション・テロップ・captionのいずれにも存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「声はかけられないまま」「静かに受け止めました」といった控えめで内省的な語り口が一貫しており、売り込み・専門家トーンへの逸脱はない。captionのCTAも「よかったら」に類する緩やかな依頼形（招待トーン）で、和男の共感共闘トーンから外れていない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「変わった/変わる/変化した/変化があった/変化を感じた」に該当する語はナレーション・テロップ・captionのいずれにも出現しない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "design_master File.81のテーマ「新しい同僚が同じ悩みを持っていることに気づいた日」が、script.mdナレーションの内容（新しい同僚の仕草を見て同じ足元の悩みかもしれないと直感した）と完全に一致している。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造どおり、軸は同僚の悩みの内実ではなく本人の内面（驚き・ひそかな親近感・声をかけられない気持ち）に置かれている。同僚が本人に問いかける・会話を交わす場面はなく、一方的な観察と独白として構成されており、Type_Bの気づき・発見型（気づきの提示→もっと聞きたい）には寄っていない。着地はナレーションの静かな受け止めとcaptionのDM招待が組み合わさり、Type_Aの「この人（視聴者）に話したい」着地を実装している。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "design_master「配置の意図」およびmeta.phase_roleが示す『「一人じゃない」のリアルな発見。視聴者にも同じ体験を示唆』と、ナレーションの「自分だけではなかったのだと、静かに受け止めました」が一致している。P3後半入口として過度な山場を要求されておらず、静かな告白としての強度も指示と整合する。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策の13語）はナレーション・テロップのいずれにも直接使用されていない。ナレーションは「靴の中でそっと足を動かす仕草」「足元の悩み」という間接表現に留めている。判定対象はscript.mdのみ（captionはC3によりC1適用外）。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "使用されている婉曲表現「足元の悩み」はconversion_table「足のニオイ」→[足元の違和感/足元の悩み]に完全一致し、ep76・ep79の前例とも整合する。直接表現を確実に回避できている。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2の婉曲チェックはcaptionに適用していない（本エージェントもcaption本文にはC1/C2判定を行っていない）。なお参考として、caption.mdも「足元の悩み」という同じ婉曲表現のみを使用しており、prohibited_direct該当語は含まれていない。captionにはA群（正直さ）は別途適用済み（A1-A5参照）。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感入口。新しい同僚の何気ない仕草から、自分と同じ足元の悩みを抱えているのかもしれないと直感したという内心の開示」が、ナレーション冒頭「新しい同僚が、現場に来ました。休憩の合間、ふとその人が靴の中でそっと足を動かす仕草をしているのに気づきました」で実現されている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exit「声をかけられないまま『自分だけではなかった』と静かに受け止めた告白とともに、同じような気づきに覚えがある人がいるかを問いかけ、DM誘導へ自然に接続する」構造が、ナレーション末尾（声はかけられないまま、自分だけではなかったのだと、静かに受け止めました）、テロップ末尾（自分だけじゃないかも）、caption CTA（同じような気づきに覚えがある人がいたら、ひとこと送ってください）の3点にまたがって実装されている。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "tone_and_rules.one_message「新しい同僚の何気ない仕草から、自分と同じ足元の悩みを抱えているのかもしれないと気づき、声をかけられないまま『自分だけではなかった』と静かに受け止めた和男の告白」に台本全体が集約できており、2メッセージの混在はない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "テロップのナンバリング行を除いた実質最終行「自分だけじゃないかも」はtelop_guideline.cta_expression「自分だけじゃないかもしれない」の圧縮実装として機能し、招待トーンの断片に留まっている。DM誘導の本体はcaption.cta「同じような気づきに覚えがある人がいたら、ひとこと送ってください。」がep[N].json caption.cta欄と一字一句一致する形で実装されており、依頼形・招待トーンでcta_type=DM誘導のこの回に限り許容される表現であり、強圧的命令・取引型の餌付けトーンには該当しない。CTA行の欠落もない。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "本回のmeta.cta_type=DM誘導であり、CTAが存在する回である。E2はcta_type=なしの回にのみ適用される軸のため、本回は判定対象外としskip。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ全行（新しい同僚/配属の日/ふとした仕草/同じ足元の悩み/自分だけじゃないかも）に「プロフィールを見て/リンクから/今すぐ」等の直接誘導・強圧的命令は存在しない。caption内のDM誘導文言「同じような気づきに覚えがある人がいたら、ひとこと送ってください。」はDM誘導回のcaptionとして許容される実装であり、依頼形・招待トーンであって強圧的命令ではない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文の文末（来ました/気づきました/同じでした/直感しました/込み上げてきました/受け止めました）はすべて「です・ます」調で統一されており、だ・である調の混在はない。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは物語的な文章（新しい同僚の来訪→仕草への気づき→内心の驚きと親近感→声をかけられないまま静かに受け止める）であるのに対し、テロップは「新しい同僚」「配属の日」「ふとした仕草」「同じ足元の悩み」「自分だけじゃないかも」という要約キーワードで構成されており、同一テキストの転記・要約の域を超えて別内容として設計されている（「配属の日」はナレーションに存在しない言い換え語）。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションは驚き・ひそかな親近感という感情（共感）を担い、テロップは新しい同僚→仕草→気づき→CTAという論理的な事実の流れ（気づき・CTA）を担っており、役割分離が保たれている。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdのhook_line「新しい同僚が、現場に来ました。」、body相当部分（休憩の合間〜声はかけられませんでした）、CTA「同じような気づきに覚えがある人がいたら、ひとこと送ってください。」、ハッシュタグ5つ（#安全靴 #工場勤務 #12年の記録 #新しい同僚 #足元の悩み）は、いずれもep81.jsonのcaptionフィールド（hook_line/body/cta/hashtags）と一字一句一致しており、別epの残骸混入もない。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "直近5作（ep76:先輩の退職と初めての告白／ep77:梅雨の靴の手入れ／ep78:同僚に『意味あるの』と問われ答える問答構図／ep79:友人の結婚式と革靴／ep80:12年分の記録を読み返す）といずれも主題・場面が異なる。特にep78との切り分けについては、ep78が『意味あるの』『同僚の問い』『根拠』という同僚との問答（会話が発生する構図）であるのに対し、ep81のナレーションには同僚との対話が一切なく、「声はかけられないまま」と明記されている一方的な観察・独白の構図であり、テーマ上『同僚』が共通して登場する以外に中核語・展開の重複はない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "「新しい同僚」「配属の日」「ふとした仕草」「同じ足元の悩み」「自分だけじゃないかも」の各行は、それぞれ単独で意味が完結しており、1行で瞬時に理解できる。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「新しい同僚が、現場に来ました。」は背景説明を挟まず場面の途中から即座に始まっており、opening_approachの指定通りイン・メディアス・レスが実装されている。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも妻・子ども・家族（実家の親を除く）の登場・存在の示唆は一切ない。人間関係は職場（新しい同僚）の範囲に留まっている。新しい同僚についても『新しい同僚』という職場上の存在としてのみ描写され、私生活・家族関係への言及はゼロであり、meta.psychology_type設計メモの制約（同僚は名前・年齢・私生活・家族関係に広げない）にも一致している。"
+        }
+      ],
+      "summary": {
+        "pass": 24,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical・highにfailなし（fail 0件）。全軸がpassまたはskipのためPass。",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-V"
+    }
+  ]
+}
