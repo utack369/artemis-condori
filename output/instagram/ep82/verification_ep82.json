@@ -1,0 +1,222 @@
+{
+  "ep_number": 82,
+  "euphemism_required": true,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文に「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。買い替え場面の事実描写と心境描写のみで、対策Xから効果Yへの因果断定は成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "【重点軸】ナレーション＋テロップ＋captionの組み合わせ全体で「これを使えば解決する」と読み取れる構造なし。新しい靴の効能・快適さ・役に立った・楽になったという含みは一切なく、買い替えの場面は淡々とした事実描写に留まる。「変わった」系の表現も未使用。着地は「何も聞かれないまま会計を済ませ、静かに店を出ました」であり、効果や改善の示唆なし。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "【重点軸】購入場面だが、商品名・銘柄・機能・性能の具体的描写なし（「同じ型番」は既存品の型番特定描写であり商品推奨ではない）。限定感・緊急性・煽り（今だけ/残りわずか/早く試さないと等）なし。購入を勧める言い回しなし。新しい靴の購入メリットへの言及もゼロ。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "ナレーション全体が和男の一人称で、買い物場面を淡々と語る共感共闘トーンを維持。売り込みトーン（商品推奨・比較・購買促進）や専門家トーン（解説・権威付け）への逸脱なし。「身構えていました」「静かに店を出ました」等、和男らしい内省的・几帳面な語り口で一貫。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "変わった禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文に「変わった/変わる/変化した/変化があった/変化を感じた」の語幹なし。足元・体調文脈での使用はゼロ。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「安全靴を買い替える時に店員に聞かれたくないこと」とナレーション内容が一致。ナレーションは安全靴の棚の前で品定めをしながら「足元の悩みのことだけは、聞かれたくない」と身構える場面を描いており、テーマを正確に実装している。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_C（日常スケッチ型）の心理構造を実装。棚の前に立つ→同じ型番を探す→身構える→会計→店を出る、という時間の流れに沿った日常の淡々とした描写。弱さ・本音の告白(Type_A)でも知的発見のオチ(Type_B)でもない。着地は「静かに店を出ました」で淡々と場面が閉じ、人柄（几帳面さ・内省的な性格）の深い理解に帰結。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "phase_role「P3後半の一本。買い物という日常の気まずさを担う」と整合。ナレーションは買い物場面で「聞かれたくない」と身構える気まずさを描写しており、配置意図通りの強度・方向。山場指定ではなく日常の一コマとしての穏やかな強度で適切。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "【重点軸・婉曲:要のため判定】euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）の全13語について、ナレーション・テロップ全文に該当語の使用なし。悩みの内実は「足元の悩み」という婉曲表現のみで間接的に言及。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "【重点軸】使用中の婉曲表現「足元の悩み」はconversion_table「足のニオイ→足元の悩み」と整合。直接表現を確実に回避できている。ナレーション中盤「足元の悩みのことだけは、聞かれたくない」の用法も、悩みの内実に踏み込まず間接描写に留まっており、婉曲変換として適切。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "【重点軸】captionには「足元の悩み」（婉曲表現）を使用。C1/C2の婉曲チェックはcaptionに適用しない制御ルール通り。A群（正直さ）はcaptionにも適用済み（A1-A5で全pass）。captionにprohibited_direct該当語の直接使用もなく、制御ルールは正しく機能。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「日常の共感入口。安全靴を買い替える時に、店員に何かを聞かれるのではと身構えてしまうという、誰もが心当たりのある買い物の一コマから視聴者の共感を拾う」に対し、ナレーション冒頭「安全靴の棚の前に立っています。同じ型番を探して、端から端まで目で追いました。」が日常の買い物場面から即座に入るType_C型の共感入口として実装されている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「人柄の深い理解。CTAなしのため行動を促さず、聞かれたくないことを胸にしまったまま淡々と買い替えを済ませる和男の几帳面さの余韻だけを残して終える」に対し、ナレーション末尾「結局、何も聞かれないまま会計を済ませ、静かに店を出ました。」が行動促進なく淡々と場面を閉じるType_C型の人柄理解着地として実装されている。テロップ最終行「静かに店を出た」も同様の余韻。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「安全靴を買い替えに訪れた和男が、店員に聞かれたくないことを胸にしまったまま、何も聞かれずに淡々と会計を済ませて店を出た日常の一コマ」にナレーション全体が集約可能。サブテーマの混在や2メッセージの並走なし。棚の前→身構え→会計→退店という一貫した線で構成。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=なしのためskip。E1はcta_type=DM誘導またはソフトCTAの場合のみ判定対象。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "【重点軸】cta_type=なしのため判定。テロップ全6行（ナンバリング行含む）にフォロー・保存・いいね・コメント・シェア・リンク遷移・DM等の特定行動への命令形・依頼形・勧誘形の指示なし。DM誘導文の混入なし。captionも同様にCTA欄は空、本文は事実描写のみ、ハッシュタグ5個のみでCTA的言及ゼロ。陳述形の存在言及（プロフィール等）もない。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "本軸は全ep・全cta_typeに適用のため判定実施。テロップ全6行に「プロフィールを見て/リンクから/今すぐ」等のハードCTA（直接誘導）なし。cta_type=なし回のためcaptionにもハードCTA不可だが、caption本文にもハードCTAなし（CTA欄は空文字列）。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "【重点軸】ナレーション全文の文末を確認。「立っています」「追いました」「答えられます」「身構えていました」「続いていました」「出ました」すべてです・ます調。「済ませ」は連用形接続（「会計を済ませ、静かに店を出ました」）でありだ・である調ではない。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは場面・心境を文章で描写（「レジに近づくほど心のどこかで身構えていました」等の心理描写を含む）。テロップは「棚の前で」「サイズは平気」「聞かれたくないこと」等のキーワード断片として視覚軸を提示。ナレーション全文の転記・段落単位の要約ではなく、フォーマット・情報粒度が異なる独立した再構成。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションは感情・共感の層を担当（「心のどこかで身構えていました」「その緊張は静かに続いていました」等の心境描写）。テロップは論理・気づきの層を担当（「棚の前で」「同じ型番を探す」「サイズは平気」等の状況把握キーワード、「聞かれたくないこと」というテーマ核心の提示）。CTA行はcta_type=なしのため不在だが、役割分離は成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.md各要素をep82.jsonのcaptionフィールドと照合。hook_line「安全靴を買い替える日は、少しだけ身構えます。」=一致。body「いつもの店の棚の前に立ち〜会計を済ませて店を出ました。」=一致。cta欄=空（指示書cta:\"\"と整合）。hashtags「#安全靴 #工場勤務 #12年の記録 #買い替えの日 #足元の悩み」=指示書の5タグと完全一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "【重点軸】直近5作と照合。ep77=梅雨の靴手入れ（新聞紙・扇風機）→異なる。ep78=同僚に『意味あるの』と問われる問答構図→★本回は問答が発生しない場面スケッチ。ep78は同僚との問答（聞かれて答える双方向会話）、本回は店員に聞かれたくないと一方的に身構えるが実際の問答は発生せず、店員の台詞も質問もゼロ。『意味あるの』『同僚の問い』『根拠』の語も未使用。構図の切り分け成立。ep79=友人の結婚式・革靴→異なる。ep80=12年分の記録を読み返す→異なる。ep81=新しい同僚・同じ仕草への気づき→異なる。素材・場面・構図の重複なし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行を確認。「棚の前で」=場面提示で独立理解可。「同じ型番を探す」=行動描写で独立理解可。「サイズは平気」=心境で独立理解可。「聞かれたくないこと」=テーマ核心で独立理解可。「静かに店を出た」=結末で独立理解可。全5行（ナンバリング除く）がいずれも短いフレーズで瞬時に理解可能。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「安全靴の棚の前に立っています。」が進行中の場面から始まるイン・メディアス・レス。「安全靴を買い替える必要があり」等の背景説明を挟まず、棚の前にすでに立っている状態から即座に入っている。opening_approach指示「場面提示から即座に入り、背景説明は挟まない」にも合致。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraintチェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "【重点軸】ナレーション・テロップ・caption全文に妻・子ども・家族（実家の親を除く）の登場・存在の示唆ゼロ。登場人物は和男本人のみ。店員は「聞かれたら」「聞かれたくない」という仮定・心境の中で間接的に存在が示唆されるのみで、台詞・名前・年齢・私生活・家族関係の描写なし。配偶者・子の存在を暗示する描写（「家族が待っている」等）なし。人間関係は本人と店内の場面という最小限の道具立てで構成されており、marriage_constraint完全遵守。"
+        }
+      ],
+      "summary": {
+        "pass": 24,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）"
+    }
+  ]
+}
