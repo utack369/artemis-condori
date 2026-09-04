@@ -1,0 +1,222 @@
+{
+  "ep_number": 83,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "phase": "後半（File.81-90）：DM発生の最大化",
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション『対策として使ってきた出費を、思い出せる範囲で一つずつ拾い上げていきました』『その数字を、今はただ、静かに受け止めています』は費やした金額と年月の事実提示に終始しており、『対策X→効果Y』の因果を断定する記述は本文・テロップ・captionいずれにも存在しない。禁止語(効/治/消え/改善/解決等)の使用もない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・CTAの組み合わせ全体で『これを使えば解決する』と読み取れる構造はない。対策が役立ったか否かの含みはどちらの向きにも置かれておらず(json narration_guideline『試したものが役立ったか否かについて、断定・含みをどちらの向きにも置かない』の指示通り)、費やした金額の合計への静かな気づきのみが主題化されている。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り表現(今だけ/残りわずか/早く試さないと等)は本文・テロップ・captionのいずれにも見られない。CTAも『よかったら覗いてみてください』という招待トーンに留まり、購入や特定行動を急かす表現はない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "『一つひとつは、たいした金額ではなかったはずです』『その数字を、今はただ、静かに受け止めています』『よかったら覗いてみてください』など、共感共闘トーン(気にならなくなった・保証しない・よかったら、の系統)から逸脱していない。売り込みトーンや専門家トーンへの逸脱は見られない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "『変わった/変わる/変化した/変化があった/変化を感じた』に該当する語はナレーション・テロップ・captionのいずれにも出現しない。全文を確認済み。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "design_master File.83テーマ『12年で試した対策を金額で振り返ると、正直ゾッとする』と、ナレーション『12年間で使ってきた金額を、頭の中で足し上げてみました』〜『正直ゾッとする数字になっていました』が語のレベルでも構造のレベルでも一致している。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_B(気づき・発見型)=気づき・発見の提示→『もっと聞きたい』着地、を実装している。足し上げるという行為から合計額への気づきを提示し、具体的な金額は明かさないまま『静かに受け止めています』で終える構造は、告白・独白型(Type_A)の弱さの開示や日常スケッチ型(Type_C)の淡々とした描写には寄っておらず、気づき・発見型の心理構造を保っている。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "meta.phase_role(P3後半・DM発生の最大化、File.82の日常スケッチに続く回)との整合を確認。山場指定はなく、静かな気づきと事実の受け止めという強度は、json narration_guidelineが指定する『感情を込めすぎず淡々と』という方向性と一致している。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "ep[N].json",
+          "reason": "meta.euphemism=『直接表現可』(婉曲不要の回)のため、euphemism_dict.prohibited_directの意味的使用チェックは適用対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "ep[N].json",
+          "reason": "meta.euphemism=『直接表現可』(婉曲不要の回)のため、婉曲変換の適切性チェックは適用対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "本回はそもそも婉曲要否が『不要』でありC1・C2自体が非対象のため、captionへの婉曲チェック適用除外という制御ルールの適用場面が生じない。判定というより適用範囲の制御事項であるためskipとする。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry=『知的好奇心入口。12年間の金額を足し上げてみたら合計がどうなったのか、という発見の提示』。ナレーション冒頭『12年間で使ってきた金額を、頭の中で足し上げてみました』はこの入口を過不足なく実現しており、背景説明を挟まないイン・メディアス・レスの開始にもなっている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exit=『もっと聞きたい。具体的な内訳は明かされないまま、静かな受け止めで終える』。ナレーション末尾『その数字を、今はただ、静かに受け止めています』は具体的な金額を明かさずに静かな受け止めで終わっており、テロップ末尾『出費はプロフィールに』が続きへの興味を誘導する形でこの出口を反映している。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "台本全体がtone_and_rules.one_message『12年間に費やしてきた金額を足し上げてみた和男が、一つひとつは大きくなかったはずの出費の積み重なりに正直ゾッとしつつも、その数字を静かに事実として受け止めている』という1文に集約できる。2つ目の別メッセージ(例:対策の効果評価、後悔の表明等)は混在していない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTAのため判定対象。テロップのナンバリング行(File.83)を除いた実質最終行『出費はプロフィールに』は、telop_guideline.cta_expression『12年分の出費は、プロフィールにまとめています』を圧縮した事実の陳述であり、依頼形・勧誘形ではない(ep17『まだ続きがあります』型の陳述形として機能)。caption.ctaの実装内容『12年分の記録も、出費の数字も、全部プロフィールにまとめています。よかったら覗いてみてください。』はep[N].json caption.ctaと文言が完全一致しており、直近のソフトCTA回ep78(『正直な答えを全部まとめた場所が、プロフィールにあります。よかったら覗いてみてください。』)・ep80(『消したい回も含めて、12年分の記録がプロフィールにあります。よかったら覗いてみてください。』)と同一パターンの『よかったら』を伴う招待トーンであり、強圧的命令や取引型の餌付けトーンではない。CTA行の欠落もない。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "ep[N].json",
+          "reason": "meta.cta_type=『ソフトCTA』でありCTAが存在する回のため、E2(cta_type=なしのみ対象)は適用対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ最終行『出費はプロフィールに』は事実の陳述による圧縮実装であり、『プロフィールを見て』『リンクから』『今すぐ』等の直接誘導・命令形は使われていない。captionのCTAも『よかったら覗いてみてください』という緩和された依頼形であり、DM誘導回のみ許容されるハードCTA(直接誘導・命令形)には該当しない。cta_type=ソフトCTA回として妥当。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文『足し上げてみました。』『拾い上げていきました。』『数えていきました。』『はずです。』『なっていました。』『受け止めています。』はすべて です・ます調で統一されており、だ・である調の混在は見られない。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは金額を足し上げていく心情的な経過を散文で描写し、テロップは『12年分を/足し上げた/出てきた数字に/正直ゾッとした/出費はプロフィールに』という圧縮されたキーワード提示になっており、同一テキストの転記・要約にはなっていない。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションは『一つひとつは、たいした金額ではなかったはずです』『その数字を、今はただ、静かに受け止めています』という感情・共感の描写を担い、テロップは足し上げる行為→発見→CTAという論理・気づきの骨格を担っており、役割分離ができている。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "caption.mdのhook_line・body・cta・hashtagsは、ep83.json caption フィールド(hook_line/body/cta/hashtags)と一言一句完全一致している。別epの残骸混入は見られない。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "本回最大の論点であるep80との切り分けを確認した。ep80の素材は『12年分の記録を読み返して、消したい回が3つあることに気づいた』(過去の投稿・記録を読み返すという行為が発見の入口、対象は個別エピソードの回想)。対してep83の素材は『12年間に費やした金額をレシート・記憶から足し上げて合計に気づいた』(記録を読み返す場面は一切置かず、金額の足し上げ・数え上げが発見の入口、対象は支出の合計額)であり、行為(読み返す/足し上げる)・対象(過去の投稿内容/支出額)・発見の中身(消したい回3つ/合計金額への驚き)のいずれも異なる。ナレーション本文にも『読み返す』『消したい』の語は使用されていない。ep78(同僚に意味あるのと聞かれた)・ep79(結婚式で革靴)・ep81(新しい同僚の仕草)・ep82(安全靴買い替えで店員に聞かれたくない)ともテーマ・場面の重複はない。なお、テロップ2行目が両epとも『12年分を』で一致しているが、これは『12年分を+動詞』という本シリーズ共通の定型フォーマット上の一致であり、素材(場面・対策・エピソード内容)の重複ではないと判断した。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "各行は短く、『12年分を→足し上げた』『出てきた数字に→正直ゾッとした』という2行1組の対句形式で、1組ごとに一瞬で意味が伝わる構成になっている。この2行1組形式は既往epでも用いられている定型パターンであり、視認性を損なっていない。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭『12年間で使ってきた金額を、頭の中で足し上げてみました』は行為の提示から即座に始まっており、背景説明(なぜ足し上げようと思ったか等)を挟んでいない。opening_approachの指定通りの実装。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも妻・子ども・家族(実家の親を除く)の登場・存在を示唆する語句(家族/妻/子/家計等)は一切出現しない。支出・出費というテーマでありながら、登場人物は本人(和男)のみに絞られており、『家計』のような家族の存在を暗示しうる語も使用されていない。婚姻制約に抵触する記述はない。"
+        }
+      ],
+      "summary": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical/high に fail が0件のため Pass（全軸 pass または skip）",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）"
+    }
+  ]
+}
