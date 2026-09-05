@@ -1,0 +1,222 @@
+{
+  "ep_number": 85,
+  "euphemism_required": false,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "phase": "段3-V（artemis-verifier 独立検証）",
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション（休日の朝に安全靴を全部出し、順番に並べ、風を通す描写）およびcaption全文を確認したが、「効く/治る/消える/改善する/なくなる/解消」等の断定表現、または「対策X→効果Y」の因果断定は一切見られない。ナレーションは行為と時間経過の描写のみで完結しており、足元の悩みの解消についての言及もない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "本回はcta_type=なしのためCTA行自体が存在せず、ナレーション＋テロップの組み合わせのみで判定した。ナレーションは『風の通る場所を選んで、少しずつ位置を調整します』『並べ終わると、しばらくその場に座って、靴を眺めます』『気づけば、いつもよりゆっくりとした朝が過ぎていました』と、乾かす理由や乾かした後の効果・成果（足元が整う、すっきりする等）には一切踏み込まず、行為と時間経過の事実描写のみで終わっている。テロップも『休日の朝/早く目覚め/靴を全部/順番に並べ/朝が過ぎる』と事実の見出しに留まり、『これをすれば解決する』と読み取れる構造は存在しない。ep85.jsonのphase_role指示（3）『乾かす理由・成果には踏み込まない』にも整合している。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionいずれにも『今だけ/残りわずか/早く試さないと』等の限定感・緊急性・煽り表現は存在しない。cta_type=なしでCTA自体が存在しないため購入圧力の余地もない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "『気にならなくなった・保証しない・よかったら』に代表される和男の共感共闘トーンからの逸脱（売り込み・専門家トーン）は見られない。休日の朝を淡々と過ごす一人称の静かな語り口で一貫しており、Type_C日常スケッチとして適切なトーン。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも『変わった/変わる/変化した/変化があった/変化を感じた』に該当する語は使用されていない。足元の悩みの体調文脈自体が本回に存在しないため誤用の余地もない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "design_master File.85『休日に靴を全部並べて乾かす朝のルーティン』に対し、ナレーションは休日の朝に安全靴を全部玄関に出し、一足ずつ順番に並べ、風の通る場所を選ぶという内容で、テーマ素材と完全に一致している。『乾かす』という語自体は使用していないが、これはep85.json指示（3）『乾かす理由・成果には触れない』という設計意図に基づく意図的な回避であり、『風の通る場所』という行為でテーマを充足している。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "Type_C（日常スケッチ型）の心理構造＝日常の淡々とした描写→人柄の深い理解を実装している。ナレーションは感情の起伏を作らず、起床→靴を出す→並べる→座って眺める→朝が過ぎる、という時間の流れを淡々と描写するのみで、Type_A的な内面の深掘り（弱さ・本音の開示）やType_B的な気づき・発見のオチは置かれていない。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "design_master・ep85.json双方が指定する『後半の配置意図：和男の丁寧さが伝わる日常スケッチ』に対し、靴の向きをそろえる・位置を調整するという几帳面な行為の描写が強度として整合している。File.84（Type_A・告白）に続く回として山場ではなく静かなトーンダウンの配置であり、meta.phase_roleの意図と齟齬がない。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "ep[N].json",
+          "reason": "ep85.json meta.euphemism=『直接表現可』（design_master婉曲:不要）のため、C1は適用対象外としてskipする。参考として本文を確認したが、euphemism_dict.prohibited_directに該当する語（ニオイ/臭い等）はいずれにせよ使用されていない。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "ep[N].json",
+          "reason": "婉曲不要回のためC2は適用対象外。本文は婉曲表現・直接表現いずれも足元の悩みそのものへの言及がなく、婉曲変換の要否を判定する対象自体が存在しない。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "ep[N].json",
+          "reason": "C3はC1/C2（婉曲チェック）をcaptionに適用しない、という適用範囲の制御ルールである。本回はC1/C2自体が婉曲不要によりskipとなっており、制御対象となるNGワード判定が存在しないため、制御ルールの適用有無を判定する土台がない。よってskipとする。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.entry『日常の共感入口。休日の朝、靴を全部並べて乾かすという、几帳面な人なら心当たりのある習慣の一コマから視聴者の共感を拾う』に対し、ナレーション冒頭『休日の朝、いつもより早く目が覚めます。靴箱の中から、安全靴を全部、玄関に出しました。』は即座に日常の一場面から入っており、Type_C指定の入口と一致する。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exit『人柄の深い理解。CTAなしのため行動を促さず、淡々と靴を並べて朝を過ごす和男の丁寧さの余韻だけを残して終える』に対し、ナレーション末尾『気づけば、いつもよりゆっくりとした朝が過ぎていました。』およびテロップ末尾『朝が過ぎる』は行動喚起を一切含まず、静かな余韻で締めており出口指定と一致する。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "【重点軸】tone_and_rules.one_message『休日の朝、安全靴を全部並べて風を通すという和男の丁寧なルーティンを、淡々とした日常の一コマとして描く』の1文に台本全体が集約できる。ナレーションは起床→全部出す→順番に並べる→風を通す場所を選ぶ→座って眺める→朝が過ぎる、という単一の時間軸上の出来事のみで構成されており、2つ目の独立したメッセージ（例：内面の葛藤の告白＝Type_A、気づきの発見＝Type_B）は混在していない。『しばらくその場に座って、靴を眺めます』という一文もType_Aの内面深掘りには至らず、あくまで日常描写の範囲に留まっている。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "ep[N].json",
+          "reason": "ep85.json meta.cta_type=『なし』のため、E1（DM誘導／ソフトCTA回のみ適用）は適用対象外としてskipする。telop_guideline.cta_expressionもnullで、design_master該当行も『CTA:なし』と一致している。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "【重点軸】cta_type=なし回のため、テロップ5行（休日の朝/早く目覚め/靴を全部/順番に並べ/朝が過ぎる）およびcaption全文（hook_line・body・ハッシュタグ）を確認したが、フォロー・保存・いいね・コメント・シェア・リンク遷移・DM・プロフィール等への命令形・依頼形・勧誘形の指示は一切存在しない。caption.cta欄も空文字列（caption.md上も該当行なし）で、ep80/ep83（『記録はプロフィールに』『出費はプロフィールに』）やep71（『理由DMで聞いて』）のようなソフト誘導文言の混入も見られない。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ5行のいずれにも『プロフィールを見て/リンクから/今すぐ』等の直接誘導は存在しない。本回はcta_type=なしのためcaptionにもハードCTAは許容されないが、caption全文を確認してもハードCTA表現は存在しない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全7文（目が覚めます／出しました／並べていきます／調整します／眺めます／流れていきます／過ぎていました）はすべて「です・ます」調で統一されており、「だ・である」調の混在は見られない。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは『休日の朝、いつもより早く目が覚めます。靴箱の中から…』という完結した散文描写であるのに対し、テロップは『休日の朝/早く目覚め/靴を全部/順番に並べ/朝が過ぎる』という短い見出し語の羅列であり、文としての転記ではない。テロップは主語・助詞・時制を省いた事実見出しの形式で、telop_guideline.directionが明示的に例示した表現（『休日の朝』『早く目覚め』『靴を全部』『順番に並べ』）とほぼ一致しており、指示書が意図した『行為をそのまま文字化しない短い視覚軸』の形式で構成されている。ナレーション文の逐語転記・要約文ではなく、事実見出しという別レイヤーとして機能している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションは『特に何をするでもなく、朝の時間だけが静かに流れていきます』のように静かな心持ち・時間感覚（感情・情緒）を担い、テロップは『休日の朝/早く目覚め/靴を全部/順番に並べ/朝が過ぎる』という出来事の事実見出し（論理・構造）を担っている。cta_type=なし回のためテロップにCTA機能はないが、事実の骨格を示す論理面の役割は保たれている。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "caption.mdのhook_line『休日の朝は、安全靴を全部並べることから始まります。』、body（玄関に靴箱の安全靴を全部出して…気づけば、いつもよりゆっくりとした朝が過ぎていました。）、ハッシュタグ（#安全靴 #工場勤務 #12年の記録 #休日の朝 #丁寧な暮らし）は、いずれもep85.json caption フィールドの該当値と一言一句一致している。cta欄も指示書通り空（caption.md上にCTA行なし）で、他epの残骸混入も見られない。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "【重点軸】直近5作（ep80:記録の読み返しと消したい回／ep81:新しい同僚の仕草／ep82:店の棚と店員／ep83:出費の足し上げ／ep84:自信の喪失）とはテーマ・場面・道具立てのいずれも重複しない。加えて指示された論点回についても確認した。ep77（梅雨の靴手入れ）は『梅雨』『新聞紙』『扇風機』『手入れ』という語と道具立てが中核だが、ep85にはこれら4語・道具のいずれも一切登場せず、季節（梅雨）の言及も湿り気・重さの描写もない。ep85は『休日の朝』『全部並べる』という行為の数・順番・朝の空気を軸にしており、ep77の『毎年繰り返す手入れ』という反復性の強調とも異なる単発の朝の情景として描かれている。ep71（12年続けた習慣を人に勧めない、という態度表明）についても、ep85には習慣を勧める・勧めないという態度表明が一切含まれておらず、単に朝の行為を描写するのみで重複しない。ep82（靴のType_C回）とは、design_master指示通り場面を『店』ではなく『自宅の玄関』に固定しており、購入・売り場・店員とのやり取りの描写もなく重複しない。以上より、5作構図・論点回のいずれとも素材重複は認められない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行（休日の朝/早く目覚め/靴を全部/順番に並べ/朝が過ぎる）はいずれも単独で意味が完結しており、各行が10字以内で瞬時に理解できる短さに収まっている。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭は『休日の朝、いつもより早く目が覚めます。』と場面の途中から即座に始まっており、背景説明（なぜ休日か、なぜ早く目覚めたか等の前置き）は一切挟まれていない。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "【重点軸】ナレーション・テロップ・captionの全文を確認したが、妻・子ども・家族（実家の親を除く）の登場・存在を示唆する記述は一切ない。場面は『玄関に安全靴を全部出す』『しばらくその場に座って靴を眺める』という完全に一人称・単独の行為のみで構成されており、誰かに話しかける・誰かの気配を感じる描写も存在しない。来客・電話・隣人といった他者の気配や生活音による暗示（例：『物音がした』『誰かが起きてくる前に』等）も一切なく、一人暮らしの範囲の描写として整合している。tone_and_rules.marriage_constraint（和男は未婚）にも矛盾しない。"
+        }
+      ],
+      "summary": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "critical・highにfailなし（fail 0件）。全軸pass(21)またはskip(4)のためPass。",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）"
+    }
+  ]
+}
