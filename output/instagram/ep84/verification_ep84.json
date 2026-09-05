@@ -1,0 +1,235 @@
+{
+  "ep_number": 84,
+  "euphemism_required": true,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "phase": "段3-V",
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・caption全文を確認したが、「効く/治る/消える/改善する/なくなる/解消」等の断定語、および「対策X→効果Y」の因果断定構造は存在しない。内容は悩みが自信に及んでいたという内面の気づきの告白のみで、対策や効果への言及自体がない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "CTAが存在せず、ナレーション+テロップの組み合わせにも「これを使えば解決する」と読める構造がない。着地は「その事実と静かに向き合っています」という受容表現に留まり、解決の暗示はない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り語（今だけ/残りわずか/早く試さないと等）はナレーション・テロップ・captionのいずれにも存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「それでも今はただ、その事実と静かに向き合っています」など、和男の共感共闘トーン（売り込み・専門家トーンへの逸脱なし）を維持している。断定・説教・専門用語は使われていない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文に「変わった/変わる/変化した/変化があった/変化を感じた」の使用は一切なし。「奪っていた」「向き合っています」等、honesty_rule.changed_prohibitionに抵触する表現もない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "design_master File.84のテーマ「足元の悩みは、他の全部の自信を奪っていく」に対し、ナレーション「足元の悩みが、他の場面での自分の自信まで、少しずつ奪っていたのだと思います」が直接対応しており、テーマ素材の一致を確認した。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装(意味的)",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "重点確認：「奪っていく」は一般法則の言い切りになっていない。ナレーションは「奪っていたのだと思います」と本人の推測・実感の枠に留め、「誰でもそうなる」「〜な人は皆」型の言い回しは不在。不安をあおる表現・脅しのトーン・健康面や医学的影響の主張も一切ない。Type_A（告白・独白型）として弱さ・本音の開示（自信を持ちきれない感覚の告白）を軸にしており、Type_Bの気づき・発見オチやType_Cの場面描写には寄っていない。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "design_master File.84行はCTA:なしと明記されており、meta.phase_role（File.83の金額振り返りに続く、出来事起点にしない実感告白）とも整合。フェーズ全体のDM発生最大化方針の中で、意図的なCTAなしの静かな回として配置されており、強度・方向に矛盾はない。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）に該当する語はナレーション・テロップのいずれにも存在しない。悩みの内実は「足元の悩み」の婉曲表現のみで通されている。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "conversion_table（足のニオイ→足元の悩み）と整合する形で「足元の悩み」が一貫して使用されており、直接表現の回避ができている。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外(制御ルール)",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "multiple",
+          "reason": "本判定ではC1・C2をcaptionには適用せず、A群（正直さ）のみcaptionにも適用する運用を徹底した。captionにもNGワードは存在せず（適用外だが実質的にも該当なし）、適用範囲の制御ルールとして問題なく機能している。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感入口。足元の悩みが自信にまで及んでいたという本人の告白から、視聴者の共感で拾う」に対し、ナレーション冒頭「足元の悩みは、足元だけの話ではありませんでした。」が即座にこの入口を実現しており、Type_A規定の弱さ・本音への共感入口と一致する。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「『この人に話したい』。本人の実感をそのまま受け止め、共感と静かな信頼で終える」に対し、ナレーション末尾「それでも今はただ、その事実と静かに向き合っています。」・テロップ末尾「その事実と/向き合う」が静かな受容と信頼のトーンで終わっており、既往のType_A回（ep76「話せてよかったと、今は静かにそう思います」・ep81「静かに受け止めました」）と同系統の出口パターンとして機能している。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "重点確認：台本全体がtone_and_rules.one_message「足元の悩みは足元だけでなく仕事や人前での自信までも奪っていたと気づき、その実感を正直に受け止めている告白」の1文に集約できる。「特別な出来事があったわけではありません」と明示的に事件性を否定しており、Type_B的な発見オチやType_C的な場面描写への混線もなく、2メッセージの混在は見られない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "meta.cta_type=なしのため適用対象外。telop_guideline.cta_expressionもnullであり、design_master該当行もCTA:なしと明記されているため、E1はskipとした。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "重点確認：テロップ（安全靴と戦う12年の記録：File.84/足元の悩みは/自信にまで/奪っていた/その事実と/向き合う）およびcaption（hook_line・body・hashtags）のいずれにも、フォロー・保存・いいね・コメント・シェア・リンク遷移・DMへの命令形・依頼形・勧誘形の指示、DM誘導文の混入は一切ない。caption.ctaも空文字列で実際のcaption.mdも空行のみで一致している。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導は存在しない。本回はcta_type=なしのためcaptionのハードCTAも許容されないが、caption内にもハードCTA相当の表現は存在しない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全5文（「ありませんでした」「積み重なっていました」「ありません」「思います」「向き合っています」）すべてです・ます調で統一されており、だ・である調の混在はない。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "テロップ「足元の悩みは/自信にまで/奪っていた/その事実と/向き合う」はナレーション末尾の要旨語を短い視覚ビートに再構成したものであり、ep79〜83と同様、ナレーションの全文転記ではなく圧縮した視覚的骨格として提示する本シリーズの一貫した手法の範囲内にある。ナレーションが心情の展開過程を語るのに対し、テロップは結論部の骨子のみを提示しており、単純な同一テキストの転記・要約とは区別できる。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションは自信を持ちきれない感覚の積み重なりという感情面を描き、テロップは「足元の悩みは→自信にまで→奪っていた→その事実と→向き合う」という論理骨子（気づきの結論）を提示しており、感情(ナレーション)/論理(テロップ)の役割分離ができている。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "ep84.json caption.hook_lineとcaption.mdの1行目は完全一致。bodyは「奪っていたんだと思います」(json)と「奪っていたのだと思います」(caption.md)の語尾表記に軽微な揺れがあるが意味は完全に同一で、別epの残骸混入は一切ない。cta=空文字列とcaption.mdの空行も一致。hashtags（#安全靴 #工場勤務 #12年の記録 #正直な話 #自信の話）も完全一致。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "重点確認：既往Type_A（ep71:12年続けた習慣を勧めない話／ep76:先輩の退職という出来事／ep79:友人の結婚式という出来事／ep81:新しい同僚の仕草という出来事）はいずれも具体的な出来事・場面を起点にしているのに対し、ep84は「特別な出来事があったわけではありません」と明示し、仕事・人前という抽象的日常文脈のみで構成される実感告白として骨格を分けている。直近5作（ep79結婚式/ep80読み返し/ep81新同僚/ep82棚・店員/ep83金額計算）とも語彙（結婚式・革靴・先輩・退職・新しい同僚・棚・店員・金額・出費等）の重複は一切なく、素材重複は認められない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性(意味的)",
+          "result": "fail",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "各行が独立して瞬時に理解できるかを確認したところ、「自信にまで」「その事実と」の2行が助詞止まりの断片になっており、単独では意味が完結しない（次行と接続して初めて「自信にまで奪っていた」「その事実と向き合う」という一文になる）。ep79「あの緊張感」・ep82「静かに店を出た」・ep83「正直ゾッとした」等、過去回のテロップが各行で文が完結する体言止め・言い切り構成であるのに対し、本回はこの2行のみ文中の接続助詞で切れており、1行単位での視認性がやや後退している。",
+          "location": "テロップ3行目「自信にまで」・5行目「その事実と」",
+          "suggested_fix": "「自信にまで」を体言止めまたは言い切り形に調整（例：「自信までも」→次行「奪われてた」等の対句にする）、「その事実と」も「その事実に」+「静かに向き合う」のように1行で意味が完結する形に再構成することを提案する。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「足元の悩みは、足元だけの話ではありませんでした。」は背景説明を挟まず、実感の提示から即座に始まっており、opening_approach（イン・メディアス・レス）の指示と一致する。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "重点確認：ナレーション・テロップ・captionの全文を確認したが、妻・子ども・家族（実家の親を除く）の登場・存在の示唆は一切ない。人間関係は「仕事をしているときも、人前に出るときも」という職場・公的場面の抽象描写のみで構成されており、tone_and_rules.marriage_constraint（未婚・一人暮らし）に完全に整合する。"
+        }
+      ],
+      "summary": {
+        "pass": 23,
+        "fail": 1,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "medium/low のみ fail → Pass 扱い。警告として記録。",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "warnings": [
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性(意味的)",
+          "severity": "low",
+          "target_file": "script.md",
+          "location": "テロップ3行目「自信にまで」・5行目「その事実と」",
+          "reason": "各行が独立して瞬時に理解できるかを確認したところ、「自信にまで」「その事実と」の2行が助詞止まりの断片になっており、単独では意味が完結しない（次行と接続して初めて「自信にまで奪っていた」「その事実と向き合う」という一文になる）。ep79「あの緊張感」・ep82「静かに店を出た」・ep83「正直ゾッとした」等、過去回のテロップが各行で文が完結する体言止め・言い切り構成であるのに対し、本回はこの2行のみ文中の接続助詞で切れており、1行単位での視認性がやや後退している。",
+          "suggested_fix": "「自信にまで」を体言止めまたは言い切り形に調整（例：「自信までも」→次行「奪われてた」等の対句にする）、「その事実と」も「その事実に」+「静かに向き合う」のように1行で意味が完結する形に再構成することを提案する。"
+        }
+      ]
+    }
+  ]
+}
