@@ -1,0 +1,222 @@
+{
+  "ep_number": 86,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現は存在しない。内容は記録を見せた体験と緊張の描写に限定されており、足元の悩みに対する対策・効果の因果構造は一切含まれていない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTA の組み合わせ全体を通じて「これを使えば解決する」と読み取れる構造は不在。相手の反応は「何を思ったのかは、分かりません」「何も言われたわけではありません」と明示的に不明・無言とされており、賞賛・承認（「役立った」「認められた」「褒められた」「感謝された」「わかってもらえた」）の含みはゼロ。記録を見せる行為の意義づけ・はたらきの示唆もない。相手の反応・返答の描写は存在せず、無言の受け取りにすら至っていない（分からないまま終わる）。記録が何かに「効いた」「解決した」「変えた」という含みも皆無。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションに限定感・緊急性・煽り（今だけ/残りわずか/早く試さないと等）は存在しない。CTA「同じような経験がある人がいたら、ひとこと送ってください」は低圧の招待トーンであり、購入・行動を急かす要素はない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "ナレーション全体が和男の共感共闘トーン（当事者としての正直な告白）で一貫している。「見せようかどうか、しばらく迷いました」「指先が少しだけ震えて」「相手が何を思ったのかは、分かりません」等、弱さ・本音の開示が軸。売り込みトーン・専門家トーンへの逸脱はない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」は未使用。足元・体調文脈における「変」の語幹は存在しない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master該当行のテーマ「同じ現場で働く人に、この記録を見せたことがある」に対し、ナレーション冒頭が「同じ現場で働く人に、この記録を見せたことがあります。」と直接対応。ナレーション全体がこのテーマを軸に展開している。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装している。弱さ・本音の正直な開示＝記録を見せたことがあるという告白、迷い、指先の震え、緊張という弱さの開示。「この人に話したい」着地＝相手の反応に触れず緊張の余韻だけを静かに残す独白が、視聴者に「この人に話したい」と思わせる構造。Type_Cの場面スケッチ（淡々とした日常描写）でもType_Bの気づき・発見型（知的発見のオチ）でもない。本人の内面の一人称独白が一貫して軸となっている。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.phase_roleの配置意図「実際に記録を共有した体験。『見せた結果』ではなく『見せた瞬間の緊張』を描く」と整合。P3後半（DM発生の最大化）において、対人行為をテーマとしたType_A告白がDM誘導CTAへ自然に接続する強度・方向を実現している。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲:不要回）のためC1はskip。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲:不要回）のためC2はskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "meta.euphemism=直接表現可（婉曲:不要回）のためC3はskip。婉曲チェック自体が適用外であり、キャプション例外の制御も不要。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感入口。同じ現場で働く人にこの記録を見せようかどうか迷った末に見せたという告白から、視聴者の共感を拾う」に対し、ナレーション冒頭「同じ現場で働く人に、この記録を見せたことがあります。見せようかどうか、しばらく迷いました。」が弱さ・本音への共感入口としてType_Aの心理構造を正確に実装している。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exit「『この人に話したい』着地。相手の反応には一切触れず、見せた事実とそのあとに残った緊張の感覚だけを静かに語り、DM誘導へ自然に接続する」に対し、ナレーション末尾「何も言われたわけではありませんが、その緊張だけが、今も自分の中にひっそりと残っています。」が相手の反応に触れず緊張の余韻だけで着地。テロップ最終行「緊張だけが今も残る」も同様の余韻。caption.ctaのDM誘導「同じような経験がある人がいたら、ひとこと送ってください。」への接続も自然。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "tone_and_rules.one_message「同じ現場で働く人にこの記録を見せた瞬間の緊張と、そのあとに残った感覚だけを静かに描く和男の告白」に台本全体が集約できる。見せた→迷い→緊張→残った感覚、という一本の流れのみで構成され、第2のメッセージは混在していない。Type_Aの一人称独白が軸であり、Type_Cの場面スケッチやType_Bの気づきのオチには寄っていない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導。テロップのナンバリング行を除く実質最終行「緊張だけが今も残る」はtelop_guideline.cta_expression「緊張だけが今も残る」と完全一致。指示書phase_roleにより本回のcta_expressionは「招待の言葉ではなく本人の内面の余韻を示す短い言葉にとどめる」と設計されており、DM誘導はcaption.ctaのみが担う。caption.cta「同じような経験がある人がいたら、ひとこと送ってください。」は前例型（File.71/76/79/81）の婉曲・低圧の「〜な人がいたら、ひとこと送ってください」型に整合。強圧的命令・取引型の餌付けトーンは不在。CTA行の欠落もなく、全体としてDM誘導回のCTA実装が適切に機能している。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導（CTAが存在する回）のためE2はskip。E2はcta_type=なしのときのみ判定対象。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ全6行（ナンバリング含む）に「プロフィールを見て/リンクから/今すぐ/DM」等の直接誘導は不在。ナレーションにもDM・プロフィール等の誘導語は不在。DM誘導文言はcaption.cta「同じような経験がある人がいたら、ひとこと送ってください。」のみに限定されており、DM誘導回のキャプションとして許容範囲内。テロップ・ナレーションへのハードCTA混入はゼロ。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文の語尾を確認。「あります」「迷いました」「緊張しました」「分かりません」「残っています」の5文すべてがです・ます調。だ・である調の混在はゼロ。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは一人称の流れる告白文（「見せたことがあります。見せようかどうか、しばらく迷いました。画面を差し出す瞬間…」）。テロップは場面の事実・内面の開示・余韻をキーワード的に提示する5行の断片（「同じ現場で」「記録を見せた」「迷った末に」「緊張した瞬間」「緊張だけが今も残る」）。ナレーションの同一テキスト転記・要約ではなく、telop_guideline.directionの指定どおり視覚的な軸としてのキーワード提示であり、内容分離を満たしている。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：迷い・震え・緊張・残る感覚という内面の感情を一人称で語る告白。テロップ＝論理（気づき・構造）：「同じ現場で」「記録を見せた」等の事実ラベルと、「緊張だけが今も残る」の余韻提示。ナレーションが感情の流れを担い、テロップが視覚的な構造マーカーを担う役割分離が成立している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素がep86.jsonのcaptionフィールドと一致。hook_line「同じ現場で働く人に、この記録を見せたことがあります。」＝完全一致。body「見せようかどうか、しばらく迷いました。画面を差し出す瞬間は、想像していたよりずっと緊張しました。相手が何を思ったのかは、分かりません。ただ、見せたという事実だけが、今も自分の中に残っています。」＝完全一致。cta「同じような経験がある人がいたら、ひとこと送ってください。」＝完全一致。hashtags 5個（#安全靴 #工場勤務 #12年の記録 #同じ現場で働く人 #DM待ってます）＝完全一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作（ep81-85）および追加参照（ep78・ep80）との素材重複を確認。ep86の主題は「同じ現場で働く人に記録を見せた→迷い→緊張→緊張が残る」。(1)ep78（同僚の問い・問答形式・「意味あるの」「根拠」）：ep78は問答形式で質問を受ける側、ep86は自発的に見せる行為。呼称もep78「職場の同僚」vsep86「同じ現場で働く人」で異なる。問答・対話は存在しない。重複なし。(2)ep80（消したい回・読み返す）：ep80は自分で記録を読み返す行為、ep86は他者に見せる行為。内向vs対人で構図が異なる。重複なし。(3)ep81（新しい同僚・同じ悩み・自分だけじゃない）：ep81は相手の仕草から同じ悩みを推察する観察、ep86は記録を能動的に見せる行為。共感成立の構図もない。呼称もep81「新しい同僚」vsep86「同じ現場で働く人」。重複なし。(4)ep82-85：靴棚での買い替え・金額の足し上げ・自信の喪失・靴の乾燥ルーティンと、いずれもep86と素材が完全に異なる。重複なし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち、1行で瞬時に理解可能。「同じ現場で」(5字)「記録を見せた」(5字)「迷った末に」(5字)「緊張した瞬間」(6字)「緊張だけが今も残る」(8字)。いずれも短く、文脈なしでも意味が通る。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「同じ現場で働く人に、この記録を見せたことがあります。」は背景説明（工場勤務歴・記録の経緯等）なしに、「見せたことがある」という事実から即座に始まる。narration_guideline.opening_approach「イン・メディアス・レス。事実の提示から即座に入り、背景説明は挟まない」に合致。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraintチェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションに妻・子ども・家族（実家の親を除く）の登場・存在の示唆はゼロ。登場人物は「同じ現場で働く人」（職場文脈の人物、J1対象外）のみ。相手の家族・私生活・本人の家族の登場・示唆もゼロ。生活音・気配による暗示もない。場面は現場（職場）に限定されており、配偶者・子の存在を暗示する描写は不在。人間関係は職場の範囲で構成されている（tone_and_rules.marriage_constraint準拠）。"
+        }
+      ],
+      "summary": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "phase": "段3-Ω（omega²）"
+    }
+  ]
+}
