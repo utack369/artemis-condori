@@ -1,0 +1,222 @@
+{
+  "ep_number": 87,
+  "euphemism_required": true,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現は存在しない。ナレーションは帰省時の緊張という内面描写のみで、対策→効果の因果構造を含まない。キャプション「理由は、足元の悩みがあるからです」も悩みの存在を述べるのみで効果を断定していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・CTAの組み合わせ全体において「これを使えば解決する」と読み取れる構造は存在しない。台本全体が和男の内面の緊張の告白であり、製品・対策・解決手段への言及がなく、before/after構造も成立していない。キャプションCTAも「同じ緊張がある人」への招待であり、解決の暗示はない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽りの表現は存在しない。台本は内面の告白に徹しており、購入・行動を急かす要素はゼロ。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "台本全体が和男の共感共闘トーン（静かな告白・弱さの開示）で一貫している。売り込みトーンへの逸脱（商品推奨・解決提案）はなく、専門家トーンへの逸脱（メカニズム解説・指導口調）もない。キャプションCTA「ひとこと送ってください」も和男の招待トーンの範囲内。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」は出現しない。足元・体調文脈での使用はゼロ。honesty_rule.changed_prohibition準拠。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「帰省した実家で靴を脱ぐ瞬間、毎回緊張する」に対し、ナレーション冒頭「実家に帰るたび、玄関で靴を脱ぐ瞬間だけ、いつも緊張します」が同一素材を忠実に扱っている。帰省・実家・靴を脱ぐ瞬間・毎回の緊張の全要素がナレーションに反映されている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を正しく実装。弱さ・本音の正直な開示：帰省のたびに靴を脱ぐ前に身構え、体が固くなるという身体的な弱さの告白がナレーション全体を貫いている。着地：「帰るたびに同じ緊張を、繰り返しているだけです」が決意・教訓を持たない静かな独白の余韻で終わり、「この人に話したい」への自然な着地を達成。Type_BやType_Cの構造（気づき・発見のオチ、日常の淡々とした描写）への逸脱はない。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P3後半（File.81-90）「DM発生の最大化」フェーズにおけるDM誘導回として、個人的な弱さの告白→DM招待への接続という十分な強度の台本になっている。phase_role記載の「帰省のたびに繰り返される玄関先での身構えとためらい」という構図が忠実に実装されている。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "婉曲:要の回。euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）のいずれもナレーション・テロップに出現しない。悩みの内実は「足元の悩み」という婉曲表現で一貫して間接的に示されており、具体的な症状・状態の名指しは皆無。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションで使用されている「足元の悩み」はconversion_table（足のニオイ→足元の違和感/足元の悩み）に合致する正規の婉曲表現。直接表現を確実に回避できており、悩みの理由に踏み込む記述は一切ない。conversion_tableとの整合性は確保されている。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "キャプションは婉曲チェック（C1/C2）の適用対象外として正しく除外。キャプション内の「足元の悩み」は婉曲表現が使用されているが、これはC1/C2の判定結果ではなく事実の付記。A群（正直さ）はキャプションにも適用済み（A1-A5で判定済み）。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感入口。帰省して実家の玄関で靴を脱ぐ瞬間に毎回緊張してしまうという告白から、視聴者の共感を拾う」に対し、ナレーション冒頭「実家に帰るたび、玄関で靴を脱ぐ瞬間だけ、いつも緊張します」が弱さの告白として即座に入っている。Type_Aの入口（弱さ・本音への共感）を正しく実現。背景説明なしのイン・メディアス・レスで共感入口が成立。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「この人に話したい着地。毎回繰り返される緊張の実感だけを静かに語る」に対し、ナレーション末尾「帰るたびに同じ緊張を、繰り返しているだけです」が決意・教訓を持たない独白の余韻で閉じている。テロップ最終行「帰るたびに緊張する」も内面の余韻を短く提示。Type_Aの出口（この人に話したい）を実現し、キャプションCTAへの自然な接続点を形成。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「帰省して実家の玄関で靴を脱ぐ瞬間、毎回繰り返される緊張を静かに語る和男の告白」に対し、台本全体がこの1メッセージに集約されている。第2メッセージ（対策の提案・過去の振り返り・他人との比較等）の混在はなく、冒頭から末尾まで帰省時の玄関での緊張という単一の内面描写で統一。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導。テロップのナンバリング行（安全靴と戦う12年の記録：File.87）を除いた実質最終行「帰るたびに緊張する」はtelop_guideline.cta_expression「帰るたびに緊張する」と完全一致。指示書の設計意図（テロップには誘導の言葉を置かず内面の余韻にとどめ、DM誘導はcaption.ctaのみで実装する）に従い、caption.cta「帰省のたびに同じ緊張がある人は、ひとこと送ってください」が依頼形の招待トーンで適切にDM誘導を実装。強圧的命令（今すぐDMして等）は使用されていない。cta_expressionとの整合・CTA行の存在ともに確認済み。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導のため、E2（cta_type=なしのみ適用）は判定対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ全行（実家に/帰る日は/靴を脱ぐ/その瞬間/帰るたびに緊張する）に「プロフィールを見て/リンクから/今すぐ」等の直接誘導は皆無。ナレーションにもDM・フォロー・プロフィール等への誘導表現は皆無。DM誘導はcaption.cta「帰省のたびに同じ緊張がある人は、ひとこと送ってください」のみに限定されており、DM誘導回のキャプション内のみ許容という規則に準拠。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全5文の語尾を確認：「緊張します」「固くなります」「できてしまいます」「重くなります」「繰り返しているだけです」。すべて「です・ます」調で統一されており、「だ・である」調の混在はない。sentence_ending規則に準拠。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは内面の詳細な告白（身構え・体の固さ・わずかな間・人の気配・一歩の重さ）を語り、テロップは場面のキーワード（実家に/帰る日は/靴を脱ぐ/その瞬間/帰るたびに緊張する）を短く視覚提示している。テロップはナレーションの転記・要約ではなく、異なる切り口で構成されており、内容分離が成立。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：身構え・体が固くなる・一歩が重い等の身体感覚を通じた感情描写に徹している。テロップ＝論理（気づき）：場面の事実（実家に/帰る日は）→行為（靴を脱ぐ）→焦点（その瞬間）→結論（帰るたびに緊張する）という論理的な構造で配置。役割分離が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.md全要素をep87.jsonのcaptionフィールドと照合。hook_line「帰省して実家に着くと、玄関で靴を脱ぐ瞬間だけ、毎回緊張します。」→完全一致。body全4文→完全一致。cta「帰省のたびに同じ緊張がある人は、ひとこと送ってください。」→完全一致。hashtags 5個（#安全靴 #工場勤務 #12年の記録 #帰省あるある #足元の悩み）→完全一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との素材・場面・主題を比較。ep82（安全靴の買い替え・店頭）、ep83（12年分の出費の足し上げ）、ep84（足元の悩みと自信の喪失）、ep85（休日の安全靴整理ルーティン）、ep86（同じ現場の人に記録を見せた緊張）のいずれとも場面・行為・主題が異なる。ep87は「帰省」「実家の玄関」「靴を脱ぐ反復的な緊張」という独自の場面。ep86との比較：ep86は「見せる」行為の一回性の緊張、ep87は「脱ぐ」行為の反復性の緊張であり骨格が異なる。「緊張」の語はテーマ文言由来のため使用可。ep86の禁止フレーズ（緊張した瞬間/緊張だけが今も残る/想像していたよりずっと/指先が震えて）はep87に不使用。「誰かに何か言われたわけでもないのに」（ep87）と「何も言われたわけではありませんが」（ep86）は同一モチーフだが語彙・構文が異なりフレーズ単位の反復には該当しない（和男の人物造形として複数epに共通する性格描写）。ep79（結婚式・革靴）・ep67（金曜・座敷・断る）の語も不使用。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行（実家に/帰る日は/靴を脱ぐ/その瞬間/帰るたびに緊張する）はいずれも独立して意味を持ち、1行で瞬時に理解可能。最長行「帰るたびに緊張する」も9字で視認性に問題なし。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「実家に帰るたび、玄関で靴を脱ぐ瞬間だけ、いつも緊張します」は背景説明（12年前から悩みがあって、安全靴を履く仕事で…等）を一切挟まず、帰省の玄関での緊張という体験の途中から即座に入っている。narration_guideline.opening_approach「イン・メディアス・レス」に準拠。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "【実家の親の扱い】実家の親はmarriage_constraintの除外対象。ナレーション「奥に人の気配を感じるたび」は実家にいる親の存在を「気配」レベルで示唆するのみであり、会話・問答・セリフ・反応・表情の描写は一切ない。除外対象である親の存在示唆の範囲内に収まっている。【親以外の家族】妻・子ども・兄弟姉妹・親戚の登場・存在の示唆はナレーション・テロップ・キャプションのいずれにも皆無。「家に上がる前の数秒」（キャプション）は物理的な家屋への言及であり家族の示唆ではない。和男は未婚・一人暮らしの内面描写の範囲で構成されており、tone_and_rules.marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 24,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）"
+    }
+  ]
+}
