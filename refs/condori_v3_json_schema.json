@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "コンドリ 台本指示書（20-30秒リール専用）",
-  "description": "パッケージ3（File.61-90）の各話指示書を生成するためのJSON Schema v3。20-30秒リール専用。P1/P2のv2から、カルーセル・7秒リールを廃止し、20-30秒リール用に再設計。omegaが生成し、alphaに渡して成果物を生成する。",
+  "description": "パッケージ3（File.61-90）の各話指示書を生成するためのJSON Schema v3。20-30秒リール専用。P1/P2のv2から、カルーセル・7秒リールを廃止し、20-30秒リール用に再設計。omegaが生成し、alphaに渡して成果物を生成する。【v3.1拡張（2026-09-09・P4対応）】パッケージ4（File.91-120）にも適用する。P4の設計正本は refs/condori_pkg4_design_complete.md。",
   "type": "object",
   "required": [
     "meta",
@@ -25,13 +25,13 @@
       "properties": {
         "file_number": {
           "type": "integer",
-          "description": "ファイル番号（61〜90）",
+          "description": "ファイル番号（61〜120）",
           "minimum": 61,
-          "maximum": 90
+          "maximum": 120
         },
         "psychology_type": {
           "type": "string",
-          "description": "適用する心理導線型。P3では20-30秒の尺に合わせて再定義したType_A/B/Cを使用。",
+          "description": "適用する心理導線型。P3・P4では20-30秒の尺に合わせて再定義したType_A/B/Cを使用。",
           "enum": [
             "Type_A（告白・独白型）",
             "Type_B（気づき・発見型）",
@@ -53,11 +53,14 @@
         },
         "phase": {
           "type": "string",
-          "description": "パッケージ3内のフェーズ",
+          "description": "パッケージ3・4内のフェーズ",
           "enum": [
             "前半（File.61-70）：対話の扉を開く",
             "中盤（File.71-80）：人柄の深い伝達",
-            "後半（File.81-90）：DM発生の最大化"
+            "後半（File.81-90）：DM発生の最大化",
+            "前半（File.91-100）：宛先を絞り、痛みを言い当てる",
+            "中盤（File.101-110）：前提を書き換え、基準を出す",
+            "後半（File.111-120）：日常を見せ、動作を一つ渡す"
           ]
         },
         "phase_role": {
@@ -68,7 +71,7 @@
     },
     "purpose": {
       "type": "string",
-      "description": "このコンテンツで達成すべき目的。1〜2文で記述。P3全体の目的「和男と話したい→DM発生→紹介登録」に対するこの1本の寄与を明確にする。"
+      "description": "このコンテンツで達成すべき目的。1〜2文で記述。P3全体の目的「和男と話したい→DM発生→紹介登録」に対するこの1本の寄与を明確にする。P4（File.91-120）では、pkg4設計図第1章の目的に対するこの1本の寄与を明確にする。"
     },
     "target_state": {
       "type": "string",
