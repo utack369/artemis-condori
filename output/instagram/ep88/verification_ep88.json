@@ -1,0 +1,222 @@
+{
+  "ep_number": 88,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "script.mdナレーション「書いたところで足元の悩みそのものが片づくわけではないと、正直に気づきました」は効果の否定(片づかない)であり、断定的な効果主張(効く/治る/消える等)は script・caption いずれにも存在しない。caption本文「片づくわけではありません」「増えていくのは、書いてきた言葉の量だけです」も同様に効果を断定しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・CTAのいずれの組み合わせからも「これを使えば解決する」という暗示構造は読み取れない。むしろ全体構成は「記録という行為では根本は片づかない」という逆方向の率直な事実提示であり、暗示的な効果訴求は存在しない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "script・captionともに限定感・緊急性・煽り表現(今だけ/残りわずか/早く試さないと等)は一切使用されていない。CTAも「よかったら覗いてみてください」という低圧な招待トーンに留まる。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「正直に言います」「正直に気づきました」「よかったら覗いてみてください」など、共感共闘トーン(気にならなくなった・保証しない・よかったら系)から逸脱していない。売り込み調・専門家調への逸脱は見られない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "script・captionのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」に該当する表現は使用されていない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "design_master File.88のテーマ文言(禁止語幹を1語含む1文)の趣旨は『正直に言う。記録を続けても[テーマ由来の語幹]しない』であり、script.mdはこれを「正直に言います…それでも、書いたところで足元の悩みそのものが片づくわけではない」という言い換え表現で正しく実装している。テーマ由来の語幹自体はscript・captionのどこにも直接使用されておらず、euphemism_dict上の変換候補にも近い「片づく/片づかない」への言い換えは、ep88.jsonのnarration_guideline・telop_guidelineが明示的に指示した語彙選択と一致するため、テーマ不整合とはしない。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "率直さの範囲制御(意味的型実装)",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "「片づくわけではない」という実感は、一貫して「12年間の記録を書いてきたこと」という本人の行為についての受け止めに限定されており、「対策全般が無意味」「他の人も同じ」といった一般化・断定や不安を煽る表現への拡張は見られない。着地も「片づかないまま、それでも記録だけは、また一つ増えていきます」という事実の提示に留まり、『それでも続ける意味がある』『だからこそ価値がある』式の意味の再付与・決意・教訓は置かれていない。『今日も』『明日も』『それだけ』を核にした継続宣言の構文も不使用。なお、caption本文末尾「それでも、記録をやめる理由は特にありません」は継続を正当化する決意文ではなく、理由の不在を淡々と述べる消極的な事実文であり、禁止構文には該当しないと判断した(念のためD3の判定と合わせて確認済み)。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "design_master該当行にはType_B/CTA:ソフトCTA/婉曲:不要の属性のみが明示され、個別の「配置の意図」欄はないが、meta.phase_roleに『File.87(Type_A・DM誘導・緊張の告白)に続く回』としての位置づけが記載されている。ep88は静かな気づき提示型のType_Bとして、直前2作(File.86/87のType_A・DM誘導・緊張描写)からトーンを落ち着かせるリズム変化として機能しており、山場指定のない後半フェーズの一コマとして強度・方向は整合している。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "ep88.jsonのmeta.euphemism=『直接表現可』(婉曲不要)のため、本軸は対象外としskipとする。なお参考として、euphemism_dict.prohibited_directに該当する語(足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策)はscript・captionいずれにも出現していない。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "婉曲不要回のためC1が非適用であり、婉曲変換の適切性を判定する前提(婉曲表現の使用)自体が発生していない。skip対象とする。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外(制御ルール)",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "本回は婉曲不要でありC1/C2自体が非適用のため、captionを婉曲チェック対象外とする制御ルールを適用する場面が生じていない。skipとする。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entryは『12年間書き続けてきた記録は、それで何かが片づくのかという率直な問いかけから、視聴者の知的好奇心で拾う』と定義されている。narration_guideline.opening_approachは明示的に『正直に言います。』という前置きなしの直接的なフックで入ることを指定しており、script.mdの冒頭『正直に言います。12年間、いろいろなことを試しては…』はこの指定通りに実装されている。文法上の疑問形ではないが、『12年間書いてきたことは何かの役に立ったのか』という暗黙の問いを喚起する構成になっており、Type_Bの知的好奇心入口として機能している。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exitは『片づかないという事実だけを静かに提示し、記録の具体的な中身には踏み込まないまま、プロフィールへの遷移を促す』と定義されている。ナレーション末尾『片づかないまま、それでも記録だけは、また一つ増えていきます。』は記録の具体的中身に触れずに事実提示のみで終わり、テロップ最終行『全部プロフィールに』が遷移を促しており、『もっと聞きたい』という出口が実装されている。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "tone_and_rules.one_message『12年分の記録を書いても、それで足元の悩みそのものが片づくわけではないと正直に気づいた和男が、それでも記録だけは増えていくという事実を静かに受け止めている』に対し、script.mdの内容(事実の整理→気づき→事実提示による着地)は完全に一致し、2つ目のメッセージの混在はない。captionのhook/body/ctaも同一メッセージの範囲内に収まっている。着地も『続ける意味がある』式の意味の再付与・決意・教訓・逆転の救いにはなっておらず、事実の整理→気づきの提示というType_Bの型に沿っている。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性(ソフトCTA)",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "テロップのナンバリング行(『安全靴と戦う12年の記録：File.88』)を除いた実質最終行は『全部プロフィールに』であり、動詞を伴わない事実の陳述(ep80『記録はプロフィールに』・ep83『出費はプロフィールに』と同型)としてソフトCTAの要件を満たす。caption.ctaの『片づかないままの記録も、全部プロフィールに置いています。よかったら覗いてみてください。』は、ep88.jsonのmeta記載『caption.ctaにプロフィール誘導＋招待トーンの結びを実装する(File.78・80・83の系統)』という設計指示に沿った低圧の招待トーンであり、命令形・取引型の餌付けトーンではない。CTA行の欠落もなく、cta_expression『12年分の記録、全部プロフィールに置いています』の趣旨とも整合している。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "meta.cta_type=ソフトCTAであり『なし』回ではないため、本軸は非適用としskipとする。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ最終行『全部プロフィールに』は動詞・命令形を伴わない事実陳述であり、『プロフィールを見て』『リンクから』『今すぐ』等の直接誘導には該当しない。ナレーションにもハードCTAは存在しない。caption.ctaの『よかったら覗いてみてください』も、条件節『よかったら』を伴う低圧な招待表現であり、『見て』『今すぐ』のような命令形のハードCTAとは区別される。本回はソフトCTA回であり、DM誘導回のような『captionのみハードCTA許容』の例外は適用されないが、caption内の表現自体がハードCTAに該当しないため問題ない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文(言います/書き留めてきました/言葉にしてきました/気づきました/残ります/増えていきます)がです・ます調で統一されており、だ・である調の混在はない。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは12年間の記録の経緯と気づきを文章として展開しているのに対し、テロップは『12年分』『書いてきた』『それでも』『片づかない』『全部プロフィールに』という圧縮されたキーワード断片で構成されており、同一テキストの単純な転記ではない。直近作(ep83-87)と同様の、テロップをナレーションの論理骨格として圧縮する本シリーズの一貫した設計パターンに沿っている。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーションは『正直に気づきました』という静かな乾いた気づきと受け止めの感情面を担い、テロップは『12年分→書いてきた→それでも→片づかない→全部プロフィールに』という事実・気づき・CTAの論理骨格を担っており、感情(ナレーション)と論理(テロップ)の役割分離が実装されている。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "caption.mdのhook_line・body・cta・hashtagsは、ep88.jsonのcaptionフィールド(hook_line/body/cta/hashtags)といずれも文言レベルで完全一致しており、別epの残骸混入は確認されない。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ep61の『記録を続ける理由が分からない』という自問構図に対し、ep88は理由の自問ではなく『記録しても根本は片づかない』という結果についての率直な気づきであり、構造が異なる。ep83(Type_B直近前例)の金額・出費を足し上げて『正直ゾッとする数字』に至る集計構図に対し、ep88は金額・出費・足し上げの要素を一切含まず、書いてきた記録の量と根本課題の非解消という別の対比軸である。直近3作との重複語も不使用: ep87の『帰省』『実家』『玄関』『緊張』、ep86の『記録を見せた』『同じ現場』、ep85の『休日』『並べる』『乾かす』『ルーティン』は、いずれもep88のscript.mdに出現しない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性(意味的)",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "『12年分』『書いてきた』『それでも』『片づかない』『全部プロフィールに』の各行はいずれも短く、単独で意味が完結しており、1行ずつ瞬時に理解できる。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭は『正直に言います。』から即座に始まり、背景説明(いつから記録を始めたか等の前置き)を挟まずに本題に入っている。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "script.md(ナレーション・テロップ)・caption.mdのいずれにも、妻・子ども・家族(実家の親を除く)の登場や存在を示唆する描写は一切ない。登場人物は本人のみで構成されており、生活音・気配による暗示も存在しない。"
+        }
+      ],
+      "summary": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）"
+    }
+  ]
+}
