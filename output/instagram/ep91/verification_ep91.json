@@ -1,0 +1,222 @@
+{
+  "ep_number": 91,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文に「効く/治る/消える/改善する/なくなる/解消」等の断定なし。「言葉を選ぶ迷いがずっと少なくなりました」は執筆活動における内面の実感であり、足元の悩みに対する対策・製品の効果の断定ではない。captionの「言葉を選ぶことが楽になりました」も同様に執筆行為についての記述であり、対策→効果の因果構造を形成していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTA全体を通じて「これを使えば解決する」と読み取れる構造は存在しない。宛先を絞るという記録の方針の宣言であり、対策・製品の使用と効果の因果は一切構築されていない。Coordinator補足の確認点「宛先の絞り込みが対策・製品の対象者の選別と読めないか」について：「足元の悩みを抱えた人だけを思って書く」は記録の宛先の話にとどまり、対策・製品を良い結果に結びつける因果・暗示への転用はない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文に限定感（今だけ/残りわずか等）・緊急性・煽り表現なし。宛先を絞る宣言は「合わない人が買う確率を下げる設計」に沿うものであり、購入を急かす要素は皆無。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全文が和男の共感共闘トーンで一貫。「足元の悩みを抱えた人だけを思って書く」「同じ場所に立つ人のことだけを思って」は共感共闘の姿勢そのもの。売り込み・専門家トーンへの逸脱なし。captionのDM誘導「同じなら送ってください」も低圧な招待トーンで一貫。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文に「変わった/変わる/変化した/変化があった/変化を感じた」の使用なし。足元・体調文脈での使用も、無関係文脈での使用も確認されない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master該当行のテーマ「この記録は、現場で安全靴を履く人にだけ向けて書いています」をナレーション冒頭がそのまま実装。テロップも「現場で履く人へ」「だけに向けて」「向けて書いた」でテーマを忠実に反映。テーマからの逸脱なし。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装。弱さ・本音の正直な開示：「全員に向けて書いているわけではありません」という全員への到達を放棄した告白、「言葉を選ぶ迷いがずっと少なくなりました」という本音の開示。独白形式で一貫し、Type_Cの場面スケッチ（場面描写なし）やType_Bの気づき整理（論理的発見の提示なし）には寄っていない。着地はcaptionのDM誘導への自然な接続を通じて「この人に話したい」状態を構築。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P4前半・pkg4設計図1段目B1「宛先を名指しする5本」の先頭=宛先の宣言回。本回は宛先の宣言のみを行い、「通じる人と通じない人がいる」の選別明示（File.93担当）・「120本目まで書く理由」の開示（File.95担当）・「何を基準に選ぶか」（File.101-110担当）に踏み込んでいない。P3総括・P4予告（「ここから30本」等の射程の宣言）も置かれていない。phase_roleと整合。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要回）のためC1はskip。なお参考として、prohibited_direct該当語（ニオイ/臭い/クサい等13語）はナレーション・テロップに含まれていないことを確認済み。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要回）のためC2はskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "婉曲不要回のためC1/C2がskipであり、captionへの婉曲チェック非適用ルール（C3）の判定対象がない。A群（正直さ）のcaptionへの適用はA1-A5で実施済み。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感入口。宛先を絞る、という告白から入る」をナレーション冒頭が実装。「この記録は、現場で安全靴を履く人にだけ向けて書いています。」という宣言で即座に入り、宛先を絞るという告白がType_Aの弱さ・本音への共感入口として機能。Type_Cの日常共感やType_Bの知的好奇心からの入口ではない。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「『この人に話したい』着地。宛先の宣言だけを残し、captionのDM誘導へ自然に接続する」をナレーション末尾とテロップが実装。ナレーション末尾「これからも、同じ場所に立つ人のことだけを思って、この記録を書いています。」で宛先の宣言を残し、テロップ最終行「向けて書いた」で余韻を配置。caption.cta「同じなら送ってください」への接続が自然に成立し、「この人に話したい」着地が機能。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "tone_and_rules.one_message「全員にではなく、現場で安全靴を履く人にだけ向けて、この記録を書いているという和男の宛先の宣言」に台本全体が集約。宛先の宣言という単一メッセージで統一されており、2メッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導のため判定。テロップのナンバリング行「安全靴と戦う12年の記録：File.91」を除く実質最終行「向けて書いた」はtelop_guideline.cta_expression「向けて書いた」と一致。本epの設計上テロップのcta_expressionは「本人の内面の余韻を示す短い言葉」として配置され、captionのDM誘導「現場で履いている人にだけ書いています。同じなら送ってください。」への導線として機能。CTA行の欠落なし、cta_expressionとの不整合なし。captionのDM誘導は低圧な招待トーン（「同じなら送ってください」）で強圧的命令・取引型餌付けトーンなし。ep86/87/90の「〜、ひとこと送ってください。」定型とは構文が異なり非同一。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導のためE2（cta_type=なしのみ適用）はskip。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。テロップの「現場で履く人へ」「だけに向けて」「全員ではない」「向けて書いた」はすべて宛先の宣言（記述文）であり、読者への動作の要求・依頼（「送ってください」「DMで」「コメントで」「見てください」等）や二人称の呼びかけ（「あなたも」等）は含まれていない。Coordinator補足のE3境界「ナレーション・テロップにおいて宛先の宣言は可、動作の要求・依頼と二人称の呼びかけは不可」に照らし、全テロップ行が記述文の範囲内。ナレーションにも誘導文言なし。DM誘導文言はcaptionのみに配置されており、v3スキーマ準拠。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全4文の語尾を確認。「書いています」（ます）・「ありません」（ません＝ます系否定）・「少なくなりました」（ました）・「書いています」（ます）。全文「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは独白形式で宛先の宣言・実感・継続の意志を語り、テロップは「現場で履く人へ」「だけに向けて」「全員ではない」「向けて書いた」と独自の短い表現で宛先の宣言を視覚的に提示。ナレーションの文を転記・要約したものではなく、別のフォーマットで別内容を構成。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：「足元の悩みを抱えた人だけを思って書くと、言葉を選ぶ迷いがずっと少なくなりました」「同じ場所に立つ人のことだけを思って」等、内面の実感・共感を表現。テロップ＝論理（気づき・CTA）：「現場で履く人へ」「だけに向けて」「全員ではない」「向けて書いた」と宛先の宣言を短い論理的な言葉で提示。役割分離が機能。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素をep91.jsonのcaptionフィールドと照合。hook_line「この記録は、現場で安全靴を履く人にだけ向けて書いています。」＝一致。body「全員に向けて書いているわけではありません。工場で安全靴を履きながら、足元の悩みを抱えている人に向けて、12年分の記録を残しています。読む相手を先に決めてから、言葉を選ぶことが楽になりました。」＝一致。cta「現場で履いている人にだけ書いています。同じなら送ってください。」＝一致。hashtags 5個＝一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との主題比較。ep86=記録を同僚に見せた体験の緊張、ep87=帰省時の玄関での緊張、ep88=12年記録しても片づかないという限界認識、ep89=安全靴を履く日常の反復、ep90=分からないことがあるから記録を続ける。ep91=記録の宛先の宣言。「記録」という語はep88/90/91で共有されるが、主題はそれぞれ限界認識/継続理由/宛先宣言と角度が異なり、素材（場面・対策）の重複なし。ep90差別化語「分からない」「だから」「明日も」「推移」、ep89差別化語「今日も履いた」「明日も履く」「それだけ」、ep88差別化語「正直に言う」「片づく」「片づかない」「増えていく」のいずれもep91に未使用。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ全4行（ナンバリング行除く）がそれぞれ独立して意味を持ち、1行で瞬時に理解可能。「現場で履く人へ」（6字）「だけに向けて」（6字）「全員ではない」（6字）「向けて書いた」（6字）、いずれも10字以内で視認性良好。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「この記録は、現場で安全靴を履く人にだけ向けて書いています。」は宛先の宣言から即座に入っており、背景説明（「12年前から記録をつけていて…」「P4が始まるにあたって…」等）を挟んでいない。narration_guideline.opening_approach「イン・メディアス・レス」の要件を満たす。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "File.91（File.61以降）のため判定対象。ナレーション・テロップ・caption全文に妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。登場人物は和男本人のみ。「現場で安全靴を履く人」は記録の宛先（語りの対象）であり人物の登場・示唆ではない（Coordinator補足の区別に準拠）。「工場の床に立ちながら」は和男自身の描写。「同じ場所に立つ人のことだけを思って」は宛先への言及であり人物の登場ではない。配偶者・子の存在を暗示する描写（「家族が待っている」等）は皆無。人間関係は内面の範囲で構成されており、marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）"
+    }
+  ]
+}
