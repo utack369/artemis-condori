@@ -1,0 +1,222 @@
+{
+  "ep_number": 97,
+  "euphemism_required": true,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。全文がバケツの位置と外形の事実描写のみで構成されており、足元の悩み文脈での効果の因果断定は存在しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋captionの組み合わせ全体で「これを使えば解決する」と読み取れる構造なし。バケツは用途不明のまま位置と外形のみが描写されており、対策・製品・その良い結果との関連づけは一切ない。Coordinator留意事項（A2：バケツを対策・製品・その良い結果と関連づける暗示がないか）も確認済み。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り（今だけ/残りわずか/早く試さないと等）の表現なし。全文が静的な物の描写に終始しており、購入を促す要素は皆無。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "ナレーション全体が淡々とした一人称の物の観察であり、和男の共感共闘トーン（気にならなくなった・保証しない・よかったら系統の誠実さ）を維持。売り込みトーン・専門家トーンへの逸脱なし。Type_Cの日常スケッチとして適切な温度感。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」の語幹なし。「色が薄くなっています」は色の経年変化の客観描写であり、体調・効果文脈の「変わった」には該当しない（changed_prohibition の対象は足元・体調文脈の効果暗示としての使用）。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「洗面所の床に置いたバケツが、12年ずっと同じ場所にあります」に対し、ナレーションは洗面所の床の白いバケツ→12年動いていない→外形描写→今日も同じ場所、という構成でテーマを忠実に扱っている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_C（日常スケッチ型）＝日常の淡々とした描写→人柄の深い理解を実装。ナレーションは洗面所のバケツの外形を淡々と観察し、感情の押し付け・気づきの整理（Type_B化）・内面独白（Type_A化）への逸脱なし。「少しずつ色が薄くなっています」「うっすらとした跡がついています」等の描写は、物の経年を淡々と記す日常スケッチそのもの。着地「今日も、同じ場所に、同じ形で、静かに置かれています」は日常の反復の記述として閉じ、読み手が12年同じ場所にバケツを置き続ける和男の人柄を理解する着地。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P4前半B2ブロック2本目＝体験枠。phase_role「言葉にできていない粒度まで痛みを書く。ここでは売り込まない」に整合。12年動かないバケツの位置・外形跡という具体の一コマを静かに提示しており、売り込み要素ゼロ。CTAなし配分の指定も遵守。強度はB2ブロックの「体験」枠として適切な静かさ。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "婉曲:要のため判定実施。prohibited_direct 13語（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）がナレーション・テロップで直接使用されていない。全文がバケツの位置・外形の描写で構成されており、嗅覚・衛生関連の語彙は一切登場しない。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "婉曲の核「バケツの用途・中身・使う場面・使う時間を言語化しない。物の位置・年月・外形の描写のみ。使う行為・過去に使った場面も描かない」が完全に実装されている。ナレーション：用途の説明なし、中身への言及なし、使う場面・時間への言及なし、使う行為の描写なし。構成要素は位置（洗面所の床・同じ場所）、年月（12年）、外形（取っ手の色・持ち手の内側の跡・底の外側と床の境目の跡）のみ。テロップ・captionも同様に用途言及なし。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "適用範囲の制御を確認。婉曲チェック（C1/C2）はcaptionに適用しない（C3の制御ルール通り）。A群（正直さ）はcaptionにも適用済み（A1〜A5で確認）。なおcaptionにもprohibited_direct語は使用されていない（追加確認）。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「日常の共感入口。洗面所の床に置かれたバケツが、12年ずっと同じ場所にあるという、何気ない物の描写から入る」に対し、ナレーション冒頭「洗面所の床に、白いバケツが一つ置いてあります。」が日常の何気ない物の描写からの入りを実現。Type_Cの日常の共感入口として正しく実装。Type_A（弱さ・本音への共感）やType_B（知的好奇心）への逸脱なし。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「人柄の深い理解という着地。バケツの位置だけを静かに残し、用途を明かさないまま、12年動いていないものへの理解だけで完結させる」に対し、ナレーション末尾「今日も、同じ場所に、同じ形で、静かに置かれています。」がバケツの位置を静かに残し、用途を明かさず完結。DMへの接続なし。12年動いていない物を置き続ける和男の人柄への理解で着地。テロップも「12年動かない」で静かに閉じる。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「洗面所の床に置いたバケツの置き場所が、理由を語らないまま、12年ずっと同じ場所から動いていなかったという静かな観察」に対し、ナレーション全体がこの1メッセージに一貫して集約される。冒頭（バケツの提示）→中盤（外形描写）→着地（今日も同じ場所）の全てが同一主題。2つ目のメッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=なしのため判定対象外。telop_guideline.cta_expression=null、caption.cta=\"\"。E1はcta_type=DM誘導またはソフトCTAの場合のみ判定する。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=なしのため判定実施。テロップ4行（ナンバリング行除く）：「洗面所の床に」「バケツが一つ」「同じ場所のまま」「12年動かない」→全て事実の陳述。命令形・依頼形・勧誘形の行動指示なし。フォロー/保存/いいね/コメント/シェア/リンク遷移/DMへの指示なし。プロフィール言及なし。ソフトCTA相当の混入なし。DM誘導文の混入なし。caption本文も事実描写のみ。caption.cta=\"\"（空文字列）で誘導文なし。ハッシュタグは行動指示ではない。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ全5行に「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。DM誘導・ハードCTA一切なし。captionもcta_type=なしのためハードCTA不可であり、captionにも直接誘導なし（caption.cta=\"\"）。全cta_typeで禁止されるテロップ内ハードCTAは存在しない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文の語尾を確認：「置いてあります」「動いていません」「薄くなっています」「残っています」「ついています」「置かれています」→全てです・ます調で統一。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは取っ手の色の薄れ・持ち手の内側の跡・底の外側と床の境目の跡など外形の具体描写を含むが、テロップは「洗面所の床に」「バケツが一つ」「同じ場所のまま」「12年動かない」と場所・物・時間の視覚的軸を短く提示する構成。テロップはナレーションの転記・要約ではなく、ナレーション固有の外形描写（取っ手・持ち手・底）はテロップに出現しない。内容分離が成立。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝物の外形を淡々と眺める共感的描写（「少しずつ色が薄くなっています」「同じように薄い跡が残っています」「静かに置かれています」）。テロップ＝場所・物・状態・時間を端的に提示する論理的軸（「洗面所の床に」「バケツが一つ」「同じ場所のまま」「12年動かない」）。Type_Cの淡々とした温度の中で、ナレーション側が観察の共感を、テロップ側が事実の提示を担う役割分離が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "ep97.json caption各フィールドとcaption.mdを照合。hook_line「洗面所の床に、白いバケツが一つ置いてあります。」→一致。body「置き場所は、12年、動いていません。取っ手のあたりは色が薄くなっていて、底の外側には、床との境目にうっすらとした跡が残っています。今日も、同じ場所に、同じ形で置かれています。」→一致。cta=\"\"→caption.mdにCTA文なし→一致。hashtags 5個（#安全靴 #工場勤務 #12年の記録 #洗面所 #日常のひとコマ）→一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との照合：ep92（朝の玄関・安全靴に足を入れる）、ep93（通じる人と通じない人）、ep94（夕方の電車・立つ癖）、ep95（120本目の理由）、ep96（帰宅時・窓を開ける順番）。本回の素材（洗面所の床のバケツ・12年動かない位置・外形の跡）はいずれとも異なる。場面が自宅の3連続（ep92玄関/ep96部屋/ep97洗面所）だが、場所・素材・構文が全て異なるため素材重複には該当しない。注記：ep96着地「今日も、同じ順番で」とep97着地「今日も、同じ場所に、同じ形で」に構文パターンの類似があるが、素材・意味内容は異なるため重複とは判定しない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行：「洗面所の床に」（場所）、「バケツが一つ」（物）、「同じ場所のまま」（状態）、「12年動かない」（時間）→各行が独立して意味を持ち、1行で瞬時に理解可能。前後の行なしでも各行単体で場面の一側面が伝わる。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「洗面所の床に、白いバケツが一つ置いてあります。」→物の描写から即座に入り、背景説明（「この話は〜」「僕は〜年前から〜」等の前置き）は挟まない。narration_guideline.opening_approach「イン・メディアス・レス」の指定通り、途中からの描写開始を実装。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "婚姻制約チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "File.97（File.61以降）のため判定実施。ナレーション・テロップ・captionに妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。登場人物は暗黙の観察者（本人）のみ。洗面所の描写は「白いバケツが一つ」「取っ手」「持ち手」「底の外側」「床との境目」の物の外形のみで構成され、他人の持ち物・生活音・共用の暗示は一切ない。一人暮らしの洗面所として完全に成立。tone_and_rules.marriage_constraint「和男は未婚。妻・子ども・家族の話は使用禁止」に準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 24,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）"
+    }
+  ]
+}
