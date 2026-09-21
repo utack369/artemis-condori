@@ -1,0 +1,222 @@
+{
+  "ep_number": 100,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全体に「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。対策→効果の因果構造も存在しない。100本目の節目と受け手への実感のみで構成されている。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造は存在しない。100本の継続を対策・製品・良い結果と関連づけていない。ナレーションは節目の数の事実と受け手への実感だけで構成されており、製品・対策への言及自体がない。captionのctaも「送ってほしい」であり、対策・効果の暗示はない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感（今だけ/残りわずか等）・緊急性・煽りの表現は一切なし。「それだけで送ってほしい」は招待トーンであり購入圧力に該当しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・caption全体が和男の共感共闘トーン（静かな独白・本音の開示）で一貫。売り込みトーン・専門家トーンへの逸脱なし。「少し不思議な気持ちになります」「僕は思っています」等、共感共闘の和男ペルソナとして自然な語り。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全体に「変わった/変わる/変化した/変化があった/変化を感じた」は未使用。足元・体調文脈での使用なし。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master該当行のテーマ「100本目です。ここまで読んでいる人の顔が、なんとなく浮かびます」とナレーション内容が一致。ナレーション冒頭で「100本目です」と提示し、中盤で「ここまで読んでくれている人がいる」実感を述べ、「画面の向こうにいる人の顔が、なんとなく浮かびます」で着地。テーマ素材を正確に扱っている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装。弱さ・本音の正直な開示＝「誰の顔かは、わかりません」「顔はわからないまま」と不確かさを正直に認める弱さの開示。着地＝「そこにいる誰かのことを、僕は思っています」で、画面の向こうの受け手への想いを告白し、「この人に話したい」着地に自然に接続。Type_B化（気づきの整理）・Type_C化（場面の一点描写）への逸脱なし。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "pkg4設計図2段目・橋渡し「節目の1本。フェーズ1の締めとして最も自然なDM誘導」に整合。B2ブロックの意図「ここでは売り込まない」も遵守（製品・対策への言及なし）。節目のメタ回の純度確認：(1)書き続けている理由の言及・推量なし（File.120領域の先取りなし）、(2)実績誇張・自慢なし（「100本目です」は淡々とした事実提示）、(3)感謝の儀礼文なし（「ありがとう」等の語彙なし）、(4)先の本数・残り本数の言及なし。フェーズ1の締めとして受け手の存在の実感で閉じ、captionのDM誘導へ自然に橋渡ししている。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲:不要）のためskip。婉曲不要回ではC1は判定対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲:不要）のためskip。婉曲不要回ではC2は判定対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "制御ルール確認：婉曲チェック(C1/C2)はcaptionに適用していない。A群(正直さ)はcaptionにも適用済み（A1-A5で判定完了、全pass）。制御ルールの適用範囲に逸脱なし。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感入口。100本目という節目を、誇張せず淡々とした告白として提示するところから入る」が実現。ナレーション冒頭「100本目です。数字として見れば、ただの通し番号かもしれません。」で100本目の節目を誇張せず淡々と提示し、「かもしれません」の留保で弱さ・本音の共感入口として機能。Type_Aの入口として適切。Type_B（知的好奇心）・Type_C（日常の共感）ではない。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「『この人に話したい』着地。画面の向こうにいる読み手の顔が、なんとなく浮かぶという実感だけを静かに残し、captionのDM誘導へ自然に接続する」が実現。ナレーション末尾「顔はわからないまま、そこにいる誰かのことを、僕は思っています。」で受け手への想いを告白し、「この人に話したい」着地として機能。テロップ最終行「顔が浮かぶ」も出口を補強。captionのDM誘導「それだけで送ってほしい」へ自然に接続する構造。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「100本目という節目の数の事実と、画面の向こうで読んでいる人の顔がなんとなく浮かぶという抽象的な実感だけで構成された、フェーズ1を締めくくる和男の独白」に集約。台本全体が（1）100本目の数の事実→（2）受け手の顔が浮かぶ実感、の一本の導線で構成されており、2メッセージの混在なし。書き続ける理由・対策・製品・感謝など副次的メッセージの混入なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導。2面で判定。(1)テロップ実質最終行：ナンバリング行「安全靴と戦う12年の記録：File.100」を除いた実質最終行は「顔が浮かぶ」。telop_guideline.cta_expression「顔が浮かぶ」と完全一致し、事実陳述として機能。依頼形・勧誘形・DM言及なし。強圧的命令・取引型トーンなし。(2)caption.cta：「100本目です。ここまで見てくれた人がいたら、それだけで送ってほしい。」はep100.jsonのcaption.ctaおよびpkg4 8.1原文と完全一致。「いたら、それだけで送ってほしい」は招待トーンの依頼形であり、DM誘導回のcaptionとして許容。強圧的命令・取引型の餌付けトーンではない。CTA機能の欠落なし。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導（CTAあり回）のためskip。E2はcta_type=なしの場合のみ判定対象。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ全行確認：「安全靴と戦う12年の記録：File.100」（ナンバリング定型）・「100本目です」・「ここまで」・「読んでいる人」・「顔が浮かぶ」いずれも「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。依頼形・勧誘形・DM言及もテロップに一切なし。ナレーションにも依頼形・勧誘形・DM言及・ハードCTAなし。captionのcta「100本目です。ここまで見てくれた人がいたら、それだけで送ってほしい。」はDM誘導回のキャプションとして許容範囲（ハードCTAではなく招待トーンの依頼形）。captionのbodyにもハードCTAなし。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文の語尾確認：「です」「かもしれません」「なります」「わかりません」「浮かびます」「思っています」。全文「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは100本目の節目への気持ちと受け手への実感を文章で語る独白。テロップは「100本目です」「ここまで」「読んでいる人」「顔が浮かぶ」とキーワードを短く抽出した視覚的な軸。ナレーションの同一テキストの転記・要約ではなく、別内容として独立して機能している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：「少し不思議な気持ちになります」「僕は思っています」等、節目への驚きと受け手への想いを感情として語る。テロップ＝論理（気づき）：「100本目です」「ここまで」「読んでいる人」「顔が浮かぶ」と、事実と気づきを論理的な軸として短く提示。役割分離が機能している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "ep100.jsonのcaptionフィールドと照合。hook_line「100本目です。」→caption.md 1行目と一致。body「数字だけ見ると〜なんとなく浮かびます。」→caption.md 3-6行目と一致。cta「100本目です。ここまで見てくれた人がいたら、それだけで送ってほしい。」→caption.md 8行目と一致。hashtags 5個→caption.md 10行目と一致（#安全靴 #工場勤務 #12年の記録 #100本目 #顔が浮かぶ）。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との主題重複なし。ep95=120本への決意、ep96=帰宅時の窓開け順番、ep97=洗面所のバケツ、ep98=半歩下がる癖、ep99=人に会う回数の減少。ep100=100本目の節目と受け手への実感。全く異なる主題。追加確認：(a)着地構文の別形化＝ep100の着地「顔はわからないまま、そこにいる誰かのことを、僕は思っています。」は、ep96・97「今日も、同じ〜」型（「今日も」で始まらず「同じ」パターンでもない）、ep98「その〜は、まだ〜です」型（該当せず）、ep99「〜てみると、〜が伝わってきます」型（該当せず）のいずれとも別形。(b)ep95との切り分け＝ep95は先の本数（120本）への決意、ep100はここまで（100本）の受け手への実感。「120本」「見取り図」「先に言っておきます」未使用。(c)ep80との切り分け＝「消したい回」「読み返す」未使用。自分の過去投稿を振り返る場面に寄せていない。視線は画面の向こうの受け手にのみ向けている。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち、1行で瞬時に理解可能。「100本目です」（節目の事実）、「ここまで」（到達の示唆）、「読んでいる人」（受け手の提示）、「顔が浮かぶ」（実感の結び）。いずれも短く、文脈内で即座に理解できる。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「100本目です。」で事実提示から即座に入り、背景説明（なぜ100本書いたか、いつから始めたか等）を一切挟まない。opening_approach「イン・メディアス・レス。『100本目です。』という数の提示から即座に入り、背景説明を挟まない」に準拠。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "File.100（>60）のため判定対象。ナレーション・テロップ・caption全体に妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。登場人物は本人のみ。「読んでいる人」「そこにいる誰か」は抽象的な受け手像に留まり、特定人物化（妻・子ども・家族・同僚・友人・実在人物・性別・年齢・関係の名指し）は一切ない。「誰の顔かは、わかりません」と不特定性を明示的に保持。具体的な誰かの顔としての描写なし。家族・同居者の気配・生活音・物の配置による暗示も存在しない。tone_and_rules.marriage_constraint「和男は未婚。妻・子ども・家族（実家の親を除く）の話は使用禁止」に準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）"
+    }
+  ]
+}
