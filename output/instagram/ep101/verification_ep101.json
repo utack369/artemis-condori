@@ -1,0 +1,652 @@
+{
+  "ep_number": 101,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 3,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の断定表現がない。内容は12年前に外側ばかり手入れした理由の整理であり、対策X→効果Yの因果構造が成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造がない。「外側の手入れ」は対策・製品・良い結果と関連づけられておらず、過去の自分の判断の理由を説明する文脈に限定されている。転換（外側→内側）や正解の先取り（本当は内側だった）も混在していない。captionのCTA「外側だけを見ていた頃の記録も、そのまま残してあります。」は記録の存在の陳述であり、効果の暗示として機能しない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感（今だけ/残りわずか等）・緊急性・煽り表現がナレーション・テロップ・captionのいずれにも含まれていない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全体を通じて和男の共感共闘トーン（静かな振り返り・当時の自分を否定しない落ち着いた語り口）を維持している。「理由は単純で」「当時の自分にとって自然なことでした」「それが一番わかりやすかったからです」はいずれも売り込み・専門家トーンへの逸脱がなく、一人称の素直な回想として一貫している。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」が足元・体調文脈で使用されていない。語幹「変わ」「変化」「変え」の出現自体がゼロ。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master File.101のテーマ「12年前の僕が外側ばかり手入れしたのは、そこだけが目に見えたからです」に対し、ナレーション冒頭「12年前の僕は、外側ばかり手入れしていました。理由は単純で、そこだけが目に見えていたからです。」が直接対応している。テーマ素材（12年前・外側の手入れ・目に見えた理由）を正確に扱っている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_B（気づき・発見型）の心理構造を実装している。気づき・発見の提示＝「外側ばかり手入れしたのは、そこだけが目に見えていたから」という理由の整理を知的好奇心で拾える形で提示。着地＝理由だけを静かに示して閉じ、転換や正解を提示しないことで「もっと聞きたい」（続きへの興味）を残している。Type_Aの弱さ・本音の告白や、Type_Cの日常一点描写には寄っていない。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "設計図の配置の意図「3段目・主張：過去の自分の判断を正当だったと認める。3段目の『否定しない』を1本目で実行」と整合。ナレーションは過去の判断を責めず・笑わず・恥じず、「見えるところから手を付けるのは、当時の自分にとって自然なことでした」と当時の合理性を説明しており、主張枠として相応の強度で3段目の原則を実行している。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲:不要）のため、C1は判定対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲:不要）のため、C2は判定対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "婉曲チェック(C1/C2)はcaptionに適用しない制御が正しく機能している（本回は婉曲不要のためC1/C2自体がskip）。一方、A群(正直さ)はcaptionにも適用しており（A1〜A5すべてcaption含めて判定済み・全pass）、適用範囲の制御が正しい。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「知的好奇心入口」がナレーション冒頭で実現。「12年前の僕は、外側ばかり手入れしていました。理由は単純で、そこだけが目に見えていたからです。」で即座に「なぜ外側だけだったのか」という知的好奇心を喚起する切り口から入っている。Type_Bの入口（知的好奇心）と一致し、Type_A（弱さ・本音への共感）やType_C（日常の共感）の入口にはなっていない。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「『もっと聞きたい』着地」がナレーション末尾・テロップ全体に反映。ナレーション最終文「目に見えるものだけを頼りにしていたのは、それが一番わかりやすかったからです。」は理由の言い切りで静かに閉じ、転換や正解を提示しないことで「その後どうなったのか」という続きへの興味を残している。テロップ最終行「そこだけ見えていた」も同様に理由の結びで閉じ、「もっと聞きたい」着地を実現している。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「12年前の僕が外側ばかり手入れしていたのは、そこだけが目に見えていたからだという理由を、当時の自分を否定せず静かに説明する和男の気づき」に台本全体が集約できる。全6文がすべてこの1メッセージの展開であり、2つ目のメッセージ（転換の話・正解の先取り・内側への言及）は混在していない。理由の整理一本で構成されている。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTAとして判定。(1)テロップ：ナンバリング行「安全靴と戦う12年の記録：File.101」を除く実質最終行「そこだけ見えていた」はtelop_guideline.cta_expressionと完全一致し、事実の陳述として機能している。依頼形・勧誘形・二人称呼びかけ・プロフィール/リンク/DM言及がない。(2)caption CTA：「外側だけを見ていた頃の記録も、そのまま残してあります。」はep101.json caption.ctaと完全一致。記録の存在を陳述する事実文であり、依頼形・勧誘形ではない。テロップにプロフィール言及がないことはfail事由としない（Coordinator前提どおり）。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTAのため、E2（cta_type=なし専用）は判定対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導が含まれていない。テロップ全4行（ナンバリング含む5行）のいずれにもハードCTA文言がない。captionについても、本回はソフトCTA回であるためハードCTA不可だが、captionのCTA「外側だけを見ていた頃の記録も、そのまま残してあります。」は事実の陳述でありハードCTAに該当しない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全6文の語尾：「手入れしていました」「からです」「伸ばせます」「入りませんでした」「ことでした」「からです」。すべて「です・ます」調で統一されており、「だ・である」調の混在がない。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは6文で12年前に外側ばかり手入れした理由を詳細に展開（理由の提示→見える部分への手の伸ばしやすさ→他の場所の不可視性→当時の自然さ→わかりやすさ）。テロップは「12年前は／外側ばかり／手入れしてた／そこだけ見えていた」の4行で、キーワードを視覚的な軸として短く抽出している。ナレーションの転記・要約ではなく、別の表現形式で提示されている。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情(共感)：過去の自分の判断を否定せず「自然なことでした」「一番わかりやすかったからです」と共感的に語る和男の内面の声。テロップ＝論理(気づき)：「12年前は→外側ばかり→手入れしてた→そこだけ見えていた」と理由の論理的な骨格を短いフレーズで提示。役割が分離されている。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption各要素がep101.jsonのcaptionフィールドと完全一致。hook_line「12年前の僕は、外側ばかり手入れしていました。」＝caption.md 1行目と一致。body 3文＝caption.md 3-5行目と一致（改行で分割されているが内容同一）。cta「外側だけを見ていた頃の記録も、そのまま残してあります。」＝caption.md 7行目と一致。hashtags 5個＝caption.md 9行目と一致（#安全靴 #工場勤務 #12年の記録 #外側の記録 #目に見えるもの）。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との主題・場面・対策の重複なし。ep96＝帰宅時の窓開けの順番、ep97＝洗面所のバケツの定位置、ep98＝人と歩くとき半歩下がる、ep99＝人に会う予定の回数減少、ep100＝100本目の節目。ep101＝12年前に外側ばかり手入れした理由の整理。いずれとも主題・場面・対策が異なる。着地構文も別形化済み：ep96・97「今日も〜」型、ep98「その〜は、まだ〜です」型、ep99「〜てみると、〜が伝わってきます」型、ep100「〜ないまま、〜を思っています」型に対し、ep101は「〜からです。」の理由の言い切り型であり、いずれとも異なる。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行（「12年前は」「外側ばかり」「手入れしてた」「そこだけ見えていた」）はいずれも独立して意味を持ち、1行で瞬時に理解できる短いフレーズで構成されている。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「12年前の僕は、外側ばかり手入れしていました。」は背景説明なしに事実の提示から即座に入るイン・メディアス・レス構造。「この記録は〜」「安全靴を履き始めたのは〜」等の前置きがなく、行為の最中から語り始めている。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも妻・子ども・家族（実家の親を除く）の登場・存在の示唆がない。登場人物は本人のみ（現在の自分と12年前の自分）。人間関係の描写は一切なく、一人で靴の外側を手入れしていた過去の振り返りに終始している。配偶者・子の存在を暗示する描写（「家族が待っている」等）もない。tone_and_rules.marriage_constraint「和男は未婚。妻・子ども・家族（実家の親を除く）の話は使用禁止」を満たしている。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）"
+    },
+    {
+      "round": 2,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも、足元の悩み文脈で「効く/治る/消える/改善する/なくなる/解消」等の断定表現がない。「外側ばかり手入れしていたのは、そこだけが目に見えたからです」は過去の判断の理由の陳述であり、対策→効果の因果を断定形で成立させていない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造になっていない。「外側の手入れ」という行為は対策・製品・良い結果と関連づけられておらず、純粋に「なぜそうしていたか」の理由の整理に留まっている。caption CTA「外側だけを見ていた頃の記録も、そのまま残してあります。」も記録の存在の事実陳述であり、効果の暗示構造を持たない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも、限定感・緊急性・煽り（今だけ/残りわずか/早く試さないと等）が存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全体を通して「自然なことだったと思います」に代表される、和男の共感共闘トーン（静かな納得・当時の自分への穏やかな肯定）が一貫している。売り込みトーン・専門家トーンへの逸脱なし。過去の判断を責めない・笑わない・恥じない・間違いと断じない姿勢が維持されている。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」の語幹が足元・体調文脈で使用されていない。文脈判定として、紛らわしい使用も検出されなかった。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master File.101のテーマ素材「外側ばかり手入れした理由＝そこだけが目に見えた」をナレーションが正しく扱っている。本部是正指示どおり時点表現は「12年前」→「働き始めた頃」に置換済み。ナンバリング「安全靴と戦う12年の記録：File.101」とハッシュタグ「#12年の記録」は期間表現として従来どおり残されており、運用に合致。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_B（気づき・発見型）の心理構造を実装している。ナレーションは「なぜ外側ばかりだったか」という理由の気づきを一定テンポで情報提示し、知的好奇心で拾える構造。弱さ・本音の開示（Type_A的）でも日常の一点描写（Type_C的）でもなく、理由の整理という知的発見の提示。着地は理由を言い切る事実陳述にとどめ、「では見えていなかったものは何か」という続きへの興味を残しており、「もっと聞きたい」着地として機能。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "pkg4設計図の配置の意図「3段目・主張：過去の自分の判断を正当だったと認める。3段目の『否定しない』を1本目で実行」およびmeta.phase_roleと整合。ナレーション冒頭文「働き始めた頃の僕が、外側ばかり手入れしていたのは、そこだけが目に見えたからです。」と最終文「外側ばかり手入れしていたのは、そこだけが目に見えていたからです。」が近似の理由陳述で反復するサンドイッチ構造は、主張枠の強度として機能している。中盤で当時の合理性（意識して見ようとしなければ目に入らない・手を伸ばせる・自然なこと）を描写した後、同じ理由に静かに戻ることで、否定も転換もせず理由を据え置く主張の一貫性を担保。3段目ブロック1本目として前提を言語化する配置に相応の強度がある。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のためC1判定をskip。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のためC2判定をskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "婉曲チェック(C1/C2)はcaptionに適用しない制御が正しく維持されている（本epは婉曲不要でC1/C2自体がskipだが、制御ルールとして確認）。A群（正直さ）はcaptionにも適用済みでA1-A5すべてpass。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「知的好奇心入口」がナレーション冒頭で実現。冒頭文「働き始めた頃の僕が、外側ばかり手入れしていたのは、そこだけが目に見えたからです。」は、「なぜ外側ばかりだったのか」という理由の提示で視聴者の知的好奇心を引き込む構造。Type_Bの入口として正しく実装されており、Type_A的な弱さ・本音の開示やType_C的な日常の共感からは入っていない。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「もっと聞きたい着地」がナレーション末尾・テロップ全体に反映。ナレーション最終文「外側ばかり手入れしていたのは、そこだけが目に見えていたからです。」は理由を言い切る事実陳述にとどめ、否定も正解の提示（本当は内側だった等）もなく閉じている。テロップ最終行「そこだけ見えていた」も同様。「では見えていなかったものは何だったのか」「今はどうなのか」という続きへの興味を自然に残しており、Type_Bの「もっと聞きたい」出口として機能。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「当時の判断を否定せず受け止める和男の気づき」に台本全体が集約されている。ナレーション全5文は一貫して「なぜ外側ばかりだったか」の理由の整理のみを扱い、2メッセージの混在がない。「外側から内側へ」の転換構文・転換した日の言及・「本当は内側だった」という正解の先取りは含まれておらず、理由の整理一本で閉じている。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTA。テロップのナンバリング行「安全靴と戦う12年の記録：File.101」を除いた実質最終行「そこだけ見えていた」はtelop_guideline.cta_expression「そこだけ見えていた」と完全一致し、過去の状態を述べる事実の陳述として機能している。依頼形・勧誘形ではない。caption CTA「外側だけを見ていた頃の記録も、そのまま残してあります。」もep101.json caption.cta原文＋句点と完全一致し、記録の存在を述べる事実の陳述。DM誘導文言・ハードCTA・プロフィール/リンク直接誘導はテロップ・captionのいずれにもない。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTAのためE2判定をskip。E2はcta_type=なしの場合のみ判定対象。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ全行（ナンバリング行含む5行）に「プロフィールを見て/リンクから/今すぐ」等のハードCTA直接誘導がない。ソフトCTA回のcaptionにもハードCTA不可だが、caption CTA「外側だけを見ていた頃の記録も、そのまま残してあります。」は事実の陳述であり、ハードCTAに該当しない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全5文の語尾：「〜からです。」「〜ませんでした。」「〜伸ばせます。」「〜と思います。」「〜からです。」。すべて「です・ます」調で統一されており、「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは理由の整理を5文の文章で展開（理由提示→見えない場所→手を伸ばせる→自然なこと→理由の再陳述）。テロップは「外側ばかり/手入れした/目に見えた/そこだけ見えていた」と短い語句で視覚的なキーワードを独立提示。ナレーションの文をそのまま転記・要約したものではなく、テロップは別内容として機能している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情(共感)：「自然なことだったと思います」に代表される当時の自分への穏やかな肯定・静かな納得。テロップ＝論理(気づき・CTA)：「外側ばかり/手入れした/目に見えた」という理由の論理的要素の短い提示、最終行「そこだけ見えていた」がソフトCTAとして機能。役割分離が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.md各要素がep101.json captionフィールドと一致。hook_line「働き始めた頃の僕が、外側ばかり手入れしていたのは、そこだけが目に見えたからです。」＝一致。body「他の場所は、意識して見ようとしなければ、目に入りませんでした。見える部分になら気になればすぐに手を伸ばせたので、そこから手を付けるのは当時の自分にとって自然なことだったと今は思います。」＝一致。cta「外側だけを見ていた頃の記録も、そのまま残してあります。」＝一致。hashtags 5個（#安全靴 #工場勤務 #12年の記録 #外側だけ #働き始めた頃）＝順序含め一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との素材重複なし。ep96=帰宅時の窓開け順番、ep97=洗面所のバケツ、ep98=半歩下がる、ep99=人に会う予定の回数、ep100=100本目の節目。ep101=外側の手入れの理由。素材・場面・対策のいずれも異なる。着地構文も別形化されている：ep96・97「今日も、同じ〜」型、ep98「その〜は、まだ〜です」型、ep99「〜てみると、〜が伝わってきます」型、ep100「〜ないまま、〜を思っています」型に対し、ep101は「〜からです。」型（理由を言い切る事実陳述）で、4型のいずれとも異なる別形として成立。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち、1行で瞬時に理解できる。「外側ばかり」(4字)「手入れした」(4字)「目に見えた」(4字)「そこだけ見えていた」(8字)。いずれも10字以内で視認性に問題なし。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「働き始めた頃の僕が、外側ばかり手入れしていたのは、そこだけが目に見えたからです。」は背景説明なしで理由の提示から即座に入っており、イン・メディアス・レスとして成立。「工場に入った頃は〜」等の導入的背景説明を挟んでいない。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "File.101（>File.61）のため判定対象。ナレーション・テロップ・captionのいずれにも、妻・子ども・家族（実家の親を除く）の登場・存在の示唆がない。登場人物は本人のみ（現在の自分と働き始めた頃の自分）。人間関係は内面の範囲で構成されている。「家に帰っても一人」等の一人暮らし描写もなく、配偶者・子の存在を暗示する描写も一切ない。tone_and_rules.marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "本部段6照合の指摘（時点表現「12年前」→「働き始めた頃」）による再生成後の再検証（GO_fix101）"
+    },
+    {
+      "round": 3,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。「外側ばかり手入れしていた」は行為の描写であり、対策→効果の因果断定は成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造なし。外側の手入れは対策・製品・良い結果と関連づけられておらず、理由の整理に終始している。転換・正解の先取り（外側から内側へ・本当は内側だった）も含まれていない。captionのCTA「外側だけを見ていた頃の記録も、そのまま残してあります。」は記録の存在の陳述であり、製品やその効果への暗示ではない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り（今だけ/残りわずか/早く試さないと等）の表現はナレーション・テロップ・captionのいずれにも存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「自然なことだったと思います」に代表される、当時の判断を静かに受け止める語り口は和男の共感共闘トーンに合致。売り込みトーン・専門家トーンへの逸脱なし。captionも同一トーンを維持。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」の使用なし。足元・体調文脈での「変わ」語幹は検出されない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master File.101テーマ「12年前の僕が外側ばかり手入れしたのは、そこだけが目に見えたからです」に対し、本部是正指示の「12年前」→「気になり始めた頃」置換を適用済み。ナレーション冒頭「気になり始めた頃の僕が、外側ばかり手入れしていたのは、そこだけが目に見えたからです。」はテーマ素材（外側ばかり手入れした理由＝そこだけが目に見えた）と一致。ナンバリング「安全靴と戦う12年の記録：File.101」およびハッシュタグ「#12年の記録」は期間表現のため従来どおり使用で問題なし。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_B（気づき・発見型）の心理構造を実装。冒頭で「外側ばかり手入れしていたのは、そこだけが目に見えたからです」という気づきを提示し、中盤で当時の合理性を一定テンポで情報提示（「意識して見ようとしなければ、目に入りませんでした」「気になればすぐに手を伸ばせました」）、着地で理由を言い切る事実陳述にとどめ「もっと聞きたい」着地を実現。Type_Aの弱さ・本音の告白（後悔・自嘲なし）にもType_Cの一点描写にも寄っていない。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "pkg4設計図「3段目・主張：過去の自分の判断を正当だったと認める。3段目の『否定しない』を1本目で実行」と整合。ナレーション冒頭文「外側ばかり手入れしていたのは、そこだけが目に見えたからです」と最終文「外側ばかり手入れしていたのは、そこだけが目に見えていたからです」が近似の理由陳述で反復する構造は、中盤に当時の合理性の証拠（「自然なことだったと思います」）を挟み、冒頭と最終で理由を言い切る包み込み構造により「主張」枠の強度として機能している。過去の判断を責めない・笑わない・恥じない・間違いと断じない。後悔・自嘲・転換の先取りなし。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のため判定対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のため判定対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "本回は婉曲不要のためC1/C2自体がskipであり、captionへの婉曲チェック適用除外の制御は自明に満たされている。A群（正直さ）はcaptionにも適用済みで、全軸pass。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「知的好奇心入口」に合致。ナレーション冒頭「気になり始めた頃の僕が、外側ばかり手入れしていたのは、そこだけが目に見えたからです。」で理由の提示から即座に入り、視聴者の知的好奇心で拾う構造。Type_Aの弱さ・本音への共感から始まっておらず、Type_Bの知的好奇心入口として正しく実装。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「もっと聞きたい着地」に合致。ナレーション末尾「外側ばかり手入れしていたのは、そこだけが目に見えていたからです。」は理由を言い切る事実陳述にとどめ、転換・正解の提示をしないため「では内側はどうだったのか」という続きへの興味が残る。テロップ最終行「そこだけ見えていた」もソフトCTAの事実陳述として「もっと聞きたい」を残す構造。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "台本全体がone_message「気になり始めた頃の僕が外側ばかり手入れしていたのは、そこだけが目に見えたからだったという、当時の判断を否定せず受け止める和男の気づき」の一文に集約可能。2メッセージの混在なし。外側の手入れを対策・製品と関連づけておらず、転換・正解の先取り（外側から内側へ・本当は内側だった）が混在していない。理由の整理一本で統一されている。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTA。テロップのナンバリング行「安全靴と戦う12年の記録：File.101」を除く実質最終行「そこだけ見えていた」はtelop_guideline.cta_expressionと完全一致し、過去の状態を述べる事実陳述として機能。依頼形・勧誘形・ハードCTAなし。caption.cta「外側だけを見ていた頃の記録も、そのまま残してあります。」はpkg4 8.2原文＋句点と完全一致し、記録の存在の事実陳述。CTA行の欠落・cta_expressionとの不整合なし。テロップにプロフィール言及がないことはCoordinator前提によりfail事由としない。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTAのため、E2（cta_type=なしのみ判定）は判定対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ全6行（ナンバリング含む）に「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現なし。ソフトCTA回のcaptionにもハードCTA表現（プロフィールへの命令的誘導等）は含まれておらず、「そのまま残してあります」は事実陳述にとどまる。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全5文の語尾を確認。「〜からです。」「〜ませんでした。」「〜ました。」「〜思います。」「〜からです。」すべて「です・ます」調で統一。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは理由の整理を文章で展開。テロップは「気になり始め」「外側ばかり」「目に見えた」「手を伸ばせた」「そこだけ見えていた」と短い単語・フレーズでキーワードを列挙。ナレーションの同一テキストの転記・要約ではなく、別の表現形式で内容分離が実現されている。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：当時の判断を受け止める静かな納得の語り。「自然なことだったと思います」は共感的な肯定。テロップ＝論理（気づき・CTA）：「気になり始め」→「外側ばかり」→「目に見えた」→「手を伸ばせた」→「そこだけ見えていた」は理由の論理的流れを視覚的に整理し、最終行がソフトCTAとして機能。役割分離が実現されている。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.md各要素とep101.json captionフィールドを照合。hook_line「気になり始めた頃の僕が、外側ばかり手入れしていたのは、そこだけが目に見えたからです。」＝完全一致。body「他の場所は、意識して見ようとしなければ、目に入りませんでした。見える部分になら気になればすぐに手を伸ばせたので、そこから手を付けるのは当時の自分にとって自然なことだったと今は思います。」＝完全一致。cta「外側だけを見ていた頃の記録も、そのまま残してあります。」＝完全一致。hashtags 5つ（#安全靴 #工場勤務 #12年の記録 #外側だけ #気になり始めた頃）＝完全一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "主題（外側の手入れの理由＝そこだけが目に見えた）は直近5作と重複なし。ep96=帰宅時の窓開けルーティン、ep97=洗面所のバケツの一点描写、ep98=人と歩く時の半歩の癖、ep99=人に会う予定の回数が削られた、ep100=100本目の節目独白。いずれも場面・行為・中核語が異なる。着地構文「外側ばかり手入れしていたのは、そこだけが目に見えていたからです。」（〜からです。型）は、ep96・97の「今日も」型、ep98の「その〜は、まだ〜です」型、ep99の「〜てみると、〜が伝わってきます」型、ep100の「〜ないまま、〜を思っています」型のいずれとも別形。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ5行（ナンバリング除く）の文字数は実測で「気になり始め」6字/「外側ばかり」5字/「目に見えた」5字/「手を伸ばせた」6字/「そこだけ見えていた」9字。各行が独立した短いフレーズで、1行で瞬時に理解可能。全行10字以内。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「気になり始めた頃の僕が、外側ばかり手入れしていたのは、そこだけが目に見えたからです。」は理由の提示から途中に入る構造。背景説明（和男の経歴、安全靴との関わりの歴史等）を挟まず即座にフックを置いている。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。登場人物は本人のみ（現在の自分と気になり始めた頃の自分）。人間関係の描写は一切なく、内面の判断理由のみで構成されている。配偶者・子の存在を暗示する描写なし。tone_and_rules.marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "本部再是正指示（時点表現「働き始めた頃」→「気になり始めた頃」）による再生成後の再検証（GO_fix101b）"
+    }
+  ]
+}
