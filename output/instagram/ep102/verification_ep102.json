@@ -1,0 +1,223 @@
+{
+  "ep_number": 102,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全体で「効く/治る/消える/改善する/なくなる/解消」等の断定なし。「根性が足りないだけだという説明」は思い込みの開示であり、対策→効果の因果断定は成立していない。prohibited_words（13語）の語幹もナレーション・テロップ・captionのいずれにも未使用。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「根性」は思い込みの開示として使われており、対策・製品の当否や良い結果に結びつける因果・暗示は存在しない。ナレーション全体が「根性が足りないだけだという説明を自分にしてきた」という独白に留まり、「これを使えば解決する」「根性ではなく別の方法で良くなった」等の構造は一切ない。テロップ・captionも同様に、事実陳述・思い込みの開示の範囲に収まっている。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionに限定感・緊急性・煽り（今だけ/残りわずか/早く試さないと等）なし。caption CTA「同じ説明を自分にしていた人、DMで教えてください。」は共感の呼びかけであり購入圧力ではない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全文が和男の共感共闘トーン（穏やかな独白）で一貫。「恥じても、笑ってもいません。」は過去の自分への穏やかな受け止めであり、売り込みトーン・専門家トーンへの逸脱なし。caption CTAも招待トーンの依頼形であり、共感共闘の範囲内。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionに「変わった/変わる/変化した/変化があった/変化を感じた」の使用なし。honesty_rule.changed_prohibition準拠。足元・体調文脈での使用も皆無。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「一番長く信じていたのは、根性が足りないだけだという説明でした」がナレーション冒頭文「一番長く信じていたのは、根性が足りないだけだという説明でした。」と完全一致。ナレーション全体がこのテーマの開示で構成されている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装。弱さ・本音の正直な開示：「根性が足りないだけだという説明を自分で自分にしてきた」という思い込みの告白が中心。「否定しない」の実装：「恥じても、笑ってもいません。」により後悔・自嘲・自己断罪を明示的に排除。転換・正解の先取りなし：「本当は根性の問題ではなかった」等の転換構文・別の真因の特定は不在。着地「ただ、根性が足りないだけだという説明を、僕はいちばん長く信じていました。」は事実を静かに言い切る独白であり、「この人に話したい」着地として成立。Type_B（気づき整理）やType_C（一点描写）への寄りもない。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P4中盤3段目ブロック2本目「体験」枠として、最も長く握っていた思い込みの開示は深い共感層を担う回にふさわしい強度・方向。時系列カノン遵守：「12年前」「◯年前」「◯年目」等の時点表現なし、「働き始めた頃」なし、退職への言及なし。「12年」はテロップのナンバリング行「安全靴と戦う12年の記録：File.102」にのみ出現し勤務年数（期間）の文脈として適正。File.101採用語「気になり始めた頃」も未使用。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のため、C1は判定対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のため、C2は判定対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "婉曲不要回のためC1/C2は既にskip。婉曲チェックのcaptionへの非適用は自明。一方、A群（正直さ）はcaptionにも適用済み（A1-A5のtarget_file=multipleで確認）。制御ルールの適用範囲は適切。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感入口。一番長く信じていた思い込みを、静かな独白として開示するところから入る」に合致。ナレーション冒頭「一番長く信じていたのは、根性が足りないだけだという説明でした。」は背景説明を挟まず、最も長く信じていた思い込みを静かに開示する弱さ・本音の共感入口として成立。Type_Aの入口に適合し、Type_B（知的好奇心）やType_C（日常の共感）の入口ではない。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exit「この人に話したい」着地に合致。ナレーション末尾「ただ、根性が足りないだけだという説明を、僕はいちばん長く信じていました。」は、思い込みを否定せず恥じず笑わず静かに言い切る独白であり、この正直さが「この人に話したい」と思わせる出口として成立。テロップ実質最終行「一番長く信じた」も独白の結びを短く示し、caption CTA「同じ説明を自分にしていた人、DMで教えてください。」への自然な接続が成立。Type_B（もっと聞きたい）やType_C（人柄の深い理解）の出口ではない。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「一番長く信じていたのは、根性が足りないだけだという説明だったという思い込みを、否定せず静かに受け止める和男の独白」に集約可能。ナレーション全体が「根性が足りないだけだという説明を一番長く信じていた」という一つのメッセージで構成され、副次的テーマや2つ目のメッセージの混在なし。「それ以上深く考えずに済む、手近で、それなりに筋が通って見える言い方だった」は当時の合理性の描写であり、一つの思い込みの開示を深める要素として1メッセージの範囲内。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導回。テロップのナンバリング行「安全靴と戦う12年の記録：File.102」を除いた実質最終行「一番長く信じた」がtelop_guideline.cta_expression「一番長く信じた」と完全一致し、DM/プロフィール言及なし・依頼形/勧誘形/二人称呼びかけなしの事実陳述として機能。caption.cta「同じ説明を自分にしていた人、DMで教えてください。」はpkg4 8.1原文+句点であり、招待トーンの依頼形（強圧的命令でない）として適切。本部標準（ep93確立・ep100適用）に基づき、テロップ実質最終行=cta_expressionの事実陳述+caption.ctaの両面でCTA実装が成立。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導のため、E2（cta_type=なしのみ判定）は判定対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ全行（「安全靴と戦う12年の記録：File.102」「一番長く」「信じていた」「根性が足りない」「という説明」「一番長く信じた」）に「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。テロップにDM誘導文言・プロフィール言及・強圧的命令は不在。DM誘導回のcaptionにおけるCTA「DMで教えてください。」はv3スキーマcaption.cta準拠でキャプションのみに配置されており許容。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション語尾：「〜でした。」「〜きました。」「〜思います。」「〜ません。」「〜ました。」すべて「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーション=思い込みの開示を独白として長文叙述（当時の合理性の描写、恥じ・笑いの否定を含む）。テロップ=「一番長く」「信じていた」「根性が足りない」「という説明」「一番長く信じた」の短い視覚的キーワードとして、思い込みの骨格を分解提示。ナレーションの転記・要約ではなく、別の情報提示形式として機能。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：「誰かに言われたわけではなく、自分で自分にそう説明してきました」「恥じても、笑ってもいません」等の内省・共感の独白。テロップ＝論理（気づき）：思い込みの構造を「一番長く」「信じていた」「根性が足りない」「という説明」と視覚的に分解し、論理的な気づきの軸を提示。CTA機能は実質最終行「一番長く信じた」の事実陳述が担う。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.md各要素がep102.json captionフィールドと完全一致。hook_line：caption 1行目「一番長く信じていたのは、根性が足りないだけだという説明でした。」=指示書caption.hook_line。body：caption 3-5行目「誰かに言われたわけではなく〜恥じても、笑ってもいません。」=指示書caption.body。cta：caption 7行目「同じ説明を自分にしていた人、DMで教えてください。」=指示書caption.cta。hashtags：caption 9行目「#安全靴 #工場勤務 #12年の記録 #根性論 #思い込み」=指示書caption.hashtags（5タグ全一致）。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作の素材：ep97（洗面所バケツ・12年動かない定位置）、ep98（人と並ぶ半歩後ろ・距離感）、ep99（人に会う予定の減少・手帳の空白）、ep100（100本目の節目・読者への思い）、ep101（外側ばかり手入れ・目に見えるところ）。ep102素材「根性が足りないだけだという思い込みの開示」は完全に異なりテーマ重複なし。着地構文別形化：ep102「ただ、〜を、僕はいちばん長く〜ました。」は、ep96-97「今日も、同じ〜」型・ep98「その〜は、まだ〜です」型・ep99「〜てみると、〜が伝わってきます」型・ep100「〜ないまま、〜を思っています」型・ep101「〜からです。」型のいずれとも異なる別形。ep101切り分け語（外側・手入れ・気になり始めた頃・目に見え）：いずれもep102に未使用。P3 File.73切り分け語（「12年間で一番」「たぶん」）：いずれもep102に未使用。「一番長く」はテーマ由来として使用可であり、File.73「12年間で一番」とは構文が異なる。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行「一番長く」（4字）「信じていた」（4字）「根性が足りない」（6字）「という説明」（4字）「一番長く信じた」（6字）はいずれも独立して意味を持ち、1行で瞬時に理解可能。テロップmax10字/行の制約内で視認性良好。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「一番長く信じていたのは、根性が足りないだけだという説明でした。」は背景説明（「僕は工場で12年働いていて〜」等）を挟まず、思い込みの開示から即座に入るイン・メディアス・レス構造。冒頭2-3秒で「一番長く信じていた思い込みの提示」というフックが成立。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "File.102>File.60のため判定対象。ナレーション・テロップ・captionに妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。登場人物は本人のみ。「自分で自分にそう説明してきました」「恥じても、笑ってもいません」は一人称の内省であり、配偶者・子の存在を暗示する描写（「家族が待っている」等）は不在。tone_and_rules.marriage_constraint「和男は未婚」に準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "round1一発Pass（beta合格100点・confidence 0.92後の独立検証）"
+    }
+  ]
+}
