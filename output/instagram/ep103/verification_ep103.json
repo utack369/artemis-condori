@@ -1,0 +1,223 @@
+{
+  "ep_number": 103,
+  "euphemism_required": true,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionの全文に「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。小瓶の外形描写と「捨てるという判断は、まだしていません」という事実陳述のみで構成されており、対策→効果の因果構造そのものが存在しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋caption全体を通じ、小瓶を対策・製品・良い結果に結びつける因果・暗示は一切ない。小瓶の本数・高さ・透け方・ラベルの向き・蓋・乾き方という物の外形描写のみ。「これを使えば解決する」と読み取れる構造は不在。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現なし。判断を保留した物の描写のみで、購入を急かす文脈は皆無。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「棚に、使いかけの小瓶が並んでいます。」に始まる淡々とした観察が全文を貫き、和男の共感共闘トーンの範囲内。売り込み・専門家トーン・指導的トーンへの逸脱なし。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionの全文に「変わった/変わる/変化した/変化があった/変化を感じた」の使用なし。足元・体調文脈での使用もなし。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「使いかけの小瓶が棚に並んだまま、まだ捨てられずにいます」に対し、ナレーションは棚に並んだ使いかけの小瓶の外形描写と「捨てるという判断は、まだしていません」で構成。テーマ素材を忠実に扱っている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_C（日常スケッチ型）の心理構造を実装。日常の淡々とした描写（棚の小瓶の本数・高さ・透け方・ラベル・蓋・乾き方）に徹し、気づきの整理（Type_B化）・内面の独白（Type_A化）に寄っていない。着地は物の外形の提示で完結し、人柄の深い理解に至る構造。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "配置の意図「3段目・体験。思い込みの物証。捨てられない理由は言わない。ブレット担当」に対し、ナレーションは理由を語らず物の外形描写のみで思い込みの物証を静かに提示。ブレット的な一点描写に徹しており、phase_roleの「前提を書き換え、基準を出す」の土台となる共感を適切な強度で担っている。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "prohibited_direct 13語（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）のいずれもナレーション・テロップに未使用。小瓶の外形描写のみで、何のための小瓶かも言語化されていないため、直接表現の文脈的使用もない。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "婉曲の核「物の外形描写だけで構成し、何の瓶か・何のために買ったか・どう使うものか・中身が何であるかはいずれも言語化しない」に完全に準拠。本数・背の高さ・残量の透け方・ラベルの向き・蓋の閉まり方・表面の乾き方という外形のみ。小瓶の中身・用途・商品種別の名指しなし。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "婉曲チェック(C1/C2)はcaptionに適用していない。A群(正直さ)はcaptionにも適用済み（A1-A5すべてpass）。制御ルールどおりの適用範囲。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「日常の共感入口。棚に使いかけの小瓶が並んだまま残っているという、何気ない物の描写から入る」に対し、ナレーション冒頭は「棚に、使いかけの小瓶が並んでいます。」で即座に物の描写に入る。Type_Cの日常の共感入口を正確に実現。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「人柄の深い理解。小瓶の本数と外形だけを静かに残し、捨てられない理由を明かさないまま、判断を保留したままの状態への理解だけで完結させる」に対し、着地文「五本は、それぞれ違う高さのまま、棚に残っています。」は理由を語らず、物の外形を提示して静かに閉じている。Type_Cの人柄の深い理解に至る出口を実現。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「棚に使いかけの小瓶が並んだまま、まだ捨てるという判断をしていない、という和男の静かな観察」に対し、ナレーション全体が物証の一点描写一本で構成。捨てられない理由の説明・内面解説・感情の名指し（未練・後悔・迷い等）は一切なく、2メッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=なしのため、E1（CTA実装の適切性）は判定対象外。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=なしの回として判定。テロップ4行（棚に並ぶ/使いかけの瓶/五本ある/捨てられず）はすべて事実描写・事実陳述であり、特定行動（フォロー・保存・いいね・コメント・シェア・リンク遷移・DM）への命令形・依頼形・勧誘形による指示なし。captionもcta空文字列で本文は描写と事実陳述のみ。DM誘導文の混入なし。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。DM言及なし。テロップ4行＋ナンバリング行はすべて物の描写・事実陳述。captionにもハードCTA不在（cta_type=なしの回のためcaptionでもハードCTA不可であり、混入なし）。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全8文の語尾を確認：「並んでいます」「五本です」「違います」「見えます」「閉まっています」「乾いています」「しません」「残っています」。すべて「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは8文の詳細な外形描写（高さの違い・光にかざした透け方・ラベルの向き・蓋の閉まり方・表面の乾き方）で構成。テロップは「棚に並ぶ/使いかけの瓶/五本ある/捨てられず」の4行キーワード。ナレーションの詳細描写（透け方・ラベル・蓋・乾き等）はテロップに含まれず、同一テキストの転記ではない。テロップは視覚的な軸として独立した短句で機能。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情(共感)軸：物の外形を「光にかざすと」「きちんと閉まっています」「どれも乾いています」と静かに観察し、共感を醸成する描写。テロップ＝論理(気づき)軸：「棚に並ぶ」「使いかけの瓶」「五本ある」「捨てられず」と事実のキーワードで気づきを提示。Type_Cの一点描写回として、ナレーションの情感的描写とテロップの事実的キーワード提示で役割が分離。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.md各要素とep103.jsonのcaptionフィールドを照合。hook_line「棚に、使いかけの小瓶が並んでいます。」=一致。body「数えると、五本です。背の高さはそれぞれ違い、光にかざすと中身の残りがわずかに透けて見えます。捨てるという判断は、まだしていません。」=一致。cta=空文字列=一致（captionにCTA文なし）。hashtags 5個「#安全靴 #工場勤務 #12年の記録 #棚の風景 #日常のひとコマ」=一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作（ep98:半歩の距離/ep99:人に会う回数/ep100:100本目/ep101:外側の手入れ/ep102:根性という説明）とep97（洗面所のバケツ）との素材・場面・着地構文を照合。ep103の素材「棚の使いかけの小瓶」は全作と異なる。ep97（物の一点描写）との比較：ep97=洗面所の床のバケツ（現役・12年動いていない位置）、ep103=棚の使いかけの小瓶（役目を終えかけて残る物）。物の性質で書き分け済み。着地「五本は、それぞれ違う高さのまま、棚に残っています。」は6型すべてと別形：(1)「今日も、同じ〜」型(ep96・97)=「今日も」不使用・「同じ」非主軸、(2)「その〜は、まだ〜です」型(ep98)=「その」型ではなく「五本は」で立てる、(3)「〜てみると、〜が伝わってきます」型(ep99)=不使用、(4)「〜ないまま、〜を思っています」型(ep100)=不使用、(5)「〜からです。」型(ep101)=文末「残っています。」、(6)冒頭文の反復クローズ型(ep102)=冒頭「棚に、使いかけの小瓶が並んでいます。」と着地「五本は、それぞれ違う高さのまま、棚に残っています。」は別文。主語を本数で立て外形の差異を静かに言い切る新しい7つ目の型。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ全4行が独立して意味を持ち、瞬時に理解可能。「棚に並ぶ」(4字)=場面提示、「使いかけの瓶」(6字)=物の明示、「五本ある」(4字)=事実、「捨てられず」(5字)=状態。各行10字以内で完結。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「棚に、使いかけの小瓶が並んでいます。」は背景説明（「〜年前」「働き始めた頃」等）を挟まず、物の描写から即座に入るイン・メディアス・レス。冒頭2-3秒で物の提示というフックを実現。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraintチェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionの全文に、妻・子ども・家族の登場・存在の示唆なし。登場は本人の視点のみ（「数えると」「光にかざすと」等の本人の観察行為）。他者の名指し・気配を一切置かず、一人暮らしの日常で物を眺める場面に徹している。marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 24,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "round1一発Pass（beta合格・confidence 0.85後の独立検証）"
+    }
+  ]
+}
