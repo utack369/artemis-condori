@@ -1,0 +1,223 @@
+{
+  "ep_number": 105,
+  "euphemism_required": true,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の断定表現がない。休憩室に入る前に外に出るという行動の癖を描写するのみで、対策・製品・結果への因果接続が一切ない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造がない。癖の描写に終始し、外の空気に当たる行為を良い結果に結びつける因果・暗示がない。CTA「職場で同じことをしている人がいたら、聞かせてください。」も体験の共有を求めるのみ。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り表現（今だけ/残りわずか/早く試さないと等）がナレーション・テロップ・キャプションのいずれにも存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全文が和男の共感共闘トーンで統一されている。「僕にはずっとありました」「理由を話したことは一度もありません」「体だけが先に、外へ向かうだけです」等、静かな独白・告白のトーンが一貫。売り込み・専門家トーンへの逸脱がない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションに「変わった/変わる/変化した/変化があった/変化を感じた」が足元・体調文脈で使用されていない。changed_prohibition準拠。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master該当行のテーマ「休憩室に入る前、一度外の空気に当たってから戻る癖がありました」と、ナレーション冒頭「休憩室に入る前に、一度だけ外に出て、外の空気に当たってから戻ります。そんな癖が、僕にはずっとありました。」が正確に一致。テーマ素材を忠実に扱っている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装。弱さ・本音の正直な開示として「誰かに理由を話したことは一度もありません」という、誰にも言えなかった行動を静かに打ち明ける構造。着地「何ごともなかったように、また働き始めます」は理由を閉じずに行動だけを残し、「この人に話したい」という感情を生成する。Type_Bの気づき整理やType_Cの一点描写に寄っていない。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "pkg4 3段目「橋渡し」枠として、職場での行動の癖を言い切らずに4段目へ橋渡しする役割を果たしている。理由・結論・自己分析で閉じず、「中身」「量」「選ぶ」「最初に見る」「基準」も使用していない。行動の描写と継続事実の提示で止まっており、meta.phase_roleと整合。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "婉曲:要。euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）のいずれもナレーション・テロップに使用されていない。外の空気に当たる目的・理由が一切言語化されておらず、行動の外形描写のみで構成されている。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "婉曲:要。直接表現を一切使わず、「外の空気に当たってから戻る」という行動外形のみで場面を構成。何を確かめているか・何を気にしているかを一切言語化しないことで、直接表現の回避が達成されている。conversion_tableの語も不要な文脈（そもそも悩みの名を出していない）。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2の婉曲チェックはcaptionに適用していない。A群（正直さ）はcaptionにも適用済み。適用範囲の制御が正しく機能。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感入口。誰にも話したことのない小さな行動を静かに開示するところから入る」が実現。ナレーション冒頭で「休憩室に入る前に、一度だけ外に出て、外の空気に当たってから戻ります。そんな癖が、僕にはずっとありました。」と行動を開示し、Type_Aの弱さ・本音への共感から入っている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「この人に話したい」着地が実現。理由を語らないまま「少し外で息をしてから戻り、何ごともなかったように、また働き始めます。」と行動が今も続いている事実だけを残して閉じている。caption CTA「職場で同じことをしている人がいたら、聞かせてください。」への自然な接続が成立。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "台本全体が「休憩室に入る前に一度外に出て、外の空気に当たってから戻るという癖を、理由を語らないまま静かに続けている和男の日常」という1メッセージに集約できる。第2のメッセージ（教訓・分析・提案等）の混在がない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導。(1)テロップ実質最終行「外に出てから戻る」はtelop_guideline.cta_expression「外に出てから戻る」と逐語一致し、短い事実陳述として機能。テロップにDM/プロフィール言及・依頼形・勧誘形・二人称呼びかけなし。(2)caption CTA「職場で同じことをしている人がいたら、聞かせてください。」は指示書caption.ctaの原文と句点含め逐語一致。招待トーンの依頼形として機能し、強圧的命令・取引型の餌付けトーンなし。(3)ナレーション・テロップに誘導文言なし。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導のため、E2（cta_type=なしのみ適用）は対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップ全5行（ナンバリング含む）に「プロフィールを見て/リンクから/今すぐ」等の直接誘導、DM言及、強圧的命令が一切ない。テロップは場面提示と行動描写の短文のみで構成。DM誘導回のcaption CTA「聞かせてください。」は招待トーンであり許容範囲。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全5文の語尾：「戻ります」「ありました」「ありません」「だけです」「始めます」。すべて「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは感情を伴う独白（理由を話したことがない、体だけが先に向かう等の内面描写）。テロップは「休憩室の前で」「外に出る」「外の空気に当たる」「外に出てから戻る」と行動の視覚的アンカーのみ。ナレーションの転記・要約ではなく別内容として機能。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：「僕にはずっとありました」「理由を話したことは一度もありません」「体だけが先に」等の一人称の告白・内面描写。テロップ＝論理（気づき）：「休憩室の前で→外に出る→外の空気に当たる→外に出てから戻る」と行動の論理的シーケンスを視覚提示。役割が分離している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.md各要素がep105.jsonのcaptionフィールドと逐語一致。hook_line「休憩室に入る前に、一度だけ外に出る癖がありました。」一致。body「理由を誰かに聞かれたことはありません。扉の前まで来ると、体が先に、外へ向かうだけです。それから戻って、何ごともなかったように、また働き始めます。」一致。cta「職場で同じことをしている人がいたら、聞かせてください。」句点含め一致。hashtags 5個の順序・表記も一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との素材重複なし。ep100=100本目の節目、ep101=外側の手入れ、ep102=根性の説明、ep103=使いかけの小瓶、ep104=対策の数と前提。ep105=休憩室前で外に出る癖。主題・場面・対策が異なる。着地「少し外で息をしてから戻り、何ごともなかったように、また働き始めます。」は禁止8型（今日も同じ型/その〜まだ型/〜てみると型/〜ないまま型/〜からです型/反復クローズ型/本数主語型/抽象主語型）のいずれにも該当しない新しい第9の型（人称主語による次の行動描写クローズ型）。「癖」は本文中1回のみで必要最小限。ep94の場面（通勤・車内）の持ち込みなし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち、1行で瞬時に理解可能。「休憩室の前で」(5字)「外に出る」(4字)「外の空気に当たる」(8字)「外に出てから戻る」(8字)。いずれも10字以内で視認性良好。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「休憩室に入る前に、一度だけ外に出て、外の空気に当たってから戻ります。」が行動の途中から始まっている。背景説明（「僕は12年工場で働いていて」等）を挟まず、行動の提示から即座に入るイン・メディアス・レス構成。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionに妻・子ども・家族（実家の親を除く）の登場・存在の示唆がない。登場人物は「僕」のみ。同僚・上司など他者の気配も置かれていない。「家に帰っても一人」等の描写もなく、一人称の行動描写に終始。tone_and_rules.marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 24,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep105_round1.json）の全25軸を reason・target_file を含め欠落なく転記"
+    }
+  ]
+}
