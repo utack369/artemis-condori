@@ -1,0 +1,223 @@
+{
+  "ep_number": 106,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体を通じて「効く/治る/消える/改善する/なくなる/解消」等の断定が足元の悩み文脈で使われていない。「中身の量を見ない」「選ばなくなりました」は自分の選択基準の事実陳述であり、対策X→効果Yの因果断定ではない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "Coordinator重点確認済。「量を見ない」ことを良い結果・上達・製品効果に接続する構造がない。ナレーション「量が多くても、それだけでは選ばなくなりました」「今の僕が見ているのは、量とは別のところです」はいずれも行動基準の変化の事実陳述にとどまり、「楽になった」「改善した」「上手くいった」等の良い結果への接続は一切ない。テロップ・キャプション含め「これを使えば解決する」と読み取れる構造は存在しない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体に限定感・緊急性・煽り（今だけ/残りわずか/早く試さないと等）が一切ない。基準の入り口を静かに提示するのみ。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "和男の共感共闘トーン（気にならなくなった・保証しない・よかったら）から逸脱なし。売り込みトーン・専門家トーンへの逸脱がない。「以前は〜確かめていました」「安心していた時期もあります」等、当事者の淡々とした振り返りで一貫している。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体に「変わった/変わる/変化した/変化があった/変化を感じた」は未使用。「選ばなくなりました」は行動の変化を示すがchanged_prohibition禁止語（変わ/変化/変え）には該当しない別語幹。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマ一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master該当行のテーマ「今の僕が何かを選ぶ時、最初に見るのは中身の量ではありません」をナレーション冒頭文で逐語的に扱い、台本全体がこのテーマに沿って展開している。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の意味的実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_B（気づき・発見型）の心理構造を適切に実装。入口＝「中身の量ではありません」という否定形の気づきの提示で知的好奇心を喚起。出口＝「何を見ているかは、まだ言葉にしていません。それだけは、はっきりしています。」で答えを明かさず「もっと聞きたい」着地を実現。Type_Aの弱さ・本音の独白やType_Cの一点描写には寄っていない。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P4中盤4段目ブロック（File.106-110）の1本目＝「主張」枠としての強度・方向が整合。「今の僕が何かを選ぶ時、最初に見るのは中身の量ではありません」を現在形で静かに言い切り、基準①の入り口を主張として提示している。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲:不要）のためskip。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲:不要）のためskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2がskip（婉曲不要）のため、適用範囲制御としてのC3も判定不要。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry=知的好奇心入口。ナレーション冒頭「今の僕が何かを選ぶ時、最初に見るのは中身の量ではありません。」で否定形の基準提示から即座に開始し、視聴者の知的好奇心（では何を見るのか？）を喚起。Type_Bの入口として適切に実装。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit=「もっと聞きたい」着地。ナレーション末尾「何を見ているかは、まだ言葉にしていません。それだけは、はっきりしています。」で答えを明かさず事実陳述にとどめ、続きへの興味を残したまま閉じており、Type_Bの出口を適切に実装。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "Coordinator重点確認済。one_message=「今の僕が何かを選ぶ時、最初に見るのは中身の量ではないという基準の入り口に、和男が静かに立っている今」に一本化。台本全体が「量を見ない→以前は量を見ていた→量では選ばなくなった→何を見ているかはまだ言葉にしていない」と一貫して基準①の提示（何を見ないか）のみ。「何を見ているか」の答え・具体的着眼点の先取りはない。「量とは別のところです」は量を見ないことの裏返し表現であり具体的着眼点（質・素材等）の示唆ではない（narration_guideline参考例文にも同一表現を含む承認済み文言）。2メッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=ソフトCTA。テロップのナンバリング行「安全靴と戦う12年の記録：File.106」を除いた実質最終行「量では見ない」はtelop_guideline.cta_expression「量では見ない」と一致し、事実の陳述として機能。依頼形・勧誘形でなくソフトCTAの要件を満たす。キャプションのcta「何を見ているかの続きは、プロフィールにまとめています。」はCoordinator明示渡し原文と逐語一致（句点含む）。陳述形でありハードCTAではない。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTA（CTA存在回）のため、E2（cta_type=なしのみ適用）はskip。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "Coordinator重点確認済。テロップ全5行（ナンバリング行含む）に「プロフィールを見て/リンクから/今すぐ」等の直接誘導・ハードCTA文言なし。テロップ最終行「量では見ない」も事実の陳述でありCTA文言ではない。キャプションのcta「プロフィールにまとめています」は陳述形でありハードCTA（命令形・強圧的指示）ではない。ソフトCTA回のcaptionにハードCTAは不可だが、本caption.ctaは陳述形のため合格。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "Coordinator重点確認済。ナレーション全7文の語尾を確認：「ではありません」「確かめていました」「時期もあります」「選ばなくなりました」「別のところです」「言葉にしていません」「はっきりしています」。全文がです・ます調で統一。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは文章形式で基準の入り口を感情込みで語る構成。テロップは「中身の量ではない」「量の多さを見ていた」「量では選ばない」「量では見ない」と短いキーワード/フレーズで論理軸を抽出。同一テキストの直接転記ではなく、表現形式・粒度が異なるため分離が成立。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）面を担当：「安心していた時期もあります」「まだ言葉にしていません」等、当事者としての内面の語り。テロップ＝論理（気づき）面を担当：「中身の量ではない」「量では選ばない」等、基準の論理的ポイントの提示。役割分離が機能。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.md各要素とep106.jsonのcaptionフィールドを照合：hook_line「今の僕が何かを選ぶ時、最初に見るのは中身の量ではありません。」逐語一致。body「以前は、目の前にある量の多さを真っ先に確かめていました。それだけで安心していた時期もあります。今は、量が多くても、それだけでは選ばなくなりました。」逐語一致。cta「何を見ているかの続きは、プロフィールにまとめています。」逐語一致（句点含む）。hashtags 5個完全一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "Coordinator重点確認済。直近5作（ep101:外側の手入れ、ep102:根性が足りないという説明、ep103:棚の使いかけの小瓶、ep104:対策は多いほどいい、ep105:休憩室の前で外に出る癖）とep106（選ぶ基準としての中身の量）は素材・場面・対策いずれも重複なし。ep104の「多いほど」は対策の数の話であり、ep106の「中身の量」とは異なる素材。着地構文「それだけは、はっきりしています。」は指示語主語による確言クローズ型（第10の形）であり、Coordinator指示の9型（「今日も、同じ〜」型／「その〜は、まだ〜です」型／「〜てみると、〜が伝わってきます」型／「〜ないまま、〜を思っています」型／「〜からです。」型／冒頭文との反復クローズ型／本数主語の外形言い切り型／抽象主語＋動詞言い切り型／人称主語の次行動描写クローズ型）のいずれとも異なる。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行（ナンバリング行除く4行）がそれぞれ独立して意味を持ち、1行で瞬時に理解可能。「中身の量ではない」「量の多さを見ていた」「量では選ばない」「量では見ない」いずれも文脈なしで即座に把握できる短文。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「今の僕が何かを選ぶ時、最初に見るのは中身の量ではありません。」で背景説明なく基準の入り口の否定形提示から即座に開始。イン・メディアス・レスの要件を満たす。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "婚姻制約チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "Coordinator重点確認済。File.106（File.61以降）。ナレーション・テロップ・caption全体に妻・子ども・家族（実家の親を除く）の登場・存在の示唆が一切ない。登場人物は本人（僕）のみ。配偶者・子の存在を暗示する描写（「家族が待っている」等）もなし。人間関係は内面の範囲で構成されており、tone_and_rules.marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep106_round1.json）の全25軸を reason・target_file を含め欠落なく転記"
+    }
+  ]
+}
