@@ -1,0 +1,223 @@
+{
+  "ep_number": 107,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文に「効く/治る/消える/改善する/なくなる/解消」等の効果断定は未使用。「言えます」「埋まっていきました」「驚きました」「伝えるようにしています」はすべて自分の状態・行動の事実記述であり、対策X→効果Yの因果断定は成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTA全体で「これを使えば解決する」と読み取れる構造は不在。ナレーションは「合わない条件の方が先に言える」という自分の内側の事実の開示に留まり、テロップは条件の対比を視覚的に提示するのみ。captionのCTA「合わない条件の方が知りたい人は、DMでどうぞ。」も効果・改善への接続はなし。Coordinator重点確認事項：「合わない条件を言えること」が信頼・成果・上達・良い結果・製品効果に接続されていないことを確認。着地は「先に伝えるようにしています」という習慣の開示のみで、その結果としての良い帰結への言及は皆無。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文に限定感・緊急性・煽り（今だけ/残りわずか/早く試さないと等）は一切含まれていない。むしろ「誰にでも、とは言いません」は対象を狭める姿勢の表明であり、購入圧力の正反対。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "ナレーション全体が和男の共感共闘トーンを維持。自分の内側の事実を静かに開示する独白調で、売り込みトーン・専門家トーンへの逸脱は不在。「誰にでも、とは言いません」は対象を狭める姿勢の表明であり、和男の正直さの範囲内。自己評価語（正直だから等）への逸脱もない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文に「変わった/変わる/変化した/変化があった/変化を感じた」および語幹「変わ」「変化」「変え」は一切未使用。足元・体調文脈での紛らわしい使用も不在。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master File.107行のテーマ「合う人の条件より、合わない人の条件の方をはっきり言えます」に対し、ナレーション冒頭「合う人の条件より、合わない人の条件の方を、僕ははっきり言えます。」がテーマを正確に実装している。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を正しく実装。弱さ・本音の正直な開示＝合う条件を書き出そうとして言葉にならなかったという弱さの開示、合わない条件だけが先に埋まったという意外な事実の独白。着地＝「誰にでも、とは言いません。合わない条件の方から、先に伝えるようにしています。」で具体的内容を明かさないまま閉じ、captionのDM誘導への「この人に話したい」接続が自然に成立。Type_Bの情報提示やType_Cの情景スケッチへの逸脱なし。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.phase_role「P4中盤4段目ブロック（File.106-110）の2本目＝体験枠、de-sellingの核」に対し、台本は過去の体験（合う条件を紙に書き出そうとして言葉にならなかった経緯）を中心に構成し、de-selling（合わない条件の方を先に伝える姿勢）を静かに実装。体験枠として適切な強度。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=「直接表現可」（婉曲:不要）の回のため、C1は判定対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=「直接表現可」（婉曲:不要）の回のため、C2は判定対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2がともにskip（婉曲不要）のため、適用範囲制御としてのC3も適用不要。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感入口。合う人の条件より、合わない人の条件の方を、僕ははっきり言えるという、自分でも意外だった内側の事実を静かに開示するところから入る」に対し、ナレーション冒頭「合う人の条件より、合わない人の条件の方を、僕ははっきり言えます。」がType_Aの弱さ・本音への共感入口として正確に実装されている。背景説明を挟まず即座に事実提示から入っている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「この人に話したい着地。合わない条件の中身は明かさないまま、その姿勢だけを恒常の習慣として言い切り、captionのDM誘導へ自然に接続する」に対し、ナレーション末尾「誰にでも、とは言いません。合わない条件の方から、先に伝えるようにしています。」が条件の中身を一切明かさず恒常の習慣として着地し、captionの「合わない条件の方が知りたい人は、DMでどうぞ。」への「この人に話したい」接続が自然に成立している。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「合う人の条件より、合わない人の条件の方を、僕ははっきり言えるという事実を、具体的な内容は明かさないまま静かに抱えている今」に台本全体が一本化されている。2メッセージの混在なし。de-selling純度の確認：合わない条件の具体的な内容・個数・カテゴリ・示唆は0件。対象（製品・用途）の名指しも皆無。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導。テロップのナンバリング行「安全靴と戦う12年の記録：File.107」を除いた実質最終行「先に伝える」がtelop_guideline.cta_expression「先に伝える」と逐語一致し、事実陳述として機能。テロップにDM誘導文そのものは置かず（E3遵守）、DM誘導はcaptionに集約。caption.md 7行目「合わない条件の方が知りたい人は、DMでどうぞ。」がep107.json caption.cta「合わない条件の方が知りたい人は、DMでどうぞ。」およびCoordinator明示渡し原文と句点含め逐語一致。招待トーンで強圧的命令・餌付けトーンなし。CTA行の欠落なし。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "E2はcta_type=なしのみ適用の軸。本回はcta_type=DM誘導（CTA存在回）のため判定対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ全4行（合う条件より／合わない条件／先に埋まる／先に伝える）に「プロフィールを見て/リンクから/今すぐ/DM」等の直接誘導は不在。DM誘導回のcaptionのハードCTA「合わない条件の方が知りたい人は、DMでどうぞ。」はv3スキーマcaption.cta準拠で許容範囲内。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全6文の語尾を1文ずつ確認。(1)「僕ははっきり言えます。」→ます (2)「なかなか言葉になりませんでした。」→でした (3)「すんなり先に埋まっていきました。」→ました (4)「自分でも少し驚きました。」→ました (5)「誰にでも、とは言いません。」→ません (6)「先に伝えるようにしています。」→います。全文「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは感情を伴う独白（紙に書き出そうとした、言葉にならなかった、少し驚いた、誰にでもとは言わない）で展開。テロップは「合う条件より／合わない条件／先に埋まる／先に伝える」と短い視覚的な軸で構成。ナレーションの同一テキストの転記・要約ではなく、別内容として機能している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：内側の事実の開示、過去の経緯の感情的な描写（言葉にならなかった、驚いた、誰にでもとは言わない）。テロップ＝論理（気づき）：条件の対比構造（合う条件より→合わない条件→先に埋まる→先に伝える）を視覚的に提示。役割分離が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.md各要素とep107.json captionフィールドの照合：hook_line「合う人の条件より、合わない人の条件の方を、はっきり言えます。」→逐語一致。body「以前は、合う条件がなかなか言葉になりませんでした。それなのに、合わない条件の方だけは、先に埋まっていきました。誰にでも、とは言いません。」→一致（改行形式の差異のみ、テキスト同一）。cta「合わない条件の方が知りたい人は、DMでどうぞ。」→逐語一致（句点含む）。hashtags「#安全靴 #工場勤務 #12年の記録 #合わない条件 #はっきり言う」→5タグ全て一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との素材重複なし。ep102=根性が足りないという説明、ep103=棚の使いかけの小瓶、ep104=対策は多いほどいいという前提、ep105=休憩室前の外の空気、ep106=選ぶとき最初に見るのは量ではない。ep107=合わない条件の方が先に言える。テーマ・素材・場面・対策すべて独立。着地構文の別形化確認：本回の着地「合わない条件の方から、先に伝えるようにしています。」は第11形「人称主語の恒常的な習慣の言い切り（〜ようにしています）型」。回避すべき10型（ep96-97今日も同じ型/ep98その〜まだ型/ep99〜てみると型/ep100〜ないまま型/ep101〜からです型/ep102冒頭反復クローズ型/ep103本数主語型/ep104抽象主語型/ep105人称主語の次行動描写型/ep106指示語主語の確言型）のいずれとも異なることを確認。ep105との区別：ep105は特定の一場面の直後の行動描写、本回は特定場面に紐づかない恒常の習慣（「〜ようにしています」）。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ全4行（合う条件より／合わない条件／先に埋まる／先に伝える）がそれぞれ独立して意味を持ち、最長5文字で瞬時に理解可能。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「合う人の条件より、合わない人の条件の方を、僕ははっきり言えます。」が背景説明なしに事実の提示から即座に入っている。「以前は〜」という状況説明や「足元の悩みを抱えて12年〜」等の導入は挟まず、途中から始まるイン・メディアス・レスが成立。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文に妻・子ども・家族（実家の親を除く）の登場・存在の示唆は一切なし。登場人物は本人（僕・自分）のみ。「誰にでも、とは言いません」は不特定多数への言及であり特定の他者（同僚・友人含む）の存在を示唆しない。人間関係は内面の範囲で完結。tone_and_rules.marriage_constraint「和男は未婚。妻・子ども・家族の話は使用禁止」に準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep107_round1.json）の全25軸を reason・target_file を含め欠落なく転記"
+    }
+  ]
+}
