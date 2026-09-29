@@ -1,0 +1,248 @@
+{
+  "ep_number": 109,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション・テロップ・caption全体",
+          "reason": "「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。「続く/続かない」は対策の継続性についての記述であり、足元の悩み文脈での効果の断定には該当しない。「手間の少なさに表れていました」も効果ではなく継続性の観察。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション＋テロップ＋caption CTA全体",
+          "reason": "台本全体が「続けられるかどうかを手間の回数で測る」という基準の提示に徹し、具体的な製品・対策の名指しがない。「手間が少ないから続く」を「続くから良い結果になる」へ接続する因果構造もない。captionCTA「測り方の話は、プロフィールから読めます。」は事実の陳述であり、「これを使えば解決する」とは読み取れない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション・テロップ・caption全体",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現なし。全体が基準の提示と経験の外形の語りに終始している。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション全体",
+          "reason": "「僕は」「僕の場合」「気持ちの強さは、あまり関係ありませんでした」等、一人称の体験語りに終始。売り込みトーン・専門家トーンへの逸脱なし。「気にならなくなった・保証しない・よかったら」に代表される和男の共感共闘トーンと一貫している。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション冒頭「測るようになりました」",
+          "reason": "「変わった/変わる/変化した/変化があった/変化を感じた」の語幹はナレーション・テロップ・caption全体に含まれていない。「〜ようになりました」は測り方という行動の習慣化の記述であり、体・状態への言及や結果の暗示ではないため、honesty_rule.changed_prohibitionの対象外（本部裁定）。冒頭1回のみの使用であり、乱用もない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション冒頭「続けられるかどうかを、僕は手間の回数で測るようになりました。」",
+          "reason": "design_masterのテーマ「続けられるかどうかを、僕は手間の回数で測るようになりました」とナレーション冒頭が完全一致。ナレーション全体もこのテーマ（基準②の提示）を12年の実例の外形で展開しており、テーマ逸脱なし。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション全体の構造",
+          "reason": "Type_B（気づき・発見型）の心理構造を実装。冒頭で「手間の回数で測る」という基準（気づき・発見）を提示し、12年の実例の外形を一定テンポの情報として淡々と示し、測り方の具体を明かさないまま仮定節クローズで「もっと聞きたい」着地を実現。Type_Aの内面独白やType_Cの日常スケッチには寄っていない。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション全体",
+          "reason": "P4中盤フェーズ2・4段目ブロック（File.106-110）の4本目＝「証拠」枠。基準②「手間の回数で測る」を、12年の中に手間が少なくて続いたものと手間が多くて続かなかったものの両方があったという経験の外形で裏付けており、「証拠」枠としての強度・方向が整合。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "location": "",
+          "reason": "meta.euphemism=直接表現可（婉曲:不要）のため、C1はskip。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "",
+          "reason": "meta.euphemism=直接表現可（婉曲:不要）のため、C2はskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "location": "caption.md全体",
+          "reason": "婉曲チェック(C1/C2)はcaptionに適用しない制御ルールの確認。本回は婉曲不要回でもあり、C1/C2自体がskip。A群(正直さ)はcaptionにも適用済み（A1-A5全pass）。適用範囲の制御は正しく運用されている。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション冒頭「続けられるかどうかを、僕は手間の回数で測るようになりました。」",
+          "reason": "psychology.entry「知的好奇心入口。続けられるかどうかを手間の回数で測る、という基準の提示から、視聴者の知的好奇心で拾う」と合致。冒頭で基準②を即提示し、知的好奇心を喚起する入口を実現。Type_Bの入口（知的好奇心）として適切。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション末尾「手間が増えるなら、続けられません。」／テロップ最終行「増えるなら続かない」",
+          "reason": "psychology.exit「もっと聞きたい着地。測り方の具体には触れないまま、手間が増えるなら続けられない、という仮定節の言い切りにとどめ、続きへの興味を残したまま閉じる」と合致。具体的な測り方を明かさず仮定節クローズで静かに閉じており、「もっと聞きたい」着地が実現。Type_Bの出口として適切。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション全体",
+          "reason": "one_message「続けられるかどうかを、僕は自分の12年の実例から、手間の回数で測るようになった、という基準②の提示」に台本全体が集約。基準②の提示以外のメッセージ（別テーマ・別基準・製品言及等）は混在していない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "テロップ実質最終行「増えるなら続かない」",
+          "reason": "cta_type=ソフトCTA。ナンバリング行「安全靴と戦う12年の記録：File.109」を除いた実質最終行「増えるなら続かない」は事実の陳述に留まっている。依頼形・勧誘形ではない。cta_expression「増えるなら続かない」とも完全一致。ep17「まだ続きがあります」と同等の事実言い切り型ソフトCTA。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "location": "",
+          "reason": "cta_type=ソフトCTA（CTA存在回）のため、E2（cta_type=なしのみ適用）はskip。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "テロップ全5行・caption CTA行",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。テロップ内にプロフィール言及・DM誘導・行動要求は一切なし。captionCTA「測り方の話は、プロフィールから読めます。」は陳述形（「読めます」）であり、命令形「読んでください」「見てください」ではないためハードCTAに該当しない。ソフトCTA回のcaptionとして適切。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション全7文",
+          "reason": "全文の語尾を確認：「測るようになりました」「あります」「あります」「ものです」「表れていました」「ありませんでした」「続けられません」。すべて「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション vs テロップ",
+          "reason": "ナレーションは感情を含む一人称の体験語り（「僕は」「僕の場合」「気持ちの強さは、あまり関係ありませんでした」等）。テロップは「続くかは手間の回数」「少ない手間で続いた」「多い手間は途切れた」「増えるなら続かない」と論理的キーワードに凝縮。同一テキストの転記・要約ではなく、別内容として構成されている。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション（感情・共感）vs テロップ（論理・気づき）",
+          "reason": "ナレーション＝感情(共感)：「僕は」「どちらも、僕が自分で続けようとしたものです」「気持ちの強さは、あまり関係ありませんでした」等の共感的語り。テロップ＝論理(気づき)：「続くかは手間の回数」「少ない手間で続いた」「多い手間は途切れた」「増えるなら続かない」の論理的対比構造。役割分離が実現。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "location": "caption.md全体（6行＋hashtags行）",
+          "reason": "ep109.jsonのcaptionフィールドと逐語照合：hook_line「続けられるかどうかを、僕は手間の回数で測るようになりました。」=一致、body「12年の中には、手間が少なくて続いたものがあります。手間が多くて続かなかったものも、あります。」=一致、cta「測り方の話は、プロフィールから読めます。」=逐語一致（句点含む・Coordinator明示のpkg4 8.2原文と一致）、hashtags 5個=一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "直近5作（ep104-108）との比較",
+          "reason": "ep109主題「続けられるかどうかを手間の回数で測る（基準②）」は、ep104（対策の数・前提の疑い）・ep105（休憩室前の外気の癖）・ep106（選ぶ基準・量ではない＝基準①）・ep107（合わない条件を先に伝える）・ep108（毎朝の引き出しルーティン）のいずれとも素材・場面・対策が重複しない。着地構文「手間が増えるなら、続けられません。」は条件節クローズ（仮定の「〜なら」＋言い切り）型＝第13の形であり、既往12型（ep96-108）すべてと異なる新規形であることを確認。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "location": "テロップ4行（ナンバリング行除く）",
+          "reason": "「続くかは手間の回数」「少ない手間で続いた」「多い手間は途切れた」「増えるなら続かない」の各行が独立して意味を持ち、1行で瞬時に理解できる。対比構造（少ない/多い、続いた/途切れた）が視覚的に明瞭。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション冒頭「続けられるかどうかを、僕は手間の回数で測るようになりました。」",
+          "reason": "背景説明（「12年間工場で働いてきて〜」等）を挟まず、基準②の提示から即座に始まっている。途中から始まる構造（イン・メディアス・レス）が実現。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraintチェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション・テロップ・caption全体",
+          "reason": "File.109（File.61以降）のため判定対象。登場人物は「僕」のみ。ナレーション・テロップ・captionに妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。人間関係は内面の範囲（自分の経験の振り返り）で完結。配偶者・子の存在を暗示する描写もなし。tone_and_rules.marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep109_round1.json）の全25軸を reason・target_file を含め欠落なく転記"
+    }
+  ]
+}
