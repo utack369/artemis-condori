@@ -1,0 +1,245 @@
+{
+  "ep_number": 110,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション冒頭『基準が決まってから、店の棚の前で迷う時間が短くなりました。』",
+          "reason": "「効く/治る/消える/改善する/なくなる/解消」等の断定語はナレーション・テロップ・captionのいずれにも存在しない。「短くなりました」は店の棚の前での行動の外形（選ぶ場面にかける時間）の帰結であり、体・状態への効果の断定ではない（本部裁定に基づく）。「対策X→効果Y」の因果構造も成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション全文＋テロップ全行＋caption全文",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造は存在しない。「短くなりました」は「基準が決まった」という判断の持ち方の帰結としてのみ語られており、製品・対策の働きへの接続はない。「短くなりました」は冒頭テーマ提示部の1回のみ。体まわりの結果への暗示接続もない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション・テロップ・caption全文",
+          "reason": "限定感（今だけ/残りわずか等）・緊急性・煽りの表現はナレーション・テロップ・captionのいずれにも存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション『僕は静かに受け止めています』『手を伸ばすだけです』、caption『まだ迷っていますか。』",
+          "reason": "全文を通じて和男の共感共闘トーン（気にならなくなった・保証しない・よかったら系のトーン）を維持。売り込みトーン・専門家トーンへの逸脱はない。caption CTA『棚の前で迷う人、まだ迷っていますか。』は疑問形の呼びかけであり、招待トーンの範囲内。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック（文脈判定）",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション・テロップ・caption全文",
+          "reason": "「変わった/変わる/変化した/変化があった/変化を感じた」の語はナレーション・テロップ・captionのいずれにも使用されていない。「短くなりました」はchanged_prohibitionの対象外（行動の外形の帰結であり、本部裁定に基づく）。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション冒頭『基準が決まってから、店の棚の前で迷う時間が短くなりました。』",
+          "reason": "design_masterのテーマ『基準が決まってから、店の棚の前で迷う時間が短くなりました』とナレーション冒頭が逐語一致（句点追加のみ）。ナレーション全体がこのテーマの帰結を独白として展開しており、テーマ素材を正確に扱っている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション『決められない自分が、そこに立っていました』→『棚の前では、手を伸ばすだけです。』",
+          "reason": "Type_A（告白・独白型）の心理構造を実装。弱さ・本音の正直な開示（決められないまま眺めていた自分の告白）から始まり、『この人に話したい』着地（最小の動作で静かに閉じる→captionのDM誘導への自然な接続）を実現。一人称『僕』による内面の独白形式。Type_B（気づき・発見型）やType_C（日常スケッチ型）への寄りはない。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション全体の構成",
+          "reason": "phase_roleに「4段目ブロック（File.106-110）の5本目＝『橋渡し』枠。帰結を『迷う時間』の外形で示し、5段目へ渡す回」とあり、ナレーションは基準が決まった帰結を棚の前の迷う時間の外形で静かに示している。橋渡しに相応しい静かな強度。フェーズ3の先取り・次回予告めいた文言もなく、File.111先取り語（その足で・買い物・寄り道・帰った日）も不使用。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のため、C1は判定対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のため、C2は判定対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "location": "caption全文",
+          "reason": "婉曲チェック（C1/C2）はcaptionに適用されない制御ルールが正しく適用されている。A群（正直さ）はcaptionにも適用済み（A1-A5の各軸で確認）。婉曲不要回のため実質的なC1/C2判定は発生しないが、制御ルールの適用方針は正しい。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション冒頭『基準が決まってから、店の棚の前で迷う時間が短くなりました。ずらりと続く棚を、端から端まで目で追っていた頃があります。決められない自分が、そこに立っていました。』",
+          "reason": "psychology.entryに定義された『弱さ・本音への共感入口。棚の前で決められずに眺めていた自分を、基準が決まってからという事実から静かに開示する』をナレーション冒頭で実現。テーマの言い切りから入り、棚を眺めていた過去→決められない自分の告白という構成で弱さ・本音を共感入口として開示。Type_Aの入口として整合。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "location": "ナレーション末尾『基準が決まったことを、僕は静かに受け止めています。棚の前では、手を伸ばすだけです。』、テロップ最終行『手を伸ばすだけ』、caption CTA『棚の前で迷う人、まだ迷っていますか。』",
+          "reason": "psychology.exitに定義された『この人に話したい着地。棚の前では手を伸ばすだけ、という最小の動作で静かに閉じ、captionのDM誘導へ自然に接続する』をナレーション末尾・テロップ最終行・caption CTAの全体で実現。最小の動作の言い切り→DM誘導の疑問形呼びかけという導線がType_Aの出口として機能。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション全文",
+          "reason": "one_message『基準が決まってからの帰結（棚の前の迷う時間）を、基準の中身には触れないまま静かに置く』に集約される内容。ナレーション全体が棚の前の時間の帰結を一本の軸で語り、基準そのものの説明・測り方への軸割れがない。2メッセージの混在は確認されない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "location": "テロップ実質最終行『手を伸ばすだけ』、caption CTA『棚の前で迷う人、まだ迷っていますか。』",
+          "reason": "cta_type=DM誘導。テロップのナンバリング行（安全靴と戦う12年の記録：File.110）を除いた実質最終行『手を伸ばすだけ』はtelop_guideline.cta_expression『手を伸ばすだけ』と逐語一致。telop_guidelineの設計（最終行はCTA文言ではなく事実陳述）に従い、DM誘導はcaption.ctaで実装。caption CTA『棚の前で迷う人、まだ迷っていますか。』はep110.json caption.cta原文およびCoordinator明示渡し原文と逐語一致（句点含む）。疑問形・二人称呼びかけ型の招待トーンであり、強圧的命令・取引型の餌付けトーンではない。CTA行の欠落・cta_expressionとの不整合なし。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導のため、E2（cta_type=なしのみ適用）は判定対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "テロップ全行『基準が決まった/棚の前の時間/眺めていた頃/手を伸ばすだけ』",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ/DM」等の直接誘導は存在しない。4行（ナンバリング除く）はすべて事実陳述・描写のフレーズ。DM誘導回だがテロップにハードCTAは不可であり、その条件を満たしている。captionのCTA『棚の前で迷う人、まだ迷っていますか。』は疑問形の呼びかけであり、DM誘導回のキャプションとして許容範囲（ハードCTAはDM誘導回のキャプションのみ許容）。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション全6文の語尾：短くなりました/あります/立っていました/過ぎていきました/受け止めています/だけです",
+          "reason": "ナレーション全文が「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション（完全な独白文）vs テロップ（短いフレーズ4行：基準が決まった/棚の前の時間/眺めていた頃/手を伸ばすだけ）",
+          "reason": "テロップはナレーションのキーワードを視覚的な軸として短く抽出した別内容。ナレーションの文をそのまま転記・要約したものではない。ナレーションは感情を込めた独白、テロップは骨格のフレーズという分離が成立。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション（感情・共感の独白）vs テロップ（論理・気づきの視覚軸）",
+          "reason": "ナレーション＝感情（共感）：『決められない自分が、そこに立っていました』『僕は静かに受け止めています』等の内面の共感描写。テロップ＝論理（気づき・CTA）：『基準が決まった』『棚の前の時間』『手を伸ばすだけ』という状態・行動の論理的な提示。役割分離が適切に実装されている。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "location": "caption.md全文",
+          "reason": "caption各要素がep110.json captionフィールドと逐語一致。hook_line『基準が決まってから、店の棚の前で迷う時間が短くなりました。』一致。body『棚の前で、決められないまま眺めていた頃があります。時間だけが過ぎていきました。』一致。cta『棚の前で迷う人、まだ迷っていますか。』一致（句点含む・Coordinator明示渡し原文とも逐語一致）。hashtags 5タグ（#安全靴 #工場勤務 #12年の記録 #棚の前 #基準）一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション主題：基準が決まってからの棚の前の迷う時間の帰結",
+          "reason": "直近5作との主題比較：ep105（休憩室前の行動パターン）・ep106（選び方の基準＝量ではない何か）・ep107（合う/合わない条件の言語化）・ep108（毎朝の引き出しルーティン）・ep109（継続の基準＝手間の少なさ）。ep110は「棚の前の迷う時間の帰結」であり、ep106と「基準」という語は共有するが場面（ep106=選ぶ場面の視点、ep110=棚の前の時間の外形）が異なり素材重複には該当しない。着地型の重複確認：第14形『〜だけです。』型は既往13型（File.96-109の各着地型）のいずれとも異なる新型であり、着地型の重複なし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "location": "テロップ4行（ナンバリング除く）：基準が決まった(6字)/棚の前の時間(6字)/眺めていた頃(6字)/手を伸ばすだけ(7字)",
+          "reason": "各行が独立して意味を持ち、1行で瞬時に理解できる短いフレーズ。文の分割や続きを要する構成ではない。telop_max_chars_per_line=10以内に全行収まっている。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション冒頭『基準が決まってから、店の棚の前で迷う時間が短くなりました。』",
+          "reason": "ナレーション冒頭が背景説明ではなく、テーマの帰結を言い切りで即座に提示。narration_guideline.opening_approachの『イン・メディアス・レス。テーマの言い切りから即座に入り、背景の語りは挟まない』に整合。冒頭2-3秒で帰結のフックを置く構成。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraintチェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション・テロップ・caption全文",
+          "reason": "File.110（>File.60）のため判定対象。ナレーション・テロップ・captionの全文において、妻・子ども・家族（実家の親を除く）の登場・存在の示唆は一切ない。登場人物は本人（僕）のみ。『棚の前で迷う人』は読者への二人称呼びかけであり、家族の言及ではない。人間関係は内面の独白の範囲で構成されており、marriage_constraintを満たしている。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep110_round1.json）の全25軸を reason・target_file を含め欠落なく転記"
+    }
+  ]
+}
