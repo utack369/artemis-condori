@@ -1,0 +1,223 @@
+{
+  "ep_number": 111,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文に「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。寄り道の場面を描写するのみで、対策X→効果Yの因果構造は成立していない。寄り道できた理由も一切語られていない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの全体構成で「これを使えば解決する」と読み取れる構造はない。寄り道の場面を淡々と描写するのみで、製品・対策への言及、何かが良くなったから寄り道できたという暗示もゼロ。因果の遮断が完全に実装されている。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り表現（今だけ/残りわずか/早く試さないと等）が本文・テロップ・captionのいずれにも存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全文が和男の共感共闘トーン（内面の独白・静かな回想）で一貫している。売り込み・専門家トーンへの逸脱なし。「ふっと曲がりました」「のんびり歩いて帰りました」等、和男の淡々とした語り口が維持されている。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "変わった禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文に「変わった/変わる/変化した/変化があった/変化を感じた」は未使用。「違う方へ」は帰り道の方向の記述であり「変わった」の代替表現ではない。足元・体調文脈での使用は皆無。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「作業を終えたその足で買い物に寄って帰った日のこと」に対し、ナレーション冒頭「作業を終えて、その足で買い物に寄って帰った日のことです。」が忠実に対応。全文が当該テーマの場面描写に終始。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造が実装されている。弱さ・本音の正直な開示=直帰しなかった日の場面を理由を語らず内面の独白で静かに描写。出口=「この人に話したい」着地が「あの日の出来事は、帰り道と小さな袋で、全部です。」の静かな総括からcaptionのDM誘導「そのまま寄り道して帰った日がある人、いますか。」への自然な接続で実現されている。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P4後半フェーズ3初回・5段目ブロック1本目「主張」枠として、時間の再配分の記録を「直帰しなかった日の描写のみ」で静かに主張する強度・方向が配置の意図と整合。因果を語らない抑制的なトーンが「主張」枠の初回として適切。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のためskip。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のためskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "婉曲チェック(C1/C2)はcaptionに適用されていない（適用範囲の制御どおり）。A群(正直さ)はcaptionにも適用済みで全pass。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感入口。直帰しなかった日の自分を、理由を添えないまま静かに開示する」がナレーション冒頭「作業を終えて、その足で買い物に寄って帰った日のことです。」で実現。理由を添えず場面を静かに提示しており、Type_Aの弱さ・本音への共感入口として機能している。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「この人に話したい着地。帰り道と小さな袋という最小の事実で静かに閉じ、captionのDM誘導へ自然に接続する」がナレーション末尾「あの日の出来事は、帰り道と小さな袋で、全部です。」で実現。因果に触れず最小の事実で閉じ、captionのcta「そのまま寄り道して帰った日がある人、いますか。」への接続が自然に成立。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「作業帰りにそのまま買い物へ寄った日の記録」一本に集約。台本全体が寄り道の場面のみを描写し、理由・はたらき・これからの話・別のメッセージへの軸の分散がない。2メッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導。テロップのナンバリング行「安全靴と戦う12年の記録：File.111」を除いた実質最終行「帰り道と小さな袋」がtelop_guideline.cta_expression「帰り道と小さな袋」と逐語一致。設計指示どおり事実陳述として機能し、captionのDM誘導「そのまま寄り道して帰った日がある人、いますか。」への橋渡しが成立。強圧的命令・取引型の餌付けなし。captionのctaはep111.json caption.cta原文「そのまま寄り道して帰った日がある人、いますか。」と句点含め逐語一致。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導のためskip（E2はcta_type=なしのときのみ判定対象）。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップ全5行（ナンバリング含む）に「プロフィールを見て/リンクから/今すぐ/DM/送って/フォロー/いいね/コメント/シェア」等の直接誘導なし。テロップ最終行「帰り道と小さな袋」は事実陳述でありCTA文言ではない。DM誘導回でもテロップにハードCTAは置かれていない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全6文の語尾を確認：「〜のことです。」「〜曲がりました。」「〜ませんでした。」「〜感じられました。」「〜帰りました。」「〜全部です。」全てです・ます調で統一。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは内面の独白（感覚・体験の描写：ふっと曲がった、何も探していなかった、空気が広く感じられた）。テロップは場面のランドマークを名詞句・体言止めで視覚的軸として提示（作業を終えて／その足で買い物へ／まだ明るい空／帰り道と小さな袋）。同一テキストの転記ではなく、語形・構造が異なる。telop_guideline指示「ナレーションの独白をそのまま文字化せず視覚的な軸に短く提示する」どおりの分離が実装されている。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：内面の独白として寄り道の体験を感覚的に語る（「ふっと曲がりました」「何も探していませんでした」「空気が少し広く感じられました」「のんびり歩いて帰りました」）。テロップ＝論理（気づき）：場面の外形的事実を名詞句で整理して提示（作業を終えて→その足で買い物へ→まだ明るい空→帰り道と小さな袋）。ナレーションが感覚・内面、テロップが事実・構造という役割分担が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.md各要素がep111.json captionフィールドと逐語一致。hook_line「作業を終えて、その足で買い物に寄って帰った日のことです。」一致。body「まだ明るい帰り道を、ゆっくり歩いた日がありました。」一致。cta「そのまま寄り道して帰った日がある人、いますか。」句点含め一致。hashtags「#安全靴 #工場勤務 #12年の記録 #帰り道 #買い物」5個一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との素材・語・構図の重複なし。ep106=選ぶ基準（量）、ep107=合わない条件、ep108=毎朝の引き出し、ep109=手間の回数、ep110=棚の前の基準。ep111=作業帰りの寄り道はいずれとも異なるテーマ・場面。着地構文「あの日の出来事は、帰り道と小さな袋で、全部です。」は第15の形（総括の言い切り「〜で、全部です。」型）であり、ep96〜ep110の既存14型（今日も同じ型/その〜まだ型/伝わってきます型/思っています型/からです型/反復クローズ型/本数主語型/抽象主語型/人称主語型/指示語確言型/ようにしています型/ありません型/なら型/だけです型）のいずれとも異なる。phase_role列挙の用いない語（ep96〜ep110の語、先取り語「就寝前/電気/減りました/今日は早いな/同僚に言われ/気にならなくなった」、既往場面語）の混入なし（grep確認済み）。外部データ・一般論・他人の事例の引用なし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち、1行で瞬時に理解可能。「作業を終えて」(6字)「その足で買い物へ」(8字)「まだ明るい空」(6字)「帰り道と小さな袋」(8字)。いずれも10字以内の短い名詞句・体言止めで視認性に問題なし。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「作業を終えて、その足で買い物に寄って帰った日のことです。」はテーマの直接提示であり、背景説明（12年の経緯、悩みの前置き等）から始めていない。narration_guideline.opening_approach「イン・メディアス・レス。テーマの提示から即座に入り、背景の語りは挟まない」を満たす。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "婚姻制約チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文に妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。登場人物は本人のみ。「袋を片手に、のんびり歩いて帰りました」は一人での帰宅を描写。配偶者・子の存在を暗示する描写（「家族が待っている」等）は皆無。tone_and_rules.marriage_constraint「和男は未婚。妻・子ども・家族の話は使用禁止」を遵守。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep111_round1.json）の全25軸を reason・target_file を含め欠落なく転記"
+    }
+  ]
+}
