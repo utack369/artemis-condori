@@ -1,0 +1,223 @@
+{
+  "ep_number": 112,
+  "euphemism_required": true,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定語は未使用。「減りました」は就寝前の動作回数（行動の外形）の帰結であり、体・状態への効果の断定ではない。足元の悩み文脈で「対策X→効果Y」の因果断定形は成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "本部重点観点。ナレーション＋テロップ＋キャプションの組み合わせ全体で「これを使えば解決する」と読み取れる構造は不成立。「回数が一つ減りました」は動作の外形の事実陳述に留まり、減った理由・対策・製品・良い結果への接続は0件。着地「夜の廊下は、暗いままです」も中立的な状態描写であり、何かが良くなったことへの接続ではない。因果の遮断（「〜から」「〜ので」「おかげで」等）が徹底されている。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り表現（今だけ/残りわずか/早く試さないと等）はナレーション・テロップ・キャプションのいずれにも未使用。購入を急かす文脈は存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全体を通じて静かな観察トーンが維持されている。売り込みトーン・専門家トーンへの逸脱なし。Type_Cの日常スケッチとして和男の共感共闘トーン（淡々とした当事者視点）から逸脱していない。二人称の呼びかけもなし。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションに「変わった/変わる/変化した/変化があった/変化を感じた」は0件。「減りました」は本部裁定により行動の外形の帰結としてchanged_prohibition対象外。changed_prohibition禁止語幹（変わ/変化/変え）の使用なし。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「就寝前に洗面所の電気をつける回数が、一つ減りました」に対し、ナレーションは就寝前の洗面所への動線・スイッチ操作・電気をつける回数の減少を描写しており、テーマと完全に一致している。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_C（日常スケッチ型）の心理構造を実装している。日常の淡々とした描写（廊下の空気・スイッチの音・時計の針の音・静かな家）で構成され、弱さの開示（Type_A）や気づきの提示（Type_B）ではなく、夜の家の静かな一場面を通じた人柄の深い理解に着地している。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "phase_role指定（5段目ブロック・2本目＝体験枠・ブレット担当）に対し、台本は「回数が一つ減った」という最小の事実を一つだけ静かに置くブレット形式。はたらきを主張せず、適切な強度で実装されている。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "本部重点観点（婉曲:要）。euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策、計13語）のいずれもナレーション・テロップに未使用。洗面所での用事の中身・使う物・理由は0件、体まわりへの接続語も0件。婉曲の核（動作の外形のみ）の純度が保たれている。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "本部重点観点。meta.euphemismの指定「就寝前の動作の外形だけで構成。洗面所で何をしていたか・用事の中身・使う物・理由が0件、ヒント・示唆もなし、体まわりへの接続・感情の名指し語なし」に完全準拠。ナレーションは動作（向かう・触れる・つく・落とす・向かう）とその音（かちっ・時計の針）のみで構成され、洗面所内での行為は一切言語化されていない。感情を名指しする語（安心・落ち着く等）も0件。直接表現の回避が確実に成功している。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2の婉曲チェックをキャプションに適用していない（制御ルール準拠）。A群（正直さ）はキャプションにも適用済み（A1-A5各軸で確認）。キャプション自体もprohibited_directを含んでいないが、それはC1/C2ではなくA群としての確認。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「日常の共感入口。就寝前に洗面所へ向かうという何気ない動作の描写から入る」に対し、ナレーション冒頭「就寝前に、洗面所へ向かいます。」で指定通りの日常動作から即座に入っている。Type_Cの入口（日常の共感）として正しく実装。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「人柄の深い理解。洗面所での用事を明かさないまま、この人の夜の静かな一場面という余韻だけを残す」に対し、ナレーション末尾「夜の廊下は、暗いままです。」で用事を明かさぬまま夜の余韻で閉じている。テロップ最終行「夜の廊下は暗いまま」も同様の着地。Type_Cの出口（人柄の深い理解）として正しく実装。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "本部重点観点。one_message「就寝前に洗面所の電気をつける回数が一つ減った、という最小の事実」一本に台本全体が集約されている。理由・はたらき・これからの話への分岐は0件。ナレーション全文が就寝前の洗面所動線→回数が一つ減った→夜の廊下は暗いまま、という一本の線で構成され、2メッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=なしのためE1はskip。E1はcta_type=DM誘導またはソフトCTAの場合にのみ判定対象となる。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "本部重点観点（cta_type=なし回）。テロップ全5行（ナンバリング含む）にDM誘導文・フォロー/保存/いいね/コメント/シェア/リンク遷移/DMへの命令形・依頼形・勧誘形・プロフィール言及は0件。キャプションにも同様のCTA的文言は0件（caption.cta=空文字列準拠）。読者への二人称の呼びかけも0件。保存促し（緩和つき依頼含む）も0件。陳述形の存在言及もなし。CTA混入は完全に0件。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導は0件。cta_type=なし回であり、テロップ・キャプション双方にハードCTAは存在しない。テロップ全行が事実陳述・場面描写で構成されている。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "本部重点観点。ナレーション全9文の語尾を確認：向かいます/しています/触れます/つきます/向かいます/聞こえます/静かです/減りました/暗いままです。全文が「です・ます」調で統一。「だ・である」調の混在なし。Type_Cの現在形情景描写（〜ます形）は例外類型として許容される範囲内。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは感覚的・時間的な描写（廊下の空気のひんやり感・かちっという音・時計の針の音・夜の静けさ）を含む散文。テロップは概念的なキーワード断片（就寝前の洗面所/電気をつける回数/一つ減りました/夜の廊下は暗いまま）。ナレーション固有の感覚描写（ひんやり・かちっ・時計の針の音）はテロップに転記されておらず、テロップはナレーションの要約・転記ではなく視覚的アンカーとして機能している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）チャネル：廊下の空気感・スイッチの触感・音の描写を通じた感覚的共感の喚起。テロップ＝論理（気づき）チャネル：場面の提示→動作の明示→事実の提示→状態の提示、という概念的構造を短文で配置。役割分離が成立している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "ep112.jsonのcaptionフィールドと照合。hook_line「就寝前に、洗面所へ向かいます。」→caption.md 1行目と一致。body「スイッチを押す音が、夜の家に小さく響きます。電気をつける回数が、一つ減りました。」→caption.md 3-4行目と一致。cta=空文字列→caption.mdにCTA文なし（一致）。hashtags 5件（#安全靴/#工場勤務/#12年の記録/#夜の風景/#日常のひとコマ）→caption.md 8行目と一致（順序・表記とも合致）。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "本部重点観点。直近5作と照合。ep107=合う/合わない条件、ep108=毎朝の引き出し、ep109=手間の回数、ep110=棚の前の基準、ep111=買い物帰りの寄り道。ep112=就寝前の洗面所・電気の回数。主題（素材・場面・対策）の重複なし。着地構文もep112「〜ままです。」（第16形）は直近5作（ep107〜ようにしています/ep108〜ありません/ep109〜続けられません/ep110〜だけです/ep111〜全部です）のいずれとも異なる独立した形。15型回避も確認済み。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち1行で瞬時に理解可能。「就寝前の洗面所」（場面提示）、「電気をつける回数」（動作の明示）、「一つ減りました」（事実の提示）、「夜の廊下は暗いまま」（状態の提示）。いずれも文脈なしで瞬時に理解できる。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「就寝前に、洗面所へ向かいます。」で動作の途中から即座に入っている。背景説明（12年前から〜/僕は毎晩〜等）を挟まず、就寝前の動線に直接ドロップインするイン・メディアス・レス構造。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "婚姻制約チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "本部重点観点。ナレーション・テロップ・キャプション全体で妻・子ども・家族（実家の親を除く）の登場・存在の示唆は0件。夜の家の場面で「時計の針の音が、聞こえます。夜の家は、静かです。」は一人暮らしの静けさとして読め、複数人分の生活音・待つ人の気配は一切ない。登場人物は本人のみ。人間関係は一人暮らしの日常・内面の範囲で完結。marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 24,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep112_round1.json）の全25軸を reason・target_file を含め欠落なく転記"
+    }
+  ]
+}
