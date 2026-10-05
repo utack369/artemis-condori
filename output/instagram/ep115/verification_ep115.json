@@ -1,0 +1,223 @@
+{
+  "ep_number": 115,
+  "euphemism_required": false,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionに「効く/治る/消える/改善する/解消」等の効果断定表現なし。「気にならなくなった」はhonesty_ruleが定める体験談の統一表現であり効果の断定ではない。「時間が増えました」は行動の外形の帰結であり効果の断定に該当しない。足元の悩み文脈における「対策X→効果Y」の因果断定構造は不在。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "重点確認済。(1)「気にならなくなった」の対象（何が気にならなくなったか）は名指し・示唆なし。(2)「別のこと」の内容も名指しなし（考えごとの場面を「いつ・どこで」の外形のみで描写）。(3)対策の名称・手段への言及なし。(4)理由・はたらきへの接続なし（なぜ気にならなくなったか・何をしたかの記述ゼロ）。(5)「時間が増えました」は考える時間の向き先という行動外形の帰結であり、何かが良くなった証拠・成果の含意を持たない。(6)着地「時間の使い道は、これからです。」は先送りの言い切りであり、成果の結論や改善の着地ではない。ナレーション＋テロップ＋captionの組み合わせ全体で「これを使えば解決する」と読み取れる構造は不在。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感（今だけ/残りわずか）・緊急性（早く試さないと）・煽り表現はナレーション・テロップ・captionのいずれにも不在。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "全体が和男の共感共闘トーン（静かな独白・内面の小さな本音の提示）で一貫。売り込みトーン・専門家トーン・教示的トーンへの逸脱なし。「気にならなくなった・保証しない・よかったら」の3語トーンラインからの離反なし。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionに「変わった/変わる/変化した/変化があった/変化を感じた」の語幹（変わ・変化・変え）は不在。体験描写は「気にならなくなった」に統一されており、推移の言い添え（禁止語幹を含む表現）も置かれていない。文脈的にも暗示的変化表現の使用なし。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master該当行のテーマ「気にならなくなった分、別のことを考える時間が増えました」がナレーション冒頭文としてそのまま提示され、中盤は考えごとの場面の外形、着地は時間の使い道へと展開。テーマ素材に合致。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装。冒頭：「気にならなくなった分、別のことを考える時間が増えました」＝内面の小さな本音の正直な開示。中盤：考えごとの場面を一人で淡々と振り返る独白。着地：「時間の使い道は、これからです。」＝まだ決まっていないという弱さを含む正直な告白で、「この人に話したい」という余韻を残す。Type_Bの情報整理やType_Cの情景スケッチには寄っていない。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.phase_role：5段目ブロック（File.111-115）の5本目＝『橋渡し』枠。橋渡し枠を押さずに静かに締める設計。台本は静かなトーンで新しい情報・主張・数値を足さず、5段目を穏やかに締める構造。強度も方向も設計意図と整合。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のためC1はskip。design_master該当行の婉曲列も「不要」。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のためC2はskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2が婉曲不要によりskipのため、captionへの婉曲チェック適用も不要。A群（正直さ）はcaptionにも適用済み（A1-A5で全文確認済み、captionに効果断定・暗示・購入圧力・トーン逸脱・「変わった」使用なし）。制御ルールとして正常動作。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry：「弱さ・本音への共感入口。気にならなくなった分、考えることが別のものに移っていたという、内面の小さな本音の提示から入る」。ナレーション冒頭「気にならなくなった分、別のことを考える時間が増えました。」が内面の小さな本音の提示として機能しており、Type_Aの弱さ・本音への共感入口を実現。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit：「『この人に話したい』着地。考えごとの内容も理由も明かさずに、時間の使い道はこれからだという静かな余韻のみを残す」。ナレーション着地「時間の使い道は、これからです。」は考えごとの中身も理由も明かさず、まだ決まっていないという静かな余韻を残す。テロップ最終行「使い道はこれから」も同様に事実陳述の余韻。CTAなし回としてDM・captionの誘導への接続なし。独白の外形のみで完結しており「この人に話したい」着地を実現。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message：「気にならなくなった分、考える時間が別のものに移っていた、という体験」。台本全体が冒頭（気にならなくなった分→考える時間が増えた）→中盤（考えごとの場面の外形を淡々と）→着地（時間の使い道はこれから）の一本で構成されており、理由の説明・成果の話・まとめ等の第2メッセージの混在なし。1メッセージに集約されている。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "meta.cta_type=なし のためE1はskip。telop_guideline.cta_expression=null。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "CTA混入0件を確認。テロップ5行（ナンバリング除く）はすべて事実描写の体言止め（「気にならなくなった分」「別のことを考える」「増えた時間」「お茶が冷めている」「使い道はこれから」）であり、フォロー・保存・いいね・コメント・シェア・リンク遷移・DMへの命令形・依頼形・勧誘形の指示、DM誘導文の混入なし。captionも陳述文3行＋ハッシュタグ5個のみで、CTA的文言は不在。caption.cta=空文字であることも確認済み。二人称の呼びかけ・読者への動作要求も不在。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導表現は不在。CTAなし回のcaptionにもハードCTA文言なし（v3スキーマ準拠：ハードCTAはDM誘導回のキャプションのみ許容であり、本回はcta_type=なし）。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全6文の語尾：「増えました」「していました」「していました」「暗くなっていました」「ありました」「これからです」。すべて「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは完全な文章で場面を描写（主述を持つ6文）。テロップは体言止め・短縮形のキーワード軸5行（「気にならなくなった分」「別のことを考える」「増えた時間」「お茶が冷めている」「使い道はこれから」）。ナレーションの転記でも要約でもなく、視覚的な認知フレームとして独立した内容を構成。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）の役割：考えごとの場面を一人称の独白として情感を持って描写（お茶が冷めていた、外が暗くなっていた等の体感的描写）。テロップ＝論理（気づき）の役割：「気にならなくなった分」「増えた時間」「使い道はこれから」等の認知的フレームを短く提示。役割分離が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption各要素とep115.json captionフィールドの照合：hook_line「気にならなくなった分の話です。」→一致。body「昼休みに、お茶が冷めていることがありました。別のことを考える時間が、増えました。」→一致（改行の有無の差のみ）。cta=\"\"→captionにCTA文言なし＝一致。hashtags 5個「#安全靴 #工場勤務 #12年の記録 #日常のひとコマ #考えごと」→順序・内容ともに一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との素材・場面・着地構文の重複なし。ep110=棚の前の選択（基準が決まった）、ep111=寄り道の買い物（行動としての時間の再配分）、ep112=就寝前の洗面所（回数が減った）、ep113=同僚の一言（他者の気づき）、ep114=記録の文字数（書く分量の変化）。本回は考える時間の向き先という内面の外形で、いずれとも素材・場面が異なる。特にep111との切り分け：ep111は「寄り道という行動」で時間の再配分を見せた回、本回は「考えごとという内面」の外形で締めており、行動vs内面で明確に切り分けられている。着地構文もep110「〜だけです。」/ep111「〜で、全部です。」/ep112「〜ままです。」/ep113「〜は、覚えています。」/ep114「〜のは、…のほうです。」に対し、本回は「時間の使い道は、これからです。」（先送り言い切り型）で別形。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ全5行が各行独立して意味を持ち、1行で瞬時に理解可能。「気にならなくなった分」(7字)・「別のことを考える」(8字)・「増えた時間」(5字)・「お茶が冷めている」(8字)・「使い道はこれから」(8字)。いずれも10字以内で体言止めまたは短文、前後の行に依存せず単独で認知可能。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「気にならなくなった分、別のことを考える時間が増えました。」はテーマの言い切りから即座に入っており、背景説明（「以前は〜」「〜年前から〜」「僕は〜歳の〜で」等）を挟んでいない。narration_guideline.opening_approachの「イン・メディアス・レス。テーマ文の言い切りから即座に入り、背景の語りは挟まない」に準拠。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "登場人物＝本人のみ・家族の気配なし。ナレーションの場面描写は「昼休みにお茶を飲みながら」「布団に入ってから天井を見ながら」「仕事の合間にふと目を上げると」「考えごとの途中でお茶が冷めている」のいずれも一人の場面で、妻・子ども・家族（実家の親を除く）の登場・存在の示唆は不在。テロップ・captionにも同様に家族の気配なし。tone_and_rules.marriage_constraint「和男は未婚。妻・子ども・家族の話は使用禁止」に準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep115_round1.json）の全25軸を reason・target_file を含め欠落なく転記。verifier返答文の件数表記（pass 20軸）と列挙・spool実データ（pass 22）が食い違ったため、spool実データを正として集計"
+    }
+  ]
+}
