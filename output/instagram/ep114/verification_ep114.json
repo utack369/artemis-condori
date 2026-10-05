@@ -1,0 +1,223 @@
+{
+  "ep_number": 114,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionに「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現なし。記録の文字数が半分になったという外形事実の記述のみで、足元の悩み文脈での対策→効果の因果断定は成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック（★重点）",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "因果の遮断を確認。ナレーションは文字数半減をページの埋まり方・書き終わり位置・余白という外形の対比で提示するのみ。なぜ書く量が減ったかの理由・はたらき・体まわりへの接続なし。良い出来事の証拠として誇示する構造なし。着地『書き終えたあとに残っているのは、記録のほうです。』はページ上の物理的残存物の同定であり、価値判断・効果示唆に接続しない。テロップも同様に外形軸の短語のみ。captionのcta『半分になる前の記録も、そのまま置いてあります。』は記録の所在の事実陳述であり、効果・改善の暗示構造を持たない。外部データなし。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionに限定感・緊急性・煽り（今だけ/残りわずか/早く試さないと等）の表現なし。購入を急かす構造なし。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "ナレーション全体が和男の共感共闘トーン（静かな観察・淡々とした事実陳述）で一貫。売り込みトーン・専門家トーンへの逸脱なし。『〜でした』『〜ありました』『〜目に入りました』の穏やかな過去形回想基調が維持されている。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionに禁止語幹「変わ」「変化」「変え」を含む語の使用なし。「半分になりました」は本部裁定により changed_prohibition 対象外（禁止語幹を含まない行動の外形の帰結）であり、A5判定には影響しない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ『記録の文字数が、この3年で半分になりました』に対し、ナレーション冒頭が『この3年で、記録の文字数が半分になりました。』と語順違いの同一内容で提示。以降の展開もページの文字数・余白という同テーマで一貫。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_B（気づき・発見型）の心理構造を実装。入口=測れる外形事実の提示で知的好奇心を拾い、中盤=ページの外形の対比を一定テンポで情報提示し、出口=理由を語らず最小の事実で閉じて『もっと聞きたい』を生成。Type_Aの内面独白・Type_Cの情景スケッチへの逸脱なし。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "phase_role『5段目ブロック（File.111-115）の4本目＝証拠枠（書く量という測れる指標。断定も暗示もせず、事実だけを置く）』に整合。台本は記録の文字数という測定可能な指標を、断定も暗示もなく事実として提示している。証拠枠にふさわしい抑制された強度。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可のため、C1は適用対象外（skip）。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可のため、C2は適用対象外（skip）。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "婉曲チェック（C1/C2）はcaptionに適用されない制御ルールを確認。本回はC1/C2自体がskip（婉曲不要）のため実質的に問題なし。A群（正直さ）はcaptionにも適用済み（A1-A5でcaptionを含めて判定済み）。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry『知的好奇心入口。記録の文字数が半分になったという、測れる外形の事実の提示から、視聴者の知的好奇心で拾う』に対し、ナレーション冒頭『この3年で、記録の文字数が半分になりました。』が測れる事実を即座に提示し、Type_Bの知的好奇心入口を実現。背景説明なし。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exit『もっと聞きたい着地。理由や意味づけには触れず、残っているのは記録のほうだという最小の事実で静かに閉じ、captionのソフトCTAへ自然に接続する』に対し、ナレーション末尾『書き終えたあとに残っているのは、記録のほうです。』が最小の事実で閉じ、テロップ最終行『残るのは記録のほう』が対応。caption.cta『半分になる前の記録も、そのまま置いてあります。』への自然接続が成立。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック（★重点）",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "one_message『記録の文字数が、この3年で半分になった、という測れる事実』一本に集約。ナレーション全7文がすべてこの一事実の外形描写（ページの埋まり方・書き終わり位置・余白・残るもの）に帰着。理由・これからの話・まとめ等の第二メッセージの混在なし。テロップ5行も同一軸。captionも同一テーマ。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック（★重点・ソフトCTA）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "【テロップ】ナンバリング行『安全靴と戦う12年の記録：File.114』を除く実質最終行『残るのは記録のほう』は事実の陳述に留まり、依頼形・勧誘形なし。cta_expression『残るのは記録のほう』と一致。ソフトCTA要件（事実陳述のみ）を充足。【caption.cta】Coordinator明示渡し原文『半分になる前の記録も、そのまま置いてあります。』との逐語一致を確認（句点含む完全一致）。caption.md 6行目の文字列と原文が1字の差異もなく一致。【混入なし】ナレーション・テロップにCTA・プロフィール言及・DM誘導文言なし。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTA（CTA存在回）のため、E2（cta_type=なしのみ適用）は対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップに『プロフィールを見て/リンクから/今すぐ』等の直接誘導なし。テロップ全6行はナンバリング＋外形の軸語＋事実陳述のみ。captionはソフトCTA回のためハードCTA不可であり、caption.cta『半分になる前の記録も、そのまま置いてあります。』は事実の陳述でありハードCTAに該当しない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全7文の語尾を確認：『なりました/埋まっていました/上のほうでした/ありました/目に入りました/目に留まりました/記録のほうです』。すべて「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは過去形の回想的叙述（ページが埋まっていた/書き終わる位置/行の途中で終わる日/余白が目に留まった等）で展開。テロップは『記録の文字数/書き終わる位置/ページの上のほう/余白が目に入る/残るのは記録のほう』と視覚軸を短語で提示。ナレーションの転記・要約ではなく、別の切り口で内容を提示している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝過去の記録ページを開いたときの気づきの連なり（感情・体験寄り）。テロップ＝外形の対比軸を短い名詞句・体言止めで提示（論理・構造寄り）。ナレーション＝感情(共感)、テロップ＝論理(気づき)の役割分離が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.md各要素とep114.jsonのcaptionフィールドの一致を確認。hook_line：『記録のページの、書き終わる位置の話です。』＝逐語一致。body：『以前は、ページの下の端まで文字が埋まっていました。今は、余白が目に入ります。』＝逐語一致。cta：『半分になる前の記録も、そのまま置いてあります。』＝逐語一致（句点含む）。hashtags：#安全靴 #工場勤務 #12年の記録 #記録 #文字数＝5タグ一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック（★重点）",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "【素材重複なし】直近5作との照合：ep109=手間の回数と継続、ep110=店の棚の前の基準と迷い、ep111=作業後の寄り道と帰り道、ep112=就寝前の洗面所と電気の回数、ep113=帰り支度と同僚の一言。ep114=記録の文字数とページの余白。テーマ・場面・素材いずれも重複なし。【着地構文】最終文『書き終えたあとに残っているのは、記録のほうです。』は『〜のは、…のほうです。』構造＝対比の同定型（第18の形）。過去17型との照合：ep96-97今日も同じ型/ep98まだ型/ep99てみると型/ep100ないまま型/ep101からです型/ep102反復クローズ型/ep103本数主語型/ep104抽象主語型/ep105人称主語型/ep106指示語主語型/ep107ようにしています型/ep108たことはありません型/ep109なら言い切り型/ep110だけです型/ep111全部です型/ep112ままです型/ep113覚えています型のいずれとも異なる別形。【空気不使用】ナレーション・テロップ・captionに『空気』なし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ5行（ナンバリング除く）がそれぞれ独立して意味を持ち、1行で瞬時に理解可能。『記録の文字数』『書き終わる位置』『ページの上のほう』『余白が目に入る』『残るのは記録のほう』はいずれも短く、文脈なしでも単独で読み取れる。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭『この3年で、記録の文字数が半分になりました。』が背景説明なしに事実を即座に提示。工場勤務や記録の習慣についての前置きなく、測れる事実の途中から開始。イン・メディアス・レスの要件を充足。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "婚姻制約チェック（★重点）",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "登場人物=本人のみ・家族の気配なし。ナレーション全7文に妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。テロップ全6行に同様に該当なし。caption全文に同様に該当なし。人間関係は登場せず、記録ページの外形描写のみで構成。配偶者・子の存在を暗示する描写（『家族が待っている』等）なし。一人暮らしの日常・内面の範囲内。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep114_round1.json）の全25軸を reason・target_file を含め欠落なく転記"
+    }
+  ]
+}
