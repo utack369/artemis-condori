@@ -1,0 +1,438 @@
+{
+  "ep_number": 116,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 2,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現なし。prohibited_words(23語)の語幹一致もゼロ。ナレーション全文は発信の性質の要約であり、対策→効果の因果構造を含まない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション+テロップ+CTA全体で「これを使えば解決する」と読み取れる構造なし。理由・はたらき（なぜ効くか等）の記述0件。対策・製品への言及なし。悩みの内実・部位を名指し・示唆する表現なし。要旨は性質の一般語への言い直しに留まり、推移の総括（何かが良くなった証拠）への接続もない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り表現（今だけ/残りわずか/早く試さないと等）なし。ナレーション・テロップ・captionのいずれにも購入を急かす表現なし。要約枠として淡々と事実を置く構成。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "和男の共感共闘トーン（気にならなくなった・保証しない・よかったら系統）から逸脱なし。売り込み・専門家トーンへの逸脱なし。過去の発信を淡々と振り返る回想調で、説教・権威付け・煽りのニュアンスを含まない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」の語なし。文脈的にも変化の暗示を含む表現は使用されていない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「ここまでの30本で言ったことを、一度だけまとめておきます」とナレーション冒頭文「ここまでの30本で言ったことを、一度だけまとめておきます。」が逐語一致（句点の有無のみ差異）。ナレーション全体がこのテーマの実装として機能している。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_B（気づき・発見型）の心理構造を実装。入口=知的好奇心（まとめの宣言で「何を言ってきたのか」への好奇心を喚起）、展開=一定テンポで要旨を3点提示（まず/次に/そして）、出口=「言ってきたことは、以上です。」で意味づけ・約束に触れず静かに閉じ「もっと聞きたい」着地。Type_Aの内面独白・Type_Cの情景スケッチに寄せていない。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P4後半フェーズ3・6段目の1本目＝「要約」枠。新しい情報・場面・数値・主張を足さず、既述の要旨だけを性質の一般語で言い直す設計に忠実。強度は控えめで、山場回ではなくまとめ回として相応の落ち着き。meta.phase_roleと整合。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要回）のためskip。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要回）のためskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1/C2が婉曲不要回でskipのため、適用範囲の制御自体が不要。skip。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry=「知的好奇心入口」。ナレーション冒頭「ここまでの30本で言ったことを、一度だけまとめておきます。」がまとめの宣言として知的好奇心を喚起。Type_Bの知的好奇心入口として適切に実装されている。Type_Aの弱さ・本音の開示やType_Cの日常共感で始まっていない。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit=「もっと聞きたい着地」。ナレーション末尾「言ってきたことは、以上です。」が意味づけ・次の約束に触れず最小の事実で静かに閉じている。captionのソフトCTA「30本分のまとめは、プロフィールに置いておきます。」への自然な接続として「もっと聞きたい」着地が機能。テロップ最終行「言ったことは以上」もこの出口を視覚的に補強。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "one_message=「30本で言ってきたことの、一度だけのまとめ」一本で統一。次回予告・新しい約束・依頼に軸を割っていない。新情報ゼロ。「30本」はナレーション冒頭テーマ提示部1回のみ（テロップ0回・caption.hook_line 0回・caption.body 0回）、caption.cta内に「30本分」1回（指示書原文どおり）。新規数値0件。2メッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTA。(1)テロップ実質最終行「言ったことは以上」はtelop_guideline.cta_expression「言ったことは以上」と逐語一致し、事実の陳述として機能（依頼形・勧誘形ではない）。(2)caption CTA「30本分のまとめは、プロフィールに置いておきます。」はep116.json caption.cta原文「30本分のまとめは、プロフィールに置いておきます。」と句点含め逐語一致。Coordinator明示渡し原文とも完全一致。自分の行動の事実陳述でありソフトCTAとして適切に機能。CTA行の欠落なし。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTA（CTA存在回）のためskip。E2はcta_type=なしのみ適用。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ5行（ナンバリング除く）に「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。ナレーションにもプロフィール言及・DM誘導文言なし（grep確認済み）。captionのCTA「プロフィールに置いておきます」は自分の行動の事実陳述であり、ハードCTA（命令・直接誘導）ではなくソフトCTA（陳述）。ソフトCTA回のcaptionでのソフトCTA使用は設計どおり。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全8文の語尾を確認。まとめておきます/していません/置いてきました/書いてきました/使ってきませんでした/していません/書いてきました/以上です。すべて「です・ます」調（肯定:ます/です、否定:ません/ませんでした）で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーション=過去形の回想的語り（「〜してきました」の継続相で要旨を述べる文章体）、テロップ=名詞句・体言止めの短語による要旨の軸の視覚提示（「大きな話はしない」「数字になる事実」等）。同一テキストの転記ではなく、文体・品詞・時制が異なる。telop_guideline.directionの「ナレーションを文字化せず、視覚的な軸に短く提示する」指示に準拠。要約枠の性質上、話題の柱は共有するが、表現形式が明確に分離されている。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション=過去を振り返る語り手の声（共感・回想の層）、テロップ=要旨の軸を短く提示する論理的骨格（気づきの層）。要約枠のため通常よりも話題が近接するが、ナレーション=感情を伴う語り、テロップ=情報の構造化という役割分担は維持されている。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.md各要素とep116.json captionフィールドを逐語照合。hook_line「言ってきたことの話です。」=一致、body「大きな話はせず、事実と毎日の場面を置いてきました。」=一致、cta「30本分のまとめは、プロフィールに置いておきます。」=句点含め逐語一致、hashtags 5個(#安全靴 #工場勤務 #12年の記録 #まとめ #日常のひとコマ)=全数一致・順序一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作(ep111-115)との素材・場面・語句の重複なし。ep111(買い物・帰り道)、ep112(洗面所・電気)、ep113(同僚・帰り支度)、ep114(記録の文字数・余白)、ep115(考えごと・お茶)のいずれの固有語句・場面・物もep116に出現しない。ep116は個別回の場面・物を名指しせず、性質の一般語への言い直しで要約を構成。着地構文「言ってきたことは、以上です。」は第20の形（締めの言い切り型）であり、既往19型（今日も同じ〜/その〜はまだ〜です/〜てみると〜が伝わってきます/〜ないまま〜を思っています/〜からです/冒頭文反復/本数主語外形言い切り/抽象主語動詞言い切り/人称主語次行動描写/指示語主語確言/〜ようにしています/〜たことはありません/〜なら言い切り/〜だけです/〜で全部です/〜ままです/〜は覚えています/〜のは…のほうです/〜はこれからです）のすべてを回避した新形。要約の純度：個別回の場面・物・語句の再利用ゼロ。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行（大きな話はしない/数字になる事実/毎日の場面/断定も暗示もなし/言ったことは以上）がそれぞれ独立して意味を持ち、1行で瞬時に理解可能。文脈依存の語や曖昧な指示語なし。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「ここまでの30本で言ったことを、一度だけまとめておきます。」がテーマの言い切りとして即座に入り、背景説明や前置き（「今日は〜」「最近〜」等）を挟まない。冒頭2-3秒でまとめの宣言というフックを置くnarration_guideline.opening_approachに準拠。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraintチェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "登場人物=本人のみ・家族の気配なし。ナレーション・テロップ・captionのいずれにも妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。同僚・友人・知人の描写もなし。人間関係の言及自体がなく、発信の性質の要約に徹した内容。配偶者・子の存在を暗示する描写（「家族が待っている」等）もゼロ。tone_and_rules.marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep116_round1.json）の全25軸を reason・target_file を含め欠落なく転記。verifier返答文の件数表記（pass 21・skip 4）とspool実データが一致。本部GO_round2_ep116（本数表現の不使用＝恒久ルール）により round2 で是正再生成"
+    },
+    {
+      "round": 2,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文に「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。対策→効果の因果構造も存在しない。ナレーションは過去の発信の性質を一般語で言い直すのみで、足元の悩み文脈での効果の断定は皆無。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造は存在しない。内容は過去の発信の性質の言い直し（大きな話はしていない／事実と場面を置いてきた／断定も暗示もせずに書いてきた）のみ。理由・はたらきの記述0件。なぜ・はたらきへの接続なし。何かが良くなった証拠への接続なし。重点確認済み。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現はナレーション・テロップ・captionのいずれにも存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "ナレーションは過去形の回想調（〜てきました/〜ていません）で淡々と語り、和男の共感共闘トーンを維持。売り込み・専門家トーンへの逸脱なし。captionも同様に陳述調。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文に「変わった/変わる/変化した/変化があった/変化を感じた」は未使用。足元・体調文脈に限らず、語幹「変わ」「変化」「変え」自体が出現しない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「ここまでの30本で言ったことを、一度だけまとめておきます」に対し、本部裁定（本数に触れない実装）に従いナレーション冒頭は「ここまでに言ったことを、一度だけまとめておきます。」。テーマの意図（ここまでの発信のまとめ）と一致し、本数表現（30本）を正しく除外。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_B（気づき・発見型）の心理構造を実装。冒頭でまとめの宣言（気づき提示の入口）→「まず」「次に」「そして」で要旨3点を一定テンポで情報提示（発見の重ね）→「言ってきたことは、以上です。」で静かに閉じ「もっと聞きたい」着地。Type_Aの内面独白・弱さの開示やType_Cの日常スケッチには寄っていない。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "phase_role「6段目の1本目＝要約枠（新しい情報を足さない・本文で既に述べたことだけを並べる・煽らない）」と整合。ナレーションは性質の一般語での言い直しのみで構成され、新情報・新場面・新数値・新主張はゼロ。煽りなし。要約枠の強度・方向に適合。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要回）のためskip。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要回）のためskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "婉曲不要回であり婉曲チェック自体がskipだが、制御ルールとしてcaptionに婉曲チェックが誤適用されていないことを確認。A群（正直さ）はcaptionにも適用済み（A1-A5各passで検証済み）。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「知的好奇心入口。ここまでの発信で何を言ってきたのかを一度整理するという提示」に対し、ナレーション冒頭「ここまでに言ったことを、一度だけまとめておきます。」がType_Bの知的好奇心入口として機能。視聴者に「何を言ってきたのか」への関心を喚起する構造。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「もっと聞きたい着地。意味づけや次の約束には触れず、言ってきたことは以上だという最小の事実で静かに閉じる」に対し、ナレーション末尾「言ってきたことは、以上です。」が最小の事実の言い切りで閉じている。意味づけ・理由づけ・次の約束・動作の依頼なし。captionのソフトCTA「ここまでのまとめは、プロフィールに置いておきます。」への自然な接続が成立。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "one_message「ここまでに言ってきたことの、一度だけのまとめ」一本に集約。次回予告なし・新しい約束なし・依頼なし。本数表現（30本・120本等）0件。新規数値0件。新情報ゼロ（性質の言い直しのみ）。2メッセージの混在なし。重点項目すべて確認済み。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=ソフトCTA。ナンバリング行「安全靴と戦う12年の記録：File.116」を除いた実質最終テロップ行「言ったことは以上」がcta_expression「言ったことは以上」と逐語一致。事実の陳述に留まっており、依頼形・勧誘形ではない。ソフトCTAの合格条件を満たす。caption.cta「ここまでのまとめは、プロフィールに置いておきます。」も指示書と逐語一致（句点含む）であり、事実の陳述形。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTA（E2はcta_type=なしのみ適用）のためskip。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ全行（大きな話はしない／数字になる事実／毎日の場面／断定も暗示もなし／言ったことは以上）に「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。ナレーション全文にもプロフィール言及・DM誘導文言なし。captionのcta「ここまでのまとめは、プロフィールに置いておきます。」は陳述形であり、ソフトCTA回のcaptionとして適切（ハードCTAではない）。ソフトCTA回のcaptionはハードCTA不可であり、この陳述形はpass。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文の語尾を確認。「まとめておきます」「していません」「置いてきました」「書いてきました」「使ってきませんでした」「していません」「書いてきました」「以上です」。すべて「です・ます」調。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは過去形の文体（〜てきました/〜ていません）で性質を語る語り。テロップは名詞句・体言止め（「大きな話はしない」「数字になる事実」「断定も暗示もなし」）で視覚的な軸を提示。要約回で扱う素材が共通するのは設計上不可避だが、形式・文体が異なり、同一テキストの転記ではない。テロップはナレーションの逐語引用ではなく、独立した名詞句表現で軸を構成。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝過去形の語りかけ（〜てきました）で淡々とした共感の調子。テロップ＝名詞句・体言止めで論理的な軸（大きな話はしない／数字になる事実／断定も暗示もなし）を提示。ナレーション=感情(共感)、テロップ=論理(気づき)の役割分担が概ね成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.md各要素がep116.jsonのcaptionフィールドと逐語一致。hook_line「言ってきたことの話です。」一致。body「大きな話はせず、事実と毎日の場面を置いてきました。」一致。cta「ここまでのまとめは、プロフィールに置いておきます。」逐語一致（句点含む・重点確認済み）。hashtags「#安全靴 #工場勤務 #12年の記録 #まとめ #日常のひとコマ」5個一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作（ep111:買い物帰り／ep112:就寝前の洗面所／ep113:帰り支度と同僚の一言／ep114:記録の文字数と余白／ep115:気にならなくなった分の考えごと）のいずれとも主題が異なる。ep116は過去の発信の性質の一般語での言い直し（メタ的まとめ）であり、個別回の場面・物・語句が特定できる表現は置かれていない。着地「言ってきたことは、以上です。」は第20形（締めの言い切り型）で既往19型をすべて回避。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち、1行で瞬時に理解可能。「大きな話はしない」(7字)「数字になる事実」(7字)「毎日の場面」(5字)「断定も暗示もなし」(8字)「言ったことは以上」(8字)。いずれも10字以内で端的。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「ここまでに言ったことを、一度だけまとめておきます。」はテーマの言い切りから即座に入っており、背景説明（なぜまとめるのか等）を挟んでいない。イン・メディアス・レスの要件を満たす。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraintチェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "登場人物=本人のみ・家族の気配なし。ナレーション・テロップ・caption全文に妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。同僚・友人・知人も登場しない。人間関係の描写自体がなく、本人の過去の発信の性質のメタ的まとめのみ。婚姻制約に抵触する要素は皆無。File.116>File.60のため判定適用。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "round2理由：本部裁定（公開ナンバリング以外の本数をナレーション・テロップ・caption・サムネ文字に置かない）により、ナレーション第1文とcaption.ctaの「30本」を除去して再生成。spool（.verification_spool/ep116_round2.json）の全25軸を reason・target_file を含め欠落なく転記"
+    }
+  ]
+}
