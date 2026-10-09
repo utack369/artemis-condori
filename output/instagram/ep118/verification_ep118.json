@@ -1,0 +1,223 @@
+{
+  "ep_number": 118,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全体を通じ、「効く/治る/消える/改善する/なくなる/解消」等の効果断定語は未使用。足元の悩み文脈での対策→効果の因果断定は存在しない。ナレーションは過去の一場面の外形描写と受け手への依頼のみで構成されており、理由・はたらきの記述は0件。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体を通じ、「これを使えば解決する」と読み取れる構造は存在しない。ナレーションは動けなかった夜の身体動作の外形のみ（スマホを見た・指が動かなかった・画面を伏せて眠った）で、製品・対策・効果への言及はゼロ。着地の依頼「送ってください」は行動（DM送信）への招待であり、良くなる行動への接続や得られるものの示唆はない。「同じところ」の中身（悩みの内実・部位・症状・対策・製品）は具体化されていない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現はナレーション・テロップ・captionのいずれにも存在しない。全体のトーンは静かで、敷居の最小化（一行でいい）に留まっており、購入を急かす構造はない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全文を通じ、和男の共感共闘トーン（一人称「僕」・過去の弱さの開示・静かな呼びかけ）が一貫している。売り込みトーン（製品推薦・購入促進）や専門家トーン（知識の権威的提示）への逸脱はない。着地の「送ってください」も招待トーンの範囲内で、強圧的命令や取引型の餌付けトーンではない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionの全文において「変わった/変わる/変化した/変化があった/変化を感じた」は未使用。足元・体調文脈に限らず、全文中に「変」を含む語は存在しない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「同じところで止まっている人がいたら、一行でいいので送ってください」がナレーション着地文として逐語で実装されている。ナレーション全体がこのテーマに向かう構成（動けなかった夜→受け手への呼びかけ→依頼）で一貫している。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装している。冒頭「僕にも、動けなかった夜がありました」で弱さ・本音を正直に開示し、スマホを見て指が動かず画面を伏せて眠ったという体験を独白形式で語っている。着地「同じところで止まっている人がいたら、一行でいいので送ってください」は、同じ経験を持つ人への静かな呼びかけとして「この人に話したい」着地を実現している。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "phase_role「6段目ブロック（File.116-120）の3本目＝動作枠」に整合。pkg4第6章の段ルール（新しい情報を足さない・動作は一つだけ・煽らない）を満たしている。動作は「一行を送る」の一つのみ。新しい情報・数値・主張はゼロ。トーンは静かで煽りなし。DM誘導回として敷居を最小化する構成。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要回）のため、C1は判定対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要回）のため、C2は判定対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2は婉曲不要回でskip済み。A群（正直さ）はcaptionを含めて全文判定済み（A1-A5すべてpass）。captionへの婉曲チェック非適用の制御ルールは正しく運用されている。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感入口。動けなかった夜の一場面を、内面を控えめに外形のみで開示する」が実装されている。冒頭「僕にも、動けなかった夜がありました。」で弱さへの共感入口を開き、続くスマホ・指・画面の描写は身体動作の外形のみで内面を控えめに留めている。Type_Aの入口（弱さ・本音への共感）と整合。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「この人に話したい着地。理由や意味づけは置かず、同じところで止まっている人へ一行でいいと静かに手渡す。captionのDM誘導が機能する接続」が実装されている。ナレーション末尾「同じところで止まっている人がいたら、一行でいいので送ってください。」は理由や意味づけなしの静かな手渡し。テロップ最終行「一行でいい」が視覚的に補強し、captionのDM誘導CTAへ自然に接続している。Type_Aの出口（この人に話したい）と整合。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「止まっていた本人が、同じ人へ一行を頼む」一本に集約されている。ナレーション前半は止まっていた本人の体験、後半は同じ人への呼びかけと一行の依頼で構成され、2メッセージの混在はない。依頼形は全編で1回（着地文「送ってください」のみ）。新規数値0件（「一行」はテーマ由来の定型）。本数表現0件（ナンバリング定型を除く）。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "【caption CTA逐語一致】caption.md 5行目「同じところで止まっている人がいたら、一行でいいので送ってください。」はCoordinator明示渡し原文（pkg4 8.1 File.118原文＋句点）と句点まで逐語一致。「？」は未使用。【テロップ実質最終行】ナンバリング行を除く実質最終行「一行でいい」はtelop_guideline.cta_expression「一行でいい」と一致し、テーマ由来語の短い言い切りとしてDM誘導のソフトな入口を形成。【トーン】依頼は「〜がいたら、…送ってください」の招待トーンで、強圧的命令・取引型の餌付けトーンではない。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導（CTA存在回）のため、E2（cta_type=なしのみ適用）は判定対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップ全行（安全靴と戦う12年の記録：File.118／動けなかった夜／画面を伏せて眠った／あの夜の僕／一行でいい）にハードCTA文言（プロフィール/リンク/今すぐ/DM/フォロー/保存/コメント/シェア等）は存在しない。テロップ内に依頼形・勧誘形はゼロ。「一行でいい」はテーマ由来語の事実陳述であり、「送ってください」はテロップに置かれていない。DM誘導回であってもテロップのハードCTA禁止は遵守されている。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文の語尾を確認：「ありました」「見ていました」「動きませんでした」「分からなかったのです」「眠りました」「かもしれません」「送ってください」。すべてです・ます調で統一されている。「分からなかったのです」は「のです」構文でです調。着地の「〜ください。」はです・ます調の範囲内（Coordinator明示渡し）。だ・である調の混在はない。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは完全な文章で場面と感情を語る（「僕にも、動けなかった夜がありました。スマホを手に取って…」）。テロップは短いキーワード・フレーズ（「動けなかった夜」「画面を伏せて眠った」「あの夜の僕」「一行でいい」）で視覚的な軸を提示。ナレーションの逐語転記や要約ではなく、場面のエッセンスを別形式で抽出した構成。内容分離が成立している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：動けなかった夜の体験を独白で語り、弱さを開示し、同じ人への共感的呼びかけで閉じる。テロップ＝論理（気づき・CTA）：場面のキーワードを視覚的に並べ、最終行「一行でいい」でCTA expression を提示。感情と論理の役割分離が成立している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素とep118.jsonのcaptionフィールドを照合：hook_line「動けなかった夜が、僕にもありました。」→逐語一致。body「スマホを手に取って、画面をじっと見ていました。指は、動きませんでした。」→逐語一致。cta「同じところで止まっている人がいたら、一行でいいので送ってください。」→逐語一致（句点含む）。hashtags「#安全靴 #工場勤務 #12年の記録 #一人暮らし #夜の独り言」→5個全て一致、順序も一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ep118主題「動けなかった夜・スマホの画面を伏せて眠った・DM依頼」と直近5作を照合。ep113=帰り支度・同僚の一言、ep114=記録の文字数・余白、ep115=気にならなくなった分・考え事、ep116=これまでのまとめ、ep117=安全靴を新しく下ろす朝・ひも通し。場面・素材・対策のいずれも重複なし。着地形も第22形（条件節＋依頼の言い切り「〜がいたら、…ください。」型）で、既往21型（今日も同じ型〜てから〜ます型）のいずれとも別形であることを確認。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち、1行で瞬時に理解可能。「動けなかった夜」（場面設定）、「画面を伏せて眠った」（行動描写）、「あの夜の僕」（主体の提示）、「一行でいい」（CTA expression）。いずれも文脈なしで意味が成立する短いフレーズ。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「僕にも、動けなかった夜がありました。」は背景説明（経歴・状況説明・導入の前置き）ではなく、体験の途中（動けなかった夜という具体的な一場面）から直接入っている。イン・メディアス・レスの要件を満たす。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "婚姻制約チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全体を通じ、登場人物は本人（僕）のみ。妻・子ども・家族（実家の親を除く）の登場・存在の示唆はない。人間関係は一人暮らしの日常・内面の範囲で構成されている。「同じところで止まっている人」「あの夜の僕のような人」は不特定の受け手への呼びかけであり、特定の家族・配偶者・子の存在を示唆するものではない（pkg4 8.1前例どおり許容）。caption hashtag「#一人暮らし」も婚姻制約と整合。配偶者・子の存在を暗示する描写（「家族が待っている」等）は存在しない。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep118_round1.json）の全25軸を reason・target_file を含め欠落なく転記"
+    }
+  ]
+}
