@@ -1,0 +1,223 @@
+{
+  "ep_number": 119,
+  "euphemism_required": false,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全体に「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。足元の悩み文脈での「対策X→効果Y」の因果構造も存在しない。内容は夜の部屋での日常描写（手を洗う・上着を掛ける・座る・部屋の静けさ等）のみ。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋captionの組み合わせ全体で「これを使えば解決する」と読み取れる構造がない。「変わった」も不使用。書く行為を良くなるための行動へ接続する記述もない。日常の一コマを外形だけで淡々と描写しており、効果の暗示は認められない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全体に限定感・緊急性・煽りの表現（今だけ/残りわずか/早く試さないと等）が一切ない。製品・対策への言及自体がなく、購入を促す構造は皆無。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全文が和男の淡々とした日常スケッチで、共感共闘トーン（気にならなくなった・保証しない・よかったら）の基調から逸脱していない。売り込みトーン・専門家トーンへの逸脱なし。Type_Cの静かな観察視点が一貫している。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionに「変わった/変わる/変化した/変化があった/変化を感じた」は出現しない。着地文『外は、すっかり夜になりました。』は時間帯の状態描写であり、足元・体調文脈の「変化」には該当しない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterのテーマ『今日も作業を終えてから、10分だけこれを書いています』がナレーション冒頭文『今日も作業を終えてから、10分だけこれを書いています。』と完全一致。ナレーション全体もこのテーマに沿った作業後の夜の部屋の描写で構成されている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_C（日常スケッチ型）の心理構造を正確に実装。日常の淡々とした描写（手を洗う→上着を掛ける→座る→部屋の静けさ→肩の重さ→灯り→車の音）を情景の外形だけで重ね、着地『外は、すっかり夜になりました。』で人柄の深い理解（この人の夜の静かな一場面の余韻）に至る。Type_Aの内面独白やType_Bの情報整理には寄っていない。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "phase_role=P4後半6段目ブロック4本目＝「体験」枠（動作を渡した直後に押さない。ブレット担当／新しい情報を足さない・煽らない）。台本は新しい主張・新しい情報を足さず、感情の押し付けなしで具体の一コマだけを静かに置いている。押さない回としての抑制された強度が適切に実装されている。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のためC1はskip。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のためC2はskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "婉曲不要のためC1/C2がskipにつき、C3（婉曲チェックの適用範囲制御）も適用対象外。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry=『日常の共感入口。作業を終えた夜の部屋で、手を洗い、上着を掛け、座るという具体の一コマから入る』。ナレーション冒頭でテーマ文『今日も作業を終えてから、10分だけこれを書いています。』の後すぐに『手を洗って、上着を椅子の背に掛けます。座って、息をゆっくり吐きます。』と続き、Type_Cの日常の共感入口として具体の一コマから入っている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit=『人柄の深い理解という着地。動作と時間帯の外形だけを見せ、書いているものの中身は明かさないまま、この人の夜の静かな一場面という余韻を残す。誘導への接続は置かず、外形だけで完結させる』。着地文『顔を上げると、外は、すっかり夜になりました。』は周囲の状態の言い切りで、中身は明かさず誘導なし。テロップ最終行『すっかり夜になった』も整合。Type_Cの人柄の深い理解に至る出口として正確に実装。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message=『作業を終えたあとに10分だけ書いている、その一コマ』。台本全体が作業後の夜の部屋での一場面に集約されており、2つ目のメッセージ（理由の説明・経過の総括・次回の予告・依頼等）は混在していない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=なしのためE1はskip。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=なし回。テロップ全5行（ナンバリング定型＋本文4行）にフォロー・保存・いいね・コメント・シェア・リンク遷移・DMへの命令形・依頼形・勧誘形の指示なし。DM誘導文の混入なし。caption本文にもCTA的文言は一切ない。captionのcta欄も空。ハッシュタグ5個は定型で誘導ではない。混入0件。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップ全5行に「プロフィールを見て/リンクから/今すぐ」等の直接誘導は一切なし。全行が場面の外形を短く提示する名詞句・体言止めのみで構成されている。captionもCTAなし回であり、ハードCTAは不在。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全8文の語尾を確認：『書いています』『掛けます』『吐きます』『静かです』『残っています』『落としてあります』『通っていきます』『夜になりました』。全文「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは具体的な動作と情景を完全な文で描写（『手を洗って、上着を椅子の背に掛けます。』等）。テロップは場面の外形を短い名詞句・体言止めで提示（『作業を終えて』『上着を椅子の背に』『肩に残る昼間の重さ』『すっかり夜になった』）。同一テキストの転記・要約ではなく、それぞれが独自の表現形式で別内容を提示している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情(共感)：本人視点の夜の部屋での一コマを、動作と感覚（肩の重さ・静けさ）で淡々と語り共感を生む。テロップ＝論理(気づき)：場面の外形を視覚的なキーワードとして提示し、視聴者の理解のフックとして機能。役割分離が成立している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "ep119.jsonのcaption定義と照合。hook_line=『手を洗って、上着を椅子の背に掛けます。』→caption.md1行目と一致。body=『部屋の灯りは、少し落としてあります。遠くの道を、車が通っていきます。』→caption.md3-4行目と一致。cta=空→caption.mdにCTA文なし（一致）。hashtags=5個→caption.md8行目と完全一致（#安全靴 #工場勤務 #12年の記録 #夜の部屋 #静かな時間）。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作と照合。ep114=記録の文字数と余白、ep115=気にならなくなった分の考えごと、ep116=これまでのまとめ、ep117=安全靴を新しく下ろす朝の所作、ep118=動けなかった夜とDM誘導。ep119=作業を終えた夜の部屋で書いている一コマ（手を洗う・上着を掛ける・座る・部屋の静けさ・肩の重さ・灯り・車の音）。主題・場面・対策いずれも重複なし。ep117に『朝の部屋は、静かです』があり一文レベルで類似するが、場面設定（朝の靴の所作 vs 夜の帰宅後）とテーマが異なるため素材重複には該当しない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ本文4行を確認。『作業を終えて』（4字・独立して意味あり）、『上着を椅子の背に』（7字・独立して意味あり）、『肩に残る昼間の重さ』（9字・独立して意味あり）、『すっかり夜になった』（9字・独立して意味あり）。各行が独立して意味を持ち、1行で瞬時に理解できる。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭『今日も作業を終えてから、10分だけこれを書いています。』はテーマ文の言い切りで途中から始まっている。背景説明（なぜ書いているか・何年やっているか・何を書いているか等）を挟まず、進行中の行為からイン・メディアス・レスで入っている。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全体に妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。登場人物は本人のみ。全動作が一人の行為（『手を洗って』『上着を椅子の背に掛けます』『座って、息をゆっくり吐きます』）。『部屋の中は、静かです』は一人暮らしの描写として自然。複数人分の物・生活音・待つ人等の気配なし。受け手への呼びかけ・二人称・依頼形・勧誘形・疑問形の呼びかけも0件。"
+        }
+      ],
+      "summary": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep119_round1.json）の全25軸を reason・target_file を含め欠落なく転記"
+    }
+  ]
+}
