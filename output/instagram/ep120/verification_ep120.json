@@ -1,0 +1,223 @@
+{
+  "ep_number": 120,
+  "euphemism_required": false,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionに「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。台本は書き続けている理由と思いについての独白であり、足元の悩み文脈での「対策X→効果Y」の因果構造は存在しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造なし。理由・思いを商品・体の状態・良くなる系に一切接続しておらず、書く行為そのものの動機を静かに述べるにとどまる。製品名・対策名・はたらきへの言及もゼロ。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現なし。購入を促す文脈自体が存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "全文が和男の共感共闘トーンに収まる静かな独白。「話すのは苦手で」「うまく伝えられない日が、僕にもありました」等の弱さの開示は告白型の正統。売り込み・専門家・情報提供者トーンへの逸脱なし。着地「〜と思っています」も個人の思いの静かな言い切りで一貫。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionに「変わった/変わる/変化した/変化があった/変化を感じた」の語幹なし。足元・体調文脈はそもそも登場せず、無関係文脈での誤検出もない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master File.120のテーマ「120本目。僕がこれを書き続けている理由は、たぶん一つだけです」がナレーション冒頭で文字通り提示されている。ナレーション全体がこのテーマに沿った回想と思いの表明で構成されている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装。弱さ・本音の正直な開示＝「話すのは苦手」「誰に見せるあてもありませんでした」「うまく伝えられない日が、僕にもありました」「手を休めた時期も、ありました」。着地＝「口に出せずにいることに、言葉を添えていきたいと思っています」で「この人に話したい」感情を喚起する構造。Type_Bの情報整理やType_Cの情景描写には寄っていない。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P4後半File.116-120第6ブロック5本目＝追伸枠。phase_roleの「売らずに閉じる。出すことにした思いと理念を兼ねる一行」を台本が忠実に実装。新情報なし・煽りなし・依頼なし・予告なし。回想の過去形基調から思いの一行で静かに閉じる構成は追伸枠にふさわしい低強度。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のためC1判定をskip。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のためC2判定をskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "skip",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2が婉曲不要によりskipのため、C3（captionへの婉曲チェック非適用の制御ルール）も判定対象なし。A群（正直さ）はcaptionにも適用済み（A1-A5参照）。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感入口。話すのが苦手で、誰に見せるあてもなく言葉にして残してきたという、内面の小さな本音の提示から入る」を実装。テーマ文直後に「最初は、誰に見せるあてもありませんでした。話すのは苦手で」と弱さの開示から入っており、Type_Aの共感入口として機能。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「『この人に話したい』着地。口に出せずにいることに言葉を添えたいという思いのひとことだけを残す。独白のまま完結」を実装。着地文「口に出せずにいることに、言葉を添えていきたいと思っています。」は書いているものの内容も理由の詳細も明かさず、思いのひとことで独白を完結。CTA・DM・caption誘導への接続なし。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「120本目に、書き続けてきた思いをひとこと置いて閉じる」に一本化。台本はテーマ提示→回想（書き続けてきた時間の外形）→思いの着地という単一アークで構成。経過の総括・次回の予告・依頼・理由の複数提示いずれもなく、2メッセージが混在しない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=なしのためE1判定をskip。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=なし回として全チャネル（ナレーション・テロップ・caption）を検査。(1)特定行動（フォロー・保存・いいね・コメント・シェア・リンク遷移・DM）への命令形指示ゼロ。(2)依頼形・勧誘形によるフォロー等への指示ゼロ。(3)DM誘導文の混入ゼロ。テロップ最終行「言葉を添えたい」は自己の思いの陳述であり視聴者への動作要求ではない。captionもhook_line・body・ハッシュタグのみでCTA的文言なし。プロフィール・リンク・DM等への言及一切なし。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップに「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。cta_type=なし回のためcaptionにもハードCTA不可であるところ、captionにもハードCTA・依頼形・誘導表現なし。全チャネルでハードCTA検出ゼロ。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文が「です・ます」調で統一。文末：「一つだけです」「ありませんでした」「落ち着きました」「ありました」(2回)「続いていました」「思っています」。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは感情を込めた回想と思いの独白（過去形の語り→着地の現在形の思い）。テロップは回想と思いを視覚的概念ラベルに圧縮した5行（「言葉にして残す」「誰に見せるあてもない」等）。テロップはナレーションの同一文の転記ではなく、感情・文法を削ぎ落とした概念語として独立に機能。telop_guidelineの「ナレーションを文字化せず、回想の外形と思いを視覚的な軸に短く提示する」に準拠。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（弱さの告白、回想の情感、思いの吐露）。テロップ＝論理（回想の外形を概念語で時系列的に提示し、視聴者の理解を構造化）。CTAなし回のためテロップにCTA的気づき要素はないが、ナレーションの情感をテロップが概念的に整理する役割分離は成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "ep120.json caption仕様との照合：hook_line「最初は、誰に見せるあてもありませんでした。」→完全一致。body「手を休めた時期も、ありました。それでも、言葉を置くことは、続いていました。」→完全一致（行分割は書式上の差異）。cta=空文字→captionにCTA文言なし、整合。hashtags 5件「#安全靴 #工場勤務 #12年の記録 #ひとりごと #言葉」→順序・内容とも完全一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作（ep115-119）との主題比較：ep115=時間の使い道、ep116=30本のまとめ、ep117=安全靴を下ろす朝、ep118=動けなかった夜・DM、ep119=作業後の日常風景。ep120の主題「120本目の節目に書き続けている理由（思い）を一行置いて閉じる」は独自。ep119に「書いています」があるが文脈が異なる（日常行為の描写 vs 存在理由の内省）。場面・対策・素材の重複なし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ5行すべてが独立して意味を持ち、1行で瞬時理解可能。「言葉にして残す」(6字)「誰に見せるあてもない」(9字)「手を休めた時期もある」(9字)「口に出せずにいること」(9字)「言葉を添えたい」(7字)。いずれもtelop_max_chars_per_line=10以下。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "冒頭「120本目。僕がこれを書き続けている理由は、たぶん一つだけです。」で即座にテーマに入る。背景説明・前置き・挨拶なし。narration_guidelineのopening_approach「テーマ文の言い切りから即座に入り、背景の語りは挟まない」に合致。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "File.120（>60）のためJ1適用。ナレーション・テロップ・captionに妻・子ども・家族の登場・気配なし。登場人物は「僕」のみ。受け手への呼びかけ・二人称・「読んでいる人」等の第三者像の名指しなし。依頼形・勧誘形・疑問形の呼びかけなし。人間関係は内面の範囲に収まり、一人暮らしの独白として完結。tone_and_rules.marriage_constraint「和男は未婚」に準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 4
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep120_round1.json）の全25軸を reason・target_file を含め欠落なく転記"
+    }
+  ]
+}
