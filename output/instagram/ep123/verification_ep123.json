@@ -1,0 +1,247 @@
+{
+  "ep_number": 123,
+  "euphemism_required": true,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション全文・テロップ全行・caption全文",
+          "reason": "ナレーションは3つの手順の外形（足をぬぐう・中敷きを入れる・靴を履く）を動作として淡々と述べるのみ。「効く」「治る」「消える」「改善する」「なくなる」「解消」等の断定表現は未使用。テロップ・captionにも効果を断定する因果構造は存在しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション全文・テロップ全行・caption.cta「手順の一覧は、プロフィールに置いています。」",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造はない。手順の外形を列挙するだけで、理由・はたらき・結果を一切記述していない。caption.ctaは手順一覧の所在を事実として述べるのみで、効果への暗示的橋渡しは成立していない。「変わった」系の語も未使用。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション全文・テロップ全行・caption全文",
+          "reason": "「今だけ」「残りわずか」「早く試さないと」等の限定感・緊急性・煽りの表現は全フィールドに存在しない。購入を急かす要素・商品名への言及もゼロ。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "location": "ナレーション全文",
+          "reason": "ナレーションは和男の共感共闘トーンの範囲内。「椅子に腰かけて」「ゆっくりぬぐいます」「指で軽く押さえます」等、一人称の淡々とした手順描写が一貫しており、売り込みトーン・専門家トーン・説教調への逸脱はない。P5段ルールの『内面独白・感情語なし』も遵守されており、Type_B P5版の静かな手順列挙として適切。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション全文・テロップ全行・caption全文",
+          "reason": "「変わった」「変わる」「変化した」「変化があった」「変化を感じた」の語幹はナレーション・テロップ・captionのいずれにも未使用。足元・体調文脈での使用はゼロ。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション冒頭「気温が20度を超える秋の朝です。仕事の前に、3つの手順をすませます。」",
+          "reason": "design_master該当行のテーマ「気温が20度を超える秋の日は、仕事の前に3つの手順をすませます」とナレーション冒頭が整合。「秋の日」→「秋の朝」の変換はnarration_guidelineの指定（冒頭でテーマ文を言い切る）に準拠しており、テーマの本質（20度超えの秋・仕事前・3手順）は完全に一致。展開部も3つの手順の外形を列挙しておりテーマどおり。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション全文＋テロップ最終行「1拭く2中敷き3履く」",
+          "reason": "Type_B P5版（保存される実用形）の心理構造を正しく実装。(1)数字つきの手順（1つ目〜3つ目）を本人の手順の外形として列挙している。(2)はたらき・理由・良し悪しを書いていない。(3)内面独白・感情語がない。(4)終カットのテロップ最終行に手順一覧（1拭く2中敷き3履く）を1枚置き、見返す動機を生んでいる。(5)入口＝実用的好奇心（数字と手順の予告）、出口＝「もっと聞きたい」（理由を語らず静かに閉じ、一覧を見返したくなる余韻）が成立。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション全文",
+          "reason": "P5第3回・ブロックS1の3本目（秋の気温・日ざし）。phase_roleに「各本単独完結・販売導線なし」とあり、本台本は単独で完結する手順紹介で販売導線を含まない。山場指定ではなく淡々とした強度で、ブロック内3本目として適切な位置づけ。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "location": "ナレーション全文・テロップ全行",
+          "reason": "euphemism_dict.prohibited_direct（足のニオイ・足が臭い・悪臭・臭い足・足臭・体臭・蒸れ臭・雑菌・腐敗臭・発酵臭・殺菌・除菌・ニオイ対策）の13語はナレーション・テロップのいずれにも未使用。悩みの部位・内実・製品の名指しもない。手順の外形（足をぬぐう・中敷きを入れる・靴を履く）のみで構成されており、最小接触方式が機能している。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション全文",
+          "reason": "婉曲:要（核＝足元の違和感）に対し、最小接触方式で悩みへの間接接触を3つの手順の外形だけで成立させている。直接表現（ニオイ・臭い・蒸れ等）を確実に回避。なぜその手順かの理由・はたらきを書かず、悩み語・不調の部位・内実・製品を足していない。euphemism_dictのconversion_tableに照合しても、変換が必要な直接語が使用されていないため、変換の適切性は問題なし。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "location": "caption.md全文",
+          "reason": "婉曲チェック（C1・C2）はcaptionに適用しない制御ルールを確認。A群（正直さ）はcaptionにも適用済み（A1-A5で判定済）。captionには「手順の一覧は、プロフィールに置いています。」があるが、これは婉曲チェックの対象外であり、正直さの観点では事実陳述として問題なし。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション冒頭「気温が20度を超える秋の朝です。仕事の前に、3つの手順をすませます。」",
+          "reason": "psychology.entry「実用の入口。気温の数字と秋の朝の情景から入り、番号つきの手順が順に並ぶと予感させる、保存される実用形の入口」を正しく実装。冒頭1文目で気温の数字（20度）と秋の朝の情景を提示し、2文目で「3つの手順をすませます」と手順列挙を予告。Type_B（知的好奇心・実用への関心）の入口として機能している。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション末尾「外では、虫の声が細く続いています。」＋テロップ最終行「1拭く2中敷き3履く」",
+          "reason": "psychology.exit「もっと聞きたい。理由も結論も語らないまま、同じ気温の朝の聞こえる音を置いて終わり、終カットの手順一覧を見返したくなる静かな余韻で締める。誘導は本文に一切置かない」を正しく実装。着地文で理由も結論も語らず聴覚情景（虫の声）で静かに閉じ、テロップ最終行の手順一覧が見返す動機を生んでいる。本文に誘導なし。Type_B出口（もっと聞きたい）として機能。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション全文・テロップ全行",
+          "reason": "one_message「20度を超える秋の日の、仕事前の3つの手順」に台本全体が集約できる。冒頭のテーマ提示→3手順の外形列挙→着地の情景、すべてが一つのメッセージに収束しており、2メッセージの混在はない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック（ソフトCTA）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "location": "caption.md 5行目「手順の一覧は、プロフィールに置いています。」",
+          "reason": "P5ソフトCTA新機構の6要件を判定。①非依頼形：「置いています」は事実の陳述であり依頼・勧誘・疑問形の呼びかけなし＝適合。②二人称・呼びかけなし：「あなた」等の直接的呼びかけなし＝適合。③販売圧なし：購入・商品・リンク誘導・保存/フォロー/タグ付け指示なし＝適合。④「プロフィール」はcaption.ctaのみに出現（ナレーション・テロップ・caption hook_line・bodyに未出現）、「DM」全面不可＝全フィールドで未使用＝適合。⑤1文・静かな言い切りの事実陳述＝適合。⑥禁止語23語幹＋prohibited_direct 13語の出現＝0件＝適合。6要件すべて充足。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTAのためE2はskip。E2はcta_type=なしの場合のみ判定対象。本epはCTA存在回（ソフトCTA）であり適用対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "テロップ全行・ナレーション全文・caption hook_line・caption body",
+          "reason": "テロップに「プロフィールを見て」「リンクから」「今すぐ」等の直接誘導は未使用。テロップ全行は場面・動作の外形の短い語と手順一覧のみ。ナレーション・caption本文（hook_line「秋の朝、仕事の前の手順をすませました。」・body「外から、虫の声が聞こえていました。」）にも誘導の気配はゼロ。caption.cta「手順の一覧は、プロフィールに置いています。」はソフトCTA回のcaption.cta欄で許容される事実陳述であり、ハードCTA（強圧的命令・直接誘導）には該当しない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション全8文",
+          "reason": "ナレーション全文が「です・ます」調で統一。「朝です」「すませます」「ぬぐいます」「かけます」「入れます」「押さえます」「鳴らします」「続いています」。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "location": "ナレーション全文 vs テロップ全行",
+          "reason": "ナレーションは手順の詳細な動作描写（「椅子に腰かけて、足をタオルでゆっくりぬぐいます」等）。テロップは場面・動作のキーワード（「秋の朝」「足をぬぐう」「中敷きを靴へ」）と手順一覧（「1拭く2中敷き3履く」）。ナレーションの文をそのまま転記・要約した行はなく、テロップは独立した視覚的参照として機能している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション全文 vs テロップ全行",
+          "reason": "ナレーション＝体験的・手順を追体験させる共感の層（本人が朝の手順を淡々と語る一人称体験）。テロップ＝論理的・整理の層（場面語のカード提示＋最終行の手順一覧で「見返せる実用的情報」を提供）。Type_B P5版の設計に沿い、ナレーションが体験的追体験、テロップが保存用の論理的参照という役割分離が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "location": "caption.md全文 vs ep123.json caption フィールド",
+          "reason": "caption.md各要素がep123.jsonのcaptionフィールドと完全一致。hook_line「秋の朝、仕事の前の手順をすませました。」＝一致。body「外から、虫の声が聞こえていました。」＝一致。cta「手順の一覧は、プロフィールに置いています。」＝一致。hashtags「#安全靴 #工場勤務 #12年の記録 #秋の朝 #仕事の前」＝5個すべて一致・順序も一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション主題 vs ep118-122のナレーション主題",
+          "reason": "ep123の主題（20度超えの秋の朝・仕事前の3つの足元手順）は直近5作と重複しない。ep118＝動けなかった夜・DM誘導、ep119＝作業後の10分・夜の書く習慣、ep120＝120本目の振り返り・言葉を残す理由、ep121＝15度の朝・上着選び、ep122＝秋の昼下がり・日陰のベンチ。いずれもテーマ・場面・対策が異なる。着地文「外では、虫の声が細く続いています。」は聞こえる自然音（虫の声）を主語に立てる聴覚情景の言い切り型であり、既往26型（身体反応型〈ep121〉・視覚情景型〈ep122〉含む）のいずれにも該当しない第27形として確認。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "location": "テロップ全行（ナンバリング行除く5行）",
+          "reason": "各行が独立して意味を持ち1行で瞬時に理解可能。「秋の朝」＝時間場面の即理解、「仕事の前に」＝時間的位置の即理解、「足をぬぐう」＝動作の即理解、「中敷きを靴へ」＝動作の即理解、「1拭く2中敷き3履く」＝3手順の一覧が1行に圧縮されているが各手順が短い語で区切られており瞬時に理解可能。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "location": "ナレーション冒頭「気温が20度を超える秋の朝です。」",
+          "reason": "ナレーション冒頭が背景説明・挨拶・自己紹介ではなく、気温の数字と秋の朝の情景から即座に入っている。前置きなし。opening_approachの指定「イン・メディアス・レス。気温の数字と秋の朝を言い切るテーマ文から即座に入り、前置き・挨拶・背景の話は挟まない」に準拠。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "婚姻制約チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "location": "ナレーション全文・テロップ全行・caption全文",
+          "reason": "登場人物は本人のみ。ナレーション・テロップ・captionに妻・子ども・家族（実家の親を除く）の登場・存在の示唆はない。「椅子に腰かけて」「靴を履いて、立ち上がり」等の描写は一人暮らしの朝の手順として自然。配偶者・子の存在を暗示する描写（「家族が待っている」等）はゼロ。受け手への呼びかけ・二人称・疑問形の呼びかけも全面不使用。tone_and_rules.marriage_constraint「和男は未婚」に準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 24,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep123_round1.json）から全25軸を転記。P5の3本目・Type_B（P5版＝保存される実用形）・ソフトCTA（P5初・caption.cta段2生成）・婉曲:要（2回目・最小接触方式）。"
+    }
+  ]
+}
