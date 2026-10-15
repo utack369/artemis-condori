@@ -1,0 +1,223 @@
+{
+  "ep_number": 124,
+  "euphemism_required": true,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体を確認。「効く/治る/消える/改善する/なくなる/解消」等の断定表現なし。動作の外形（あおぐ・風を入れる）のみで、対策→効果の因果構造は一切成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTA全体を通読。製品言及なし、before/after比較なし、理由・はたらき・良し悪しへの言及なし。風を入れる動作の外形だけを描写し、なぜそうするかの因果を一切示していないため、「これを使えば解決する」と読み取れる構造は成立しない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体に、限定感（今だけ/残りわずか）・緊急性・煽り表現なし。製品・購入への言及自体が存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全編を通じて和男の共感共闘トーンを維持。「少し行儀が悪いかな、という気もします」は自嘲的な本音の開示であり、売り込み・専門家・指導者トーンへの逸脱なし。CTA「昼の話は、DMでそっと受け取っています。」も静かな陳述形で、勧誘・命令トーンに転じていない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体で「変わった/変わる/変化した/変化があった/変化を感じた」の語幹・活用形なし。足元・体調文脈での使用は皆無。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ『秋でも昼の日ざしが強い日は、上着のすそをあおいで風を入れています』に対し、ナレーション冒頭「秋でも、昼の日ざしが強い日があります」でテーマを提示し、展開で「上着のすそを両手でつまんで、ゆっくりあおぎます」「すそをふくらませて、風を入れます」と動作を描写。テーマ素材を正確に扱っている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装。弱さ・本音の開示=「少し行儀が悪いかな、という気もします。それでも、もう一度つまんで、あおぎます。」（小さな行儀の悪さを言い訳なしに開示）。着地は「資材置き場の角で、昼の光を正面に受けています。」で居場所を具体に置き、視聴者が自分の昼を重ねる余白＝「この人に話したい」着地を実現。P5版の場面・身体動作主軸・内面1文の制約も遵守。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P5第4回・ブロックS1の4本目。各本単独完結・販売導線なし・前回視聴の前提なしの設計意図に合致。強度は淡々とした一コマ描写で、P5の「発見と蓄積」の静かなトーンと整合。山場指定はなく、相応の静かな強度。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "婉曲:要。euphemism_dict.prohibited_direct 13語（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）をナレーション・テロップで確認。いずれも未使用。暑さ・汗・蒸れ等の体感の悩み語も使用なし。動作の外形（すそをあおぐ・風を入れる）のみで、なぜそうするかの内実に触れていない。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "最小接触方式3回目として、婉曲変換テーブルの語を使う必要がそもそも発生していない。足元の違和感への間接接触は「上着のすそをあおいで風を入れる」動作の外形と情景だけで成立。悩みの内実・部位・不調・製品への言及が皆無のため、変換対象となる直接表現が存在しない。設計意図どおり。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "婉曲チェック（C1/C2）はキャプションに適用していない。一方、A群（正直さ）はキャプションにも適用済み（A1-A5でcaption含めて判定完了）。制御ルールどおりの適用範囲。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry=「弱さ・本音への共感入口。日ざしの強い昼に上着のすそをあおぐ小さな行儀の悪さを、言い訳なしで場面の外形として開示する入口」。ナレーション冒頭「秋でも、昼の日ざしが強い日があります。外に出ると、目を細めます。」で日ざしの情景から即座に入り、続く動作描写で「行儀の悪さ」の外形を開示。Type_Aの弱さ・本音の共感入口として機能。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit=「『この人に話したい』着地」。ナレーション末尾「資材置き場の角で、昼の光を正面に受けています。」は、理由も結論も語らず居場所と光の向きを具体に置いて終える構造。同じ日ざしの昼を過ごした視聴者が自分の昼を重ねられる余白を残し、caption.cta「昼の話は、DMでそっと受け取っています。」が静かに導線を示す。「この人に話したい」着地が成立。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message=「日ざしの強い秋の昼に、上着のすそをあおいで風を入れる一コマ」。ナレーション全体が、秋の昼の日ざし→すそをあおいで風を入れる動作→資材置き場の角、という単一の一コマに集約。第二のメッセージ（対策提示・効果報告・別テーマ等）は混在していない。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "cta_type=DM誘導。telop_guideline.cta_expression=null（テロップにCTA行なし=設計意図どおり）。CTAはcaption.ctaのみで担う設計。caption.cta「昼の話は、DMでそっと受け取っています。」をDM誘導要件6点で検証：①非依頼形＝「受け取っています」は陳述形（言い切り）、依頼形・疑問形の呼びかけなし→適合。②二人称・呼びかけなし＝「あなた」「みなさん」等なし→適合。③販売圧なし＝購入・商品・リンク・プロフィール遷移・タグ付け・保存・フォロー誘導いずれもなし→適合。④「DM」の語はcaption.ctaのみに出現＝ナレーション・テロップ・caption本文・hook_line・ハッシュタグを確認し「DM」なし。「プロフィール」は全面不使用→適合。⑤1文・静かな言い切り→適合。⑥禁止語23語幹＋prohibited_direct13語を照合し0件→適合。加えて婉曲要回のため悩み語・体感の悩み語・部位・製品もcta行に未使用→適合。全6点＋悩み語なしを充足。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導のため、E2（cta_type=なしのみ適用）は判定対象外。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ全行（秋の昼/外に出て目を細める/すそをつまんであおぐ/風を入れる/資材置き場の角）に「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。ナレーションにもハードCTA要素なし。caption本文「資材置き場の角で、昼の光を受けていました。」にも誘導の気配なし。caption.cta「昼の話は、DMでそっと受け取っています。」は陳述形の静かなDM言及であり、DM誘導回のcaptionとして許容範囲内（強圧的命令でない）。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全8文の語尾を確認：あります/細めます/あおぎます/入れます/気もします/あおぎます/あおぎます/受けています。全文「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは「です・ます」調の情感を含む独白文体（「ゆっくりあおぎます」「少し行儀が悪いかな、という気もします」「それでも、もう一度つまんで」等の時間経過・内面・副詞を含む）。テロップは約物なしの短い体言止め・連用形の視覚的場面標識（「秋の昼」「外に出て目を細める」「すそをつまんであおぐ」）。ナレーションの逐語転記・文単位の要約ではなく、視覚的な場面アンカーとして別形式で機能。内面描写（行儀が悪いかな）はテロップに含まれず、役割が分かれている。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）面を担当。「少し行儀が悪いかな、という気もします。それでも、もう一度つまんで、あおぎます。」等の内面・感覚描写はナレーションのみに存在。テロップ＝場面の視覚的構造を提示。P5版Type_Aでは論理的気づき・CTA要素をテロップに載せない設計（cta_expression=null・理由/はたらき記述禁止）のため、テロップは場面の視覚的骨格に徹しており、設計意図に沿った役割分離。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素をep124.jsonのcaptionフィールドと照合。hook_line「秋の昼、上着のすそをあおいだ日です。」＝完全一致。body「資材置き場の角で、昼の光を受けていました。」＝完全一致。cta「昼の話は、DMでそっと受け取っています。」＝完全一致。hashtags 5件（#安全靴 #工場勤務 #12年の記録 #秋の昼 #上着）＝指示書の配列と完全一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作と主題・場面・対策・着地型を照合。ep119=夜の部屋で記録を書く（夜・室内）、ep120=120本目の記録を書く理由（内省・言葉）、ep121=朝の上着選び・ドアの前（朝・寒さ・上着を着る）、ep122=昼下がり・日陰のベンチ・かかと（昼下がり・ベンチ・休憩）、ep123=秋の朝の3手順・中敷き（朝・手入れ手順）。ep124=秋の昼・日ざし・すそをあおいで風を入れる・資材置き場の角。場面（資材置き場）・動作（すそをあおぐ）・着地（第28形：本人の居場所と向きの言い切り型）いずれも直近5作と非重複。ep122と季節・時間帯（秋・昼）は近いが、場所・動作・描写対象が異なる。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行を確認。「秋の昼」（3字）「外に出て目を細める」（9字）「すそをつまんであおぐ」（10字）「風を入れる」（5字）「資材置き場の角」（7字）。全行10字以内（telop_max_chars_per_line=10準拠）、各行が独立して意味を持ち、瞬時理解可能。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「秋でも、昼の日ざしが強い日があります。外に出ると、目を細めます。」は、挨拶・自己紹介・背景説明なしに日ざしの情景から即座に入るイン・メディアス・レス構成。narration_guideline.opening_approach「昼の日ざしの情景を言い切るテーマ文から即座に入り、前置き・挨拶・背景説明は挟まない」に適合。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "File.124（>60）のため判定対象。ナレーション・テロップ・キャプション全体を確認。登場人物は本人のみ（主語省略の一人称独白）。妻・子ども・家族の登場・存在の示唆なし。同僚・友人・知人の名指し・気配なし。二人称・呼びかけ・疑問形の呼びかけなし。「資材置き場の角で」は職場の場所描写だが、他者は登場しない。caption.cta「昼の話は、DMでそっと受け取っています。」も受け手を名指しせず、二人称なし。一人暮らし・内面の範囲で構成されている。"
+        }
+      ],
+      "summary": {
+        "pass": 24,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep124_round1.json）から全25軸を転記。P5の4本目・Type_A（P5版＝場面と身体動作から入り内面は一行だけ）・DM誘導×婉曲:要（P5初の組み合わせ・caption.cta段2生成）・最小接触方式3回目。"
+    }
+  ]
+}
