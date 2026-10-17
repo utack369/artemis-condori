@@ -1,0 +1,247 @@
+{
+  "ep_number": 126,
+  "euphemism_required": true,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionの全文を走査。「効く/治る/消える/改善する/なくなる/解消」等の断定語なし。内容は冷たい雨の日の外形描写と「気が重い」という感情の一文のみで、対策→効果の因果構造は存在しない。",
+          "location": "該当箇所なし"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造なし。製品・対処・手段への言及が皆無。雨の午後の情景を淡々と記述するのみで、暗示的な解決導線は成立していない。",
+          "location": "該当箇所なし"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽りの表現なし。製品への言及自体がなく、購入を促す文脈は一切存在しない。",
+          "location": "該当箇所なし"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全文が和男の共感共闘トーン（静かな独白、正直な一言、淡々とした外形描写）で一貫。売り込みトーン・専門家トーンへの逸脱なし。「気が重いです」はテーマ由来の正直な開示であり、共感共闘の範囲内。",
+          "location": "該当箇所なし"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionの全文に「変わった/変わる/変化した/変化があった/変化を感じた」の使用なし。足元・体調文脈での使用は皆無。「色が濃くなっています」は靴表面の外形描写であり、体調・効果の文脈ではないため問題なし。",
+          "location": "該当箇所なし"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master該当行のテーマ「冷たい雨の日、濡れた靴のまま過ごす午後が、いちばん気が重いです」とナレーション内容が完全に整合。冷たい雨（冒頭）→濡れた靴で過ごす午後の外形（展開）→気が重い（内面一文）→靴の形の水の跡（着地）という構成でテーマ原文の要素をすべて反映。",
+          "location": "ナレーション全文がテーマ原文と対応"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装。弱さ・本音の正直な開示＝「濡れた靴で過ごす午後が、いちばん気が重いです」という一文で率直に内面を開示。着地＝理由も対処も語らず靴の形の水の跡で静かに閉じることで、「この人に話したい」（自分の雨の午後を重ねて誰かを思い浮かべる）余韻を生んでいる。",
+          "location": "ナレーション7文目「濡れた靴で過ごす午後が、いちばん気が重いです。」＋最終文「靴の形の水の跡が、点々と残っています。」"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P5第6回・S2ブロック1本目として、ブロック構造を視聴者に見せず各本単独完結の設計を遵守。前回視聴の前提なし・販売導線なし。「新しいブロックの始まり」「季節の区切り」の扱いもない。phase_roleの指示と整合する適切な強度。",
+          "location": "該当箇所なし（設計整合）"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "euphemism=要のため判定実施。euphemism_dict.prohibited_direct（足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策）のいずれもナレーション・テロップに使用なし。内容は天候と物の外形のみ（雨・靴の表面の色・水の音・しずく・水たまり・水の跡）で、悩みの核心に直接触れる語は皆無。",
+          "location": "該当箇所なし"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "最小接触方式を忠実に実装。接触は天候と物の外形のみ：雨（天候）、靴の表面の色が濃い（外から見える変化）、水を踏む音（聴覚）、しずく（視覚）、水たまり（外形）、靴の形の水の跡（痕跡）。不可とされる足の感覚語・足や皮膚の部位・靴の内側・水気への対処手段・替えの物・製品はいずれも不使用。conversion_tableの精神（直接表現を確実に回避）と整合。",
+          "location": "該当箇所なし（全文が外形描写の範囲内）"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "制御ルール確認：C1・C2の婉曲チェックはcaptionに適用しない（適用範囲外）。A群（正直さ）はcaptionにも適用済み（A1-A5で判定済）。なおcaptionにもprohibited_direct語の使用はない。",
+          "location": "caption.md全文"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感。冷たい雨の日の情景から入り、その午後の気の重さを一文だけ正直に開示する静かな入口」とナレーション冒頭が整合。「冷たい雨が降る日の、午後です。」で情景から即座に入り、Type_Aの入口（弱さ・本音への共感）を実現。前置き・挨拶なし。",
+          "location": "ナレーション冒頭「冷たい雨が降る日の、午後です。」"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「この人に話したい。理由も対処も語らないまま、靴の形の水の跡が残る外形で終わり、自分の雨の午後を重ねて誰かを思い浮かべる静かな余韻で締める」とナレーション末尾が整合。「靴の形の水の跡が、点々と残っています。」で理由も対処も語らず痕跡の外形だけで閉じ、Type_Aの出口（この人に話したい）の余韻を生んでいる。テロップ最終行「靴の形の水の跡」も同方向。誘導は一切なし。",
+          "location": "ナレーション最終文「靴の形の水の跡が、点々と残っています。」・テロップ最終行「靴の形の水の跡」"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「冷たい雨の日、濡れた靴のまま過ごす午後の一コマ」に台本全体が集約可能。ナレーション・テロップ・captionすべてが「冷たい雨の午後、濡れた靴の外形」という1メッセージに収束し、第2のメッセージ（対処・製品・別の悩み等）は混在していない。",
+          "location": "該当箇所なし（全文が一貫）"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=なしのためE1は判定対象外。E1はcta_type=DM誘導またはソフトCTAのときのみ判定する。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=なしのため判定実施。テロップ全行（ナンバリング行「安全靴と戦う12年の記録：File.126」＋描写5行）に、特定行動（フォロー・保存・いいね・コメント・シェア・リンク遷移・DM）への命令形・依頼形・勧誘形の指示なし。DM誘導文の混入なし。caption本文「濡れた靴の午後を、静かに書き留めておきます。」は一人称の自己行為の陳述であり視聴者への依頼ではない。caption.cta=空文字（JSON確認済）。ハッシュタグ5件もすべて描写的（#安全靴 #工場勤務 #12年の記録 #冷たい雨 #雨の日）で誘導性なし。",
+          "location": "テロップ全6行＋caption全文を走査"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップ全6行に「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。DM・プロフィール・リンク・フォロー・保存等への言及自体が皆無。CTAなし回のcaptionにもハードCTAなし（CTAなし回はcaptionのハードCTA不可）。",
+          "location": "テロップ全6行＋caption全文を走査"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全8文の語尾を確認：「午後です」「濃くなっています」「鳴ります」「落ちます」「はねます」「またぎます」「気が重いです」「残っています」。全文が「です・ます」調で統一。だ・である調の混在なし。",
+          "location": "ナレーション全8文の文末"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは冷たい雨の午後の体験を完全文で描写（感覚・動作・情景・内面一文）。テロップは場面の視覚的ラベルを体言止め・短句で提示（「冷たい雨の午後」「靴の色が濃くなる」等）。同一テキストの転記・要約ではなく、同じテーマを異なる表現形式で扱っている。例：ナレ「靴の表面は、雨を受けて色が濃くなっています」→テロップ「靴の色が濃くなる」は圧縮された視覚ラベルであり転記ではない。",
+          "location": "ナレーション全文 vs テロップ5行の対比"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）の役割を担当。一人称の体験描写と「気が重い」の正直な内面開示で共感を生む。テロップ＝論理（気づき）の役割を担当。場面の視覚要素を短く並べ、情景の構造を論理的に提示（感情語・内面語は不使用）。テロップに「気が重い」等の感情語が転記されていないことで役割分離が成立。",
+          "location": "テロップ全行に感情語なし・ナレーションに内面一文あり"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "ep126.jsonのcaptionフィールドと実際のcaption.mdを照合。hook_line「冷たい雨の日の午後です。」→caption1行目と一致。body「濡れた靴の午後を、静かに書き留めておきます。靴の形の水の跡が、点々と残っています。」→caption3-4行目と一致。cta=空文字→caption5-7行目が空行で正しく空。hashtags 5件「#安全靴 #工場勤務 #12年の記録 #冷たい雨 #雨の日」→caption8行目と一致。別epの残骸混入なし。",
+          "location": "caption.md全行とep126.json captionフィールドの対応"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との素材・場面・対策の重複なし。ep121＝朝の上着選び・ドアノブの冷たさ、ep122＝秋の昼下がり・日陰のベンチ・缶コーヒー、ep123＝秋の朝・3つの手順・タオル・中敷き、ep124＝秋の昼・上着のすそをあおぐ、ep125＝前の晩・持ち物4つを机に出す。ep126＝冷たい雨・濡れた靴・水たまり・水の跡。主題（雨の午後の濡れた靴の外形）は直近5作のいずれとも異なる。",
+          "location": "ep121-125のナレーション主題との比較"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ全5行（ナンバリング除く）がそれぞれ独立した意味を持ち、1行で瞬時に理解可能。「冷たい雨の午後」「靴の色が濃くなる」「水を踏む音」「しずくが落ちる」「靴の形の水の跡」はいずれも具体的な情景の一断面を端的に表現しており、前後の行がなくても単独で意味が成立する。",
+          "location": "テロップ2-6行目"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「冷たい雨が降る日の、午後です。」は情景の途中から始まる典型的なイン・メディアス・レス。自己紹介・背景説明（「僕は工場で働いていて…」等）・挨拶・前置きなし。冷たい雨の午後という場面に即座に没入させる構成。",
+          "location": "ナレーション冒頭「冷たい雨が降る日の、午後です。」"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "File.126（>=61）のため判定実施。ナレーション・テロップ・caption全文を走査。登場は本人のみ。妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。同僚・友人等の名指し・気配もなし。人間関係は一人暮らしの日常（雨の中一人で歩き、濡れた靴で午後を過ごす）の範囲内。二人称への呼びかけ・受け手への言及なし。配偶者・子の存在を暗示する描写（「家族が待っている」等）なし。tone_and_rules.marriage_constraint準拠。",
+          "location": "ナレーション・テロップ・caption全文（人物は本人のみ）"
+        }
+      ],
+      "summary": {
+        "pass": 24,
+        "fail": 0,
+        "skip": 1
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep126_round1.json）から全25軸を転記。P5の6本目・S2ブロック1本目（ブロック区切り扱いなし）・Type_A（P5版＝内面一行はテーマ由来「気が重い」の一文のみ）・CTAなし（caption.cta空文字・E1 skip/E2判定）・婉曲:要（最小接触方式・C1/C2判定対象4回目）。"
+    }
+  ]
+}
