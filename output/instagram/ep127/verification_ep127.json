@@ -1,0 +1,223 @@
+{
+  "ep_number": 127,
+  "euphemism_required": false,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体を確認。「効く/治る/消える/改善する/なくなる/解消」等の効果断定語なし。足元の悩み文脈での因果断定構造なし。白い息・マフラーという中立の情景描写のみで構成されている。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋キャプションの組み合わせ全体で「これを使えば解決する」と読み取れる構造は存在しない。製品名・素材・対策への言及が皆無。朝の白い息とマフラーを巻く動作の外形描写のみで、悩みの解決を示唆する要素がない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り表現（今だけ/残りわずか/早く試さないと等）なし。購入に結びつく文言が一切ない。日常の情景描写に終始している。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "和男の共感共闘トーン（淡々とした日常の語り）を全文で維持。売り込みトーン・専門家トーンへの逸脱なし。ナレーションは身体動作と外形を静かに並べる一人称の語りで、Type_C P5版の「感情の押し付けなし」に合致。キャプションも「静かに書き留めておきます」と和男の自然なトーン。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全文を確認。「変わった/変わる/変化した/変化があった/変化を感じた」のいずれも未使用。足元・体調文脈での使用なし。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master該当行のテーマ『朝6時、吐く息がはじめて白く見えた日に、マフラーを首に巻きます』に対し、ナレーション冒頭『朝6時、吐く息がはじめて白く見えました。』から始まりマフラーを巻く動作を展開しており、テーマ素材と完全に一致。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_C（日常スケッチ型）の心理構造を実装。日常の淡々とした描写（白い息を見る、マフラーを巻く、歩き出す等の外形動作の羅列）のみで構成され、内面独白・感情語は0件。着地『口もとの白い息は、朝の景色の一部です。』は物の様子の言い切りで、視聴者が自分の朝を重ねて人柄を理解する余白を残している。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "phase_role『P5第7回・ブロックS2の2本目』に整合。P5は各本単独完結・前回視聴の前提なし・販売導線なし。台本は山場指定ではなくブロック内の静かな一コマとして適切な強度。ブロックS2『雨・初冬の冷え』の文脈で、朝の白い息（初冬の冷え）を扱い、前作ep126（冷たい雨）との素材重複もなく位置づけが整合。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=『直接表現可』（婉曲不要）のためC1はskip。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=『直接表現可』（婉曲不要）のためC2はskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "婉曲チェック(C1/C2)はcaptionに適用しない制御ルール。本epはそもそも婉曲不要のためC1/C2自体がskipだが、制御ルールとしてはA群(正直さ)がcaptionにも適用されていることを確認済（A1-A5でcaptionを含めて判定済）。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry=『日常の共感。朝の白い息という誰にでも覚えのある情景から入り、前置きなしでその朝の一コマに入っていける静かな入口』。ナレーション冒頭『朝6時、吐く息がはじめて白く見えました。』は、前置きなしで白い息の情景に直接入っており、Type_C（日常の共感）の入口として実装されている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit=『人柄の深い理解。理由も感情も語らないまま、白い息という外形で終わり、自分の朝を重ねて誰かを思い浮かべる静かな余韻で締める。誘導は一切置かない』。ナレーション末尾『口もとの白い息は、朝の景色の一部です。』は白い息の外形で静かに言い切り、誘導なし。テロップ最終行『白い息のある朝』も同一の余韻。Type_C（人柄の深い理解）の出口を実装。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message=『朝6時、吐く息がはじめて白く見えた日に、マフラーを首に巻く一コマ』。台本全体がこの1メッセージに集約される。朝の白い息→マフラーを巻く→歩き出す→白い息で閉じるという単一の場面で、第2のメッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "cta_type=『なし』のためE1はskip。telop_guideline.cta_expression=null。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=『なし』のため混入チェックを実施。テロップ全6行を確認：ナンバリング行を除く5行はすべて情景・動作の描写（『吐く息が白く見える朝/マフラーを首に巻く/端を胸の前にたらす/歩くと息が流れる/白い息のある朝』）で、特定行動（フォロー・保存・いいね・コメント・シェア・リンク遷移・DM）への指示・依頼・勧誘なし。キャプション全文を確認：hook_line・bodyは陳述形の自己描写のみ、ctaは空文字、ハッシュタグは定型5つのみ。『DM』『プロフィール』の語なし。依頼形・勧誘形・疑問形の呼びかけ・二人称なし。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップ全6行に『プロフィールを見て/リンクから/今すぐ』等の直接誘導表現なし。DM誘導文・強圧的命令なし。キャプションについてもcta_type=『なし』のためハードCTAは不可だが、captionにもハードCTA表現は存在しない。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全9文の語尾を確認：『見えました/広がります/立ち止まります/たらします/揺れます/整えます/歩きだします/流れていきます/一部です』。すべて「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは詳細な動作描写の文章体（『手のひらを口の前に出すと、白い息がふわりと広がります』等）、テロップは場面のキーワードを短い名詞句・動詞句で提示（『吐く息が白く見える朝/マフラーを首に巻く』等）。ナレーションの転記・要約ではなく、別の切り口で同じ場面を視覚的に支える構成。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝共感チャネル（一人称の生活描写で聴き手が自分の体験を重ねる場）、テロップ＝論理チャネル（場面の外形を短い句で順に提示し、視覚的な認知を助ける）。Type_C（日常スケッチ型）では感情語を明示しないが、ナレーションの詳細な身体動作描写が共感を生む役割を果たし、テロップの短い句が場面の論理的な骨格を示す役割分担が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "ep127.jsonのcaptionフィールドと照合。hook_line:『朝6時の、白い息の話です。』→caption.md 1行目と一致。body:『吐く息が白く見えた日の朝を、静かに書き留めておきます。マフラーを首に巻いて、歩きだします。』→caption.md 3-4行目と意味的に一致（改行差のみ）。cta:空文字→caption.mdにCTA文なしで一致。hashtags:5つ（#安全靴 #工場勤務 #12年の記録 #白い息 #朝の景色）→caption.md 8行目と一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との比較。ep122=秋の昼下がり・日陰のベンチ・缶コーヒー。ep123=秋の朝・仕事前の3手順・中敷き。ep124=秋の昼の日ざし・上着のすそをあおぐ。ep125=前の晩に持ち物を机に出す。ep126=冷たい雨の午後・靴の水・水たまり。ep127=朝の白い息・マフラーを巻く。主題（白い息の朝にマフラーを巻く）・場面（朝の道）・素材（マフラー・白い息）いずれも直近5作と重複なし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ全6行がそれぞれ独立して意味を持ち、1行で瞬時に理解可能。ナンバリング行『安全靴と戦う12年の記録：File.127』は定型。残り5行『吐く息が白く見える朝/マフラーを首に巻く/端を胸の前にたらす/歩くと息が流れる/白い息のある朝』はいずれも短い名詞句・動詞句で視覚的に明快。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭『朝6時、吐く息がはじめて白く見えました。』は前置き・挨拶・背景説明なしで場面の途中から始まっている。数字から即座に情景に入るイン・メディアス・レスの手法。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraintチェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "File.127（>=61）のため判定対象。ナレーション・テロップ・キャプション全文を確認。登場人物は本人（和男）のみ。妻・子ども・家族の登場・存在の示唆なし。配偶者・子の存在を暗示する描写なし。人間関係の言及自体がなく、朝の一人の場面として完結。二人称への呼びかけなし。一人暮らしの朝の道を歩く描写のみで、婚姻制約に抵触する要素は皆無。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep127_round1.json）から全25軸を転記。P5の7本目・S2ブロック2本目・Type_C（P5版＝情景の一コマ・内面0件）・CTAなし（caption.cta空文字・E1 skip/E2判定）・婉曲:不要（C1/C2 skip）。"
+    }
+  ]
+}
