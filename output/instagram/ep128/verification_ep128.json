@@ -1,0 +1,223 @@
+{
+  "ep_number": 128,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全体で「効く/治る/消える/改善する/なくなる/解消」等の効果断定表現なし。ナレーションはタオルをたたんで鞄に入れる動作の外形のみを記述しており、対策Xから効果Yへの因果構造が一切成立していない。captionも同様に場面描写の事実陳述のみ。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造なし。ナレーションはタオルをたたんで鞄に入れる外形だけを順に置き、何に使うか・何のために持つかを一切書いていない。CTA「替えのタオルの支度は、プロフィールの記録にも載っています。」も記録の存在を述べるだけで効果を暗示しない。「変わった」系の表現も未使用。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全体で限定感（今だけ/残りわずか等）・緊急性・煽りの表現なし。購入・商品への言及なし。全体が淡々とした支度の外形描写に終始している。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション全体が和男の共感共闘トーン（淡々とした当事者の一人称描写）を維持。売り込みトーン・専門家トーンへの逸脱なし。「ぱちんと閉めます」「そっと入れます」等の穏やかな動作描写が一貫し、「気にならなくなった・保証しない・よかったら」のトーン基調から外れていない。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全体で「変わった/変わる/変化した/変化があった/変化を感じた」の使用なし。足元・体調文脈での使用はもちろん、他の文脈でも一切登場しない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「雨の予報が出た晩は、替えのタオルを2枚たたんで鞄に入れます」に対し、ナレーション冒頭「雨の予報が出た晩、替えのタオルを2枚、たたんで鞄に入れます。」が忠実に対応。テーマの素材（雨の予報・晩・替えのタオル・2枚・たたむ・鞄に入れる）がすべてナレーションで扱われている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_B（気づき・発見型）のP5版（保存される実用形）を意味的に実装。冒頭でテーマ文を提示して知的好奇心を喚起し、「1枚目」「2枚目」の番号付き外形を順に列挙して実用情報を重ね、着地で「鞄の奥に入れてあります」と結果状態だけを言い切って閉じることで「もっと聞きたい」（見返したくなる）余韻を生み出している。理由や結論を語らない構造がType_Bの心理構造に合致。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P5第8回・ブロックS2（File.126-130）の3本目。山場指定ではなく、ブロック内の中間回。台本の強度は淡々とした支度描写で適度に抑えられており、フェーズ内の配置意図と整合。ブロック構造を視聴者に見せない設計も守られている。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=「直接表現可」（婉曲不要）のためC1はskip。ep128.jsonで婉曲不要と明示されている。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=「直接表現可」（婉曲不要）のためC2はskip。ep128.jsonで婉曲不要と明示されている。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "婉曲チェック(C1/C2)はcaptionに適用されない制御が正しく機能。captionにはA群（正直さ）チェックが適用されており、A1-A5で判定済み。キャプション内にprohibited_direct語の直接使用もなし。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「実用の入口。雨の予報が出た晩の情景と2枚の数字から入り、番号つきの外形が順に続くと予感させる、保存される実用形の入口」に対し、ナレーション冒頭「雨の予報が出た晩、替えのタオルを2枚、たたんで鞄に入れます。」が情景（雨の予報が出た晩）＋数字（2枚）で始まり、続く「1枚目。」で番号つき外形の予感を成立させている。Type_B入口（知的好奇心）を実現。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「もっと聞きたい。理由も結論も語らないまま、鞄の中の結果状態を置いて終わり、終カットの一覧を見返したくなる静かな余韻で締める」に対し、ナレーション末尾「替えのタオルは、鞄の奥に入れてあります。」が結果状態の静かな言い切りで閉じ、テロップ最終行「1たたむ2鞄に」が見返せる一覧として機能。理由も結論も語らず「もっと聞きたい」余韻を実現。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「雨の予報が出た晩に、替えのタオル2枚をたたんで鞄に入れる一コマ」に対し、台本全体がこの1メッセージに集約。ナレーションは冒頭テーマ提示から着地まで一貫してタオルをたたんで鞄に入れる支度の外形のみを描写。第2メッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "cta_type=ソフトCTA。caption.cta「替えのタオルの支度は、プロフィールの記録にも載っています。」を6点で判定：(1)非依頼形・疑問形の呼びかけなし＝pass。述語「載っています」は現在状態の陳述形であり、依頼形（ください）・勧誘形（しましょう）・疑問形の呼びかけを含まない。(2)二人称・宛先指定なし＝pass。「あなた」「みなさん」等の二人称・宛先なし。主語は「替えのタオルの支度」で三人称。(3)販売圧なし＝pass。購入・商品・リンク・保存・フォロー・タグ付けの指示なし。(4)「プロフィール」はcta欄だけ・「DM」は全面不可＝pass。「プロフィール」はcaption.cta行のみに出現、ナレーション・テロップ・caption本文には未出現。「DM」は全面未出現。(5)1文の静かな事実陳述・述語の差し替え＝pass。1文の言い切り。述語「載っています」はep123「置いています」・ep125「置いてあります」とは異なる動詞（載る vs 置く）であり、「プロフィールに置」の形も用いていない。骨格の連続回避を達成。(6)禁止語23語幹＋prohibited_direct13語＝0件＝pass。CTA文中に効/治/消え/改善/変わ/変化/変え/解決/完全/劇的/即効/必ず/絶対/確実に/限定/今だけ/残りわずか/足のニオイ/足が臭い/悪臭/臭い足/足臭/体臭/蒸れ臭/雑菌/腐敗臭/発酵臭/殺菌/除菌/ニオイ対策のいずれも含まれない。6点すべてpass。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "cta_type=ソフトCTA（CTA存在回）のためE2はskip。E2はcta_type=なしの回のみ判定対象。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ全6行（ナンバリング行含む）に「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。テロップは場面ラベル・動作の外形・一覧テロップのみで構成。caption本文（hook_line・body）にもハードCTA混入なし。caption.ctaは「載っています」の陳述形でありハードCTAに該当しない。本回はソフトCTA回であるため、captionにもハードCTAは不可だが、実際に混入していない。サムネイル文字「雨の予報の晩」「鞄に入れる」にも誘導の気配なし。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文の語尾を確認：入れます／折ります／平らにします／折ります／重ねます／入れます／閉めます／入れてあります。すべて「です・ます」調で統一。「1枚目。」「2枚目。」は列挙ラベル（名詞止め）であり、文体の統一を崩す「だ・である」調の混在ではない。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは動作の詳細描写（角をそろえて横に折る、折り目を指で押さえて平らにする、鞄の口を開けてそっと入れる、留め具をぱちんと閉める等）。テロップは短い語（雨の予報の晩に／替えのタオル／たたんで鞄に／角をそろえる／1たたむ2鞄に）で場面と動作の概要を視覚的に提示。同一テキストの転記・要約ではなく、別の粒度・別の切り口で内容を構成している。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）層。タオルをたたむ手の動き・鞄への入れ方を丁寧に描写することで、同じ支度をしたことのある人への共感を生む。テロップ＝論理（気づき）層。場面・動作・一覧を短い語で論理的に整理し、見返す際の索引として機能。役割が分離している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素がep128.jsonのcaptionフィールドと完全一致。hook_line「雨の予報が出た晩の話です。」＝一致、body「替えのタオルをたたんで、鞄に入れた晩の様子です。」＝一致、cta「替えのタオルの支度は、プロフィールの記録にも載っています。」＝一致、hashtags「#安全靴 #工場勤務 #12年の記録 #雨の予報 #替えのタオル」＝5個すべて一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との照合：ep123（秋の朝・3つの手順・タオルで拭く・中敷き・履く）＝タオルは共通素材だが運びが異なる（ep123は拭く用途、ep128はたたんで鞄に入れる支度）。ep124（秋の昼・上着のすそをあおぐ）＝無関係。ep125（前の晩・4つの持ち物を机に出す）＝前の晩の支度という構造は近いが、素材（鍵・財布・帽子・水筒 vs タオル）・場面（机 vs 鞄）・動作（出す vs たたんで入れる）が異なる。ep126（冷たい雨の午後・濡れた靴）＝雨は共通だが時間帯（午後 vs 晩）・場面（外で歩く vs 家での支度）が異なる。ep127（朝6時・白い息・マフラー）＝無関係。主題・場面・素材の重複なし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち、1行で瞬時に理解可能。「雨の予報の晩に」＝場面、「替えのタオル」＝アイテム、「たたんで鞄に」＝動作、「角をそろえる」＝手順の核、「1たたむ2鞄に」＝一覧。いずれも前後の行に依存せず単独で意味が成立。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「雨の予報が出た晩、替えのタオルを2枚、たたんで鞄に入れます。」は情景の途中から始まっている。挨拶・自己紹介・背景説明（「今日は雨が降りそうなので」「いつも雨の日は」等）なし。即座にテーマの行為に入るイン・メディアス・レス構造。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "File.128（61以上）のため判定対象。(1)登場人物が本人のみ＝ナレーション全文の動作主体は一人称の本人だけ。他の人物（妻・子ども・家族・同僚・友人）の登場・名指し・気配なし。(2)家族の気配なし＝「家族が待っている」「一緒に」等の配偶者・子の存在を暗示する描写なし。場面は一人で支度をする晩の描写であり、一人暮らしの日常と整合。(3)受け手への呼びかけなし＝二人称（あなた・みなさん等）・宛先指定・依頼形での受け手への働きかけはナレーション・テロップ・caption全体で一切なし。tone_and_rules.marriage_constraint「和男は未婚」に準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep128_round1.json）から全25軸を転記。P5の8本目・S2ブロック3本目・Type_B（P5版＝保存される実用形・2枚のタオルの支度の外形列挙＋終カット一覧テロップ）・ソフトCTA（caption.cta段2生成・E1判定）・婉曲:不要（C1/C2 skip）・E2 skip。"
+    }
+  ]
+}
