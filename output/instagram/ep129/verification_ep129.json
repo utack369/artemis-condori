@@ -1,0 +1,223 @@
+{
+  "ep_number": 129,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「効く/治る/消える/改善する/なくなる/解消」等の断定語なし。上着のファスナーを上げる動作の外形描写のみで、対策X→効果Yの因果構造が成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造なし。ナレーションは気温5度の朝にファスナーを上げる動作の外形のみ。理由・はたらき・暖かさの良し悪しへの言及なし。テロップも場面の短い語を並べるだけ。CTA（caption.cta）は「DMは、上着のファスナーを上げた朝のあとも、開いています。」で事実陳述にとどまり、解決の暗示なし。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも限定感・緊急性・煽り（今だけ/残りわずか/早く試さないと等）なし。購入・商品への言及自体がない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "全文が和男の共感共闘トーン（淡々とした独白・です/ます調・飾らない描写）で統一。売り込み・専門家トーンへの逸脱なし。内面は「冬が来たと思います」の一文のみで、感情を盛らない抑制されたトーンを維持。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプションのいずれにも「変わった/変わる/変化した/変化があった/変化を感じた」なし。足元・体調文脈での使用はもちろん、他の文脈でも未使用。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「気温5度の朝、かじかんだ指で上着のファスナーを上げると、冬が来たと思います」に対し、ナレーションは冒頭「気温5度の朝です」、展開「かじかんだ指で」ファスナーを上げる動作、内面「冬が来たと思います」と、テーマの全要素を忠実に扱っている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（告白・独白型）の心理構造を実装。弱さ・本音の正直な開示＝かじかんだ指でファスナーの金具がすべる飾らない描写が弱さの開示として機能。「この人に話したい」着地＝理由も結論も語らず動作完了で閉じることで、冬の朝のひとこと分の本音だけが静かに残り、もう少し聞きたいと思わせる余韻を生成。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P5第9回・S2ブロック「雨・初冬の冷え」の4本目として、冬の到来を感じる朝の一コマを静かに描写。山場や特別回の指定なく、P5の各本単独完結・前回視聴の前提なしの方針に沿った適度な強度。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=「直接表現可」のため、婉曲要の回のみ判定するC1はskip。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=「直接表現可」のため、婉曲要の回のみ判定するC2はskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1・C2は婉曲不要のためskip済み。A群（正直さ）はcaptionにも適用し、A1〜A5の判定対象にcaptionを含めている。適用範囲の制御が正しく機能。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「弱さ・本音への共感。冷えこんだ朝の数字と、かじかんだ指という身体の外形から入り、飾らない独白が始まると予感させる入口」に対し、ナレーション冒頭「気温5度の朝です。かじかんだ指で、上着のファスナーの持ち手をつかみます。」で数字の情景と身体の外形からType_Aの入口を正確に実装。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "psychology.exit「この人に話したい。理由も結論も語らないまま、上着のファスナーを上げ終えた動作で終わり、冬の朝のひとこと分の本音だけが静かに残る余韻で締める」に対し、ナレーション末尾「ファスナーを、最後まで上げました。」で動作完了の言い切りで閉じ、直前の「冬が来たと思います。」が唯一の内面として余韻を残す。テロップ最終行「最後まで上げる」も誘導なし。Type_Aの「この人に話したい」出口を実装。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "one_message「気温5度の朝、かじかんだ指で上着のファスナーを上げる一コマ」一本に集約。ナレーションは冒頭から着地まで一貫してファスナーを上げる動作のみを描写。キャプションも同一メッセージ。2つ目のメッセージの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "cta_type=DM誘導。caption.cta「DMは、上着のファスナーを上げた朝のあとも、開いています。」を要件6点で判定。(1)非依頼形：「開いています」は事実陳述、「ください/してね/しましょう」なし、疑問形なし=pass。(2)二人称なし：「あなた/みなさん/〜な人は」なし=pass。(3)販売圧なし：購入・商品・リンク・プロフィール遷移・保存・フォロー・タグ付け指示なし=pass。(4)「DM」はcaption.ctaのみに出現（ナレーション・テロップ・caption本文・hook_line・ハッシュタグに不在）、「プロフィール」は全面不在=pass。(5)1文・静かな言い切り。述語「開いています」はep121/124の「受け取っています」「そっと」「◯の話は」と異なる差し替え済み。主語「DMは」が本回の場面「上着のファスナーを上げた朝のあとも」と結ぶ=pass。(6)禁止語23語幹+prohibited_direct13語：0件=pass。全6要件充足。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=DM誘導のため、cta_type=なしの回のみ判定するE2はskip。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ全5行（ナンバリング行除く）に「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。ナレーションにも誘導の気配なし。caption本文「ここに残しています」は陳述形で誘導ではない。caption.ctaの「DMは…開いています」はDM誘導回のキャプションCTA欄として許容範囲内（事実陳述・非強圧的）。サムネ文字（selected_text: かじかんだ指/上着の朝）にも誘導なし。全フィールドでハードCTA0件。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全10文の語尾：朝です/つかみます/寄せます/あてます/すべります/差しこみます/入ります/持ち上げていきます/思います/上げました。すべて「です・ます」調で統一。「だ・である」調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは全10文の淡々とした独白（動作の順序を時系列で描写）。テロップは「気温5度の朝/かじかんだ指/上着のファスナー/金具を差しこむ/最後まで上げる」と、場面の要素を短い語句で視覚的に提示。ナレーションの転記・要約ではなく、別の切り口（名詞句・動詞句の抽出）で構成。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情(共感)：指がすべる感覚、冬が来たという内面など、身体感覚と独白を通じて共感を喚起。テロップ＝論理(気づき)：場面の構成要素（気温・身体部位・動作対象・動作・結果）を短い語句で順に提示し、視覚的な理解の枠組みを提供。役割の分離が機能。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.mdの各要素がep129.jsonのcaptionフィールドと完全一致。hook_line「気温5度の朝の話です。」=一致、body「かじかんだ指で上着のファスナーを上げた朝を、ここに残しています。」=一致、cta「DMは、上着のファスナーを上げた朝のあとも、開いています。」=一致、hashtags「#安全靴 #工場勤務 #12年の記録 #冬の朝 #上着」=一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との比較：ep124=秋の昼/上着のすそをあおぐ（季節・動作が異なる）、ep125=前の晩/持ち物を机に出す、ep126=冷たい雨/靴の表面、ep127=白い息/マフラー、ep128=タオルをたたんで鞄に。いずれも主題・素材・場面が異なる。ep121（同じ上着・ファスナー場面の前例）との切り分け：ep121の運び（ドアの前/厚手か薄手かを選ぶ/袖に腕を通す/ファスナーを上まで引き上げる/ドアノブの冷たさ/指先が縮む）をep129は一切踏襲せず、かじかんだ指で金具を差しこむ・すべる・カチリと入る・持ち上げるという金具操作の外形に徹した別の運びで構成。「引き上げ」「上まで」「指先」「ドアの前」等のep121由来語も未使用。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち、1行で瞬時に理解可能。「気温5度の朝」「かじかんだ指」「上着のファスナー」「金具を差しこむ」「最後まで上げる」はいずれも短く具体的な語句で、前後の文脈なしでも場面が浮かぶ。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「気温5度の朝です。」で数字の情景に即座に入り、背景説明・挨拶・前置きなし。2文目から即座にかじかんだ指での動作に移行。途中から始まる構造を実装。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "婚姻制約チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体で登場人物は本人のみ。妻・子ども・家族（実家の親を除く）の登場・存在の示唆なし。「かじかんだ指で上着のファスナーを上げる」は一人の動作として完結。配偶者・子の存在を暗示する描写（「家族が待っている」等）なし。受け手への呼びかけ・二人称なし。人間関係の言及自体がなく、一人暮らしの日常・内面の範囲で構成。marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep129_round1.json）から全25軸を転記。P5の9本目・S2ブロック4本目・Type_A（P5版＝場面と身体動作から入り内面は一行だけ・テーマ由来「冬が来たと思います」を内面一行に充当）・DM誘導（caption.cta段2生成・述語差し替え・E1判定）・婉曲:不要（C1/C2 skip）・E2 skip。"
+    }
+  ]
+}
