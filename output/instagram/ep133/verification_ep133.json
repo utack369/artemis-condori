@@ -1,0 +1,223 @@
+{
+  "ep_number": 133,
+  "euphemism_required": false,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全体を検査。効く/治る/消える/改善する/なくなる/解消等の断定語は0件。台本全体が車内の外形描写のみで構成され、対策X→効果Yの因果構造が存在しない。足元の悩み文脈自体がなく、断定が成立する余地がない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋caption の組み合わせ全体を検査。「これを使えば解決する」と読み取れる構造は不在。理由0件・はたらき0件・対処0件・製品0件・悩み語0件。数値は「10秒」（テーマ由来・じっとしている時間の長さ）と「12年」（ナンバリング定型）のみで、効果を示唆する数値は0件。問題提示→解決提示の構造が存在しない純粋な場面描写。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り表現を検査。今だけ/残りわずか/早く試さないと等の煽り語は0件。製品・購入・価格への言及自体が0件。全編が車内の静寂の一コマ描写。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "ナレーション全体が一人称の淡々とした場面描写で、和男の共感共闘トーンの範囲内。売り込みトーン（製品推奨・購入促進）への逸脱0件、専門家トーン（解説・指導・権威づけ）への逸脱0件。「気にならなくなった・保証しない・よかったら」の三語トーンと矛盾する表現は不在。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "変わった/変わる/変化した/変化があった/変化を感じた等の語をscript.md・caption.md全体で検索し0件。足元・体調文脈自体が不在のため、文脈的に紛らわしい使用も存在しない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master該当行のテーマ「仕事のあと、エンジンをかける前に、ハンドルに両手を置いて10秒じっとしています」に対し、ナレーション冒頭が「仕事のあと、エンジンをかける前に、ハンドルに両手を置いて、10秒じっとします。」で直接対応。展開部もハンドル・両手・車内・窓の外とテーマ素材を扱い、テーマから逸脱する素材は0件。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_A（P5版＝場面と身体動作から入り、内面は一行だけ）の実装を検査。冒頭は場面と身体動作（仕事のあと・エンジンをかける前・ハンドルに両手・10秒じっと）から入り、展開は外形のみ（両手の位置・肩と腕・目線・ラジオ・車内の音・窓の外）を順に配置。内面の行は「頭の中は、からっぽです。」の1行のみで、展開部後半（9文中8文目）に配置。冒頭と着地には内面語なし。弱さ・本音の正直な開示（仕事のあとにエンジンもかけずじっとしている姿）→「この人に話したい」着地（エンジンを保留する外形で余韻を残す）の心理構造が実装されている。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.phase_role「P5第13回・ブロックS3（車・移動）の3本目」と整合。ep131（車に乗りこむ前のマット）→ep132（信号待ちのペダル上の指）→ep133（仕事のあとのハンドルの上の両手）と、車の場面の異なる瞬間を描写しブロック内で変化を出している。山場指定はなく、淡々とした中位の強度で整合。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用チェック",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲:不要）のため、C1は判定対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性チェック",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲:不要）のため、C2は判定対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "適用範囲の制御を確認。C1/C2は婉曲不要のためskip済みでcaptionへの適用も不要。A群（正直さ）はcaptionにも適用済み（A1-A5すべてcaption含むmultipleで判定完了）。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「場面と身体動作からの入口。仕事のあと、エンジンをかける前にハンドルへ両手を置く本人の動作」に対し、ナレーション冒頭「仕事のあと、エンジンをかける前に、ハンドルに両手を置いて、10秒じっとします。」が直接実装。Type_A入口（弱さ・本音への共感）として、仕事のあとにエンジンもかけずじっとする姿が誰にでも覚えのある情景を提示し、前置きなしで場面に入っている。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「『この人に話したい』。理由も感情も語らないまま、エンジンを保留する外形で終わり、自分の仕事のあとの車内を思い浮かべる余韻で締める」に対し、ナレーション末尾「エンジンは、かけずにおきます。」が保留の外形で終わり、理由も感情も述べない。テロップ最終行「窓の外は夕方」も外形の情景で締め、誘導は一切なし。視聴者が自分の仕事のあとの車内を重ねる余韻の設計が実装されている。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_messageチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "tone_and_rules.one_message「仕事のあと、エンジンをかける前に、ハンドルに両手を置いて10秒じっとしている一コマ」への集約を検査。ナレーション9文すべてが、仕事のあとの車内でハンドルに両手を置いてじっとしている一コマの外形描写（両手の位置・肩と腕・目線・ラジオ・車内の静寂・窓の外の夕方・頭のからっぽ・エンジン保留）。第2メッセージの混在なし。テロップ5行・caption本文もすべて同一メッセージに集約。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性チェック",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "meta.cta_type=なし のため、E1（CTA実装の適切性）は判定対象外。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=なし回として、テロップおよびcaptionへのCTA混入を検査。(1)「プロフィール」全編0件（script.md 0件・caption.md 0件）。(2)「DM」全編0件（script.md 0件・caption.md 0件）。(3)保存・フォロー・いいね・コメント・シェア・リンク遷移・タグ付けへの行動指示0件（命令形0件・依頼形0件・勧誘形0件）。(4)caption.ctaは空文字（ep133.json caption.cta='' と一致、caption.md上にCTA行の実体なし）。(5)テロップ全5行（ナンバリング除く）はすべて名詞句・情景断片で、誘導機能なし。(6)caption本文は「エンジンをかける前の10秒の話です。」「仕事のあと、ハンドルに両手を置いて、じっとします。」の陳述形2文のみで、依頼形・勧誘形・疑問形の呼びかけ・二人称は0件。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ全行を検査。「プロフィールを見て」「リンクから」「今すぐ」等の直接誘導は0件。テロップ内容は情景断片のみ（仕事のあと/エンジンをかける前/ハンドルに両手/10秒じっと/窓の外は夕方）。cta_type=なし回のためcaptionのハードCTAも不可だが、caption内にもハードCTA語は0件。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全9文の語尾を検査。じっとします/のせます/抜きます/向けます/つけません/しんとしています/夕方の色です/からっぽです/かけずにおきます。全文が「です・ます」調で統一。「だ・である」調の混在は0件。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーション（9文の流れる場面描写）とテロップ（5行の情景断片カード）が別内容であることを確認。ナレーションにあってテロップにない要素：肩と腕から力を抜く/目は正面に向ける/ラジオはつけない/車の中はしんとしている/頭の中はからっぽ/エンジンはかけずにおく。テロップはナレーションの転記・要約ではなく、場面の視覚的アンカーとして機能。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）面を担当：一人称の場面体験、静寂の中のからっぽな頭、エンジンを保留する内的選択。テロップ＝論理（気づき）面を担当：場面の時系列アンカー（仕事のあと→エンジンをかける前→ハンドルに両手→10秒じっと→窓の外は夕方）を視覚的に整理。CTA不在回のため、テロップのCTA機能は適用外。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致チェック",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "ep133.json captionフィールドとcaption.mdを照合。hook_line「エンジンをかける前の10秒の話です。」→caption.md 1行目と完全一致。body「仕事のあと、ハンドルに両手を置いて、じっとします。」→caption.md 3行目と完全一致。cta「」（空文字）→caption.mdにCTA行なし（正）。hashtags「#安全靴 #工場勤務 #12年の記録 #ハンドル #仕事のあと」→caption.md 7行目と完全一致（5タグ・順序一致）。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複チェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との場面・動作・着地述語を比較。ep128=雨の予報の晩・タオルをたたんで鞄に入れる・着地「入れてあります」。ep129=気温5度の朝・上着のファスナーを上げる・着地「上げました」。ep130=冷えこんだ夜・ストーブの前で靴を手に持つ・着地「過ぎていきます」。ep131=車に乗りこむ前・マットの上で靴の底を処理・着地「開けません」。ep132=信号待ちの40秒・ペダルの上で靴の中の指を動かす・着地「小さく光ります」。本回ep133=仕事のあと・ハンドルに両手を置いて10秒じっとする・着地「エンジンは、かけずにおきます。」（第37形・保留の言い切り型）。ep132と車内という大枠は共通だが、ep132は信号待ち中のペダル上の足指運動、ep133は仕事後のハンドル上の両手の静止で、時間帯・身体部位・動作・着地述語すべてが異なり、主題の重複なし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）チェック",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ全5行（ナンバリング除く）が各行独立で意味を持ち瞬時に理解可能。「仕事のあと」(5字)「エンジンをかける前」(9字)「ハンドルに両手」(7字)「10秒じっと」(5字)「窓の外は夕方」(7字)。全行10字以内で一読で理解可能。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レスチェック",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「仕事のあと、エンジンをかける前に、ハンドルに両手を置いて、10秒じっとします。」は背景説明・挨拶・自己紹介なしに、場面の途中から始まっている。「仕事のあとの車内で〜をする習慣があります」のような説明形ではなく、動作と情景の即時提示。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "婚姻制約チェック",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "File.133（>File.60）のため判定対象。ナレーション・テロップ・caption全体を検査。登場人物は本人のみ（主語省略の一人称）。妻/子ども/家族（実家の親を除く）の登場・存在の示唆は0件。同乗者0件・周囲の車の運転者0件・歩行者0件・職場の人0件。二人称（あなた/みなさん等）0件。「車の中は、しんとしています」は一人きりの車内を示唆し、配偶者・子の存在を暗示する描写（「家族が待っている」等）は不在。人間関係は一人暮らしの日常・内面の範囲で完結。tone_and_rules.marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep133_round1.json）から全25軸を欠落なく転記。axis_name・reason・target_file完備。"
+    }
+  ]
+}
