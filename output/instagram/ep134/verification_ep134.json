@@ -1,0 +1,223 @@
+{
+  "ep_number": 134,
+  "euphemism_required": false,
+  "cta_required": true,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・captionの全文を確認。「効く/治る/消える/改善する/なくなる/解消」等の断定語は0件。ナレーションは車を停めた先の動作の外形（窓を開ける・まわりを回る・遠くをながめる）のみで、足元の悩み文脈での効果の因果は成立していない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTAの組み合わせ全体で「これを使えば解決する」と読み取れる構造は不在。理由・はたらき0件（各項目の動作の外形のみで効果説明なし）。数値は「2時間ごと」「3つ」（テーマ由来・冒頭1回）と一覧テロップ内番号「1窓2まわり3遠く」およびナンバリング定型「12年」「File.134」のみ。本数表現0件。内面語0件（「思います」「感じます」等の内面独白・感情語は全文不在）。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "「今だけ/残りわずか/早く試さないと」等の限定感・緊急性・煽り表現は全文0件。購入を促す文脈自体が存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全文が和男の淡々とした一人称描写で統一。売り込みトーン・専門家トーンへの逸脱なし。「車を寄せます」「窓を少し開けます」「ながめます」等、共感共闘型の落ち着いた語りが一貫。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文で「変わった/変わる/変化した/変化があった/変化を感じた」は0件。足元・体調文脈に限らず全文不在。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_masterテーマ「長い運転の日は、2時間ごとに車を停めてやることを3つに絞っています」に対し、ナレーション冒頭が「長い運転の日は、2時間ごとに車を停めて、やることを3つに絞っています。」と完全一致。以降の展開も3つの動作の外形を順に扱い、テーマを正確に実装。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_B P5版（保存される実用形）として判定。(1)本人の動作の外形の列挙：窓を少し開ける→車のまわりを回る→遠くをながめるの3項目を「はじめに」「それから」「おわりに」で順に列挙。(2)終カットに一覧テロップ1枚：「1窓2まわり3遠く」。(3)はたらき理由なし：各項目の理由・効果・良し悪しの説明0件。(4)内面0件：感情語・独白・「思います」等0件。(5)着地が3項目目の動作「おわりに、遠くを、ながめます。」で言い切り、理由も結論も語らず「もっと聞きたい」の余韻を残す。Type_Bの心理構造を正確に実装。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "P5第14回、ブロックS3「車・移動」の4本目。山場指定なし。淡々とした描写で一定の強度を維持し、S3ブロック内の他作（ep131マット・ep132信号待ち・ep133ハンドル）と同程度の落ち着いた調子で配置の意図に整合。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のためskip。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=直接表現可（婉曲不要）のためskip。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "婉曲不要回のためC1/C2はcaption含め全面skip済。A群（正直さ）はcaptionにも適用し、A1-A5で全passを確認。制御ルールが正しく適用されている。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry「実用の入口。長い運転の日の情景と数字から入り、順に続く動作の外形が終わりに一覧になると予感させる」に対し、ナレーション冒頭「長い運転の日は、2時間ごとに車を停めて、やることを3つに絞っています。」が情景と数字（2時間ごと・3つ）から即座に入り、知的好奇心（3つとは何か）を喚起。Type_Bの入口として正確に実装。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit「もっと聞きたい。理由も結論も語らないまま、3項目目の動作で言い切って終わり、終カットの一覧を見返したくなる余韻で締める」に対し、着地「おわりに、遠くを、ながめます。」が3項目目の動作で言い切り、理由も結論もなく終了。テロップ最終行「1窓2まわり3遠く」が見返し用の一覧。誘導は本文に一切なし。Type_Bの「もっと聞きたい」出口を正確に実装。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "one_message「長い運転の日、2時間ごとに車を停めてやる3つのこと」一本。ナレーションは冒頭でこのメッセージを提示し、3つの動作を列挙して着地。2メッセージの混在なし。副次的テーマ・脱線・別の主張は0件。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "ソフトCTA回（5回目）。telop_guideline.cta_expression=null、テロップ終カットは一覧テロップ1枚「1窓2まわり3遠く」が正。CTAはcaption.ctaのみ。caption.cta「長い運転の日に車を停めてやることは、プロフィールから読めます。」を6要件で判定：(1)非依頼形：「読めます」は事実の陳述・言い切り形、依頼・勧誘・疑問の呼びかけなし。(2)二人称・宛先指定なし：「あなた」「みなさん」等0件。(3)販売圧なし：保存・フォロー・タグ付け・リンク・購入等の行動指示0件。(4)「プロフィール」はcta欄のみ使用（ナレーション・テロップ・caption本文・ハッシュタグに不在）、「DM」は全面0件。(5)1文の静かな事実陳述の言い切り。(6)禁止語23語幹・prohibited_direct13語・悩み語・部位・製品は0件。述語差し替え禁止語の確認：「置いています」「置いてあります」「プロフィールに置」「載っています」「の記録にも」「たどれます」「でも」はいずれも不使用。述語は「から読めます」で本回指定に合致。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "cta_type=ソフトCTA回のためE2はskip。E2はcta_type=なしの場合のみ適用。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "テロップ全5行に「プロフィールを見て/リンクから/今すぐ/フォロー/保存/いいね/コメント/シェア/DM」等の直接誘導は0件。ナレーション全文にも誘導の気配0件。caption本文「道の脇で、窓を開けて、車のまわりを回って、遠くをながめます。」に誘導0件。caption hook「2時間ごとに車を停める日の話です。」に誘導0件。サムネイル文字「長い運転の日/車を停めて/やること」に誘導0件。caption.ctaの「プロフィールから読めます」はソフトCTA回のcta欄として適正（事実陳述、ハードCTAでない）。全フィールドで誘導の気配ゼロ。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全文の語尾を確認：「絞っています」「寄せます」「止めます」「引かれています」「開けます」「回ります」「出ます」「続いています」「見えます」「ながめます」。全て「です・ます」調で統一。「だ・である」調の混在は0件。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは場面描写を含む完全な文章（道の脇に車を寄せる、ハザードをつける、路面の白い線、道がまっすぐ続く、畑が見える等の情景描写込み）。テロップは「長い運転の日」「窓を少し開ける」「車のまわりを回る」「遠くをながめる」「1窓2まわり3遠く」と動作の外形を短い語で視覚的に提示。ナレーションの文字化・要約ではなく、別レイヤーの内容として機能。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝車を停めた先の情景と動作を一人称で淡々と描写する感情（共感）レイヤー。テロップ＝動作の外形を短い語句で列挙し、最終行に番号つき一覧を置く論理（気づき）レイヤー。役割が分離している。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "caption.md各要素とep134.json captionフィールドを照合。hook_line「2時間ごとに車を停める日の話です。」=完全一致。body「道の脇で、窓を開けて、車のまわりを回って、遠くをながめます。」=完全一致。cta「長い運転の日に車を停めてやることは、プロフィールから読めます。」=完全一致。hashtags「#安全靴 #工場勤務 #12年の記録 #長距離運転 #道の脇」=5個全て一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "直近5作との照合：ep129=気温5度の朝・上着のファスナー、ep130=冷えこんだ夜・ストーブの前・靴を手に持つ、ep131=車に乗りこむ前・マットの上で靴底を打つ・こする・向きをそろえる、ep132=信号待ち40秒・ペダルの上で靴の中の指を曲げのばし、ep133=仕事のあと・ハンドルに両手を置いて10秒じっとする。ep134=長い運転の日・道の脇に停車・窓を開ける・車のまわりを回る・遠くをながめる。ep131-133と「車」ドメインを共有するが、場面（道の脇での停車中）・動作（窓・まわり・遠く）・時間帯（長い運転中）は全て独自。素材・場面の重複なし。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ全6行が各行独立して意味を持ち、1行で瞬時に理解可能。「長い運転の日」=テーマ、「窓を少し開ける」「車のまわりを回る」「遠くをながめる」=各動作、「1窓2まわり3遠く」=一覧。いずれも10字以内で簡潔。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「長い運転の日は、2時間ごとに車を停めて、やることを3つに絞っています。」が背景説明・挨拶・前置きなしに、テーマ文から即座に入る。イン・メディアス・レスの要件を満たす。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・caption全文を確認。登場人物は本人のみ。妻・子ども・家族（実家の親を除く）の登場・存在の示唆は0件。同僚・友人・知人の名指し・気配も0件。他者の暗示として特に確認：「道の脇」「車の横」「車の前」は全て本人の車を指す描写であり他車・他者の暗示なし。「隣の車」「前の車」「後ろの車」「同乗者」「歩行者」等の他者暗示語は0件。「道の先には、畑が見えます」は風景描写で人の気配なし。人間関係は一人暮らしの日常・内面の範囲で完結。marriage_constraint準拠。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep134_round1.json）から全25軸を欠落なく転記。axis_name・reason・target_file完備。"
+    }
+  ]
+}
