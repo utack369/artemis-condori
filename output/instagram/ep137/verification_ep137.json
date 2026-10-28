@@ -1,0 +1,223 @@
+{
+  "ep_number": 137,
+  "euphemism_required": false,
+  "cta_required": false,
+  "current_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "checks": [
+        {
+          "axis_id": "A1",
+          "axis_name": "効果の断定",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体に「効く/治る/消える/改善する/なくなる/解消」等の断定なし。足元の悩み文脈での「対策X→効果Y」因果構造なし。全編が作業着のポケットを裏返す手の動作と砂の外形の描写のみで、効果を主張する構造が存在しない。"
+        },
+        {
+          "axis_id": "A2",
+          "axis_name": "効果の暗示",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション＋テロップ＋CTA（なし）の組み合わせ全体で「これを使えば解決する」と読み取れる構造なし。製品・対策・道具への言及0件。砂がこぼれる外形の描写のみで、改善・解決を暗示する因果・時系列比較・ビフォーアフター構造が存在しない。CTAも存在しないため、誘導による暗示もない。"
+        },
+        {
+          "axis_id": "A3",
+          "axis_name": "購入圧力",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "限定感・緊急性・煽り（今だけ/残りわずか/早く試さないと等）なし。全編が日常の一コマの情景描写で、購入・行動を急かす要素が一切存在しない。"
+        },
+        {
+          "axis_id": "A4",
+          "axis_name": "トーン一貫性",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "全編が淡々とした日常描写のです・ます調で、和男の共感共闘トーンのうちType_C（日常スケッチ型）に合致。売り込みトーン・専門家トーンへの逸脱なし。キャプションも「ポケットの砂の話です。」「手の上に砂を受けます。」と同じ淡々とした陳述調を維持。"
+        },
+        {
+          "axis_id": "A5",
+          "axis_name": "「変わった」禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "ナレーション・テロップ・キャプション全体に「変わった/変わる/変化した/変化があった/変化を感じた」の語なし。足元・体調文脈での使用なし。文脈判定としても、改善や変化を暗示する表現は存在しない。"
+        },
+        {
+          "axis_id": "B1",
+          "axis_name": "テーマの一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "design_master File.137テーマ「夜、作業着のポケットを裏返すと、細かい砂がこぼれます」に対し、ナレーションは夜の玄関で作業着のポケットを裏返し砂がこぼれる外形を描写。テーマの素材（夜・作業着・ポケット・裏返す・砂・こぼれる）がすべてナレーションの骨格に反映されている。"
+        },
+        {
+          "axis_id": "B2",
+          "axis_name": "型の実装（意味的）",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "Type_C（日常スケッチ型）＝日常の淡々とした描写→人柄の深い理解。ナレーションは夜の玄関でポケットを裏返す動作を一文ずつ淡々と外形描写。感情語・内面独白0件。着地「細かい砂が、手の上へこぼれてきます。」は感情を押し付けず情景の動きで閉じ、人柄を静かに伝える構造。Type_Cの心理構造（日常の淡々とした描写→人柄の深い理解）を実装している。"
+        },
+        {
+          "axis_id": "B3",
+          "axis_name": "フェーズ内役割",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.phase_role：P5第17回、S4ブロック「手の動作」の2本目。台本は単独完結の日常スケッチで、ポケットを裏返す手の動作に焦点。販売導線なし・前回視聴の前提なし。S4ブロックの様式要件（同じ手つきをしている人が思い浮かぶ具体＝ポケットを裏返す手の系統）に沿った強度・方向。"
+        },
+        {
+          "axis_id": "C1",
+          "axis_name": "NGワードの意味的使用",
+          "result": "skip",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=「直接表現可」（婉曲不要回）のためC1判定を適用しない。本回は悩みに触れない中立の場面の回であり、婉曲変換の対象外。"
+        },
+        {
+          "axis_id": "C2",
+          "axis_name": "婉曲変換の適切性",
+          "result": "skip",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "meta.euphemism=「直接表現可」（婉曲不要回）のためC2判定を適用しない。本回は足元・靴の内実に触れない場面のため、婉曲変換の適用対象外。"
+        },
+        {
+          "axis_id": "C3",
+          "axis_name": "キャプション例外（制御ルール）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "caption",
+          "reason": "C1/C2は婉曲不要回のためskip。制御ルールとして、A群（正直さ）はキャプションにも適用済み（A1-A5すべてcaption含めて判定しpass）。婉曲チェックがcaptionに誤適用されている事実もない。制御ルールに違反なし。"
+        },
+        {
+          "axis_id": "D1",
+          "axis_name": "入口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.entry=「日常の共感。夜の玄関で作業着を手に取る外形という、同じ暮らしの覚えがある情景から、前置きなしでその一コマに入っていける入口」。ナレーション冒頭「夜、玄関で、作業着を手に取ります。」は夜の玄関の情景から前置きなしで始まり、Type_Cの入口（日常の共感）を実装。背景説明・挨拶なし。"
+        },
+        {
+          "axis_id": "D2",
+          "axis_name": "出口の実装",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "psychology.exit=「人柄の深い理解。理由も感情も語らないまま、砂が手もとへこぼれてくる外形で終わり、同じ動きをしている人が自分の手を思い浮かべる余韻で締める」。ナレーション末尾「細かい砂が、手の上へこぼれてきます。」は理由も感情も語らず砂の動きの外形で閉じ、テロップ最終行「手の上にたまる砂」も同様。Type_Cの出口（人柄の深い理解）を余韻で実現。誘導は本文に一切なし。"
+        },
+        {
+          "axis_id": "D3",
+          "axis_name": "one_message",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "multiple",
+          "reason": "one_message=「夜、作業着のポケットを裏返すと、細かい砂がこぼれる一コマ」。ナレーション全11文が夜の玄関でポケットを裏返し砂がこぼれる一連の動作のみ。テロップ5行（ナンバリング除く）も同一場面の外形。キャプションhook_line「ポケットの砂の話です。」body「夜、作業着のポケットを裏返して、手の上に砂を受けます。」も同じ一コマ。第二のメッセージ・別テーマの混在なし。"
+        },
+        {
+          "axis_id": "E1",
+          "axis_name": "CTA実装の適切性",
+          "result": "skip",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "meta.cta_type=「なし」（CTAなし回）のためE1判定を適用しない。telop_guideline.cta_expression=null。caption.cta=空文字。CTA実装の適切性を判定する対象が存在しない。"
+        },
+        {
+          "axis_id": "E2",
+          "axis_name": "CTA非存在時の混入",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "multiple",
+          "reason": "【重点軸】cta_type=なし回のCTA混入チェック。(1)特定行動への命令形指示：全編0件。ナレーション全文が「〜ます」の陳述形、テロップは体言止め、キャプションも陳述形。命令形なし。(2)フォロー・いいね・コメント・シェア・リンク遷移・DMへの依頼形・勧誘形：全編0件。(3)DM誘導文の混入：全編0件。「プロフィール」全編0件、「DM」全編0件。保存促し0件。依頼形・勧誘形・疑問形の呼びかけ0件。二人称0件。ハッシュタグ5つ（#安全靴/#工場勤務/#12年の記録/#作業着/#ポケット）も行動指示を含まない場面タグのみ。"
+        },
+        {
+          "axis_id": "E3",
+          "axis_name": "テロップ内ハードCTA禁止",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "script.md",
+          "reason": "テロップ全6行（ナンバリング「安全靴と戦う12年の記録：File.137」＋「夜の玄関」「作業着のポケット」「底をつまんで裏返す」「細かい砂がこぼれる」「手の上にたまる砂」）に「プロフィールを見て/リンクから/今すぐ」等の直接誘導なし。DM誘導なし。ハードCTA要素0件。キャプションもCTAなし回のため空文字で、ハードCTA不可の条件を充足。"
+        },
+        {
+          "axis_id": "F5",
+          "axis_name": "語尾統一",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション全11文の語尾：「取ります」「入れます」「当たります」「裏返します」「こぼれます」「たまります」「こぼれます」「裏返します」「出ます」「増えます」「こぼれてきます」。すべて「です・ます」調で統一。だ・である調の混在なし。"
+        },
+        {
+          "axis_id": "G3",
+          "axis_name": "内容分離",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "script.md",
+          "reason": "ナレーションは時系列の動作を一文ずつ「〜ます」調で語る（右ポケット→指に粒→裏返す→砂こぼれる→左ポケット→砂増える→着地）。テロップは「夜の玄関」「作業着のポケット」「底をつまんで裏返す」「細かい砂がこぼれる」「手の上にたまる砂」と場面の構成要素を体言止めのカードで視覚提示。ナレーションの逐語転記・段落要約ではなく、場面の断面を独立した短いフレーズで提示する別コンテンツとして機能。"
+        },
+        {
+          "axis_id": "G4",
+          "axis_name": "役割分離",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション＝感情（共感）：夜の玄関でポケットを裏返す動作を一文ずつ淡々と語り、同じ動きをしている視聴者の共感を喚起する情景の語り。テロップ＝論理（気づき）：場面の構成要素（場所→対象→動作→結果→状態）を短いカードで論理的に整理して視覚提示。CTAなし回のためCTA機能は不要。役割の分離が成立。"
+        },
+        {
+          "axis_id": "H2",
+          "axis_name": "キャプション内容の指示書一致",
+          "result": "pass",
+          "severity": "high",
+          "target_file": "caption",
+          "reason": "ep137.json caption: hook_line=「ポケットの砂の話です。」→caption.md 1行目と逐語一致。body=「夜、作業着のポケットを裏返して、手の上に砂を受けます。」→caption.md 3行目と逐語一致。cta=空文字→caption.mdのbody後に空行（空CTAブロック）で一致。hashtags=[#安全靴,#工場勤務,#12年の記録,#作業着,#ポケット]→caption.md最終行と順序含め逐語一致。別epの残骸混入なし。"
+        },
+        {
+          "axis_id": "I1",
+          "axis_name": "過去epとの素材重複",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ep137の主題：夜の玄関で作業着のポケットを裏返し砂がこぼれる一コマ。直近5作との比較＝ep132（信号待ち・ペダル・靴の中の指）・ep133（仕事のあと・ハンドルに両手・じっとする）・ep134（長い運転の日・車を停めて3つ）・ep135（高速SA・風の向きを見る）・ep136（上がり口・靴の口に指先を入れてたしかめる）。素材（作業着のポケット・砂）・場面（夜の玄関）・対策（なし＝外形描写のみ）のいずれも直近5作と重複しない。"
+        },
+        {
+          "axis_id": "I2",
+          "axis_name": "テロップ視認性（意味的）",
+          "result": "pass",
+          "severity": "low",
+          "target_file": "script.md",
+          "reason": "テロップ各行が独立して意味を持ち1行で瞬時に理解可能。「夜の玄関」（場所）「作業着のポケット」（対象）「底をつまんで裏返す」（動作）「細かい砂がこぼれる」（結果）「手の上にたまる砂」（状態）。各行が場面の一断面を短く提示し、前の行を読まなくても単独で理解できる。"
+        },
+        {
+          "axis_id": "I3",
+          "axis_name": "イン・メディアス・レス",
+          "result": "pass",
+          "severity": "medium",
+          "target_file": "script.md",
+          "reason": "ナレーション冒頭「夜、玄関で、作業着を手に取ります。」は背景説明・挨拶・自己紹介・経緯の説明なしに、夜の玄関で作業着を手に取る動作の途中から即座に始まる。イン・メディアス・レスの要件を充足。"
+        },
+        {
+          "axis_id": "J1",
+          "axis_name": "marriage_constraint",
+          "result": "pass",
+          "severity": "critical",
+          "target_file": "multiple",
+          "reason": "marriage_constraint準拠。登場人物は本人のみ（全動作の主体が本人1人）。妻・子ども・家族の登場・存在の示唆なし。夜の玄関の場面だが同居の気配なし（待っている人・声・気配の描写0件）。作業着・砂の描写があるが同僚・現場の人の気配なし（砂の出どころの説明が一切ないため現場を連想させる人物が登場しない）。受け手への呼びかけ・二人称0件。一人暮らしの日常の範囲内で構成されている。"
+        }
+      ],
+      "summary": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 3
+      },
+      "coordinator_overall": "Pass",
+      "coordinator_rule_applied": "全軸 pass または skip → Pass",
+      "phase": "段3-V",
+      "action": "Pass のため段3-Ω（omega²）へ自動進行（Phase1撤廃済み）",
+      "note": "spool（.verification_spool/ep137_round1.json）から全25軸を欠落なく転記。axis_name・reason・target_file完備。"
+    }
+  ]
+}
